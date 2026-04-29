@@ -1,0 +1,58 @@
+[
+  {
+    "case_id": 0,
+    "natural_input": "黄河路经一路至经三路段向东因追尾事故严重拥堵；花园路向北畅通无阻。",
+    "adapter": {
+      "instruction": "TASK=sparse_output\nSCENE_TYPE=simple_local\nOUTPUT_OBJECT=异常语义锚点\nOUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级\nOUTPUT_RULE=只输出异常语义锚点；不要补全全量边权；不要解释。\nSCHEMA=ROAD|DIR|RANGE|LEVEL|TIME|PROPAGATION|CONFLICT\nNARRATIVE=黄河路经一路至经三路段向东因追尾事故严重拥堵；花园路向北畅通无阻\nEVENT_1: ROAD=黄河路 | DIR=向东 | RANGE=经一路至经三路 | LEVEL=严重拥堵 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=黄河路经一路至经三路段向东因追尾事故严重拥堵\nEVENT_2: ROAD=花园路 | DIR=向北 | RANGE=局部 | LEVEL=畅通 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=花园路向北畅通无阻\n仅输出锚点，不要解释。",
+      "raw_generation": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+      "bundle": {
+        "anchor_count": 0,
+        "mapped_edge_count": 0,
+        "parse_confidence": 0.9,
+        "parse_fail": false,
+        "no_anchor": true,
+        "anchors": []
+      }
+    },
+    "merged": {
+      "instruction": "TASK=sparse_output\nSCENE_TYPE=simple_local\nOUTPUT_OBJECT=异常语义锚点\nOUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级\nOUTPUT_RULE=只输出异常语义锚点；不要补全全量边权；不要解释。\nSCHEMA=ROAD|DIR|RANGE|LEVEL|TIME|PROPAGATION|CONFLICT\nNARRATIVE=黄河路经一路至经三路段向东因追尾事故严重拥堵；花园路向北畅通无阻\nEVENT_1: ROAD=黄河路 | DIR=向东 | RANGE=经一路至经三路 | LEVEL=严重拥堵 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=黄河路经一路至经三路段向东因追尾事故严重拥堵\nEVENT_2: ROAD=花园路 | DIR=向北 | RANGE=局部 | LEVEL=畅通 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=花园路向北畅通无阻\n仅输出锚点，不要解释。",
+      "raw_generation": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+      "bundle": {
+        "anchor_count": 0,
+        "mapped_edge_count": 0,
+        "parse_confidence": 0.9,
+        "parse_fail": false,
+        "no_anchor": true,
+        "anchors": []
+      }
+    }
+  },
+  {
+    "case_id": 1,
+    "natural_input": "经六路农业路至红专路段向北施工封闭；经八路向北正常通行。",
+    "adapter": {
+      "instruction": "TASK=sparse_output\nSCENE_TYPE=simple_local\nOUTPUT_OBJECT=异常语义锚点\nOUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级\nOUTPUT_RULE=只输出异常语义锚点；不要补全全量边权；不要解释。\nSCHEMA=ROAD|DIR|RANGE|LEVEL|TIME|PROPAGATION|CONFLICT\nNARRATIVE=经六路农业路至红专路段向北施工封闭；经八路向北正常通行\nEVENT_1: ROAD=经六路 | DIR=向北 | RANGE=农业路至红专路 | LEVEL=封闭 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=经六路农业路至红专路段向北施工封闭\nEVENT_2: ROAD=经八路 | DIR=向北 | RANGE=局部 | LEVEL=正常 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=经八路向北正常通行\n仅输出锚点，不要解释。",
+      "raw_generation": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+      "bundle": {
+        "anchor_count": 0,
+        "mapped_edge_count": 0,
+        "parse_confidence": 0.9,
+        "parse_fail": false,
+        "no_anchor": true,
+        "anchors": []
+      }
+    },
+    "merged": {
+      "instruction": "TASK=sparse_output\nSCENE_TYPE=simple_local\nOUTPUT_OBJECT=异常语义锚点\nOUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级\nOUTPUT_RULE=只输出异常语义锚点；不要补全全量边权；不要解释。\nSCHEMA=ROAD|DIR|RANGE|LEVEL|TIME|PROPAGATION|CONFLICT\nNARRATIVE=经六路农业路至红专路段向北施工封闭；经八路向北正常通行\nEVENT_1: ROAD=经六路 | DIR=向北 | RANGE=农业路至红专路 | LEVEL=封闭 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=经六路农业路至红专路段向北施工封闭\nEVENT_2: ROAD=经八路 | DIR=向北 | RANGE=局部 | LEVEL=正常 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=经八路向北正常通行\n仅输出锚点，不要解释。",
+      "raw_generation": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+      "bundle": {
+        "anchor_count": 0,
+        "mapped_edge_count": 0,
+        "parse_confidence": 0.9,
+        "parse_fail": false,
+        "no_anchor": true,
+        "anchors": []
+      }
+    }
+  }
+]

@@ -1,0 +1,8 @@
+scope,scope_name,count,no_anchor_when_gt_changed_rate,target_recall,gt_changed_edge_recall,MAE_on_changed_edges,parse_fail_rate_strict
+overall,overall,18,0.0556,0.0,94.4,0.0444,0.0556
+phrase_variant,畅通无阻,10,0.1,0.0,90.0,0.08,0.1
+phrase_variant,车流顺畅,8,0.0,0.0,100.0,0.0,0.0
+structure_variant,prefixed_short,7,0.1429,0.0,85.7,0.1143,0.1429
+structure_variant,short_plain,11,0.0,0.0,100.0,0.0,0.0
+source_type,remaining_hard_case_exact_eval_only,18,0.0556,0.0,94.4,0.0444,0.0556
+anchor_style,explicit_anchor,18,0.0556,0.0,94.4,0.0444,0.0556

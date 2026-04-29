@@ -1,0 +1,16 @@
+# WARNING: 本文件为旧协议下的消融场景数据（场景A-F 6个中文命名场景，非8场景固定种子协议）。
+# 数值（如 Sparse-LoRA-v2=511.15s, Rule-A*=513.55s）与主表协议不同，不可直接引用为主表结果。
+# 主表（Live SUMO 6场景固定协议，seeds 101-505）见：final_tables/method_comparison_final.csv
+# 主表核心结论：Sparse-LoRA 1190.25s vs Rule-A* 1446.47s，约束率 70.28% vs 69.78%
+Method,Method (CN),Category,Evaluation Scope,Mainline Status,Travel Time (s),model_infer_time_s,route_solve_time_s,Planning Time (s),Constraint Rate (%),Signal Ratio (%),Success Rate,Average Reward,Failure Rate,Timeout Rate,Notes
+Dijkstra,Dijkstra（等权）,Baseline,Main SUMO protocol,Main table,719.57,0.00,0.000077,0.000077,32.42,0.0,,,,,统一权重基线；无 LLM 推理
+Rule-A*,规则 A*,Baseline,Main SUMO protocol,Main table,513.55,0.00,0.000073,0.000073,61.57,91.7,,,,,人工规则权重 + A* 搜索
+DQN,DQN 强化学习,Baseline,Main SUMO protocol,Main table,605.35,0.00,0.000068,0.000068,61.57,91.7,,,,,强化学习基线
+"PPO (quick baseline, untuned)",PPO 快速基线（未调参）,Baseline-RL,Quick graph env (coverage only),Main table (coverage-only RL row),11.25,0.00,0.001429,0.001429,,,1.0,8.75,0.0,0.0,Quick PPO coverage baseline; reused SUMO-aligned graph/scenario wrapper; not used to claim optimal PPO or GAT-level gains; undefined fields intentionally left blank.
+GCN-Weight,GCN 权重估计,Baseline,Main SUMO protocol,Main table,572.88,0.00,0.000077,0.000077,61.57,71.85,,,,,图神经网络权重估计
+Raw-Qwen,Qwen 原始提示,LLM-Prompt,Main SUMO protocol,Main table,719.57,10.28,0.000067,10.280067,32.42,0.0,,,,,无微调直接提示
+CoT-Qwen,Qwen 链式思考,LLM-Prompt,Main SUMO protocol,Main table,629.12,8.36,0.000073,8.360073,35.47,3.1,,,,,链式推理提示
+R1-Raw,DeepSeek-R1 原始,LLM-Prompt,Main SUMO protocol,Main table,651.77,26.58,0.000057,26.580057,36.77,38.58,,,,,R1 模型原始提示
+Qwen-LoRA,Qwen-LoRA 微调,LLM-FineTuned,Main SUMO protocol,Main table,591.95,15.86,0.000050,15.860050,47.42,34.72,,,,,Qwen 全量 LoRA 微调
+R1-LoRA,DeepSeek-R1 LoRA,LLM-FineTuned,Main SUMO protocol,Main table,785.65,31.49,0.000068,31.490068,42.73,51.73,,,,,R1 LoRA 微调
+Sparse-LoRA-v2,Sparse-LoRA-v2（本文主方法）,Ours,Main SUMO protocol,Main table,511.15,1.47,0.000080,1.470080,68.23,9.38,,,,,stage4_fix 上游冻结；论文主方法锁定为非 GAT 版本

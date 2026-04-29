@@ -1,0 +1,93 @@
+Compare Results Report
+==================================================
+
+
+场景A 黄河路单向拥堵
+----------------------------------------
+  Dijkstra: cost=5.00, time=0.00s
+  Rule-A*: cost=16.00, time=0.00s
+  DQN: cost=27.60, time=0.02s
+  GCN-Weight: cost=16.40, time=0.00s
+  Raw-Qwen: cost=10.00, time=20.72s
+  CoT-Qwen: cost=12.00, time=16.62s
+  Qwen-LoRA★: cost=11.50, time=20.38s
+  LoRA+GAT★★: cost=13.06, time=20.38s
+  R1-Raw: cost=10.00, time=16.90s
+  R1-LoRA★: cost=10.00, time=29.20s
+  Sparse-LoRA★★: cost=18.20, time=1.13s
+  Sparse-LoRA+GAT★★★: cost=18.45, time=1.13s
+
+场景B 花园路封闭绕行
+----------------------------------------
+  Dijkstra: cost=4.00, time=0.00s
+  Rule-A*: cost=16.50, time=0.00s
+  DQN: cost=57.30, time=0.00s
+  GCN-Weight: cost=16.30, time=0.00s
+  Raw-Qwen: cost=8.00, time=4.89s
+  CoT-Qwen: cost=10.00, time=11.38s
+  Qwen-LoRA★: cost=12.40, time=19.67s
+  LoRA+GAT★★: cost=13.60, time=19.68s
+  R1-Raw: cost=16.50, time=26.38s
+  R1-LoRA★: cost=22.00, time=27.64s
+  Sparse-LoRA★★: cost=17.70, time=1.15s
+  Sparse-LoRA+GAT★★★: cost=17.89, time=1.13s
+
+场景C 多路段复合拥堵
+----------------------------------------
+  Dijkstra: cost=8.00, time=0.00s
+  Rule-A*: cost=17.20, time=0.00s
+  DQN: cost=41.60, time=0.00s
+  GCN-Weight: cost=14.75, time=0.00s
+  Raw-Qwen: cost=16.00, time=7.45s
+  CoT-Qwen: cost=16.00, time=8.76s
+  Qwen-LoRA★: cost=8.00, time=12.70s
+  LoRA+GAT★★: cost=8.88, time=12.10s
+  R1-Raw: cost=21.50, time=14.25s
+  R1-LoRA★: cost=5.40, time=26.40s
+  Sparse-LoRA★★: cost=16.00, time=1.50s
+  Sparse-LoRA+GAT★★★: cost=16.15, time=1.53s
+
+场景D 中央核心节点封锁（强迫大范围绕行）
+----------------------------------------
+  Dijkstra: cost=8.00, time=0.00s
+  Rule-A*: cost=17.60, time=0.00s
+  DQN: cost=17.50, time=0.00s
+  GCN-Weight: cost=15.95, time=0.00s
+  Raw-Qwen: cost=16.00, time=11.22s
+  CoT-Qwen: cost=16.00, time=5.80s
+  Qwen-LoRA★: cost=8.00, time=9.56s
+  LoRA+GAT★★: cost=9.00, time=9.59s
+  R1-Raw: cost=23.50, time=50.26s
+  R1-LoRA★: cost=5.20, time=30.20s
+  Sparse-LoRA★★: cost=16.00, time=1.88s
+  Sparse-LoRA+GAT★★★: cost=16.85, time=1.84s
+
+场景E 不对称方向拥堵（测试模型方向提取能力）
+----------------------------------------
+  Dijkstra: cost=5.00, time=0.00s
+  Rule-A*: cost=21.20, time=0.00s
+  DQN: cost=33.70, time=0.00s
+  GCN-Weight: cost=17.45, time=0.00s
+  Raw-Qwen: cost=10.00, time=5.93s
+  CoT-Qwen: cost=10.00, time=3.04s
+  Qwen-LoRA★: cost=3.60, time=20.10s
+  LoRA+GAT★★: cost=4.93, time=19.97s
+  R1-Raw: cost=10.00, time=24.77s
+  R1-LoRA★: cost=10.00, time=50.79s
+  Sparse-LoRA★★: cost=18.50, time=1.41s
+  Sparse-LoRA+GAT★★★: cost=19.63, time=1.41s
+
+场景F 大规模复合灾害（极限压力测试）
+----------------------------------------
+  Dijkstra: cost=8.00, time=0.00s
+  Rule-A*: cost=12.80, time=0.00s
+  DQN: cost=48.50, time=0.00s
+  GCN-Weight: cost=15.95, time=0.00s
+  Raw-Qwen: cost=16.00, time=12.57s
+  CoT-Qwen: cost=16.00, time=5.77s
+  Qwen-LoRA★: cost=8.00, time=13.86s
+  LoRA+GAT★★: cost=9.00, time=13.91s
+  R1-Raw: cost=45.50, time=30.32s
+  R1-LoRA★: cost=38.10, time=27.57s
+  Sparse-LoRA★★: cost=9.20, time=1.81s
+  Sparse-LoRA+GAT★★★: cost=10.16, time=1.82s

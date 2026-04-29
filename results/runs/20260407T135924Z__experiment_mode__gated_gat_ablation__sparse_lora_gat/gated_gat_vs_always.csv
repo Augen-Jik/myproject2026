@@ -1,0 +1,10 @@
+﻿scene,scene_type,scene_bucket,always_metric,gated_metric,delta_gated_vs_always,status
+场景A 黄河路单向拥堵,simple_local,normal,436.8,436.8,0.0,tie
+场景B 花园路封闭绕行,core_blockage,normal,708.4,708.4,0.0,tie
+场景C 多路段复合拥堵,compound_disaster,normal,544.6,544.6,0.0,tie
+场景D 中央核心节点封锁（强迫大范围绕行）,core_blockage,normal,497.5,497.5,0.0,tie
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,normal,394.1,394.1,0.0,tie
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,normal,446.5,446.5,0.0,tie
+特殊场景S1 核心封锁+外溢排队,core_blockage,special,544.6,544.6,0.0,tie
+特殊场景S2 活动管制+方向不对称,directional_asymmetry,special,814.6,814.6,0.0,tie
+特殊场景S3 局部锚点+拓扑传播,compound_disaster,special,544.6,544.6,0.0,tie

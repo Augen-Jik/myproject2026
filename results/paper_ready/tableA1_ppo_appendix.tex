@@ -1,0 +1,21 @@
+% Requires: \usepackage{booktabs,threeparttable}
+
+\begin{table}[t]
+\centering
+\caption{Appendix-only PPO quick baseline summary.}
+\label{tab:tableA1_ppo_appendix}
+\small
+\begin{threeparttable}
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & Travel Time (s) & Planning Time (s) & Success Rate & Avg. Reward & Training Steps & Eval Episodes \\
+\midrule
+PPO & 11.25 & 0.001429 & 1.0 & 8.75 & 20000 & 30 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Source: \texttt{results/ppo\_baseline/ppo\_quick\_summary.csv}. This row is retained only for appendix coverage. It comes from a simplified quick-baseline environment rather than the scene-profile-fixed live SUMO protocol used in Table~1.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

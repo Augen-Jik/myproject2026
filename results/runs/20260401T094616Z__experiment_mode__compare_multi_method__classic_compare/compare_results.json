@@ -1,0 +1,272 @@
+[
+  {
+    "scenario": "场景A 黄河路单向拥堵",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 5.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 50.0,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 623.9
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 16.0,
+        "path_len": 6,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 436.8
+      },
+      {
+        "method": "DQN",
+        "path_cost": 16.6,
+        "path_len": 6,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.02,
+        "sumo_time": 361.4
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 16.4,
+        "path_len": 6,
+        "coverage": 98.0,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 436.8
+      }
+    ]
+  },
+  {
+    "scenario": "场景B 花园路封闭绕行",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 4.0,
+        "path_len": 4,
+        "coverage": 0.0,
+        "constraint_rate": 60.0,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 1685.0
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 16.5,
+        "path_len": 5,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 708.4
+      },
+      {
+        "method": "DQN",
+        "path_cost": 58.6,
+        "path_len": 25,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 1771.4
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 16.3,
+        "path_len": 5,
+        "coverage": 98.0,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 708.4
+      }
+    ]
+  },
+  {
+    "scenario": "场景C 多路段复合拥堵",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 0.0,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 649.8
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 17.2,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 544.6
+      },
+      {
+        "method": "DQN",
+        "path_cost": 10.0,
+        "path_len": 4,
+        "coverage": 89.8,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 268.2
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 14.75,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 533.6
+      }
+    ]
+  },
+  {
+    "scenario": "场景D 中央核心节点封锁（强迫大范围绕行）",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 26.7,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 17.6,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 46.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 490.4
+      },
+      {
+        "method": "DQN",
+        "path_cost": 10.0,
+        "path_len": 4,
+        "coverage": 89.8,
+        "constraint_rate": 46.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 268.2
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 15.95,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 46.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 682.2
+      }
+    ]
+  },
+  {
+    "scenario": "场景E 不对称方向拥堵（测试模型方向提取能力）",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 5.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 36.4,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 21.2,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 454.6
+      },
+      {
+        "method": "DQN",
+        "path_cost": 33.7,
+        "path_len": 15,
+        "coverage": 89.8,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 889.0
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 17.45,
+        "path_len": 6,
+        "coverage": 98.0,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 394.1
+      }
+    ]
+  },
+  {
+    "scenario": "场景F 大规模复合灾害（极限压力测试）",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 21.4,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 12.8,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "DQN",
+        "path_cost": 36.2,
+        "path_len": 18,
+        "coverage": 89.8,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 1178.1
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 15.95,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 682.2
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+﻿Variant,Variant (CN),Scenario,Travel Time (s),model_infer_time_s,route_solve_time_s,Planning Time (s),Constraint Rate (%),Signal Ratio (%),Parsed Edge Ratio (%),Status,LLM Component,GAT Component,Sparse Mode
+No-SpatioTemporal,无时空增强输入,场景A 黄河路单向拥堵,623.9,0.9948,0.000114,0.994914,50.0,8.3,8.3,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景B 花园路封闭绕行,708.4,0.771319,0.000112,0.771432,100.0,12.5,12.5,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景C 多路段复合拥堵,544.6,1.0537,0.00012,1.053821,71.4,27.1,27.1,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景D 中央核心节点封锁（强迫大范围绕行）,536.5,1.067221,0.00012,1.067341,26.7,0.0,4.2,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景E 不对称方向拥堵（测试模型方向提取能力）,394.1,1.374468,0.000106,1.374574,36.4,9.4,9.4,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景F 大规模复合灾害（极限压力测试）,446.5,1.777463,0.000119,1.777582,21.4,0.0,0.0,parse_failed,Yes,No,Yes

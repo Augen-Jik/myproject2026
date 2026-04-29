@@ -1,0 +1,427 @@
+{
+  "default_best_showcase": "propagation_range_showcase",
+  "runtime_spillover_actual_probe": {
+    "scene_profile": "propagation_range",
+    "path_edge_count": 8,
+    "benchmark_travel_time_s": 1919.1999999999998,
+    "showcase_travel_time_s": 1534.2,
+    "delta_showcase_minus_benchmark_s": -384.9999999999998,
+    "benchmark_runtime_spillover_summary": {
+      "scene_mode": "benchmark",
+      "runtime_spillover_enabled": false,
+      "runtime_spillover_edge_count": 0,
+      "runtime_spillover_1hop_count": 0,
+      "runtime_spillover_2hop_count": 0,
+      "runtime_spillover_config": {
+        "hop_speed_factor_bounds": {
+          "1": [
+            0.6,
+            0.74
+          ],
+          "2": [
+            0.82,
+            0.9
+          ]
+        },
+        "hop_travel_time_multiplier": {
+          "1": 1.34,
+          "2": 1.14
+        }
+      },
+      "runtime_spillover_weight_range": null
+    },
+    "showcase_runtime_spillover_summary": {
+      "scene_mode": "showcase",
+      "runtime_spillover_enabled": true,
+      "runtime_spillover_edge_count": 45,
+      "runtime_spillover_1hop_count": 27,
+      "runtime_spillover_2hop_count": 18,
+      "runtime_spillover_config": {
+        "hop_speed_factor_bounds": {
+          "1": [
+            0.6,
+            0.74
+          ],
+          "2": [
+            0.82,
+            0.9
+          ]
+        },
+        "hop_travel_time_multiplier": {
+          "1": 1.34,
+          "2": 1.14
+        }
+      },
+      "runtime_spillover_weight_range": {
+        "min": 2.7560000000000002,
+        "max": 5.9
+      }
+    },
+    "benchmark_final_route_edges": [
+      "R0C0_W",
+      "C0R0_N",
+      "C0R1_N",
+      "C0R2_N",
+      "C0R3_N",
+      "R4C0_E",
+      "R4C1_E",
+      "C2R3_S"
+    ],
+    "showcase_final_route_edges": [
+      "R0C0_W",
+      "C0R0_N",
+      "C0R1_N",
+      "C0R2_N",
+      "C0R3_N",
+      "R4C0_E",
+      "R4C1_E",
+      "C2R3_S"
+    ]
+  },
+  "cases": {
+    "blockage_detour_showcase": {
+      "scene_profile": "core_blockage",
+      "start_edge": "R0C0_W",
+      "end_edge": "C4R3_S",
+      "planned_time_s": 2160.1,
+      "baseline_time_s": 2160.1,
+      "saving_s": 0.0,
+      "planned_ok": false,
+      "baseline_ok": false,
+      "planned_used_sumo_fallback": false,
+      "baseline_used_sumo_fallback": true,
+      "planned_final_route_edges": [
+        "R0C0_W",
+        "C0R0_N",
+        "C0R1_N",
+        "C0R2_N",
+        "C0R3_N",
+        "R4C0_E",
+        "R4C1_E",
+        "R4C2_E",
+        "R4C3_E",
+        "C4R3_S"
+      ],
+      "baseline_final_route_edges": [
+        "R0C0_W",
+        "C0R0_N",
+        "R1C0_E",
+        "R1C1_E",
+        "R1C2_E",
+        "C3R1_N",
+        "C3R2_N",
+        "R3C3_E",
+        "C4R3_N",
+        "C4R3_S"
+      ],
+      "planned_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 58,
+        "runtime_spillover_1hop_count": 36,
+        "runtime_spillover_2hop_count": 22,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.62,
+              0.76
+            ],
+            "2": [
+              0.84,
+              0.92
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.3,
+            "2": 1.12
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7560000000000002,
+          "max": 5.9
+        }
+      },
+      "baseline_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 58,
+        "runtime_spillover_1hop_count": 36,
+        "runtime_spillover_2hop_count": 22,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.62,
+              0.76
+            ],
+            "2": [
+              0.84,
+              0.92
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.3,
+            "2": 1.12
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7560000000000002,
+          "max": 5.9
+        }
+      }
+    },
+    "directional_asymmetry_showcase": {
+      "scene_profile": "directional_asymmetry",
+      "start_edge": "R4C0_E",
+      "end_edge": "C4R3_S",
+      "planned_time_s": 1694.9,
+      "baseline_time_s": 865.8,
+      "saving_s": -829.1000000000001,
+      "planned_ok": true,
+      "baseline_ok": true,
+      "planned_used_sumo_fallback": false,
+      "baseline_used_sumo_fallback": false,
+      "planned_final_route_edges": [
+        "R4C0_E",
+        "C1R3_S",
+        "R3C1_E",
+        "R3C2_E",
+        "R3C3_E",
+        "C4R3_N",
+        "C4R3_S"
+      ],
+      "baseline_final_route_edges": [
+        "R4C0_E",
+        "R4C1_E",
+        "R4C2_E",
+        "R4C3_E",
+        "C4R3_S"
+      ],
+      "planned_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 19,
+        "runtime_spillover_1hop_count": 19,
+        "runtime_spillover_2hop_count": 0,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.68,
+              0.8
+            ],
+            "2": [
+              0.86,
+              0.94
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.24,
+            "2": 1.1
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7812,
+          "max": 4.451630720000001
+        }
+      },
+      "baseline_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 19,
+        "runtime_spillover_1hop_count": 19,
+        "runtime_spillover_2hop_count": 0,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.68,
+              0.8
+            ],
+            "2": [
+              0.86,
+              0.94
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.24,
+            "2": 1.1
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7812,
+          "max": 4.451630720000001
+        }
+      }
+    },
+    "propagation_range_showcase": {
+      "scene_profile": "propagation_range",
+      "start_edge": "R0C0_W",
+      "end_edge": "C2R3_S",
+      "planned_time_s": 1534.2,
+      "baseline_time_s": 1534.2,
+      "saving_s": 0.0,
+      "planned_ok": true,
+      "baseline_ok": true,
+      "planned_used_sumo_fallback": false,
+      "baseline_used_sumo_fallback": true,
+      "planned_final_route_edges": [
+        "R0C0_W",
+        "C0R0_N",
+        "C0R1_N",
+        "C0R2_N",
+        "C0R3_N",
+        "R4C0_E",
+        "R4C1_E",
+        "C2R3_S"
+      ],
+      "baseline_final_route_edges": [
+        "R0C0_W",
+        "C0R0_N",
+        "R1C0_E",
+        "C1R1_N",
+        "C1R2_N",
+        "R3C1_E",
+        "C2R3_N",
+        "C2R3_S"
+      ],
+      "planned_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 45,
+        "runtime_spillover_1hop_count": 27,
+        "runtime_spillover_2hop_count": 18,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.6,
+              0.74
+            ],
+            "2": [
+              0.82,
+              0.9
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.34,
+            "2": 1.14
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7560000000000002,
+          "max": 5.9
+        }
+      },
+      "baseline_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 45,
+        "runtime_spillover_1hop_count": 27,
+        "runtime_spillover_2hop_count": 18,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.6,
+              0.74
+            ],
+            "2": [
+              0.82,
+              0.9
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.34,
+            "2": 1.14
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7560000000000002,
+          "max": 5.9
+        }
+      }
+    },
+    "compound_disaster_showcase": {
+      "scene_profile": "compound_disaster",
+      "start_edge": "R3C0_W",
+      "end_edge": "C3R0_N",
+      "planned_time_s": 2400.1,
+      "baseline_time_s": 2400.1,
+      "saving_s": 0.0,
+      "planned_ok": false,
+      "baseline_ok": false,
+      "planned_used_sumo_fallback": false,
+      "baseline_used_sumo_fallback": true,
+      "planned_final_route_edges": [
+        "R3C0_W",
+        "C0R2_S",
+        "C0R1_S",
+        "C0R0_S",
+        "R0C0_E",
+        "R0C1_E",
+        "R0C2_E",
+        "C3R0_N"
+      ],
+      "baseline_final_route_edges": [
+        "R3C0_W",
+        "R3C0_E",
+        "R3C1_E",
+        "R3C2_E",
+        "C3R2_S",
+        "C3R1_S",
+        "C3R0_S",
+        "C3R0_N"
+      ],
+      "planned_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 51,
+        "runtime_spillover_1hop_count": 40,
+        "runtime_spillover_2hop_count": 11,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.6,
+              0.74
+            ],
+            "2": [
+              0.82,
+              0.9
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.32,
+            "2": 1.14
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7560000000000002,
+          "max": 5.9
+        }
+      },
+      "baseline_runtime_spillover_summary": {
+        "scene_mode": "showcase",
+        "runtime_spillover_enabled": true,
+        "runtime_spillover_edge_count": 51,
+        "runtime_spillover_1hop_count": 40,
+        "runtime_spillover_2hop_count": 11,
+        "runtime_spillover_config": {
+          "hop_speed_factor_bounds": {
+            "1": [
+              0.6,
+              0.74
+            ],
+            "2": [
+              0.82,
+              0.9
+            ]
+          },
+          "hop_travel_time_multiplier": {
+            "1": 1.32,
+            "2": 1.14
+          }
+        },
+        "runtime_spillover_weight_range": {
+          "min": 2.7560000000000002,
+          "max": 5.9
+        }
+      }
+    }
+  }
+}

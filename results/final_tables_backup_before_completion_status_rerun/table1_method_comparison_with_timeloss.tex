@@ -1,0 +1,40 @@
+% Requires: \usepackage{booktabs,threeparttable}
+% Generated from: results/final_tables/method_comparison_final.csv
+% SUMO run: 6 methods × 6 scene-profile-fixed live evaluations
+
+\begin{table}[t]
+\centering
+\caption{Method comparison under the scene-profile-fixed live SUMO protocol (6-scene mean). Time Loss and Waiting Time are extracted from SUMO \texttt{tripinfo.xml} (\texttt{timeLoss}, \texttt{waitingTime}); Stop Count is computed from per-step vehicle speed transitions.}
+\label{tab:method_comparison_with_timeloss}
+\small
+\begin{threeparttable}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Method & \makecell{Travel\\Time (s)} & \makecell{Time\\Loss (s)} & \makecell{Waiting\\Time (s)} & \makecell{Stop\\Count} & \makecell{Planning\\Time (s)} & \makecell{Constraint\\Rate (\%)} & \makecell{Signal\\Ratio (\%)} \\
+\midrule
+\multicolumn{8}{l}{\textit{Classical}} \\
+Dijkstra & 1276.12 & 931.59 & 914.68 & 3.83 & 0.000201 & 23.91 & 0.00 \\
+Rule-A* & 1257.12 & 898.70 & 880.12 & 4.17 & 0.000698 & 69.78 & 91.70 \\
+\midrule
+\multicolumn{8}{l}{\textit{GNN}} \\
+GCN-Weight & 1471.90 & 1159.07 & 1135.15 & 5.00 & 0.001027 & 57.30 & 71.85 \\
+\midrule
+\multicolumn{8}{l}{\textit{RL}} \\
+DQN & 1796.57 & 1215.91 & 1177.88 & 7.50 & 0.032779 & 69.78 & 91.70 \\
+\midrule
+\multicolumn{8}{l}{\textit{Ours}} \\
+Sparse-LoRA & 1257.33 & 989.79 & 969.88 & 4.33 & 1.334584 & 67.25 & 8.48 \\
+\midrule
+\multicolumn{8}{l}{\textit{Extended}} \\
+Sparse-LoRA+GAT & 1257.33 & 989.79 & 969.88 & 4.33 & 1.263883 & 67.25 & 100.00 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Time Loss and Waiting Time are measured per-trip by SUMO from \texttt{tripinfo.xml}; values are averaged over 6 scene profiles.
+\item Stop Count is counted during simulation when the evaluated vehicle transitions from speed $\geq 0.1$ m/s to speed $< 0.1$ m/s.
+\item Signal Ratio (\%) denotes the share of edges whose final planning weight departs from the method-specific default weight.
+\item PPO is omitted from this table (simplified environment; no scene-profile-fixed SUMO data).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

@@ -1,0 +1,13 @@
+﻿scene,scene_type,baseline_metric,method,delta_vs_sparse,status
+场景A 黄河路单向拥堵,simple_local,sumo_time,Sparse-LoRA+Always-GAT,-187.1,helpful
+场景A 黄河路单向拥堵,simple_local,sumo_time,Sparse-LoRA+Gated-GAT,-187.1,helpful
+场景B 花园路封闭绕行,core_blockage,sumo_time,Sparse-LoRA+Always-GAT,-976.6,helpful
+场景B 花园路封闭绕行,core_blockage,sumo_time,Sparse-LoRA+Gated-GAT,-976.6,helpful
+场景C 多路段复合拥堵,compound_disaster,sumo_time,Sparse-LoRA+Always-GAT,0.0,tie
+场景C 多路段复合拥堵,compound_disaster,sumo_time,Sparse-LoRA+Gated-GAT,0.0,tie
+场景D 中央核心节点封锁（强迫大范围绕行）,compound_disaster,sumo_time,Sparse-LoRA+Always-GAT,-51.6,helpful
+场景D 中央核心节点封锁（强迫大范围绕行）,compound_disaster,sumo_time,Sparse-LoRA+Gated-GAT,-51.6,helpful
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,sumo_time,Sparse-LoRA+Always-GAT,0.0,tie
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,sumo_time,Sparse-LoRA+Gated-GAT,0.0,tie
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,sumo_time,Sparse-LoRA+Always-GAT,0.0,tie
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,sumo_time,Sparse-LoRA+Gated-GAT,0.0,tie

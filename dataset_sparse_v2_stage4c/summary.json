@@ -1,0 +1,328 @@
+{
+  "paths": {
+    "singleedge_train": "/root/autodl-tmp/dataset_stage4c_singleedge_core/train/data.parquet",
+    "singleedge_eval": "/root/autodl-tmp/dataset_stage4c_singleedge_core/eval/data.parquet",
+    "relabel_train": "/root/autodl-tmp/dataset_sparse_v2_stage4b_relabel/train/data.parquet",
+    "relabel_eval": "/root/autodl-tmp/dataset_sparse_v2_stage4b_relabel/eval/data.parquet",
+    "relief_train": "/root/autodl-tmp/dataset_simple_local_relief_pack/train/data.parquet",
+    "relief_eval": "/root/autodl-tmp/dataset_simple_local_relief_pack/eval/data.parquet",
+    "audit_md": "/root/autodl-tmp/results/stage4c_training_signal_audit.md",
+    "policy_md": "/root/autodl-tmp/results/simple_local_v2_label_policy.md",
+    "output_train": "/root/autodl-tmp/dataset_sparse_v2_stage4c/train",
+    "output_eval": "/root/autodl-tmp/dataset_sparse_v2_stage4c/eval"
+  },
+  "reference_from_audit": {
+    "stage4b_guard_share": 0.286,
+    "target_singleedge_min_share": 0.55,
+    "target_guard_band": [
+      0.1,
+      0.15
+    ]
+  },
+  "target_component_counts": {
+    "train": {
+      "singleedge_relief_core": 91,
+      "short_range_relief_support": 23,
+      "relabeled_anomaly_plus_normal_repair": 16,
+      "guard_minimal": 16,
+      "multi_edge_relief_tail": 7
+    },
+    "eval": {
+      "singleedge_relief_core": 34,
+      "short_range_relief_support": 10,
+      "relabeled_anomaly_plus_normal_repair": 6,
+      "guard_minimal": 7,
+      "multi_edge_relief_tail": 3
+    }
+  },
+  "component_share_check": {
+    "train": {
+      "singleedge_relief_core": 0.5948,
+      "short_range_relief_support": 0.1503,
+      "relabeled_anomaly_plus_normal_repair": 0.1046,
+      "guard_minimal": 0.1046,
+      "multi_edge_relief_tail": 0.0458
+    },
+    "eval": {
+      "singleedge_relief_core": 0.5667,
+      "short_range_relief_support": 0.1667,
+      "relabeled_anomaly_plus_normal_repair": 0.1,
+      "guard_minimal": 0.1167,
+      "multi_edge_relief_tail": 0.05
+    }
+  },
+  "total_rows": {
+    "train": 153,
+    "eval": 60,
+    "overall": 213
+  },
+  "split_summary": {
+    "train": {
+      "total_rows": 153,
+      "mixture_component_counts": {
+        "guard_minimal": 16,
+        "multi_edge_relief_tail": 7,
+        "relabeled_anomaly_plus_normal_repair": 16,
+        "short_range_relief_support": 23,
+        "singleedge_relief_core": 91
+      },
+      "mixture_component_share": {
+        "guard_minimal": 0.1046,
+        "multi_edge_relief_tail": 0.0458,
+        "relabeled_anomaly_plus_normal_repair": 0.1046,
+        "short_range_relief_support": 0.1503,
+        "singleedge_relief_core": 0.5948
+      },
+      "single_edge_count": 91,
+      "short_range_count": 23,
+      "multi_edge_count": 7,
+      "single_edge_share": 0.5948,
+      "short_range_share": 0.1503,
+      "multi_edge_share": 0.0458,
+      "phrase_variant_counts": {
+        "保持正常通行": 6,
+        "局部恢复正常": 6,
+        "恢复正常": 6,
+        "某段向某方向正常": 6,
+        "正常通行": 6,
+        "畅通": 12,
+        "畅通无阻": 10,
+        "通行正常": 6,
+        "顺畅": 33
+      },
+      "phrase_variant_share_within_singleedge": {
+        "保持正常通行": 0.0659,
+        "局部恢复正常": 0.0659,
+        "恢复正常": 0.0659,
+        "某段向某方向正常": 0.0659,
+        "正常通行": 0.0659,
+        "畅通": 0.1319,
+        "畅通无阻": 0.1099,
+        "通行正常": 0.0659,
+        "顺畅": 0.3626
+      },
+      "NO_ANCHOR_count": 0,
+      "NO_ANCHOR_share": 0.0,
+      "source_type_counts": {
+        "guard_anti_truncation_canary": 4,
+        "guard_directional_stable": 8,
+        "guard_hard_negative_no_anchor": 4,
+        "multi_edge_relief_tail": 7,
+        "relabel_anomaly_plus_normal": 16,
+        "short_range_relief_base": 16,
+        "short_range_relief_repeat": 7,
+        "singleedge_core_base": 75,
+        "singleedge_core_phrase_boost": 16
+      },
+      "source_type_share": {
+        "guard_anti_truncation_canary": 0.0261,
+        "guard_directional_stable": 0.0523,
+        "guard_hard_negative_no_anchor": 0.0261,
+        "multi_edge_relief_tail": 0.0458,
+        "relabel_anomaly_plus_normal": 0.1046,
+        "short_range_relief_base": 0.1046,
+        "short_range_relief_repeat": 0.0458,
+        "singleedge_core_base": 0.4902,
+        "singleedge_core_phrase_boost": 0.1046
+      },
+      "bucket_counts": {
+        "anomaly_plus_normal_side_event": 16,
+        "anti_truncation_canary": 4,
+        "directional_asymmetry_stable": 8,
+        "hard_negative_no_anchor": 4,
+        "multi_edge_relief": 7,
+        "relief_normal_short_range": 23,
+        "relief_normal_single_edge": 91
+      },
+      "guard_focus_counts": {
+        "anti_truncation_canary": 4,
+        "directional_asymmetry_stable": 8,
+        "hard_negative_no_anchor": 4
+      },
+      "risk_flag_counts": {
+        "high": 7,
+        "low": 130,
+        "medium": 16
+      },
+      "anchor_style_counts": {
+        "explicit_anchor": 153
+      }
+    },
+    "eval": {
+      "total_rows": 60,
+      "mixture_component_counts": {
+        "guard_minimal": 7,
+        "multi_edge_relief_tail": 3,
+        "relabeled_anomaly_plus_normal_repair": 6,
+        "short_range_relief_support": 10,
+        "singleedge_relief_core": 34
+      },
+      "mixture_component_share": {
+        "guard_minimal": 0.1167,
+        "multi_edge_relief_tail": 0.05,
+        "relabeled_anomaly_plus_normal_repair": 0.1,
+        "short_range_relief_support": 0.1667,
+        "singleedge_relief_core": 0.5667
+      },
+      "single_edge_count": 34,
+      "short_range_count": 10,
+      "multi_edge_count": 3,
+      "single_edge_share": 0.5667,
+      "short_range_share": 0.1667,
+      "multi_edge_share": 0.05,
+      "phrase_variant_counts": {
+        "畅通": 10,
+        "畅通无阻": 10,
+        "顺畅": 14
+      },
+      "phrase_variant_share_within_singleedge": {
+        "畅通": 0.2941,
+        "畅通无阻": 0.2941,
+        "顺畅": 0.4118
+      },
+      "NO_ANCHOR_count": 0,
+      "NO_ANCHOR_share": 0.0,
+      "source_type_counts": {
+        "guard_anti_truncation_canary": 2,
+        "guard_directional_stable": 4,
+        "guard_hard_negative_no_anchor": 1,
+        "multi_edge_relief_tail": 3,
+        "relabel_anomaly_plus_normal": 6,
+        "short_range_relief_base": 8,
+        "short_range_relief_repeat": 2,
+        "singleedge_core_base": 24,
+        "singleedge_core_phrase_boost": 10
+      },
+      "source_type_share": {
+        "guard_anti_truncation_canary": 0.0333,
+        "guard_directional_stable": 0.0667,
+        "guard_hard_negative_no_anchor": 0.0167,
+        "multi_edge_relief_tail": 0.05,
+        "relabel_anomaly_plus_normal": 0.1,
+        "short_range_relief_base": 0.1333,
+        "short_range_relief_repeat": 0.0333,
+        "singleedge_core_base": 0.4,
+        "singleedge_core_phrase_boost": 0.1667
+      },
+      "bucket_counts": {
+        "anomaly_plus_normal_side_event": 6,
+        "anti_truncation_canary": 2,
+        "directional_asymmetry_stable": 4,
+        "hard_negative_no_anchor": 1,
+        "multi_edge_relief": 3,
+        "relief_normal_short_range": 10,
+        "relief_normal_single_edge": 34
+      },
+      "guard_focus_counts": {
+        "anti_truncation_canary": 2,
+        "directional_asymmetry_stable": 4,
+        "hard_negative_no_anchor": 1
+      },
+      "risk_flag_counts": {
+        "high": 3,
+        "low": 50,
+        "medium": 7
+      },
+      "anchor_style_counts": {
+        "explicit_anchor": 60
+      }
+    },
+    "overall": {
+      "total_rows": 213,
+      "mixture_component_counts": {
+        "guard_minimal": 23,
+        "multi_edge_relief_tail": 10,
+        "relabeled_anomaly_plus_normal_repair": 22,
+        "short_range_relief_support": 33,
+        "singleedge_relief_core": 125
+      },
+      "mixture_component_share": {
+        "guard_minimal": 0.108,
+        "multi_edge_relief_tail": 0.0469,
+        "relabeled_anomaly_plus_normal_repair": 0.1033,
+        "short_range_relief_support": 0.1549,
+        "singleedge_relief_core": 0.5869
+      },
+      "single_edge_count": 125,
+      "short_range_count": 33,
+      "multi_edge_count": 10,
+      "single_edge_share": 0.5869,
+      "short_range_share": 0.1549,
+      "multi_edge_share": 0.0469,
+      "phrase_variant_counts": {
+        "保持正常通行": 6,
+        "局部恢复正常": 6,
+        "恢复正常": 6,
+        "某段向某方向正常": 6,
+        "正常通行": 6,
+        "畅通": 22,
+        "畅通无阻": 20,
+        "通行正常": 6,
+        "顺畅": 47
+      },
+      "phrase_variant_share_within_singleedge": {
+        "保持正常通行": 0.048,
+        "局部恢复正常": 0.048,
+        "恢复正常": 0.048,
+        "某段向某方向正常": 0.048,
+        "正常通行": 0.048,
+        "畅通": 0.176,
+        "畅通无阻": 0.16,
+        "通行正常": 0.048,
+        "顺畅": 0.376
+      },
+      "NO_ANCHOR_count": 0,
+      "NO_ANCHOR_share": 0.0,
+      "source_type_counts": {
+        "guard_anti_truncation_canary": 6,
+        "guard_directional_stable": 12,
+        "guard_hard_negative_no_anchor": 5,
+        "multi_edge_relief_tail": 10,
+        "relabel_anomaly_plus_normal": 22,
+        "short_range_relief_base": 24,
+        "short_range_relief_repeat": 9,
+        "singleedge_core_base": 99,
+        "singleedge_core_phrase_boost": 26
+      },
+      "source_type_share": {
+        "guard_anti_truncation_canary": 0.0282,
+        "guard_directional_stable": 0.0563,
+        "guard_hard_negative_no_anchor": 0.0235,
+        "multi_edge_relief_tail": 0.0469,
+        "relabel_anomaly_plus_normal": 0.1033,
+        "short_range_relief_base": 0.1127,
+        "short_range_relief_repeat": 0.0423,
+        "singleedge_core_base": 0.4648,
+        "singleedge_core_phrase_boost": 0.1221
+      },
+      "bucket_counts": {
+        "anomaly_plus_normal_side_event": 22,
+        "anti_truncation_canary": 6,
+        "directional_asymmetry_stable": 12,
+        "hard_negative_no_anchor": 5,
+        "multi_edge_relief": 10,
+        "relief_normal_short_range": 33,
+        "relief_normal_single_edge": 125
+      },
+      "guard_focus_counts": {
+        "anti_truncation_canary": 6,
+        "directional_asymmetry_stable": 12,
+        "hard_negative_no_anchor": 5
+      },
+      "risk_flag_counts": {
+        "high": 10,
+        "low": 180,
+        "medium": 23
+      },
+      "anchor_style_counts": {
+        "explicit_anchor": 213
+      }
+    }
+  },
+  "final_checks": {
+    "singleedge_exposure_ge_55pct": true,
+    "guard_clearly_lower_than_stage4b": true,
+    "singleedge_is_absolute_main_signal": true,
+    "train_total_in_preferred_band": true
+  }
+}

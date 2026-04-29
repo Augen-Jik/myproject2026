@@ -1,0 +1,122 @@
+{
+  "compound_disaster": {
+    "sumo_ranking": [
+      [
+        "Sparse-LoRA",
+        511.9
+      ],
+      [
+        "Sparse-LoRA+Always-GAT",
+        511.9
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        511.9
+      ]
+    ],
+    "constraint_ranking": [
+      [
+        "Sparse-LoRA",
+        29.367
+      ],
+      [
+        "Sparse-LoRA+Always-GAT",
+        29.367
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        29.367
+      ]
+    ]
+  },
+  "core_blockage": {
+    "sumo_ranking": [
+      [
+        "Sparse-LoRA+Always-GAT",
+        583.5
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        583.5
+      ],
+      [
+        "Sparse-LoRA",
+        918.833
+      ]
+    ],
+    "constraint_ranking": [
+      [
+        "Sparse-LoRA",
+        42.233
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        42.233
+      ],
+      [
+        "Sparse-LoRA+Always-GAT",
+        37.767
+      ]
+    ]
+  },
+  "directional_asymmetry": {
+    "sumo_ranking": [
+      [
+        "Sparse-LoRA",
+        574.1
+      ],
+      [
+        "Sparse-LoRA+Always-GAT",
+        604.35
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        604.35
+      ]
+    ],
+    "constraint_ranking": [
+      [
+        "Sparse-LoRA",
+        54.55
+      ],
+      [
+        "Sparse-LoRA+Always-GAT",
+        36.4
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        36.4
+      ]
+    ]
+  },
+  "simple_local": {
+    "sumo_ranking": [
+      [
+        "Sparse-LoRA+Always-GAT",
+        436.8
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        436.8
+      ],
+      [
+        "Sparse-LoRA",
+        623.9
+      ]
+    ],
+    "constraint_ranking": [
+      [
+        "Sparse-LoRA",
+        66.7
+      ],
+      [
+        "Sparse-LoRA+Always-GAT",
+        66.7
+      ],
+      [
+        "Sparse-LoRA+Gated-GAT",
+        66.7
+      ]
+    ]
+  }
+}

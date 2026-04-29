@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260409T130707Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "planner": "compare_multi_method_live_scene_profile",
+  "model": "method_comparison_v2",
+  "scenario_list": [
+    "场景D 中央核心节点封锁"
+  ],
+  "fallback_policy": "experiment_mode_no_rule_fallback_for_llm",
+  "default_weight_policy": "method_specific_default_weight",
+  "timing_policy": "planning_time_s=model_infer_time_s+route_solve_time_s",
+  "simulation_seed": {
+    "core_blockage": 303
+  },
+  "warmup_seconds": {
+    "core_blockage": 240
+  },
+  "evaluation_start_time": {
+    "core_blockage": 240
+  },
+  "evaluation_end_time": {
+    "core_blockage": 2400
+  },
+  "scene_profile_version": "sha256:eb0410e2b384",
+  "scene_profile_protocols": {
+    "core_blockage": {
+      "simulation_seed": 303,
+      "warmup_seconds": 240,
+      "evaluation_start_time": 240,
+      "evaluation_end_time": 2400
+    }
+  },
+  "run_compare_results": "/root/autodl-tmp/results/runs/20260409T130707Z__experiment_mode__compare_multi_method_live_scene_profile__method_comparison_v2/compare_results.json",
+  "mainline_model_path": "/root/autodl-tmp/model_merged_sparse_v2_stage4_fix",
+  "gat_model_path": "/root/autodl-tmp/gat_model_v2_gated.pt",
+  "ppo_summary_path": ""
+}

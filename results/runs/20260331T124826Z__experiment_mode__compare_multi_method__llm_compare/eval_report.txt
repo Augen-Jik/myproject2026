@@ -1,0 +1,91 @@
+========================================================================
+Compare Methods Evaluation Report
+========================================================================
+run_id: 20260331T124826Z__experiment_mode__compare_multi_method__llm_compare
+mode: experiment_mode
+seed: 42
+llm_enabled: True
+
+[Scenario] 场景A 黄河路单向拥堵
+  - Dijkstra           plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1945.46 constraint=  50.0%
+  - Rule-A*            plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1836.87 constraint= 100.0%
+  - DQN                plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint= 100.0%
+  - GCN-Weight         plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint= 100.0%
+  - Raw-Qwen           plan_ms=    0.07 infer_ms=11866.88 sim_ms= 1881.79 constraint=  50.0%
+  - CoT-Qwen           plan_ms=    0.08 infer_ms= 4321.18 sim_ms=  1784.5 constraint=  66.7%
+  - Qwen-LoRA★         plan_ms=    0.02 infer_ms=19910.76 sim_ms=  1839.3 constraint=  66.7%
+  - LoRA+GAT★★         plan_ms=    0.02 infer_ms=19867.94 sim_ms= 1785.35 constraint=  66.7%
+  - Sparse-LoRA★★      plan_ms=    0.08 infer_ms= 1121.51 sim_ms= 1838.59 constraint= 100.0%
+  - R1-LoRA★           plan_ms=    0.04 infer_ms=26088.51 sim_ms=  1905.2 constraint=  50.0%
+  - R1-Raw             plan_ms=    0.07 infer_ms=24567.23 sim_ms= 1883.79 constraint=  50.0%
+  - Sparse-LoRA+GAT★★★ plan_ms=    0.07 infer_ms= 1125.22 sim_ms= 1835.59 constraint= 100.0%
+
+[Scenario] 场景B 花园路封闭绕行
+  - Dijkstra           plan_ms=    0.04 infer_ms=     0.0 sim_ms= 2441.41 constraint=  60.0%
+  - Rule-A*            plan_ms=    0.04 infer_ms=     0.0 sim_ms= 1920.27 constraint= 100.0%
+  - DQN                plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint= 100.0%
+  - GCN-Weight         plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint= 100.0%
+  - Raw-Qwen           plan_ms=    0.04 infer_ms=16153.34 sim_ms= 2772.21 constraint=  60.0%
+  - CoT-Qwen           plan_ms=    0.06 infer_ms= 2355.66 sim_ms= 2080.24 constraint=  60.0%
+  - Qwen-LoRA★         plan_ms=    0.02 infer_ms=19395.97 sim_ms= 1938.12 constraint= 100.0%
+  - LoRA+GAT★★         plan_ms=    0.03 infer_ms=19361.38 sim_ms= 1924.18 constraint= 100.0%
+  - Sparse-LoRA★★      plan_ms=    0.08 infer_ms= 1156.25 sim_ms=  2015.1 constraint= 100.0%
+  - R1-LoRA★           plan_ms=    0.04 infer_ms=49147.57 sim_ms= 2487.87 constraint=  60.0%
+  - R1-Raw             plan_ms=    0.04 infer_ms=13403.66 sim_ms= 2742.84 constraint=  60.0%
+  - Sparse-LoRA+GAT★★★ plan_ms=    0.06 infer_ms= 1144.92 sim_ms= 1926.24 constraint= 100.0%
+
+[Scenario] 场景C 多路段复合拥堵
+  - Dijkstra           plan_ms=    0.08 infer_ms=     0.0 sim_ms= 2006.45 constraint=   0.0%
+  - Rule-A*            plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1911.26 constraint=  28.6%
+  - DQN                plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  28.6%
+  - GCN-Weight         plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  28.6%
+  - Raw-Qwen           plan_ms=    0.08 infer_ms= 5922.38 sim_ms= 1948.88 constraint=   0.0%
+  - CoT-Qwen           plan_ms=    0.08 infer_ms= 4323.98 sim_ms= 2002.65 constraint=   0.0%
+  - Qwen-LoRA★         plan_ms=    0.08 infer_ms=12157.91 sim_ms=  2032.0 constraint=   0.0%
+  - LoRA+GAT★★         plan_ms=    0.09 infer_ms=12034.86 sim_ms= 1953.87 constraint=   0.0%
+  - Sparse-LoRA★★      plan_ms=    0.08 infer_ms= 1479.65 sim_ms= 1870.55 constraint=  28.6%
+  - R1-LoRA★           plan_ms=    0.08 infer_ms= 35076.1 sim_ms= 1896.16 constraint=   0.0%
+  - R1-Raw             plan_ms=    0.08 infer_ms=23618.94 sim_ms= 1963.89 constraint=   0.0%
+  - Sparse-LoRA+GAT★★★ plan_ms=    0.08 infer_ms= 1486.77 sim_ms= 1985.03 constraint=  28.6%
+
+[Scenario] 场景D 中央核心节点封锁（强迫大范围绕行）
+  - Dijkstra           plan_ms=    0.08 infer_ms=     0.0 sim_ms=  1928.6 constraint=  26.7%
+  - Rule-A*            plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1880.95 constraint=  46.7%
+  - DQN                plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  46.7%
+  - GCN-Weight         plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  46.7%
+  - Raw-Qwen           plan_ms=    0.08 infer_ms= 9425.56 sim_ms= 1838.24 constraint=  26.7%
+  - CoT-Qwen           plan_ms=    0.08 infer_ms= 2547.17 sim_ms= 1891.22 constraint=  33.3%
+  - Qwen-LoRA★         plan_ms=    0.08 infer_ms= 9342.02 sim_ms= 1836.36 constraint=  26.7%
+  - LoRA+GAT★★         plan_ms=    0.08 infer_ms= 9319.08 sim_ms= 1836.66 constraint=  26.7%
+  - R1-Raw             plan_ms=    0.08 infer_ms= 41105.3 sim_ms= 1928.84 constraint=  26.7%
+  - R1-LoRA★           plan_ms=    0.07 infer_ms= 22883.6 sim_ms= 1849.34 constraint=  26.7%
+  - Sparse-LoRA★★      plan_ms=    0.08 infer_ms= 1902.34 sim_ms= 1988.96 constraint=  86.7%
+  - Sparse-LoRA+GAT★★★ plan_ms=    0.08 infer_ms= 1865.15 sim_ms= 1832.47 constraint=  86.7%
+
+[Scenario] 场景E 不对称方向拥堵（测试模型方向提取能力）
+  - Dijkstra           plan_ms=    0.06 infer_ms=     0.0 sim_ms= 2091.24 constraint=  36.4%
+  - Rule-A*            plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1899.38 constraint=  72.7%
+  - DQN                plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  72.7%
+  - GCN-Weight         plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  72.7%
+  - Raw-Qwen           plan_ms=    0.06 infer_ms= 8177.68 sim_ms= 1961.47 constraint=  36.4%
+  - CoT-Qwen           plan_ms=    0.06 infer_ms= 5829.05 sim_ms= 2012.19 constraint=  36.4%
+  - Qwen-LoRA★         plan_ms=    0.02 infer_ms=19284.83 sim_ms= 2016.01 constraint=  36.4%
+  - LoRA+GAT★★         plan_ms=    0.03 infer_ms=19288.42 sim_ms= 2056.29 constraint=  36.4%
+  - R1-Raw             plan_ms=    0.06 infer_ms=15506.89 sim_ms= 1963.47 constraint=  36.4%
+  - R1-LoRA★           plan_ms=    0.06 infer_ms=49203.98 sim_ms= 1958.19 constraint=  36.4%
+  - Sparse-LoRA★★      plan_ms=    0.07 infer_ms=  1304.1 sim_ms= 1809.86 constraint=  72.7%
+  - Sparse-LoRA+GAT★★★ plan_ms=    0.07 infer_ms= 1314.56 sim_ms= 1762.81 constraint=  72.7%
+
+[Scenario] 场景F 大规模复合灾害（极限压力测试）
+  - Dijkstra           plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1841.28 constraint=  21.4%
+  - Rule-A*            plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1839.98 constraint=  21.4%
+  - DQN                plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  21.4%
+  - GCN-Weight         plan_ms=       0 infer_ms=       0 sim_ms=       0 constraint=  21.4%
+  - Raw-Qwen           plan_ms=    0.08 infer_ms=15384.94 sim_ms= 1900.43 constraint=  21.4%
+  - CoT-Qwen           plan_ms=    0.08 infer_ms= 6644.81 sim_ms= 1818.32 constraint=  28.6%
+  - Qwen-LoRA★         plan_ms=    0.08 infer_ms=12951.51 sim_ms= 1859.32 constraint=  21.4%
+  - LoRA+GAT★★         plan_ms=    0.09 infer_ms=12973.74 sim_ms= 1789.78 constraint=  21.4%
+  - R1-Raw             plan_ms=    0.08 infer_ms=33988.16 sim_ms= 1792.18 constraint=  21.4%
+  - R1-LoRA★           plan_ms=    0.08 infer_ms=44810.86 sim_ms= 1790.08 constraint=  21.4%
+  - Sparse-LoRA★★      plan_ms=    0.08 infer_ms= 1803.71 sim_ms= 1793.88 constraint=  21.4%
+  - Sparse-LoRA+GAT★★★ plan_ms=    0.08 infer_ms= 1810.92 sim_ms= 1787.83 constraint=  21.4%

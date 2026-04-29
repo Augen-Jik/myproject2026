@@ -1,0 +1,5 @@
+Variant,Variant (CN),Positioning,Upstream Baseline,Travel Time (s),model_infer_time_s,route_solve_time_s,Planning Time (s),Constraint Rate (%),Signal Ratio (%),Parsed Edge Ratio (%),Mainline Eligible,Notes
+Qwen-LoRA,Qwen-LoRA（密集 LoRA 基线）,Main ablation baseline,n/a,591.95,15.86,0.000053,15.860053,47.42,34.72,50.00,yes,Dense LoRA baseline without sparse decoding or GAT.
+Sparse-LoRA-v2,Sparse-LoRA-v2（最终主方法）,Main method,stage4_fix,511.15,1.47,0.000079,1.470079,68.23,9.38,9.38,yes,Locked non-GAT main method; sparse upstream frozen at stage4_fix.
+Qwen-LoRA + GAT (exploratory),Qwen-LoRA + GAT（探索性参考）,Appendix / exploratory only,n/a,574.42,15.78,0.000057,15.780057,47.42,64.25,50.00,no,Legacy dense+GAT reference retained only for exploratory appendix comparison; not a paper mainline row.
+Sparse-LoRA-v2 + GAT (exploratory),Sparse-LoRA-v2 + GAT（附录探索性）,Appendix / exploratory only,stage4_fix,503.47,1.48,0.000074,1.480074,68.23,61.45,9.38,no,GAT family is locked to appendix/exploratory analysis only and cannot be used as the default method name.

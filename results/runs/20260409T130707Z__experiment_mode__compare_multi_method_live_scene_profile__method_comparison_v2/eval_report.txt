@@ -1,0 +1,4 @@
+[Method] Dijkstra
+  - core_blockage / 场景D 中央核心节点封锁: travel=2160.10 s, planning=0.000135 s, constraint=12.50%, signal=0.00%, seed=303, warmup=240 s, eval=240-2400 s
+  - mean: travel=2160.10 s, planning=0.000135 s, constraint=12.50%, signal=0.00%
+  - delta_vs_old_mean: travel=+1440.53 (+200.2%) [>5%], planning=+0.00 (+75.3%) [>5%], constraint=-19.92 (-61.4%) [>5%], signal=+0.00

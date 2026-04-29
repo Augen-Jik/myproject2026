@@ -1,0 +1,2088 @@
+{
+  "meta": {
+    "source_details_csv": "/root/autodl-tmp/results/sparse_v2_validation_strict_stage4_fix_details.csv",
+    "dataset_root": "/root/autodl-tmp/dataset_sparse_v2",
+    "simple_local_failure_count": 51,
+    "pred_matches_gt_label_failure_count": 51,
+    "selection_policy": "Per dimension bucket, keep up to 5 representative failures; if a bucket has fewer than 5 samples, keep all available samples."
+  },
+  "dimension_buckets": {
+    "failure_type": {
+      "no_anchor": {
+        "bucket_count": 29,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:172",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路经一路至经八路段向西畅通无阻 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:18",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至未来路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:127",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路农业路至政七街段向北车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:13",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经六路农业路至政七街段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:149",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：花园路政七街至纬五路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "parse_fail": {
+        "bucket_count": 0,
+        "selected_example_count": 0,
+        "examples": []
+      },
+      "target_miss": {
+        "bucket_count": 0,
+        "selected_example_count": 0,
+        "examples": []
+      },
+      "changed_edge_miss": {
+        "bucket_count": 22,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:117",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经三路至花园路段向东车流积压严重拥堵；未来路农业路至红专路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 3,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 75.0,
+            "gt_changed_edge_count": 4,
+            "gt_target_edge_count": 3,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:136",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经一路至经六路段向东排队长度明显增加；经六路农业路至红专路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:113",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至花园路段向东车流积压严重拥堵；经八路政七街至黄河路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:89",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "农业路经一路至经六路段向东追尾事故严重拥堵；花园路政七街至黄河路段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:128",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路政七街至黄河路段向北追尾事故严重拥堵；政七街花园路至未来路段向东畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 1,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 50.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 1,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "mixed": {
+        "bucket_count": 0,
+        "selected_example_count": 0,
+        "examples": []
+      }
+    },
+    "changed_edge_count_bucket": {
+      "1": {
+        "bucket_count": 20,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:74",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 农业路经六路至经八路段向东畅通无阻 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:1",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路红专路至政七街段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:104",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：纬五路经三路至经六路段向东车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:108",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：未来路政七街至黄河路段向北车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:109",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：农业路花园路至未来路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "2": {
+        "bucket_count": 23,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:127",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路农业路至政七街段向北车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:128",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路政七街至黄河路段向北追尾事故严重拥堵；政七街花园路至未来路段向东畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 1,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 50.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 1,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:13",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经六路农业路至政七街段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:149",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：花园路政七街至纬五路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:5",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：花园路政七街至纬五路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "3+": {
+        "bucket_count": 8,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:172",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路经一路至经八路段向西畅通无阻 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:117",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经三路至花园路段向东车流积压严重拥堵；未来路农业路至红专路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 3,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 75.0,
+            "gt_changed_edge_count": 4,
+            "gt_target_edge_count": 3,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:18",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至未来路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:136",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经一路至经六路段向东排队长度明显增加；经六路农业路至红专路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:113",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至花园路段向东车流积压严重拥堵；经八路政七街至黄河路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      }
+    },
+    "input_length_bucket": {
+      "short": {
+        "bucket_count": 27,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:18",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至未来路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:113",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至花园路段向东车流积压严重拥堵；经八路政七街至黄河路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:164",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "纬五路经一路至经六路段向东车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:41",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "红专路经六路至花园路段向东畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:6",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "红专路经八路至未来路段向东畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "medium": {
+        "bucket_count": 22,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:127",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路农业路至政七街段向北车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:117",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经三路至花园路段向东车流积压严重拥堵；未来路农业路至红专路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 3,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 75.0,
+            "gt_changed_edge_count": 4,
+            "gt_target_edge_count": 3,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:13",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经六路农业路至政七街段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:149",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：花园路政七街至纬五路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:5",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：花园路政七街至纬五路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "long": {
+        "bucket_count": 2,
+        "selected_example_count": 2,
+        "examples": [
+          {
+            "sample_id": "val_normal:172",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路经一路至经八路段向西畅通无阻 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:74",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 农业路经六路至经八路段向东畅通无阻 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      }
+    },
+    "anomaly_strength_bucket": {
+      "mild": {
+        "bucket_count": 29,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:172",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路经一路至经八路段向西畅通无阻 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:18",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至未来路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:127",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路农业路至政七街段向北车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:13",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经六路农业路至政七街段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:149",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：花园路政七街至纬五路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "moderate": {
+        "bucket_count": 7,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:43",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：纬五路经六路至花园路段向东排队通行效率下降；经一路农业路至红专路段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=经六路至花园路|LEVEL=中度拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=经六路至花园路|LEVEL=中度拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "moderate",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:75",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "经三路红专路至黄河路段向北排队通行效率下降；纬五路经三路至经六路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=红专路至黄河路|LEVEL=中度拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=红专路至黄河路|LEVEL=中度拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "moderate",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:0",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经一路红专路至政七街段向南中度拥堵缓行；政七街经八路至花园路段向东畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经一路|DIR=向南|RANGE=红专路至政七街|LEVEL=中度拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经一路|DIR=向南|RANGE=红专路至政七街|LEVEL=中度拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 1,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 50.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 1,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "moderate",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:85",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经八路红专路至政七街段向南车流较大缓行；红专路经一路至经三路段向西车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经八路|DIR=向南|RANGE=红专路至政七街|LEVEL=中度拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经八路|DIR=向南|RANGE=红专路至政七街|LEVEL=中度拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 1,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 50.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 1,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "moderate",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:87",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经八路农业路至红专路段向北中度拥堵缓行；政七街经六路至经八路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经八路|DIR=向北|RANGE=农业路至红专路|LEVEL=中度拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经八路|DIR=向北|RANGE=农业路至红专路|LEVEL=中度拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 1,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 50.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 1,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "moderate",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "severe": {
+        "bucket_count": 15,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:117",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经三路至花园路段向东车流积压严重拥堵；未来路农业路至红专路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 3,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 75.0,
+            "gt_changed_edge_count": 4,
+            "gt_target_edge_count": 3,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:136",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经一路至经六路段向东排队长度明显增加；经六路农业路至红专路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:113",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至花园路段向东车流积压严重拥堵；经八路政七街至黄河路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:89",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "农业路经一路至经六路段向东追尾事故严重拥堵；花园路政七街至黄河路段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:128",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路政七街至黄河路段向北追尾事故严重拥堵；政七街花园路至未来路段向东畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 1,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 50.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 1,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      }
+    },
+    "pattern_bucket": {
+      "single_anomaly_only": {
+        "bucket_count": 9,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:172",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路经一路至经八路段向西畅通无阻 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:18",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至未来路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:127",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路农业路至政七街段向北车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:13",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经六路农业路至政七街段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:149",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：花园路政七街至纬五路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "single_anomaly_only",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "anomaly_plus_normal": {
+        "bucket_count": 22,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:117",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经三路至花园路段向东车流积压严重拥堵；未来路农业路至红专路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 3,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 75.0,
+            "gt_changed_edge_count": 4,
+            "gt_target_edge_count": 3,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:136",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：政七街经一路至经六路段向东排队长度明显增加；经六路农业路至红专路段向南车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=政七街|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:113",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "黄河路经六路至花园路段向东车流积压严重拥堵；经八路政七街至黄河路段向北畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:89",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "农业路经一路至经六路段向东追尾事故严重拥堵；花园路政七街至黄河路段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 2,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 66.7,
+            "gt_changed_edge_count": 3,
+            "gt_target_edge_count": 2,
+            "changed_edge_count_bucket": "3+",
+            "input_length_bucket": "short",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:128",
+            "failure_type": "changed_edge_miss",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路政七街至黄河路段向北追尾事故严重拥堵；政七街花园路至未来路段向东畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+            "parse_result": {
+              "no_anchor": false,
+              "parse_fail": false,
+              "strict_parse_fail": false,
+              "strict_error_reason": "ok",
+              "anchor_count": 1,
+              "mapped_edge_count": 1,
+              "parse_confidence": 0.98
+            },
+            "target_recall": 100.0,
+            "gt_changed_edge_recall": 50.0,
+            "gt_changed_edge_count": 2,
+            "gt_target_edge_count": 1,
+            "changed_edge_count_bucket": "2",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "severe",
+            "pattern_bucket": "anomaly_plus_normal",
+            "failure_flags": [
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "same_road_multi_dir": {
+        "bucket_count": 0,
+        "selected_example_count": 0,
+        "examples": []
+      },
+      "short_range_local": {
+        "bucket_count": 20,
+        "selected_example_count": 5,
+        "examples": [
+          {
+            "sample_id": "val_normal:74",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 农业路经六路至经八路段向东畅通无阻 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "long",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:1",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：经三路红专路至政七街段向南畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:104",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：纬五路经三路至经六路段向东车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:108",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：未来路政七街至黄河路段向北车流顺畅",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          },
+          {
+            "sample_id": "val_normal:109",
+            "failure_type": "no_anchor",
+            "pred_matches_gt_label": true,
+            "input_text": "常态或局部短时事件：农业路花园路至未来路段向西畅通无阻",
+            "gt_label": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "pred_text": "<think>\nscene=simple_local\nanchor_count=0\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nNO_ANCHOR",
+            "parse_result": {
+              "no_anchor": true,
+              "parse_fail": false,
+              "strict_parse_fail": true,
+              "strict_error_reason": "no_anchor_with_changed_edges",
+              "anchor_count": 0,
+              "mapped_edge_count": 0,
+              "parse_confidence": 0.9
+            },
+            "target_recall": 0.0,
+            "gt_changed_edge_recall": 0.0,
+            "gt_changed_edge_count": 1,
+            "gt_target_edge_count": 0,
+            "changed_edge_count_bucket": "1",
+            "input_length_bucket": "medium",
+            "anomaly_strength_bucket": "mild",
+            "pattern_bucket": "short_range_local",
+            "failure_flags": [
+              "no_anchor_when_gt_changed",
+              "parse_fail_strict",
+              "changed_edge_miss"
+            ]
+          }
+        ]
+      },
+      "other": {
+        "bucket_count": 0,
+        "selected_example_count": 0,
+        "examples": []
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+﻿scene,scene_type,method,path_cost,path_len,constraint_rate,parsed_edges,parsed_edge_ratio,signal_edges,signal_ratio,infer_time_s,sumo_time,anchor_count,parse_confidence,gat_mode,alpha_used,high_conf_edges,low_conf_edges,missing_edges
+场景A 黄河路单向拥堵,simple_local,Sparse-LoRA,16.0,5,66.7,10,10.2,10,10.2,1.65,623.9,4,0.91,disabled,0.0,0,0,0
+场景A 黄河路单向拥堵,simple_local,Sparse-LoRA+Always-GAT,18.82,6,66.7,10,10.2,85,86.7,1.65,436.8,4,0.91,always_topology_completion,0.45,0,10,86
+场景A 黄河路单向拥堵,simple_local,Sparse-LoRA+Gated-GAT,18.64,6,66.7,10,10.2,85,86.7,1.65,436.8,4,0.91,gated_topology_completion,0.45000000000000007,10,0,86
+场景B 花园路封闭绕行,core_blockage,Sparse-LoRA,15.5,4,80.0,10,10.2,10,10.2,1.301,1685.0,4,0.91,disabled,0.0,0,0,0
+场景B 花园路封闭绕行,core_blockage,Sparse-LoRA+Always-GAT,18.47,5,80.0,10,10.2,85,86.7,1.301,708.4,4,0.91,always_topology_completion,0.45,0,8,86
+场景B 花园路封闭绕行,core_blockage,Sparse-LoRA+Gated-GAT,18.47,5,80.0,10,10.2,85,86.7,1.301,708.4,4,0.91,gated_topology_completion,0.45000000000000007,10,0,86
+场景C 多路段复合拥堵,compound_disaster,Sparse-LoRA,16.0,8,71.4,26,26.5,26,26.5,1.596,544.6,5,0.902,disabled,0.0,0,0,0
+场景C 多路段复合拥堵,compound_disaster,Sparse-LoRA+Always-GAT,16.96,8,71.4,26,26.5,94,95.9,1.596,544.6,5,0.902,always_topology_completion,0.45,0,18,70
+场景C 多路段复合拥堵,compound_disaster,Sparse-LoRA+Gated-GAT,16.96,8,71.4,26,26.5,94,95.9,1.596,544.6,5,0.902,gated_topology_completion,0.45000000000000007,26,0,70
+场景D 中央核心节点封锁（强迫大范围绕行）,compound_disaster,Sparse-LoRA,16.0,8,46.7,18,18.4,18,18.4,0.699,587.5,2,0.8,disabled,0.0,0,0,0
+场景D 中央核心节点封锁（强迫大范围绕行）,compound_disaster,Sparse-LoRA+Always-GAT,20.19,10,46.7,18,18.4,91,92.9,0.699,535.9,2,0.8,always_topology_completion,0.45,0,8,78
+场景D 中央核心节点封锁（强迫大范围绕行）,compound_disaster,Sparse-LoRA+Gated-GAT,20.19,10,46.7,18,18.4,91,92.9,0.699,535.9,2,0.8,gated_topology_completion,0.45000000000000007,18,0,78
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,Sparse-LoRA,15.0,6,36.4,18,18.4,18,18.4,0.725,394.1,2,0.8,disabled,0.0,0,0,0
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,Sparse-LoRA+Always-GAT,19.4,6,36.4,18,18.4,96,98.0,0.725,394.1,2,0.8,always_topology_completion,0.55,0,16,80
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,Sparse-LoRA+Gated-GAT,19.66,6,36.4,18,18.4,96,98.0,0.725,394.1,2,0.8,gated_topology_completion,0.55,16,0,80
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,Sparse-LoRA,20.3,8,21.4,19,19.4,19,19.4,2.33,446.5,4,0.97,disabled,0.0,0,0,0
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,Sparse-LoRA+Always-GAT,23.33,8,21.4,19,19.4,88,89.8,2.33,446.5,4,0.97,always_topology_completion,0.45,0,9,77
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,Sparse-LoRA+Gated-GAT,20.3,8,21.4,19,19.4,89,90.8,2.33,446.5,4,0.97,gated_topology_completion,0.45000000000000007,19,0,77

@@ -1,0 +1,25 @@
+{
+  "timestamp": "20260407T135901Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "planner": "spatiotemporal_prompt_ablation",
+  "model": "sparse_lora",
+  "scenario_list": [
+    "时空对照1 方向不对称",
+    "时空对照1 方向不对称",
+    "时空对照2 时段切换",
+    "时空对照2 时段切换",
+    "时空对照3 传播范围",
+    "时空对照3 传播范围",
+    "时空对照4 多约束冲突",
+    "时空对照4 多约束冲突"
+  ],
+  "fallback_policy": "none",
+  "default_weight_policy": "explicit_sparse_anchor_defaults_to_2.0",
+  "timing_policy": "prompt_inference_time_separate_from_scene_score",
+  "model_path": "/root/autodl-tmp/model_merged_sparse",
+  "case_csv": "/root/autodl-tmp/results/runs/20260407T135901Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_case_metrics.csv",
+  "summary_csv": "/root/autodl-tmp/results/runs/20260407T135901Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_summary.csv",
+  "delta_csv": "/root/autodl-tmp/results/runs/20260407T135901Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_deltas.csv",
+  "failure_json": "/root/autodl-tmp/results/runs/20260407T135901Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_failures.json"
+}

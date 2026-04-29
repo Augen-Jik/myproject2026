@@ -1,0 +1,433 @@
+pack_sample_id,pack_split,bucket,source_type,source_detail,origin_dataset_root,origin_split,origin_sample_id,seed_sample_id,changed_edge_count,relief_severity,is_failure_library_match,is_new_supervision,can_direct_stage4b,text,label
+train:0,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1209,train:1209,1,mild,False,True,True,常态或局部短时事件：经八路农业路至红专路段向北畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向北|RANGE=农业路至红专路|LEVEL=畅通"
+train:1,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1024,train:1024,1,mild,False,True,True,经三路政七街至黄河路段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经三路|DIR=向南|RANGE=政七街至黄河路|LEVEL=畅通"
+train:2,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1234,train:1234,1,mild,False,True,True,常态或局部短时事件：经八路政七街至黄河路段向南畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向南|RANGE=政七街至黄河路|LEVEL=畅通"
+train:3,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1112,train:1112,1,mild,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 农业路经三路至经六路段向东车流顺畅 有市民反映支路口偶尔压车，不过主约束仍以当前干道情况为准。 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向东|RANGE=经三路至经六路|LEVEL=畅通"
+train:4,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1246,train:1246,1,mild,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 政七街经一路至经三路段向西畅通无阻 其余未明确提及路段按常态理解，不要额外扩大影响范围。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=政七街|DIR=向西|RANGE=经一路至经三路|LEVEL=畅通"
+train:5,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1186,train:1186,1,mild,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 红专路经六路至经八路段向西车流顺畅 有市民反映支路口偶尔压车，不过主约束仍以当前干道情况为准。 交警提醒周边停车场正在分流车辆，不过主路仍可通行。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向西|RANGE=经六路至经八路|LEVEL=畅通"
+train:6,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1521,train:1521,1,mild,False,True,True,政七街经八路至花园路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=政七街|DIR=向东|RANGE=经八路至花园路|LEVEL=畅通"
+train:7,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1198,train:1198,1,mild,False,True,True,红专路花园路至未来路段向东车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向东|RANGE=花园路至未来路|LEVEL=畅通"
+train:8,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1524,train:1524,1,mild,False,True,True,纬五路经八路至花园路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向西|RANGE=经八路至花园路|LEVEL=畅通"
+train:9,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1199,train:1199,1,mild,False,True,True,未来路红专路至政七街段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=未来路|DIR=向南|RANGE=红专路至政七街|LEVEL=畅通"
+train:10,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1639,train:1639,1,mild,False,True,True,常态或局部短时事件：纬五路经八路至未来路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向西|RANGE=经八路至未来路|LEVEL=畅通"
+train:11,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1203,train:1203,1,mild,False,True,True,常态或局部短时事件：经八路政七街至黄河路段向北车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向北|RANGE=政七街至黄河路|LEVEL=畅通"
+train:12,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1653,train:1653,1,mild,False,True,True,经八路黄河路至纬五路段向南畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向南|RANGE=黄河路至纬五路|LEVEL=畅通"
+train:13,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1204,train:1204,1,mild,False,True,True,花园路红专路至政七街段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=花园路|DIR=向南|RANGE=红专路至政七街|LEVEL=畅通"
+train:14,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1719,train:1719,1,mild,False,True,True,农业路经一路至经三路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经三路|LEVEL=畅通"
+train:15,simple_local_relief_pack_train,relief_normal_single_edge,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1289,train:1289,1,mild,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路经一路至经三路段向西车流顺畅 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 交警提醒周边停车场正在分流车辆，不过主路仍可通行。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向西|RANGE=经一路至经三路|LEVEL=畅通"
+train:16,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1047,train:1047,2,moderate,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 经六路政七街至纬五路段向北畅通无阻 其余未明确提及路段按常态理解，不要额外扩大影响范围。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经六路|DIR=向北|RANGE=政七街至纬五路|LEVEL=畅通"
+train:17,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1255,train:1255,2,moderate,False,True,True,常态或局部短时事件：经八路政七街至纬五路段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向南|RANGE=政七街至纬五路|LEVEL=畅通"
+train:18,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:127,train:127,2,moderate,False,True,True,常态或局部短时事件：未来路政七街至纬五路段向北畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=未来路|DIR=向北|RANGE=政七街至纬五路|LEVEL=畅通"
+train:19,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1358,train:1358,2,moderate,False,True,True,黄河路经一路至经六路段向西车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=黄河路|DIR=向西|RANGE=经一路至经六路|LEVEL=畅通"
+train:20,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1417,train:1417,2,moderate,False,True,True,红专路经八路至未来路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向西|RANGE=经八路至未来路|LEVEL=畅通"
+train:21,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1852,train:1852,2,moderate,False,True,True,经八路农业路至政七街段向北车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向北|RANGE=农业路至政七街|LEVEL=畅通"
+train:22,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:144,train:144,2,moderate,False,True,True,常态或局部短时事件：纬五路经三路至经八路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向东|RANGE=经三路至经八路|LEVEL=畅通"
+train:23,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1853,train:1853,2,moderate,False,True,True,农业路经一路至经六路段向西车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向西|RANGE=经一路至经六路|LEVEL=畅通"
+train:24,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1546,train:1546,2,moderate,False,True,True,农业路经一路至经六路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=畅通"
+train:25,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2333,train:2333,2,moderate,False,True,True,纬五路经八路至未来路段向东车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向东|RANGE=经八路至未来路|LEVEL=畅通"
+train:26,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1982,train:1982,2,moderate,False,True,True,经三路政七街至纬五路段向北畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至纬五路|LEVEL=畅通"
+train:27,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2371,train:2371,2,moderate,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 经八路政七街至纬五路段向北车流顺畅 有市民反映支路口偶尔压车，不过主约束仍以当前干道情况为准。 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向北|RANGE=政七街至纬五路|LEVEL=畅通"
+train:28,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2671,train:2671,2,moderate,False,True,True,农业路经六路至花园路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向西|RANGE=经六路至花园路|LEVEL=畅通"
+train:29,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2433,train:2433,2,moderate,False,True,True,常态或局部短时事件：经一路农业路至政七街段向北车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经一路|DIR=向北|RANGE=农业路至政七街|LEVEL=畅通"
+train:30,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2816,train:2816,2,moderate,False,True,True,常态或局部短时事件：政七街经三路至经八路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=政七街|DIR=向东|RANGE=经三路至经八路|LEVEL=畅通"
+train:31,simple_local_relief_pack_train,relief_normal_short_range,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2749,train:2749,2,moderate,False,True,True,经三路农业路至政七街段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经三路|DIR=向南|RANGE=农业路至政七街|LEVEL=畅通"
+train:32,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:170,train:170,3,severe,False,True,True,常态或局部短时事件：黄河路经三路至花园路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=黄河路|DIR=向西|RANGE=经三路至花园路|LEVEL=畅通"
+train:33,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:3423,train:3423,3,severe,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 黄河路经六路至未来路段向东车流顺畅 其余未明确提及路段按常态理解，不要额外扩大影响范围。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至未来路|LEVEL=畅通"
+train:34,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2211,train:2211,3,severe,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 红专路经三路至花园路段向东畅通无阻 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 有市民反映支路口偶尔压车，不过主约束仍以当前干道情况为准。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向东|RANGE=经三路至花园路|LEVEL=畅通"
+train:35,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:3606,train:3606,3,severe,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 红专路经一路至经八路段向东车流顺畅 其余未明确提及路段按常态理解，不要额外扩大影响范围。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向东|RANGE=经一路至经八路|LEVEL=畅通"
+train:36,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2670,train:2670,3,severe,False,True,True,常态或局部短时事件：农业路经三路至花园路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向西|RANGE=经三路至花园路|LEVEL=畅通"
+train:37,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:4751,train:4751,3,severe,False,True,True,花园路红专路至纬五路段向北车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=花园路|DIR=向北|RANGE=红专路至纬五路|LEVEL=畅通"
+train:38,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:290,train:290,3,severe,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 经八路红专路至纬五路段向南畅通无阻 其余未明确提及路段按常态理解，不要额外扩大影响范围。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向南|RANGE=红专路至纬五路|LEVEL=畅通"
+train:39,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:4830,train:4830,3,severe,False,True,True,政七街经一路至经八路段向西车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=政七街|DIR=向西|RANGE=经一路至经八路|LEVEL=畅通"
+train:40,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:3508,train:3508,3,severe,False,True,True,常态或局部短时事件：红专路经三路至花园路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向西|RANGE=经三路至花园路|LEVEL=畅通"
+train:41,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:5006,train:5006,3,severe,False,True,True,常态或局部短时事件：政七街经六路至未来路段向西车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=政七街|DIR=向西|RANGE=经六路至未来路|LEVEL=畅通"
+train:42,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:4027,train:4027,3,severe,False,True,True,农业路经一路至经八路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经八路|LEVEL=畅通"
+train:43,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:5299,train:5299,3,severe,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 黄河路经一路至经八路段向东车流顺畅 其余未明确提及路段按常态理解，不要额外扩大影响范围。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=黄河路|DIR=向东|RANGE=经一路至经八路|LEVEL=畅通"
+train:44,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:659,train:659,3,severe,False,True,True,黄河路经三路至花园路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=黄河路|DIR=向东|RANGE=经三路至花园路|LEVEL=畅通"
+train:45,simple_local_relief_pack_train,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:954,train:954,3,severe,False,True,True,常态或局部短时事件：红专路经六路至未来路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向东|RANGE=经六路至未来路|LEVEL=畅通"
+train:46,simple_local_relief_pack_train,multi_edge_relief,manual_generation,manual_generation_from_structured_seed,/root/autodl-tmp/dataset_sparse_v2,eval,eval:16,eval:16,3,severe,False,True,True,常态或局部短时事件：经六路红专路至纬五路段向南通行顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经六路|DIR=向南|RANGE=红专路至纬五路|LEVEL=畅通"
+train:47,simple_local_relief_pack_train,multi_edge_relief,manual_generation,manual_generation_from_structured_seed,/root/autodl-tmp/dataset_sparse_v2,eval,eval:42,eval:42,3,severe,False,True,True,常态或局部短时事件：经八路农业路至黄河路段向南通行顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经八路|DIR=向南|RANGE=农业路至黄河路|LEVEL=畅通"
+eval:0,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:1,val_normal:1,1,mild,True,True,True,常态或局部短时事件：经三路红专路至政七街段向南畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经三路|DIR=向南|RANGE=红专路至政七街|LEVEL=畅通"
+eval:1,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:104,val_normal:104,1,mild,True,True,True,常态或局部短时事件：纬五路经三路至经六路段向东车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向东|RANGE=经三路至经六路|LEVEL=畅通"
+eval:2,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:103,val_normal:103,1,mild,True,True,True,经三路红专路至政七街段向北畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经三路|DIR=向北|RANGE=红专路至政七街|LEVEL=畅通"
+eval:3,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:108,val_normal:108,1,mild,True,True,True,常态或局部短时事件：未来路政七街至黄河路段向北车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=未来路|DIR=向北|RANGE=政七街至黄河路|LEVEL=畅通"
+eval:4,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:109,val_normal:109,1,mild,True,True,True,常态或局部短时事件：农业路花园路至未来路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向西|RANGE=花园路至未来路|LEVEL=畅通"
+eval:5,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:134,val_normal:134,1,mild,True,True,True,常态或局部短时事件：花园路黄河路至纬五路段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=花园路|DIR=向南|RANGE=黄河路至纬五路|LEVEL=畅通"
+eval:6,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:112,val_normal:112,1,mild,True,True,True,红专路花园路至未来路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向西|RANGE=花园路至未来路|LEVEL=畅通"
+eval:7,simple_local_relief_pack_eval,relief_normal_single_edge,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:140,val_normal:140,1,mild,True,True,True,纬五路花园路至未来路段向东车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向东|RANGE=花园路至未来路|LEVEL=畅通"
+eval:8,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:13,val_normal:13,2,moderate,True,True,True,常态或局部短时事件：经六路农业路至政七街段向南畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经六路|DIR=向南|RANGE=农业路至政七街|LEVEL=畅通"
+eval:9,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:127,val_normal:127,2,moderate,True,True,True,常态或局部短时事件：经三路农业路至政七街段向北车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经三路|DIR=向北|RANGE=农业路至政七街|LEVEL=畅通"
+eval:10,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:41,val_normal:41,2,moderate,True,True,True,红专路经六路至花园路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向东|RANGE=经六路至花园路|LEVEL=畅通"
+eval:11,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:149,val_normal:149,2,moderate,True,True,True,常态或局部短时事件：花园路政七街至纬五路段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=花园路|DIR=向南|RANGE=政七街至纬五路|LEVEL=畅通"
+eval:12,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:5,val_normal:5,2,moderate,True,True,True,常态或局部短时事件：花园路政七街至纬五路段向北畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=花园路|DIR=向北|RANGE=政七街至纬五路|LEVEL=畅通"
+eval:13,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:164,val_normal:164,2,moderate,True,True,True,纬五路经一路至经六路段向东车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向东|RANGE=经一路至经六路|LEVEL=畅通"
+eval:14,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:6,val_normal:6,2,moderate,True,True,True,红专路经八路至未来路段向东畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向东|RANGE=经八路至未来路|LEVEL=畅通"
+eval:15,simple_local_relief_pack_eval,relief_normal_short_range,historical_retrieval,historical_eval,/root/autodl-tmp/dataset_sparse_v2,eval,eval:230,eval:230,2,moderate,False,True,True,常态或局部短时事件：黄河路经六路至花园路段向东车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=黄河路|DIR=向东|RANGE=经六路至花园路|LEVEL=畅通"
+eval:16,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:172,val_normal:172,3,severe,True,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路经一路至经八路段向西畅通无阻 气象部门提示傍晚仍有小雨，但目前并未形成新增积水。 导航播报中还提到相邻商圈有出库车流，但不直接改变本段主判断。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=纬五路|DIR=向西|RANGE=经一路至经八路|LEVEL=畅通"
+eval:17,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_eval,/root/autodl-tmp/dataset_sparse_v2,eval,eval:760,eval:760,3,severe,False,True,True,经一路红专路至纬五路段向南车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经一路|DIR=向南|RANGE=红专路至纬五路|LEVEL=畅通"
+eval:18,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_val_normal,/root/autodl-tmp/dataset_sparse_v2,val_normal,val_normal:18,val_normal:18,3,severe,True,True,True,黄河路经六路至未来路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=黄河路|DIR=向西|RANGE=经六路至未来路|LEVEL=畅通"
+eval:19,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1148,train:1148,3,severe,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 花园路农业路至黄河路段向南车流顺畅 其余未明确提及路段按常态理解，不要额外扩大影响范围。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=花园路|DIR=向南|RANGE=农业路至黄河路|LEVEL=畅通"
+eval:20,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_eval,/root/autodl-tmp/dataset_sparse_v2,eval,eval:15,eval:15,3,severe,False,True,True,常态或局部短时事件：经一路农业路至黄河路段向北畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=经一路|DIR=向北|RANGE=农业路至黄河路|LEVEL=畅通"
+eval:21,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2906,train:2906,3,severe,False,True,True,政七街经六路至未来路段向东车流顺畅,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=政七街|DIR=向东|RANGE=经六路至未来路|LEVEL=畅通"
+eval:22,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:1479,train:1479,3,severe,False,True,True,常态或局部短时事件：红专路经一路至经八路段向西畅通无阻,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=红专路|DIR=向西|RANGE=经一路至经八路|LEVEL=畅通"
+eval:23,simple_local_relief_pack_eval,multi_edge_relief,historical_retrieval,historical_train,/root/autodl-tmp/dataset_sparse_v2,train,train:2938,train:2938,3,severe,False,True,True,当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 农业路经六路至未来路段向东车流顺畅 有市民反映支路口偶尔压车，不过主约束仍以当前干道情况为准。 交警提醒周边停车场正在分流车辆，不过主路仍可通行。 部分播报会提到周边商圈或停车场信息，但主判断仍以道路方向、区间、时段和传播范围为核心。,"<think>
+scene=simple_local
+anchor_count=1
+simple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。
+</think>
+ANCHOR|ROAD=农业路|DIR=向东|RANGE=经六路至未来路|LEVEL=畅通"

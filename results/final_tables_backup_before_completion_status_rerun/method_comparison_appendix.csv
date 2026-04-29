@@ -1,0 +1,2 @@
+﻿Method,Method (CN),Category,Travel Time (s),Planning Time (s),Success Rate,Average Reward,Failure Rate,Timeout Rate,Training Steps,Eval Episodes,Train Wall Time (s),Device,Protocol,Source File,Notes
+PPO,PPO（quick baseline）,RL-Appendix,11.25,0.001429,1.0,8.75,0.0,0.0,20000,30,23.486,cpu,simplified quick baseline (non-live),results/ppo_baseline/ppo_quick_summary.csv,Frozen appendix-only PPO quick baseline. Not directly comparable to the scene-profile-fixed live SUMO main table because it lacks the same six-scene protocol and per-scene evidence chain.

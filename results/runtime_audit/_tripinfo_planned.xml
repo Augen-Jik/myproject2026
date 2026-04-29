@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-04-24 15:09:54 by Eclipse SUMO sumo Version 1.12.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/root/autodl-tmp/SUMO/config/../net/my_net.net.xml"/>
+        <route-files value="/root/autodl-tmp/results/scene_runtime/blockage_detour_showcase_conservative__seed1303.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="/root/autodl-tmp/results/runtime_audit/_tripinfo_planned.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="0.100"/>
+    </time>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.probability value="0"/>
+    </routing>
+
+    <report>
+        <no-warnings value="true"/>
+        <duration-log.disable value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="43341"/>
+    </traci_server>
+
+    <random_number>
+        <seed value="1303"/>
+    </random_number>
+
+    <gui_only>
+        <tracker-interval value="0.100"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <tripinfo id="f_Nongye_EW.0" depart="0.00" departLane="R0C0_E_0" departPos="4.60" departSpeed="14.48" departDelay="0.00" arrival="-1.00" arrivalLane="" arrivalPos="-1.00" arrivalSpeed="-1.00" duration="30.00" routeLength="431.12" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.13" rerouteNo="0" devices="tripinfo_f_Nongye_EW.0" vType="car" speedFactor="0.87" vaporized="end"/>
+    <tripinfo id="f_Nongye_WE.0" depart="5.00" departLane="R0C4_W_0" departPos="4.60" departSpeed="15.37" departDelay="0.00" arrival="-1.00" arrivalLane="" arrivalPos="-1.00" arrivalSpeed="-1.00" duration="25.00" routeLength="381.00" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.10" rerouteNo="0" devices="tripinfo_f_Nongye_WE.0" vType="car" speedFactor="0.92" vaporized="end"/>
+    <tripinfo id="f_Huanghe_WE.0" depart="8.00" departLane="R3C4_W_0" departPos="4.60" departSpeed="16.67" departDelay="0.00" arrival="-1.00" arrivalLane="" arrivalPos="-1.00" arrivalSpeed="-1.00" duration="22.00" routeLength="363.67" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.08" rerouteNo="0" devices="tripinfo_f_Huanghe_WE.0" vType="car" speedFactor="1.11" vaporized="end"/>
+    <tripinfo id="f_Huayuan_SN.0" depart="10.00" departLane="C4R3_S_0" departPos="4.60" departSpeed="16.67" departDelay="0.00" arrival="-1.00" arrivalLane="" arrivalPos="-1.00" arrivalSpeed="-1.00" duration="20.00" routeLength="330.43" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.08" rerouteNo="0" devices="tripinfo_f_Huayuan_SN.0" vType="car" speedFactor="1.07" vaporized="end"/>
+    <tripinfo id="f_Jing6_SN.0" depart="12.00" departLane="C2R3_S_0" departPos="4.60" departSpeed="13.94" departDelay="0.00" arrival="-1.00" arrivalLane="" arrivalPos="-1.00" arrivalSpeed="-1.00" duration="18.00" routeLength="248.29" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.09" rerouteNo="0" devices="tripinfo_f_Jing6_SN.0" vType="car" speedFactor="0.84" vaporized="end"/>
+    <tripinfo id="f_Hongz_WE.0" depart="15.00" departLane="R1C4_W_0" departPos="4.60" departSpeed="16.67" departDelay="0.00" arrival="-1.00" arrivalLane="" arrivalPos="-1.00" arrivalSpeed="-1.00" duration="15.00" routeLength="247.37" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.06" rerouteNo="0" devices="tripinfo_f_Hongz_WE.0" vType="car" speedFactor="1.07" vaporized="end"/>
+</tripinfos>

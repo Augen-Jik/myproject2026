@@ -1,0 +1,28 @@
+# Local runtime state
+.autodl/
+.cache/
+.claude/
+.continue/
+.ipynb_checkpoints/
+.Trash-0/
+.vscode/
+__pycache__/
+cache/
+tmp/
+
+# Logs
+logs/
+*.log
+
+# Training checkpoints and optimizer state
+**/checkpoint-*/
+**/optimizer.pt
+**/scheduler.pt
+**/trainer_state.json
+**/training_args.bin
+**/rng_state*.pth
+
+# Full merged/base model weights are too large for a normal GitHub repository.
+DeepSeek-R1-1.5B/model.safetensors
+Qwen2.5-1.5B-Instruct/model.safetensors
+model_merged_*/model.safetensors

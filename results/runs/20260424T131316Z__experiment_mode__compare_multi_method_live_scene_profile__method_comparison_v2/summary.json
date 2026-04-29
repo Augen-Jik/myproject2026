@@ -1,0 +1,27 @@
+{
+  "run_id": "20260424T131316Z__experiment_mode__compare_multi_method_live_scene_profile__method_comparison_v2",
+  "mode": "experiment_mode",
+  "scene_profiles": [
+    "normal_baseline",
+    "simple_local",
+    "directional_asymmetry",
+    "core_blockage",
+    "propagation_range",
+    "compound_disaster"
+  ],
+  "methods_rerun": [
+    "Dijkstra",
+    "Rule-A*",
+    "DQN",
+    "GCN-Weight",
+    "Sparse-LoRA",
+    "Sparse-LoRA+GAT"
+  ],
+  "include_ppo_summary": true,
+  "scene_profile_version": "sha256:012f7472d50a",
+  "final_table_path": "/root/autodl-tmp/results/final_tables/method_comparison_v2.csv",
+  "final_table_no_ppo_path": "/root/autodl-tmp/results/final_tables/method_comparison_final.csv",
+  "compare_results_path": "/root/autodl-tmp/results/runs/20260424T131316Z__experiment_mode__compare_multi_method_live_scene_profile__method_comparison_v2/compare_results.json",
+  "warning_report_path": "/root/autodl-tmp/results/final_tables/method_comparison_v2_warnings.md",
+  "identical_scene_warnings": []
+}

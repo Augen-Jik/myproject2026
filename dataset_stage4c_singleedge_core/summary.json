@@ -1,0 +1,112 @@
+{
+  "dataset": "stage4c_singleedge_core",
+  "bucket": "relief_normal_single_edge",
+  "source_inputs": {
+    "pack_train": "/root/autodl-tmp/dataset_simple_local_relief_pack/train/data.parquet",
+    "pack_eval": "/root/autodl-tmp/dataset_simple_local_relief_pack/eval/data.parquet",
+    "failure_examples_json": "/root/autodl-tmp/results/simple_local_failure_examples.json",
+    "diff_json": "/root/autodl-tmp/results/stage4b_diff_29.json",
+    "policy_md": "/root/autodl-tmp/results/simple_local_v2_label_policy.md"
+  },
+  "targets": {
+    "train_target": 72,
+    "eval_target": 24,
+    "requested_train_range": [
+      64,
+      96
+    ]
+  },
+  "counts": {
+    "train_rows": 75,
+    "eval_rows": 24,
+    "train_heldout_like_rows": 63,
+    "eval_heldout_like_rows": 19,
+    "train_exact_heldout_signature_rows": 43,
+    "eval_exact_heldout_signature_rows": 19,
+    "label_level_counts_train": {
+      "畅通": 55,
+      "正常": 20
+    },
+    "structure_counts_train": {
+      "short_plain": 16,
+      "planner_long": 13,
+      "prefixed_short": 12,
+      "same_road_dir_contrast": 10,
+      "tiny_range": 9,
+      "weak_relief": 9,
+      "anomaly_mixed_context": 6
+    },
+    "surface_counts_train": {
+      "顺畅": 33,
+      "畅通": 12,
+      "畅通无阻": 10,
+      "正常通行": 4,
+      "保持正常通行": 4,
+      "通行正常": 3,
+      "恢复正常": 3,
+      "局部恢复正常": 3,
+      "某段向某方向正常": 3
+    }
+  },
+  "heldout_alignment": {
+    "heldout_single_edge_sample_count": 20,
+    "heldout_single_edge_signature_unique_count": 19,
+    "train_signature_unique_count": 45,
+    "heldout_sample_exact_signature_coverage": "20/20",
+    "heldout_sample_pattern_rdrt_coverage": "20/20",
+    "heldout_best_pattern_score_avg": 1.0
+  },
+  "coverage_checks": {
+    "train_has_64_plus_rows": true,
+    "train_text_has_no_direct_heldout_copy": true,
+    "eval_text_has_no_direct_heldout_copy": true,
+    "all_required_variant_present_in_train": {
+      "正常通行": true,
+      "保持正常通行": true,
+      "畅通": true,
+      "畅通无阻": true,
+      "顺畅": true,
+      "通行正常": true,
+      "恢复正常": true,
+      "局部恢复正常": true,
+      "某段向某方向正常": true,
+      "某段向某方向畅通": true
+    },
+    "required_variant_counts_train": {
+      "正常通行": 8,
+      "保持正常通行": 4,
+      "畅通": 22,
+      "畅通无阻": 10,
+      "顺畅": 33,
+      "通行正常": 3,
+      "恢复正常": 6,
+      "局部恢复正常": 3,
+      "某段向某方向正常": 7,
+      "某段向某方向畅通": 20
+    },
+    "required_variant_counts_eval": {
+      "正常通行": 0,
+      "保持正常通行": 0,
+      "畅通": 10,
+      "畅通无阻": 5,
+      "顺畅": 14,
+      "通行正常": 0,
+      "恢复正常": 0,
+      "局部恢复正常": 0,
+      "某段向某方向正常": 0,
+      "某段向某方向畅通": 10
+    },
+    "failure_style_hints": {
+      "planner_long": 1,
+      "short_plain": 1,
+      "prefixed_short": 3
+    }
+  },
+  "diagnosis": {
+    "upgraded_from_16_to_64_plus_face_coverage": true,
+    "still_scarcest_singleedge_expression": {
+      "variant": "局部恢复正常",
+      "train_count": 3
+    }
+  }
+}

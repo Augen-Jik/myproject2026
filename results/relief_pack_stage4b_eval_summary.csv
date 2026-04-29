@@ -1,0 +1,8 @@
+scope,scope_name,count,no_anchor_when_gt_changed_rate,target_recall,gt_changed_edge_recall,MAE_on_changed_edges,parse_fail_rate_strict
+overall,overall,24,0.9583,0.0,6.2,0.75,0.9583
+bucket,multi_edge_relief,8,0.875,0.0,12.5,0.7,0.875
+bucket,relief_normal_short_range,8,1.0,0.0,0.0,0.8,1.0
+bucket,relief_normal_single_edge,8,1.0,0.0,0.0,0.8,1.0
+severity,mild,8,1.0,0.0,0.0,0.8,1.0
+severity,moderate,8,1.0,0.0,0.0,0.8,1.0
+severity,severe,8,0.875,0.0,12.5,0.7,0.875

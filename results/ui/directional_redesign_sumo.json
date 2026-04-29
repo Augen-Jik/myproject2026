@@ -1,0 +1,70 @@
+{
+  "showcase_name": "directional_asymmetry_showcase",
+  "scene_profile": "directional_asymmetry",
+  "start_edge": "C0R2_S",
+  "end_edge": "R4C3_E",
+  "baseline_logical_path": [
+    "C0R2_S",
+    "C0R2_N",
+    "R3C0_E",
+    "R3C1_E",
+    "C2R3_N",
+    "R4C2_E",
+    "R4C3_E"
+  ],
+  "planned_logical_path": [
+    "C0R2_S",
+    "C0R2_N",
+    "R3C0_E",
+    "R3C1_E",
+    "R3C2_E",
+    "C3R3_N",
+    "R4C3_E"
+  ],
+  "baseline_safe_route": [
+    "C0R2_S",
+    "C0R2_N",
+    "R3C0_E",
+    "R3C1_E",
+    "C2R3_N",
+    "R4C2_E",
+    "R4C3_E"
+  ],
+  "planned_safe_route": [
+    "C0R2_S",
+    "C0R2_N",
+    "R3C0_E",
+    "R3C1_E",
+    "R3C2_E",
+    "C3R3_N",
+    "R4C3_E"
+  ],
+  "logical_overlap_ratio": 0.7142857142857143,
+  "safe_route_overlap_ratio": 0.7142857142857143,
+  "baseline": 1099.0,
+  "planned": 1050.1,
+  "saving_seconds": 48.90000000000009,
+  "saving_ratio": 0.044494995450409545,
+  "whether_positive_gain": true,
+  "baseline_ok": true,
+  "planned_ok": true,
+  "baseline_final_runtime_route": [
+    "C0R2_S",
+    "C0R2_N",
+    "R3C0_E",
+    "R3C1_E",
+    "C2R3_N",
+    "R4C2_E",
+    "R4C3_E"
+  ],
+  "planned_final_runtime_route": [
+    "C0R2_S",
+    "C0R2_N",
+    "R3C0_E",
+    "R3C1_E",
+    "R3C2_E",
+    "C3R3_N",
+    "R4C3_E"
+  ],
+  "final_runtime_overlap_ratio": 0.7142857142857143
+}

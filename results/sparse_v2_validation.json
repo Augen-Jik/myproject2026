@@ -1,0 +1,95 @@
+{
+  "val_normal": {
+    "count": 180,
+    "parse_fail_rate": 0.0,
+    "parsed_edge_ratio": 0.0097,
+    "weight_mae": 0.0085,
+    "parse_confidence": 0.9471,
+    "inference_time": 0.9994,
+    "preview": [
+      {
+        "scene_type": "simple_local",
+        "length_bucket": "medium",
+        "anchor_count": 0,
+        "parse_confidence": 0.9,
+        "parse_fail": false
+      },
+      {
+        "scene_type": "simple_local",
+        "length_bucket": "medium",
+        "anchor_count": 0,
+        "parse_confidence": 0.9,
+        "parse_fail": false
+      },
+      {
+        "scene_type": "directional_asymmetry",
+        "length_bucket": "short",
+        "anchor_count": 2,
+        "parse_confidence": 0.98,
+        "parse_fail": false
+      }
+    ]
+  },
+  "val_special": {
+    "count": 180,
+    "parse_fail_rate": 0.0,
+    "parsed_edge_ratio": 0.0384,
+    "weight_mae": 0.0043,
+    "parse_confidence": 0.976,
+    "inference_time": 1.4174,
+    "preview": [
+      {
+        "scene_type": "directional_asymmetry",
+        "length_bucket": "medium",
+        "anchor_count": 0,
+        "parse_confidence": 0.9,
+        "parse_fail": false
+      },
+      {
+        "scene_type": "core_blockage",
+        "length_bucket": "long",
+        "anchor_count": 2,
+        "parse_confidence": 0.98,
+        "parse_fail": false
+      },
+      {
+        "scene_type": "core_blockage",
+        "length_bucket": "medium",
+        "anchor_count": 2,
+        "parse_confidence": 0.98,
+        "parse_fail": false
+      }
+    ]
+  },
+  "val_anti_truncation": {
+    "count": 180,
+    "parse_fail_rate": 0.0,
+    "parsed_edge_ratio": 0.0405,
+    "weight_mae": 0.0005,
+    "parse_confidence": 0.9693,
+    "inference_time": 1.5435,
+    "preview": [
+      {
+        "scene_type": "temporal_switch",
+        "length_bucket": "long",
+        "anchor_count": 1,
+        "parse_confidence": 0.98,
+        "parse_fail": false
+      },
+      {
+        "scene_type": "compound_disaster",
+        "length_bucket": "long",
+        "anchor_count": 3,
+        "parse_confidence": 0.98,
+        "parse_fail": false
+      },
+      {
+        "scene_type": "temporal_switch",
+        "length_bucket": "noisy_long",
+        "anchor_count": 1,
+        "parse_confidence": 0.98,
+        "parse_fail": false
+      }
+    ]
+  }
+}

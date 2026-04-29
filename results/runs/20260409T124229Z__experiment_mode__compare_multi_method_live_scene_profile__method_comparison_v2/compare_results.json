@@ -1,0 +1,116 @@
+[
+  {
+    "scenario": "场景N normal_baseline 正常通行",
+    "scene_profile": "normal_baseline",
+    "preset_id": "N",
+    "start_edge": "R3C0_E",
+    "end_edge": "R3C4_E",
+    "constraint": "当前路网整体通行正常，无明显拥堵或事故；各主干道保持基线交通状态。",
+    "protocol": {
+      "planning_time_definition": "Planning Time (s) = model inference time + route solving time only. It excludes SUMO startup, warm-up, simulation stepping, and live vehicle travel.",
+      "travel_time_definition": "Travel Time (s) = SUMO trip duration for the evaluated vehicle only, measured from vehicle depart to vehicle arrival inside the simulator.",
+      "warmup_seconds": 120,
+      "evaluation_start_time": 120,
+      "evaluation_end_time": 1800,
+      "reroute_trigger_mode": "periodic",
+      "reroute_period": 60,
+      "simulation_seed_policy": "scene_profile_fixed_seed_single_run",
+      "num_eval_seeds": 1,
+      "vehicle_depart_window": [
+        120,
+        120
+      ],
+      "legacy_field_mapping": {
+        "planning_ms": "planning_time_ms",
+        "plan_ms": "planning_time_ms",
+        "time_s": "planning_time_s",
+        "infer_time": "model_infer_time_s",
+        "sumo_time": "travel_time_s",
+        "travel_time": "travel_time_s",
+        "true_travel_time": "analytical_travel_time_s_legacy"
+      },
+      "legacy_field_notes": {
+        "planning_ms": "Legacy planning latency field in milliseconds.",
+        "plan_ms": "Legacy planning latency field in milliseconds.",
+        "time_s": "Legacy seconds field that was often used for inference or planning time, depending on the script.",
+        "infer_time": "Model inference-only time; this is a subcomponent of planning time, not travel time.",
+        "sumo_time": "SUMO-measured vehicle travel time in seconds.",
+        "travel_time": "SUMO-measured vehicle travel time in seconds in the current app pipeline.",
+        "true_travel_time": "Legacy analytical proxy from evaluate.py rather than a live SUMO trip duration."
+      }
+    },
+    "methods": [
+      {
+        "scenario": "场景N normal_baseline 正常通行",
+        "preset_id": "N",
+        "scene_profile": "normal_baseline",
+        "start_edge": "R3C0_E",
+        "end_edge": "R3C4_E",
+        "constraint": "当前路网整体通行正常，无明显拥堵或事故；各主干道保持基线交通状态。",
+        "method": "Dijkstra",
+        "path": [
+          "R3C0_E",
+          "R3C1_E",
+          "R3C2_E",
+          "R3C3_E",
+          "R3C4_E"
+        ],
+        "path_len": 5,
+        "path_cost": 5.0,
+        "travel_time_s": 235.8,
+        "planning_time_s": 9.7e-05,
+        "model_infer_time_s": 0.0,
+        "route_solve_time_s": 9.7e-05,
+        "constraint_rate": 100.0,
+        "signal_ratio": 0.0,
+        "signal_edges": 0,
+        "parsed_edges": 0,
+        "parsed_edge_ratio": 0.0,
+        "default_edges": 96,
+        "avg_speed_kmh": 49.813,
+        "simulation_seed": 101,
+        "warmup_seconds": 120,
+        "evaluation_start_time": 120,
+        "evaluation_end_time": 1800,
+        "scene_profile_version": "sha256:eb0410e2b384",
+        "protocol_snapshot": {
+          "planning_time_definition": "Planning Time (s) = model inference time + route solving time only. It excludes SUMO startup, warm-up, simulation stepping, and live vehicle travel.",
+          "travel_time_definition": "Travel Time (s) = SUMO trip duration for the evaluated vehicle only, measured from vehicle depart to vehicle arrival inside the simulator.",
+          "warmup_seconds": 120,
+          "evaluation_start_time": 120,
+          "evaluation_end_time": 1800,
+          "reroute_trigger_mode": "periodic",
+          "reroute_period": 60,
+          "simulation_seed_policy": "scene_profile_fixed_seed_single_run",
+          "num_eval_seeds": 1,
+          "vehicle_depart_window": [
+            120,
+            120
+          ],
+          "legacy_field_mapping": {
+            "planning_ms": "planning_time_ms",
+            "plan_ms": "planning_time_ms",
+            "time_s": "planning_time_s",
+            "infer_time": "model_infer_time_s",
+            "sumo_time": "travel_time_s",
+            "travel_time": "travel_time_s",
+            "true_travel_time": "analytical_travel_time_s_legacy"
+          },
+          "legacy_field_notes": {
+            "planning_ms": "Legacy planning latency field in milliseconds.",
+            "plan_ms": "Legacy planning latency field in milliseconds.",
+            "time_s": "Legacy seconds field that was often used for inference or planning time, depending on the script.",
+            "infer_time": "Model inference-only time; this is a subcomponent of planning time, not travel time.",
+            "sumo_time": "SUMO-measured vehicle travel time in seconds.",
+            "travel_time": "SUMO-measured vehicle travel time in seconds in the current app pipeline.",
+            "true_travel_time": "Legacy analytical proxy from evaluate.py rather than a live SUMO trip duration."
+          }
+        },
+        "protocol_snapshot_json": "{\"evaluation_end_time\": 1800, \"evaluation_start_time\": 120, \"legacy_field_mapping\": {\"infer_time\": \"model_infer_time_s\", \"plan_ms\": \"planning_time_ms\", \"planning_ms\": \"planning_time_ms\", \"sumo_time\": \"travel_time_s\", \"time_s\": \"planning_time_s\", \"travel_time\": \"travel_time_s\", \"true_travel_time\": \"analytical_travel_time_s_legacy\"}, \"legacy_field_notes\": {\"infer_time\": \"Model inference-only time; this is a subcomponent of planning time, not travel time.\", \"plan_ms\": \"Legacy planning latency field in milliseconds.\", \"planning_ms\": \"Legacy planning latency field in milliseconds.\", \"sumo_time\": \"SUMO-measured vehicle travel time in seconds.\", \"time_s\": \"Legacy seconds field that was often used for inference or planning time, depending on the script.\", \"travel_time\": \"SUMO-measured vehicle travel time in seconds in the current app pipeline.\", \"true_travel_time\": \"Legacy analytical proxy from evaluate.py rather than a live SUMO trip duration.\"}, \"num_eval_seeds\": 1, \"planning_time_definition\": \"Planning Time (s) = model inference time + route solving time only. It excludes SUMO startup, warm-up, simulation stepping, and live vehicle travel.\", \"reroute_period\": 60, \"reroute_trigger_mode\": \"periodic\", \"simulation_seed_policy\": \"scene_profile_fixed_seed_single_run\", \"travel_time_definition\": \"Travel Time (s) = SUMO trip duration for the evaluated vehicle only, measured from vehicle depart to vehicle arrival inside the simulator.\", \"vehicle_depart_window\": [120, 120], \"warmup_seconds\": 120}",
+        "use_gat": false,
+        "model_path": "",
+        "notes": "旧 baseline 权重逻辑保持不变，仅切换为 scene-profile-fixed live SUMO 协议。"
+      }
+    ]
+  }
+]

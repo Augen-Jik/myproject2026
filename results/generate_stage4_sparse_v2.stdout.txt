@@ -1,0 +1,204 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 56/338 [00:00<00:00, 559.34it/s]Loading weights:  36%|███▋      | 123/338 [00:00<00:00, 620.56it/s]Loading weights:  58%|█████▊    | 195/338 [00:00<00:00, 647.89it/s]Loading weights:  79%|███████▉  | 267/338 [00:00<00:00, 670.99it/s]Loading weights:  99%|█████████▉| 335/338 [00:00<00:00, 668.03it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 659.86it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{
+  "output_root": "/root/autodl-tmp/dataset_sparse_v2_stage4",
+  "train_summary": {
+    "size": 671,
+    "scene_type": {
+      "simple_local": 381,
+      "directional_asymmetry": 270,
+      "temporal_switch": 20
+    },
+    "scene_bucket": {
+      "simple_local": 381,
+      "directional_asymmetry": 270,
+      "complex_spatiotemporal": 20
+    },
+    "length_bucket": {
+      "medium": 268,
+      "short": 303,
+      "long": 63,
+      "noisy_long": 37
+    },
+    "avg_anchor_count": 1.034,
+    "avg_parse_confidence": 0.973
+  },
+  "eval_summary": {
+    "size": 178,
+    "scene_type": {
+      "directional_asymmetry": 71,
+      "simple_local": 99,
+      "temporal_switch": 8
+    },
+    "scene_bucket": {
+      "directional_asymmetry": 71,
+      "simple_local": 99,
+      "complex_spatiotemporal": 8
+    },
+    "length_bucket": {
+      "medium": 79,
+      "short": 78,
+      "long": 11,
+      "noisy_long": 10
+    },
+    "avg_anchor_count": 0.994,
+    "avg_parse_confidence": 0.971
+  },
+  "category_stats": {
+    "train": {
+      "hard_negative_no_anchor": 11,
+      "existing_simple_local": 180,
+      "existing_directional_asymmetry": 180,
+      "handcrafted_single_segment": 60,
+      "handcrafted_single_direction": 60,
+      "handcrafted_single_range": 60,
+      "handcrafted_clear_short": 60,
+      "balance_normal": 60
+    },
+    "eval": {
+      "hard_negative_no_anchor": 30,
+      "existing_simple_local": 40,
+      "existing_directional_asymmetry": 40,
+      "handcrafted_single_segment": 12,
+      "handcrafted_single_direction": 12,
+      "handcrafted_single_range": 12,
+      "handcrafted_clear_short": 12,
+      "balance_normal": 20
+    }
+  },
+  "source_stats": {
+    "train": {
+      "stage1_eval": 25,
+      "val_normal": 16,
+      "stage2_eval": 28,
+      "stage2_train": 156,
+      "stage1_train": 197,
+      "val_special": 2,
+      "handcrafted": 240,
+      "stage3_train": 4,
+      "val_anti_truncation": 1,
+      "stage3_eval": 2
+    },
+    "eval": {
+      "stage2_eval": 7,
+      "stage1_eval": 19,
+      "val_normal": 12,
+      "val_special": 3,
+      "stage1_train": 49,
+      "stage2_train": 35,
+      "handcrafted": 48,
+      "stage3_train": 5
+    }
+  },
+  "preview": [
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage1_eval",
+      "scene_type": "simple_local",
+      "length_bucket": "medium",
+      "constraint_text": "常态或局部短时事件：纬五路经三路至经六路段向西中度拥堵缓行；经三路红专路至政七街段向南保持正常通行",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=纬五路|DIR=向西|RANGE=经三路至经六路|LEVEL=中度拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "val_normal",
+      "scene_type": "simple_local",
+      "length_bucket": "medium",
+      "constraint_text": "常态或局部短时事件：经八路农业路至红专路段向北中度拥堵缓行；政七街经六路至经八路段向西畅通无阻",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经八路|DIR=向北|RANGE=农业路至红专路|LEVEL=中度拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "val_normal",
+      "scene_type": "simple_local",
+      "length_bucket": "short",
+      "constraint_text": "农业路经一路至经六路段向东追尾事故严重拥堵；花园路政七街至黄河路段向南畅通无阻",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经六路|LEVEL=严重拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage1_eval",
+      "scene_type": "simple_local",
+      "length_bucket": "medium",
+      "constraint_text": "常态或局部短时事件：经六路农业路至政七街段向北中度拥堵缓行；政七街经六路至经八路段向东畅通无阻",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经六路|DIR=向北|RANGE=农业路至政七街|LEVEL=中度拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage1_eval",
+      "scene_type": "simple_local",
+      "length_bucket": "medium",
+      "constraint_text": "常态或局部短时事件：经一路政七街至黄河路段向北中度拥堵缓行；农业路经八路至花园路段向西车流顺畅",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经一路|DIR=向北|RANGE=政七街至黄河路|LEVEL=中度拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage2_eval",
+      "scene_type": "simple_local",
+      "length_bucket": "medium",
+      "constraint_text": "常态或局部短时事件：纬五路经一路至经三路段向东追尾事故严重拥堵；经一路政七街至黄河路段向北保持正常通行",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=经一路至经三路|LEVEL=严重拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage2_eval",
+      "scene_type": "directional_asymmetry",
+      "length_bucket": "medium",
+      "constraint_text": "方向不对称约束：经六路政七街至黄河路段向北施工全封闭；经六路政七街至黄河路段向南车流顺畅",
+      "response_text": "<think>\nscene=directional_asymmetry\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经六路|DIR=向北|RANGE=政七街至黄河路|LEVEL=封闭",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage1_eval",
+      "scene_type": "simple_local",
+      "length_bucket": "short",
+      "constraint_text": "农业路经三路至经八路段向西中度拥堵缓行；经三路政七街至黄河路段向南畅通无阻",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=农业路|DIR=向西|RANGE=经三路至经八路|LEVEL=中度拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "val_normal",
+      "scene_type": "simple_local",
+      "length_bucket": "medium",
+      "constraint_text": "常态或局部短时事件：经三路政七街至黄河路段向北追尾事故严重拥堵；政七街花园路至未来路段向东畅通无阻",
+      "response_text": "<think>\nscene=simple_local\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=政七街至黄河路|LEVEL=严重拥堵",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage2_eval",
+      "scene_type": "directional_asymmetry",
+      "length_bucket": "long",
+      "constraint_text": "当前需要根据方向不对称约束进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 经一路黄河路至纬五路段向北临时封闭管制；经一路黄河路至纬五路段向南畅通无阻 若同一路存在双向差异，应严格区分方向。 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+      "response_text": "<think>\nscene=directional_asymmetry\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经一路|DIR=向北|RANGE=黄河路至纬五路|LEVEL=封闭",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "val_special",
+      "scene_type": "directional_asymmetry",
+      "length_bucket": "medium",
+      "constraint_text": "方向不对称约束：花园路农业路至红专路段向北施工全封闭；花园路农业路至红专路段向南畅通无阻",
+      "response_text": "<think>\nscene=directional_asymmetry\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=花园路|DIR=向北|RANGE=农业路至红专路|LEVEL=封闭",
+      "reason": "no_anchor_with_target_edges"
+    },
+    {
+      "category": "hard_negative_no_anchor",
+      "source_split": "stage1_eval",
+      "scene_type": "directional_asymmetry",
+      "length_bucket": "medium",
+      "constraint_text": "方向不对称约束：经八路政七街至纬五路段向北施工全封闭；经八路政七街至纬五路段向南畅通无阻",
+      "response_text": "<think>\nscene=directional_asymmetry\nanchor_count=1\n仅输出异常语义锚点，边级补全由本地映射与图对齐模块处理。\n</think>\nANCHOR|ROAD=经八路|DIR=向北|RANGE=政七街至纬五路|LEVEL=封闭",
+      "reason": "no_anchor_with_target_edges"
+    }
+  ]
+}

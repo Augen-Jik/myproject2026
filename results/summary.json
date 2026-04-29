@@ -1,0 +1,38 @@
+{
+  "run_id": "20260331T114857Z__experiment_mode__multi_algo_eval__llm_baselines_no_gat",
+  "timestamp": "20260331T114857Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "scenario_count": 1,
+  "algorithm_count": 5,
+  "total_records": 5,
+  "elapsed_sec": 0.018,
+  "avg_plan_ms": 3.26,
+  "ranking_by_true_travel_time": [
+    {
+      "rank": 1,
+      "algorithm": "Rule-Dijkstra",
+      "avg_true_travel_time": 12.6
+    },
+    {
+      "rank": 2,
+      "algorithm": "Uniform-Dijkstra",
+      "avg_true_travel_time": 13.0
+    },
+    {
+      "rank": 3,
+      "algorithm": "Bellman-Ford",
+      "avg_true_travel_time": 13.0
+    },
+    {
+      "rank": 4,
+      "algorithm": "ACO",
+      "avg_true_travel_time": 13.0
+    },
+    {
+      "rank": 5,
+      "algorithm": "LLM-Dijkstra",
+      "avg_true_travel_time": 13.0
+    }
+  ]
+}

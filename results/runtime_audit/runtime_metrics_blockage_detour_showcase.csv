@@ -1,0 +1,3 @@
+scene,scene_profile,method,travel_time_s,waiting_time_s,time_loss_s,stop_count,depart_delay_s,route_length_edges,affected_edge_overlap_ratio,incident_edge_overlap_ratio,spillover_edge_overlap_ratio
+blockage_detour_showcase,core_blockage,planned,1246.9,900.3,908.29,0.0,0.0,6,0.6666666666666666,0.0,0.6666666666666666
+blockage_detour_showcase,core_blockage,baseline,1404.7,900.3,911.16,0.0,0.0,6,0.8333333333333334,0.3333333333333333,0.5

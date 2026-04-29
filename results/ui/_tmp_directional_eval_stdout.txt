@@ -1,0 +1,265 @@
+ Retrying in 1 seconds
+{
+  "ok": true,
+  "travel_time_s": 1694.9,
+  "runtime_spillover_summary": {
+    "scene_mode": "showcase",
+    "runtime_spillover_enabled": true,
+    "runtime_spillover_edge_count": 19,
+    "runtime_spillover_1hop_count": 19,
+    "runtime_spillover_2hop_count": 0,
+    "runtime_spillover_config": {
+      "hop_speed_factor_bounds": {
+        "1": [
+          0.68,
+          0.8
+        ],
+        "2": [
+          0.86,
+          0.94
+        ]
+      },
+      "hop_travel_time_multiplier": {
+        "1": 1.24,
+        "2": 1.1
+      }
+    },
+    "runtime_spillover_weight_range": {
+      "min": 2.7812,
+      "max": 4.451630720000001
+    }
+  },
+  "route_debug": {
+    "ok": true,
+    "stage": "sumo_route_build",
+    "reason": "ok",
+    "original_start_edge": "R4C0_E",
+    "final_start_edge": "R4C0_E",
+    "original_end_edge": "C4R3_S",
+    "final_end_edge": "C4R3_S",
+    "original_route_edges": [
+      "R4C0_E",
+      "C1R3_S",
+      "R3C1_E",
+      "R3C2_E",
+      "R3C3_E",
+      "C4R3_N",
+      "C4R3_S"
+    ],
+    "final_route_edges": [
+      "R4C0_E",
+      "C1R3_S",
+      "R3C1_E",
+      "R3C2_E",
+      "R3C3_E",
+      "C4R3_N",
+      "C4R3_S"
+    ],
+    "route_validation": {
+      "ok": true,
+      "reason": "ok",
+      "route_edges": [
+        "R4C0_E",
+        "C1R3_S",
+        "R3C1_E",
+        "R3C2_E",
+        "R3C3_E",
+        "C4R3_N",
+        "C4R3_S"
+      ],
+      "edge_count": 7,
+      "invalid_edge": null,
+      "invalid_pair": null,
+      "checks": [
+        {
+          "edge_id": "R4C0_E",
+          "ok": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R3_S",
+          "ok": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R3C1_E",
+          "ok": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R3C2_E",
+          "ok": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R3C3_E",
+          "ok": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C4R3_N",
+          "ok": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C4R3_S",
+          "ok": true,
+          "reason": "ok"
+        }
+      ]
+    },
+    "repair_actions": [
+      "kept_original_route"
+    ],
+    "depart_candidates": [
+      {
+        "edge_id": "R4C0_E",
+        "distance": 0.0,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C1R3_N",
+        "distance": 25.4243977313131,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R4C1_W",
+        "distance": 34.539253031876555,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C1R3_S",
+        "distance": 580.0932338857266,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R4C0_W",
+        "distance": 586.4349239259204,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R3C1_W",
+        "distance": 591.355324656843,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C0R3_N",
+        "distance": 596.8434300551528,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R3C0_E",
+        "distance": 603.2000000000003,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C1R2_N",
+        "distance": 613.9800648229551,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R4C1_E",
+        "distance": 700.0018285690402,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C2R3_N",
+        "distance": 723.3278648026773,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R4C2_W",
+        "distance": 733.6628108334236,
+        "valid": true,
+        "reason": "ok"
+      }
+    ],
+    "arrival_candidates": [
+      {
+        "edge_id": "C4R3_S",
+        "distance": 0.0,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R3C3_E",
+        "distance": 25.424397731313203,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R3C4_W",
+        "distance": 25.42439773131332,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C4R2_N",
+        "distance": 35.95552808679075,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C4R3_N",
+        "distance": 566.5446143067638,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R4C3_E",
+        "distance": 578.4934917525001,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R3C4_E",
+        "distance": 610.0413100766209,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C5R2_N",
+        "distance": 630.4959317870337,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C4R2_S",
+        "distance": 680.0,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R2C4_W",
+        "distance": 690.7896930325466,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "R2C3_E",
+        "distance": 701.677076724044,
+        "valid": true,
+        "reason": "ok"
+      },
+      {
+        "edge_id": "C4R1_N",
+        "distance": 713.7147889738588,
+        "valid": true,
+        "reason": "ok"
+      }
+    ],
+    "used_sumo_fallback": false
+  },
+  "stage": "sumo_route_build"
+}

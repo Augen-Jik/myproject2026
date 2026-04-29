@@ -1,0 +1,35 @@
+{
+  "val_normal": {
+    "count": 60,
+    "parse_fail_rate": 0.0,
+    "parsed_edge_ratio": 0.0083,
+    "weight_mae": 0.0059,
+    "parse_confidence": 0.944,
+    "inference_time": 1.0219,
+    "no_anchor_rate": 0.45,
+    "mean_mae_on_no_anchor_rows": 0.0093,
+    "avg_gt_changed_edge_count": 1.3167
+  },
+  "val_special": {
+    "count": 60,
+    "parse_fail_rate": 0.0,
+    "parsed_edge_ratio": 0.0401,
+    "weight_mae": 0.0065,
+    "parse_confidence": 0.976,
+    "inference_time": 1.5257,
+    "no_anchor_rate": 0.05,
+    "mean_mae_on_no_anchor_rows": 0.0726,
+    "avg_gt_changed_edge_count": 4.3
+  },
+  "val_anti_truncation": {
+    "count": 60,
+    "parse_fail_rate": 0.0,
+    "parsed_edge_ratio": 0.0448,
+    "weight_mae": 0.0006,
+    "parse_confidence": 0.9747,
+    "inference_time": 1.6189,
+    "no_anchor_rate": 0.0667,
+    "mean_mae_on_no_anchor_rows": 0.0,
+    "avg_gt_changed_edge_count": 4.3667
+  }
+}

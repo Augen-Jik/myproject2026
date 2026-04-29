@@ -1,0 +1,66 @@
+{
+  "dataset_root": "/root/autodl-tmp/dataset_sparse_v2_stage4b",
+  "checks": {
+    "required_columns_present": true,
+    "label_non_empty": true,
+    "anchor_format_valid": true,
+    "mixture_component_complete": true,
+    "temporal_switch_absent": true,
+    "simple_local_policy_aligned": true,
+    "relief_policy_aligned": true,
+    "relabel_mapping_complete": true,
+    "relabel_repair_correct": true,
+    "guard_bucket_coverage": true,
+    "anti_truncation_guard_is_long_context": true,
+    "no_anchor_ratio_controlled": true,
+    "train_eval_non_empty": true,
+    "relabel_component_present": true,
+    "relief_component_present": true,
+    "guard_component_present": true
+  },
+  "counts": {
+    "rows": {
+      "train": 168,
+      "eval": 72,
+      "total": 240
+    },
+    "mixture_component_counts": {
+      "anti_regression_guard": 68,
+      "relabeled_simple_local_repair": 100,
+      "relief_supervision_pack": 72
+    },
+    "bucket_counts": {
+      "anomaly_plus_normal_side_event": 100,
+      "anti_truncation_guard": 16,
+      "directional_asymmetry_stable": 24,
+      "existing_simple_local_buffer": 14,
+      "hard_negative_no_anchor": 14,
+      "multi_edge_relief": 24,
+      "relief_normal_short_range": 24,
+      "relief_normal_single_edge": 24
+    },
+    "scene_type_counts": {
+      "directional_asymmetry": 52,
+      "simple_local": 188
+    },
+    "guard_bucket_counts": {
+      "anti_truncation_guard": 16,
+      "directional_asymmetry_stable": 24,
+      "existing_simple_local_buffer": 14,
+      "hard_negative_no_anchor": 14
+    },
+    "no_anchor_ratio": 0.0583,
+    "no_anchor_ratio_train": 0.0595,
+    "relief_bucket_counts": {
+      "multi_edge_relief": 24,
+      "relief_normal_short_range": 24,
+      "relief_normal_single_edge": 24
+    },
+    "anchor_style_counts": {
+      "NO_ANCHOR": 14,
+      "explicit_anchor": 226
+    }
+  },
+  "warnings": [],
+  "fatal_errors": []
+}

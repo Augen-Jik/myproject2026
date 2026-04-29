@@ -1,0 +1,5 @@
+﻿case_name,focus,baseline_target_recall,enhanced_target_recall,delta_target_recall,baseline_reverse_leakage,enhanced_reverse_leakage,delta_reverse_leakage,status
+时空对照1 方向不对称,directional_asymmetry,54.5,54.5,0.0,100.0,100.0,0.0,tie
+时空对照2 时段切换,temporal_switch,100.0,100.0,0.0,100.0,100.0,0.0,tie
+时空对照3 传播范围,propagation_range,40.0,0.0,-40.0,100.0,0.0,-100.0,negative
+时空对照4 多约束冲突,multi_constraint_conflict,71.4,71.4,0.0,100.0,100.0,0.0,tie

@@ -1,0 +1,29 @@
+{
+  "val_normal": {
+    "count": 60,
+    "parse_fail_rate": 0.0,
+    "sparse_weight_mae": 0.0059,
+    "always_gat_weight_mae": 1.4707,
+    "gated_gat_weight_mae": 1.4626,
+    "parse_confidence": 0.944,
+    "inference_time": 1.3656
+  },
+  "val_special": {
+    "count": 60,
+    "parse_fail_rate": 0.0,
+    "sparse_weight_mae": 0.0065,
+    "always_gat_weight_mae": 1.4422,
+    "gated_gat_weight_mae": 1.4161,
+    "parse_confidence": 0.976,
+    "inference_time": 2.093
+  },
+  "val_anti_truncation": {
+    "count": 60,
+    "parse_fail_rate": 0.0,
+    "sparse_weight_mae": 0.0006,
+    "always_gat_weight_mae": 1.4327,
+    "gated_gat_weight_mae": 1.4047,
+    "parse_confidence": 0.9747,
+    "inference_time": 1.6941
+  }
+}

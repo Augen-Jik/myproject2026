@@ -1,0 +1,81 @@
+Gated GAT Ablation
+===================
+
+Checkpoint: /root/autodl-tmp/gat_model.pt
+Mode: 真实 checkpoint + 部分兼容加载
+Load detail: 真实 checkpoint + 部分兼容加载
+Load error: none
+
+Overall Summary
+---------------
+Sparse-LoRA: sumo=673.8s, constraint=43.4%, parsed=14.3%, signal=14.3%
+Sparse-LoRA+Always-GAT: sumo=548.0s, constraint=37.9%, parsed=14.3%, signal=92.7%
+Sparse-LoRA+Gated-GAT: sumo=548.0s, constraint=39.4%, parsed=14.3%, signal=92.7%
+
+Normal Scene Summary
+--------------------
+Sparse-LoRA: sumo=698.6s, constraint=41.9%
+Sparse-LoRA+Always-GAT: sumo=504.6s, constraint=39.6%
+Sparse-LoRA+Gated-GAT: sumo=504.6s, constraint=41.9%
+
+Special Scene Summary
+---------------------
+Sparse-LoRA: sumo=624.2s, constraint=46.5%
+Sparse-LoRA+Always-GAT: sumo=634.6s, constraint=34.4%
+Sparse-LoRA+Gated-GAT: sumo=634.6s, constraint=34.4%
+
+Gate vs Always
+--------------
+helpful=0, tie=9, negative=0
+结论口径：当前结果用于解释 gate 何时有效、何时仅持平，不据此宣称 Gated-GAT 全局优于 Always-GAT。
+场景A 黄河路单向拥堵 | bucket=normal | delta=+0.0 | tie
+场景B 花园路封闭绕行 | bucket=normal | delta=+0.0 | tie
+场景C 多路段复合拥堵 | bucket=normal | delta=+0.0 | tie
+场景D 中央核心节点封锁（强迫大范围绕行） | bucket=normal | delta=+0.0 | tie
+场景E 不对称方向拥堵（测试模型方向提取能力） | bucket=normal | delta=+0.0 | tie
+场景F 大规模复合灾害（极限压力测试） | bucket=normal | delta=+0.0 | tie
+特殊场景S1 核心封锁+外溢排队 | bucket=special | delta=+0.0 | tie
+特殊场景S2 活动管制+方向不对称 | bucket=special | delta=+0.0 | tie
+特殊场景S3 局部锚点+拓扑传播 | bucket=special | delta=+0.0 | tie
+
+Scene Type Rankings
+------------------
+compound_disaster: Sparse-LoRA=511.9, Sparse-LoRA+Always-GAT=511.9, Sparse-LoRA+Gated-GAT=511.9
+core_blockage: Sparse-LoRA+Always-GAT=583.5, Sparse-LoRA+Gated-GAT=583.5, Sparse-LoRA=918.8
+directional_asymmetry: Sparse-LoRA=574.1, Sparse-LoRA+Always-GAT=604.4, Sparse-LoRA+Gated-GAT=604.4
+simple_local: Sparse-LoRA+Always-GAT=436.8, Sparse-LoRA+Gated-GAT=436.8, Sparse-LoRA=623.9
+
+Delta vs Sparse
+---------------
+场景A 黄河路单向拥堵 | Sparse-LoRA+Always-GAT | delta=-187.1 | helpful
+场景A 黄河路单向拥堵 | Sparse-LoRA+Gated-GAT | delta=-187.1 | helpful
+场景B 花园路封闭绕行 | Sparse-LoRA+Always-GAT | delta=-976.6 | helpful
+场景B 花园路封闭绕行 | Sparse-LoRA+Gated-GAT | delta=-976.6 | helpful
+场景C 多路段复合拥堵 | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+场景C 多路段复合拥堵 | Sparse-LoRA+Gated-GAT | delta=0.0 | tie
+场景D 中央核心节点封锁（强迫大范围绕行） | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+场景D 中央核心节点封锁（强迫大范围绕行） | Sparse-LoRA+Gated-GAT | delta=0.0 | tie
+场景E 不对称方向拥堵（测试模型方向提取能力） | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+场景E 不对称方向拥堵（测试模型方向提取能力） | Sparse-LoRA+Gated-GAT | delta=0.0 | tie
+场景F 大规模复合灾害（极限压力测试） | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+场景F 大规模复合灾害（极限压力测试） | Sparse-LoRA+Gated-GAT | delta=0.0 | tie
+特殊场景S1 核心封锁+外溢排队 | Sparse-LoRA+Always-GAT | delta=-29.4 | helpful
+特殊场景S1 核心封锁+外溢排队 | Sparse-LoRA+Gated-GAT | delta=-29.4 | helpful
+特殊场景S2 活动管制+方向不对称 | Sparse-LoRA+Always-GAT | delta=60.5 | negative
+特殊场景S2 活动管制+方向不对称 | Sparse-LoRA+Gated-GAT | delta=60.5 | negative
+特殊场景S3 局部锚点+拓扑传播 | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+特殊场景S3 局部锚点+拓扑传播 | Sparse-LoRA+Gated-GAT | delta=0.0 | tie
+
+Failure Cases
+-------------
+场景C 多路段复合拥堵 | Sparse-LoRA+Always-GAT | sumo=544.6s | constraint=0.0% | gate=always_topology_completion
+场景C 多路段复合拥堵 | Sparse-LoRA+Gated-GAT | sumo=544.6s | constraint=0.0% | gate=gated_topology_completion
+场景D 中央核心节点封锁（强迫大范围绕行） | Sparse-LoRA+Always-GAT | sumo=497.5s | constraint=33.3% | gate=always_topology_completion
+场景E 不对称方向拥堵（测试模型方向提取能力） | Sparse-LoRA+Always-GAT | sumo=394.1s | constraint=36.4% | gate=always_topology_completion
+场景E 不对称方向拥堵（测试模型方向提取能力） | Sparse-LoRA+Gated-GAT | sumo=394.1s | constraint=36.4% | gate=gated_topology_completion
+场景F 大规模复合灾害（极限压力测试） | Sparse-LoRA+Always-GAT | sumo=446.5s | constraint=21.4% | gate=always_topology_completion
+场景F 大规模复合灾害（极限压力测试） | Sparse-LoRA+Gated-GAT | sumo=446.5s | constraint=21.4% | gate=gated_topology_completion
+特殊场景S1 核心封锁+外溢排队 | Sparse-LoRA+Always-GAT | sumo=544.6s | constraint=0.0% | gate=always_topology_completion
+特殊场景S1 核心封锁+外溢排队 | Sparse-LoRA+Gated-GAT | sumo=544.6s | constraint=0.0% | gate=gated_topology_completion
+特殊场景S2 活动管制+方向不对称 | Sparse-LoRA+Always-GAT | sumo=814.6s | constraint=36.4% | gate=always_topology_completion
+特殊场景S2 活动管制+方向不对称 | Sparse-LoRA+Gated-GAT | sumo=814.6s | constraint=36.4% | gate=gated_topology_completion

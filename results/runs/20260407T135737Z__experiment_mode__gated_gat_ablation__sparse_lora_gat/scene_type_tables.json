@@ -1,0 +1,142 @@
+{
+  "compound_disaster": [
+    {
+      "subset": "compound_disaster",
+      "method": "Sparse-LoRA",
+      "samples": 3,
+      "avg_path_cost": 18.5,
+      "avg_constraint_rate": 29.367,
+      "avg_parsed_edge_ratio": 15.3,
+      "avg_signal_ratio": 15.3,
+      "avg_infer_time_s": 1.356,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "compound_disaster",
+      "method": "Sparse-LoRA+Always-GAT",
+      "samples": 3,
+      "avg_path_cost": 20.757,
+      "avg_constraint_rate": 29.367,
+      "avg_parsed_edge_ratio": 15.3,
+      "avg_signal_ratio": 93.867,
+      "avg_infer_time_s": 1.356,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "compound_disaster",
+      "method": "Sparse-LoRA+Gated-GAT",
+      "samples": 3,
+      "avg_path_cost": 20.757,
+      "avg_constraint_rate": 29.367,
+      "avg_parsed_edge_ratio": 15.3,
+      "avg_signal_ratio": 93.867,
+      "avg_infer_time_s": 1.356,
+      "avg_sumo_time": 0.0
+    }
+  ],
+  "core_blockage": [
+    {
+      "subset": "core_blockage",
+      "method": "Sparse-LoRA",
+      "samples": 3,
+      "avg_path_cost": 19.267,
+      "avg_constraint_rate": 42.233,
+      "avg_parsed_edge_ratio": 16.333,
+      "avg_signal_ratio": 16.333,
+      "avg_infer_time_s": 1.054,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "core_blockage",
+      "method": "Sparse-LoRA+Always-GAT",
+      "samples": 3,
+      "avg_path_cost": 22.067,
+      "avg_constraint_rate": 37.767,
+      "avg_parsed_edge_ratio": 16.333,
+      "avg_signal_ratio": 90.133,
+      "avg_infer_time_s": 1.054,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "core_blockage",
+      "method": "Sparse-LoRA+Gated-GAT",
+      "samples": 3,
+      "avg_path_cost": 22.43,
+      "avg_constraint_rate": 42.233,
+      "avg_parsed_edge_ratio": 16.333,
+      "avg_signal_ratio": 90.133,
+      "avg_infer_time_s": 1.054,
+      "avg_sumo_time": 0.0
+    }
+  ],
+  "directional_asymmetry": [
+    {
+      "subset": "directional_asymmetry",
+      "method": "Sparse-LoRA",
+      "samples": 2,
+      "avg_path_cost": 17.25,
+      "avg_constraint_rate": 54.55,
+      "avg_parsed_edge_ratio": 11.75,
+      "avg_signal_ratio": 11.75,
+      "avg_infer_time_s": 1.053,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "directional_asymmetry",
+      "method": "Sparse-LoRA+Always-GAT",
+      "samples": 2,
+      "avg_path_cost": 21.6,
+      "avg_constraint_rate": 36.4,
+      "avg_parsed_edge_ratio": 11.75,
+      "avg_signal_ratio": 98.0,
+      "avg_infer_time_s": 1.053,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "directional_asymmetry",
+      "method": "Sparse-LoRA+Gated-GAT",
+      "samples": 2,
+      "avg_path_cost": 21.73,
+      "avg_constraint_rate": 36.4,
+      "avg_parsed_edge_ratio": 11.75,
+      "avg_signal_ratio": 98.0,
+      "avg_infer_time_s": 1.053,
+      "avg_sumo_time": 0.0
+    }
+  ],
+  "simple_local": [
+    {
+      "subset": "simple_local",
+      "method": "Sparse-LoRA",
+      "samples": 1,
+      "avg_path_cost": 16.0,
+      "avg_constraint_rate": 66.7,
+      "avg_parsed_edge_ratio": 10.2,
+      "avg_signal_ratio": 10.2,
+      "avg_infer_time_s": 1.791,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "simple_local",
+      "method": "Sparse-LoRA+Always-GAT",
+      "samples": 1,
+      "avg_path_cost": 18.82,
+      "avg_constraint_rate": 66.7,
+      "avg_parsed_edge_ratio": 10.2,
+      "avg_signal_ratio": 86.7,
+      "avg_infer_time_s": 1.791,
+      "avg_sumo_time": 0.0
+    },
+    {
+      "subset": "simple_local",
+      "method": "Sparse-LoRA+Gated-GAT",
+      "samples": 1,
+      "avg_path_cost": 18.64,
+      "avg_constraint_rate": 66.7,
+      "avg_parsed_edge_ratio": 10.2,
+      "avg_signal_ratio": 86.7,
+      "avg_infer_time_s": 1.791,
+      "avg_sumo_time": 0.0
+    }
+  ]
+}

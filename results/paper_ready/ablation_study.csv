@@ -1,0 +1,31 @@
+﻿Variant,Variant (CN),Scenario,Travel Time (s),model_infer_time_s,route_solve_time_s,Planning Time (s),Constraint Rate (%),Signal Ratio (%),Parsed Edge Ratio (%),Status,LLM Component,GAT Component,Sparse Mode
+Qwen-LoRA,Qwen-LoRA（密集 LoRA 基线）,场景A 黄河路单向拥堵,436.8,20.31,3e-05,20.31003,100.0,70.8,100.0,ok,Yes,No,No
+Qwen-LoRA,Qwen-LoRA（密集 LoRA 基线）,场景B 花园路封闭绕行,708.4,20.05,3e-05,20.05003,100.0,67.7,100.0,ok,Yes,No,No
+Qwen-LoRA,Qwen-LoRA（密集 LoRA 基线）,场景C 多路段复合拥堵,649.8,12.01,8e-05,12.01008,0.0,0.0,0.0,parse_failed,Yes,No,No
+Qwen-LoRA,Qwen-LoRA（密集 LoRA 基线）,场景D 中央核心节点封锁,536.5,10.53,8e-05,10.53008,26.7,0.0,0.0,parse_failed,Yes,No,No
+Qwen-LoRA,Qwen-LoRA（密集 LoRA 基线）,场景E 不对称方向拥堵,773.7,19.26,2e-05,19.26002,36.4,69.8,100.0,ok,Yes,No,No
+Qwen-LoRA,Qwen-LoRA（密集 LoRA 基线）,场景F 大规模复合灾害,446.5,12.99,8e-05,12.99008,21.4,0.0,0.0,parse_failed,Yes,No,No
+LoRA+GAT,Qwen-LoRA+GAT（探索性参考）,场景A 黄河路单向拥堵,436.8,20.22,4e-05,20.22004,100.0,85.4,100.0,ok,Yes,Yes,No
+LoRA+GAT,Qwen-LoRA+GAT（探索性参考）,场景B 花园路封闭绕行,708.4,19.73,3e-05,19.73003,100.0,87.5,100.0,ok,Yes,Yes,No
+LoRA+GAT,Qwen-LoRA+GAT（探索性参考）,场景C 多路段复合拥堵,544.6,11.99,8e-05,11.99008,0.0,41.7,0.0,parse_failed,Yes,Yes,No
+LoRA+GAT,Qwen-LoRA+GAT（探索性参考）,场景D 中央核心节点封锁,536.5,10.54,9e-05,10.54009,26.7,41.7,0.0,parse_failed,Yes,Yes,No
+LoRA+GAT,Qwen-LoRA+GAT（探索性参考）,场景E 不对称方向拥堵,773.7,19.21,2e-05,19.21002,36.4,87.5,100.0,ok,Yes,Yes,No
+LoRA+GAT,Qwen-LoRA+GAT（探索性参考）,场景F 大规模复合灾害,446.5,13.02,8e-05,13.02008,21.4,41.7,0.0,parse_failed,Yes,Yes,No
+No-SpatioTemporal,无时空增强输入,场景A 黄河路单向拥堵,623.9,0.9948,0.000114,0.994914,50.0,8.3,8.3,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景B 花园路封闭绕行,708.4,0.771319,0.000112,0.771432,100.0,12.5,12.5,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景C 多路段复合拥堵,544.6,1.0537,0.00012,1.053821,71.4,27.1,27.1,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景D 中央核心节点封锁（强迫大范围绕行）,536.5,1.067221,0.00012,1.067341,26.7,0.0,4.2,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景E 不对称方向拥堵（测试模型方向提取能力）,394.1,1.374468,0.000106,1.374574,36.4,9.4,9.4,ok,Yes,No,Yes
+No-SpatioTemporal,无时空增强输入,场景F 大规模复合灾害（极限压力测试）,446.5,1.777463,0.000119,1.777582,21.4,0.0,0.0,parse_failed,Yes,No,Yes
+Sparse-LoRA,Sparse-LoRA-v2（最终主方法）,场景A 黄河路单向拥堵,436.8,1.15,8e-05,1.15008,100.0,9.4,9.4,ok,Yes,No,Yes
+Sparse-LoRA,Sparse-LoRA-v2（最终主方法）,场景B 花园路封闭绕行,708.4,1.14,8e-05,1.14008,100.0,8.3,8.3,ok,Yes,No,Yes
+Sparse-LoRA,Sparse-LoRA-v2（最终主方法）,场景C 多路段复合拥堵,544.6,1.5,8e-05,1.50008,28.6,9.4,9.4,ok,Yes,No,Yes
+Sparse-LoRA,Sparse-LoRA-v2（最终主方法）,场景D 中央核心节点封锁,536.5,1.88,8e-05,1.88008,86.7,12.5,12.5,ok,Yes,No,Yes
+Sparse-LoRA,Sparse-LoRA-v2（最终主方法）,场景E 不对称方向拥堵,394.1,1.36,7.3e-05,1.360073,72.7,12.5,12.5,ok,Yes,No,Yes
+Sparse-LoRA,Sparse-LoRA-v2（最终主方法）,场景F 大规模复合灾害,446.5,1.82,8e-05,1.82008,21.4,4.2,4.2,ok,Yes,No,Yes
+Sparse-LoRA+GAT,Sparse-LoRA-v2+GAT（附录探索性）,场景A 黄河路单向拥堵,436.8,1.17,7.3e-05,1.170073,100.0,64.6,9.4,ok,Yes,Yes,Yes
+Sparse-LoRA+GAT,Sparse-LoRA-v2+GAT（附录探索性）,场景B 花园路封闭绕行,708.4,1.16,6e-05,1.16006,100.0,64.6,8.3,ok,Yes,Yes,Yes
+Sparse-LoRA+GAT,Sparse-LoRA-v2+GAT（附录探索性）,场景C 多路段复合拥堵,544.6,1.52,8e-05,1.52008,28.6,47.9,9.4,ok,Yes,Yes,Yes
+Sparse-LoRA+GAT,Sparse-LoRA-v2+GAT（附录探索性）,场景D 中央核心节点封锁,490.4,1.86,8e-05,1.86008,86.7,64.6,12.5,ok,Yes,Yes,Yes
+Sparse-LoRA+GAT,Sparse-LoRA-v2+GAT（附录探索性）,场景E 不对称方向拥堵,394.1,1.35,7.3e-05,1.350073,72.7,81.2,12.5,ok,Yes,Yes,Yes
+Sparse-LoRA+GAT,Sparse-LoRA-v2+GAT（附录探索性）,场景F 大规模复合灾害,446.5,1.83,8e-05,1.83008,21.4,45.8,4.2,ok,Yes,Yes,Yes

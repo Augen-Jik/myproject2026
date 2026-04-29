@@ -1,0 +1,8 @@
+scope,scope_name,count,no_anchor_when_gt_changed_rate,target_recall,gt_changed_edge_recall,MAE_on_changed_edges,parse_fail_rate_strict
+overall,overall,7,0.0,100.0,76.9,0.1846,0.0
+bucket,anti_truncation_canary,2,0.0,100.0,80.0,0.16,0.0
+bucket,directional_asymmetry_stable,4,0.0,100.0,100.0,0.0,0.0
+bucket,hard_negative_no_anchor,1,0.0,100.0,50.0,0.4,0.0
+scene_type,directional_asymmetry,7,0.0,100.0,76.9,0.1846,0.0
+length_bucket,noisy_long,2,0.0,100.0,80.0,0.16,0.0
+length_bucket,short,5,0.0,100.0,75.0,0.2,0.0

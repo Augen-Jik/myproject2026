@@ -1,0 +1,43 @@
+========================================================================
+Compare Methods Evaluation Report
+========================================================================
+run_id: 20260331T130644Z__experiment_mode__compare_multi_method__classic_compare
+mode: experiment_mode
+seed: 42
+llm_enabled: False
+
+[Scenario] 场景A 黄河路单向拥堵
+  - Dijkstra           plan_ms=    0.07 infer_ms=     0.0 sim_ms=  1979.5 constraint=  50.0%
+  - Rule-A*            plan_ms=    0.06 infer_ms=     0.0 sim_ms= 1836.83 constraint= 100.0%
+  - DQN                plan_ms=    0.07 infer_ms=     0.0 sim_ms= 2034.54 constraint= 100.0%
+  - GCN-Weight         plan_ms=    0.06 infer_ms=     0.0 sim_ms= 1842.53 constraint= 100.0%
+
+[Scenario] 场景B 花园路封闭绕行
+  - Dijkstra           plan_ms=    0.04 infer_ms=     0.0 sim_ms= 2487.14 constraint=  60.0%
+  - Rule-A*            plan_ms=    0.04 infer_ms=     0.0 sim_ms= 2225.36 constraint= 100.0%
+  - DQN                plan_ms=    0.05 infer_ms=     0.0 sim_ms= 2882.64 constraint= 100.0%
+  - GCN-Weight         plan_ms=    0.05 infer_ms=     0.0 sim_ms= 2109.54 constraint= 100.0%
+
+[Scenario] 场景C 多路段复合拥堵
+  - Dijkstra           plan_ms=    0.08 infer_ms=     0.0 sim_ms= 2159.85 constraint=   0.0%
+  - Rule-A*            plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1973.25 constraint=  28.6%
+  - DQN                plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1750.75 constraint=  28.6%
+  - GCN-Weight         plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1884.72 constraint=  28.6%
+
+[Scenario] 场景D 中央核心节点封锁（强迫大范围绕行）
+  - Dijkstra           plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1995.41 constraint=  26.7%
+  - Rule-A*            plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1863.11 constraint=  46.7%
+  - DQN                plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1744.75 constraint=  46.7%
+  - GCN-Weight         plan_ms=    0.08 infer_ms=     0.0 sim_ms= 1985.09 constraint=  46.7%
+
+[Scenario] 场景E 不对称方向拥堵（测试模型方向提取能力）
+  - Dijkstra           plan_ms=    0.05 infer_ms=     0.0 sim_ms= 2011.97 constraint=  36.4%
+  - Rule-A*            plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1874.54 constraint=  72.7%
+  - DQN                plan_ms=    0.07 infer_ms=     0.0 sim_ms= 2072.01 constraint=  72.7%
+  - GCN-Weight         plan_ms=    0.06 infer_ms=     0.0 sim_ms= 1834.68 constraint=  72.7%
+
+[Scenario] 场景F 大规模复合灾害（极限压力测试）
+  - Dijkstra           plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1875.49 constraint=  21.4%
+  - Rule-A*            plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1872.84 constraint=  21.4%
+  - DQN                plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1926.37 constraint=  21.4%
+  - GCN-Weight         plan_ms=    0.07 infer_ms=     0.0 sim_ms= 1964.54 constraint=  21.4%

@@ -1,0 +1,7 @@
+{
+  "path": "/root/autodl-tmp/gat_model.pt",
+  "exists": true,
+  "load_error": null,
+  "mode": "real_checkpoint",
+  "fallback_recommendation": null
+}

@@ -1,0 +1,21 @@
+Truncation Evidence Experiment
+============================
+
+Missing models: none
+
+Summary Table
+-------------
+| Model | Variant | Truncation% | ParseFail% | ParsedEdge% | Signal% | Infer(s) |
+| --- | --- | --- | --- | --- | --- | --- |
+| Qwen-LoRA | short | 0.0 | 0.0 | 70.6 | 55.1 | 15.58 |
+| Qwen-LoRA | medium | 0.0 | 16.7 | 57.1 | 42.5 | 17.02 |
+| Qwen-LoRA | long | 0.0 | 0.0 | 73.3 | 54.1 | 17.74 |
+| Qwen-LoRA | noisy_long | 100.0 | 100.0 | 0.0 | 0.0 | 2.16 |
+| R1-LoRA | short | 0.0 | 0.0 | 33.7 | 33.7 | 25.55 |
+| R1-LoRA | medium | 0.0 | 16.7 | 25.4 | 25.4 | 34.87 |
+| R1-LoRA | long | 0.0 | 0.0 | 26.0 | 26.0 | 42.05 |
+| R1-LoRA | noisy_long | 100.0 | 100.0 | 0.0 | 0.0 | 49.83 |
+| Sparse-LoRA | short | 0.0 | 0.0 | 17.2 | 17.2 | 1.35 |
+| Sparse-LoRA | medium | 0.0 | 0.0 | 16.0 | 16.0 | 1.12 |
+| Sparse-LoRA | long | 0.0 | 0.0 | 19.1 | 18.4 | 1.53 |
+| Sparse-LoRA | noisy_long | 0.0 | 0.0 | 14.3 | 14.3 | 1.00 |

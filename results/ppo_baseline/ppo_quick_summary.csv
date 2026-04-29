@@ -1,0 +1,2 @@
+﻿method,success rate,Planning Time (s),Travel Time (s),average reward,failure rate,timeout rate,training_steps,eval_episodes,train_wall_time_s,device,table_ready
+"PPO (quick baseline, untuned)",1.0,0.001429,11.25,8.75,0.0,0.0,20000,30,23.486,cpu,yes

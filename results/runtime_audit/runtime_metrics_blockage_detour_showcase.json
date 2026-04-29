@@ -1,0 +1,36 @@
+{
+  "generated_at_utc": "2026-04-24T08:00:53.061022+00:00",
+  "scene": "blockage_detour_showcase",
+  "scene_profile": "core_blockage",
+  "rows": [
+    {
+      "scene": "blockage_detour_showcase",
+      "scene_profile": "core_blockage",
+      "method": "planned",
+      "travel_time_s": 1246.9,
+      "waiting_time_s": 900.3,
+      "time_loss_s": 908.29,
+      "stop_count": 0.0,
+      "depart_delay_s": 0.0,
+      "route_length_edges": 6,
+      "affected_edge_overlap_ratio": 0.6666666666666666,
+      "incident_edge_overlap_ratio": 0.0,
+      "spillover_edge_overlap_ratio": 0.6666666666666666
+    },
+    {
+      "scene": "blockage_detour_showcase",
+      "scene_profile": "core_blockage",
+      "method": "baseline",
+      "travel_time_s": 1404.7,
+      "waiting_time_s": 900.3,
+      "time_loss_s": 911.16,
+      "stop_count": 0.0,
+      "depart_delay_s": 0.0,
+      "route_length_edges": 6,
+      "affected_edge_overlap_ratio": 0.8333333333333334,
+      "incident_edge_overlap_ratio": 0.3333333333333333,
+      "spillover_edge_overlap_ratio": 0.5
+    }
+  ],
+  "explanation": "Baseline travel time is high mainly because its route overlaps with runtime-injected affected edges. The model/planned route avoids part of this affected band."
+}

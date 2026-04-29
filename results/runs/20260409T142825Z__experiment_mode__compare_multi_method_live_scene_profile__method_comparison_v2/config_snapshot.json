@@ -1,0 +1,93 @@
+{
+  "timestamp": "20260409T142825Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "planner": "compare_multi_method_live_scene_profile",
+  "model": "method_comparison_v2",
+  "scenario_list": [
+    "场景N normal_baseline 正常通行",
+    "场景A 黄河路单向拥堵",
+    "场景E 方向不对称拥堵",
+    "场景D 中央核心节点封锁",
+    "场景G 传播范围外溢",
+    "场景C 多路段复合拥堵"
+  ],
+  "fallback_policy": "experiment_mode_no_rule_fallback_for_llm",
+  "default_weight_policy": "method_specific_default_weight",
+  "timing_policy": "planning_time_s=model_infer_time_s+route_solve_time_s",
+  "simulation_seed": {
+    "normal_baseline": 101,
+    "simple_local": 111,
+    "directional_asymmetry": 202,
+    "core_blockage": 303,
+    "propagation_range": 404,
+    "compound_disaster": 505
+  },
+  "warmup_seconds": {
+    "normal_baseline": 120,
+    "simple_local": 180,
+    "directional_asymmetry": 180,
+    "core_blockage": 240,
+    "propagation_range": 240,
+    "compound_disaster": 300
+  },
+  "evaluation_start_time": {
+    "normal_baseline": 120,
+    "simple_local": 180,
+    "directional_asymmetry": 180,
+    "core_blockage": 240,
+    "propagation_range": 240,
+    "compound_disaster": 300
+  },
+  "evaluation_end_time": {
+    "normal_baseline": 1800,
+    "simple_local": 2100,
+    "directional_asymmetry": 2100,
+    "core_blockage": 2400,
+    "propagation_range": 2400,
+    "compound_disaster": 2700
+  },
+  "scene_profile_version": "sha256:eb0410e2b384",
+  "scene_profile_protocols": {
+    "normal_baseline": {
+      "simulation_seed": 101,
+      "warmup_seconds": 120,
+      "evaluation_start_time": 120,
+      "evaluation_end_time": 1800
+    },
+    "simple_local": {
+      "simulation_seed": 111,
+      "warmup_seconds": 180,
+      "evaluation_start_time": 180,
+      "evaluation_end_time": 2100
+    },
+    "directional_asymmetry": {
+      "simulation_seed": 202,
+      "warmup_seconds": 180,
+      "evaluation_start_time": 180,
+      "evaluation_end_time": 2100
+    },
+    "core_blockage": {
+      "simulation_seed": 303,
+      "warmup_seconds": 240,
+      "evaluation_start_time": 240,
+      "evaluation_end_time": 2400
+    },
+    "propagation_range": {
+      "simulation_seed": 404,
+      "warmup_seconds": 240,
+      "evaluation_start_time": 240,
+      "evaluation_end_time": 2400
+    },
+    "compound_disaster": {
+      "simulation_seed": 505,
+      "warmup_seconds": 300,
+      "evaluation_start_time": 300,
+      "evaluation_end_time": 2700
+    }
+  },
+  "run_compare_results": "/root/autodl-tmp/results/runs/20260409T142825Z__experiment_mode__compare_multi_method_live_scene_profile__method_comparison_v2/compare_results.json",
+  "mainline_model_path": "/root/autodl-tmp/model_merged_sparse_v2_stage4_fix",
+  "gat_model_path": "/root/autodl-tmp/gat_model_v2_gated.pt",
+  "ppo_summary_path": "/root/autodl-tmp/results/ppo_baseline/ppo_quick_summary.csv"
+}

@@ -1,0 +1,80 @@
+{
+  "core_blockage": [
+    {
+      "start_edge": "R4C0_E",
+      "end_edge": "C0R0_S",
+      "offline_score": 9.034693354364183,
+      "estimated_saving_seconds": 3.244803785552847,
+      "result": {
+        "showcase_name": "blockage_detour_showcase",
+        "scene_profile": "core_blockage",
+        "start_edge": "R4C0_E",
+        "end_edge": "C0R0_S",
+        "baseline": 1404.8,
+        "planned": 1247.0,
+        "saving_seconds": 157.79999999999995,
+        "saving_ratio": 0.11232915717539861,
+        "whether_positive_gain": true,
+        "baseline_ok": true,
+        "planned_ok": true,
+        "baseline_final_runtime_route": [
+          "R4C0_E",
+          "C1R3_S",
+          "C1R2_S",
+          "C1R1_S",
+          "R1C0_W",
+          "C0R0_S"
+        ],
+        "planned_final_runtime_route": [
+          "R4C0_E",
+          "R4C0_W",
+          "C0R3_S",
+          "C0R2_S",
+          "C0R1_S",
+          "C0R0_S"
+        ],
+        "final_runtime_overlap_ratio": 0.3333333333333333,
+        "baseline_used_sumo_fallback": false,
+        "planned_used_sumo_fallback": false
+      }
+    },
+    {
+      "start_edge": "R4C0_E",
+      "end_edge": "C0R1_N",
+      "offline_score": 8.634693354364183,
+      "estimated_saving_seconds": 3.244803785552847,
+      "result": {
+        "showcase_name": "blockage_detour_showcase",
+        "scene_profile": "core_blockage",
+        "start_edge": "R4C0_E",
+        "end_edge": "C0R1_N",
+        "baseline": 1404.6,
+        "planned": 1247.5,
+        "saving_seconds": 157.0999999999999,
+        "saving_ratio": 0.11184678912145801,
+        "whether_positive_gain": true,
+        "baseline_ok": true,
+        "planned_ok": true,
+        "baseline_final_runtime_route": [
+          "R4C0_E",
+          "C1R3_S",
+          "C1R2_S",
+          "C1R1_S",
+          "R1C0_W",
+          "C0R1_N"
+        ],
+        "planned_final_runtime_route": [
+          "R4C0_E",
+          "R4C0_W",
+          "C0R3_S",
+          "C0R2_S",
+          "C0R1_S",
+          "C0R1_N"
+        ],
+        "final_runtime_overlap_ratio": 0.3333333333333333,
+        "baseline_used_sumo_fallback": false,
+        "planned_used_sumo_fallback": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "timestamp": "20260331T114857Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "planner": "multi_algo_eval",
+  "model": "llm_baselines_no_gat",
+  "scenario_list": [
+    {
+      "id": 1,
+      "name": "黄河路单向拥堵",
+      "start": [
+        3,
+        0
+      ],
+      "end": [
+        3,
+        5
+      ]
+    }
+  ],
+  "fallback_policy": "N/A（evaluate.py 使用固定场景权重，不做运行时fallback）",
+  "default_weight_policy": "默认2.0；Uniform-Dijkstra基线固定1.0",
+  "timing_policy": "planning_ms/plan_ms 仅统计路径规划；smooth_ms 单列记录GAT平滑；infer_ms 在本脚本恒为0；sim_ms 在本脚本恒为0；warmup_excluded=true",
+  "no_gat": true,
+  "gat_model": "/root/autodl-tmp/gat_model.pt",
+  "train_gat": false,
+  "init_ms": 0.007,
+  "results_root": "/root/autodl-tmp/results"
+}

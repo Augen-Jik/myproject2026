@@ -1,0 +1,605 @@
+{
+  "generated_at_utc": "2026-04-24T07:09:56.121763+00:00",
+  "scene": "blockage_detour_showcase",
+  "profile": "blockage_detour_showcase_conservative",
+  "scene_type": "core_blockage",
+  "start_edge": "R4C0_E",
+  "end_edge": "C0R0_S",
+  "baseline_path_edges": [
+    "R4C0_E",
+    "C1R3_S",
+    "C1R2_S",
+    "C1R1_S",
+    "R1C0_W",
+    "C0R0_S"
+  ],
+  "planned_path_edges": [
+    "R4C0_E",
+    "R4C0_W",
+    "C0R3_S",
+    "C0R2_S",
+    "C0R1_S",
+    "C0R0_S"
+  ],
+  "baseline_travel_time": 349.5909993963473,
+  "planned_travel_time": 277.9185158821601,
+  "relative_gap_pct": 25.789027869081227,
+  "baseline_waiting_time": NaN,
+  "planned_waiting_time": NaN,
+  "baseline_time_loss": NaN,
+  "planned_time_loss": NaN,
+  "baseline_stop_count": NaN,
+  "planned_stop_count": NaN,
+  "baseline_depart_delay_s": NaN,
+  "planned_depart_delay_s": NaN,
+  "baseline_route_length_edges": 6,
+  "planned_route_length_edges": 6,
+  "baseline_incident_overlap_ratio": 0.3333333333333333,
+  "planned_incident_overlap_ratio": 0.0,
+  "baseline_spillover_overlap_ratio": 0.3333333333333333,
+  "planned_spillover_overlap_ratio": 0.0,
+  "baseline_affected_edge_overlap_ratio": 0.6666666666666666,
+  "planned_affected_edge_overlap_ratio": 0.0,
+  "fairness_status": "PASS_SHOWCASE_FAIRNESS",
+  "baseline_runtime": {
+    "ok": true,
+    "travel_time_s": 349.5909993963473,
+    "waiting_time_s": NaN,
+    "time_loss_s": NaN,
+    "stop_count": NaN,
+    "depart_delay_s": NaN,
+    "route_length_edges": 6,
+    "affected_edge_overlap_ratio": 0.6666666666666666,
+    "path_runtime_sum_s": 349.5909993963473,
+    "final_route_edges": [
+      "R4C0_E",
+      "C1R3_S",
+      "C1R2_S",
+      "C1R1_S",
+      "R1C0_W",
+      "C0R0_S"
+    ],
+    "route_debug": {
+      "ok": true,
+      "stage": "sumo_route_build",
+      "reason": "ok",
+      "original_start_edge": "R4C0_E",
+      "final_start_edge": "R4C0_E",
+      "original_end_edge": "C0R0_S",
+      "final_end_edge": "C0R0_S",
+      "original_route_edges": [
+        "R4C0_E",
+        "C1R3_S",
+        "C1R2_S",
+        "C1R1_S",
+        "R1C0_W",
+        "C0R0_S"
+      ],
+      "final_route_edges": [
+        "R4C0_E",
+        "C1R3_S",
+        "C1R2_S",
+        "C1R1_S",
+        "R1C0_W",
+        "C0R0_S"
+      ],
+      "route_validation": {
+        "ok": true,
+        "reason": "ok",
+        "route_edges": [
+          "R4C0_E",
+          "C1R3_S",
+          "C1R2_S",
+          "C1R1_S",
+          "R1C0_W",
+          "C0R0_S"
+        ],
+        "edge_count": 6,
+        "invalid_edge": null,
+        "invalid_pair": null,
+        "checks": [
+          {
+            "edge_id": "R4C0_E",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C1R3_S",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C1R2_S",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C1R1_S",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "R1C0_W",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C0R0_S",
+            "ok": true,
+            "reason": "ok"
+          }
+        ]
+      },
+      "repair_actions": [
+        "kept_original_route"
+      ],
+      "depart_candidates": [
+        {
+          "edge_id": "R4C0_E",
+          "distance": 0.0,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R3_N",
+          "distance": 25.4243977313131,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C1_W",
+          "distance": 34.539253031876555,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R3_S",
+          "distance": 580.0932338857266,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C0_W",
+          "distance": 586.4349239259204,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R3C1_W",
+          "distance": 591.355324656843,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C0R3_N",
+          "distance": 596.8434300551528,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R3C0_E",
+          "distance": 603.2000000000003,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R2_N",
+          "distance": 613.9800648229551,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C1_E",
+          "distance": 700.0018285690402,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C2R3_N",
+          "distance": 723.3278648026773,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C2_W",
+          "distance": 733.6628108334236,
+          "valid": true,
+          "reason": "ok"
+        }
+      ],
+      "arrival_candidates": [
+        {
+          "edge_id": "C0R0_S",
+          "distance": 0.0,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R0C0_W",
+          "distance": 20.238577025077632,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R0C0_E",
+          "distance": 609.9022872559177,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R0_S",
+          "distance": 620.0129030915405,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R0C1_W",
+          "distance": 643.2318400079398,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C0R0_N",
+          "distance": 653.7253245821214,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R1C0_W",
+          "distance": 672.4003569303038,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C0R1_S",
+          "distance": 680.8018801384145,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R1C0_E",
+          "distance": 900.2143744686597,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R0_N",
+          "distance": 909.741062061068,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R1_S",
+          "distance": 921.8867609419283,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R1C1_W",
+          "distance": 930.2097827909573,
+          "valid": true,
+          "reason": "ok"
+        }
+      ],
+      "used_sumo_fallback": false
+    },
+    "runtime_spillover_summary": {
+      "scene_mode": "showcase",
+      "runtime_spillover_enabled": true,
+      "runtime_spillover_edge_count": 28,
+      "runtime_spillover_1hop_count": 28,
+      "runtime_spillover_2hop_count": 0,
+      "runtime_spillover_config": {
+        "hop_speed_factor_bounds": {
+          "1": [
+            0.76,
+            0.86
+          ],
+          "2": [
+            0.9,
+            0.96
+          ]
+        },
+        "hop_travel_time_multiplier": {
+          "1": 1.16,
+          "2": 1.06
+        }
+      },
+      "runtime_spillover_weight_range": {
+        "min": 2.6324,
+        "max": 4.955329395200001
+      }
+    },
+    "stage": "sumo_edge_runtime_quick",
+    "reason": "quick_edge_traveltime_sum",
+    "edge_runtime_times_s": {
+      "R4C0_E": 52.78127812781278,
+      "C1R3_S": 43.22113866404013,
+      "C1R2_S": 75.43138484405118,
+      "C1R1_S": 88.4409247260219,
+      "R1C0_W": 50.508114666094976,
+      "C0R0_S": 39.20815836832633
+    }
+  },
+  "planned_runtime": {
+    "ok": true,
+    "travel_time_s": 277.9185158821601,
+    "waiting_time_s": NaN,
+    "time_loss_s": NaN,
+    "stop_count": NaN,
+    "depart_delay_s": NaN,
+    "route_length_edges": 6,
+    "affected_edge_overlap_ratio": 0.0,
+    "path_runtime_sum_s": 277.9185158821601,
+    "final_route_edges": [
+      "R4C0_E",
+      "R4C0_W",
+      "C0R3_S",
+      "C0R2_S",
+      "C0R1_S",
+      "C0R0_S"
+    ],
+    "route_debug": {
+      "ok": true,
+      "stage": "sumo_route_build",
+      "reason": "ok",
+      "original_start_edge": "R4C0_E",
+      "final_start_edge": "R4C0_E",
+      "original_end_edge": "C0R0_S",
+      "final_end_edge": "C0R0_S",
+      "original_route_edges": [
+        "R4C0_E",
+        "R4C0_W",
+        "C0R3_S",
+        "C0R2_S",
+        "C0R1_S",
+        "C0R0_S"
+      ],
+      "final_route_edges": [
+        "R4C0_E",
+        "R4C0_W",
+        "C0R3_S",
+        "C0R2_S",
+        "C0R1_S",
+        "C0R0_S"
+      ],
+      "route_validation": {
+        "ok": true,
+        "reason": "ok",
+        "route_edges": [
+          "R4C0_E",
+          "R4C0_W",
+          "C0R3_S",
+          "C0R2_S",
+          "C0R1_S",
+          "C0R0_S"
+        ],
+        "edge_count": 6,
+        "invalid_edge": null,
+        "invalid_pair": null,
+        "checks": [
+          {
+            "edge_id": "R4C0_E",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "R4C0_W",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C0R3_S",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C0R2_S",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C0R1_S",
+            "ok": true,
+            "reason": "ok"
+          },
+          {
+            "edge_id": "C0R0_S",
+            "ok": true,
+            "reason": "ok"
+          }
+        ]
+      },
+      "repair_actions": [
+        "kept_original_route"
+      ],
+      "depart_candidates": [
+        {
+          "edge_id": "R4C0_E",
+          "distance": 0.0,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R3_N",
+          "distance": 25.4243977313131,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C1_W",
+          "distance": 34.539253031876555,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R3_S",
+          "distance": 580.0932338857266,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C0_W",
+          "distance": 586.4349239259204,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R3C1_W",
+          "distance": 591.355324656843,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C0R3_N",
+          "distance": 596.8434300551528,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R3C0_E",
+          "distance": 603.2000000000003,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R2_N",
+          "distance": 613.9800648229551,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C1_E",
+          "distance": 700.0018285690402,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C2R3_N",
+          "distance": 723.3278648026773,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R4C2_W",
+          "distance": 733.6628108334236,
+          "valid": true,
+          "reason": "ok"
+        }
+      ],
+      "arrival_candidates": [
+        {
+          "edge_id": "C0R0_S",
+          "distance": 0.0,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R0C0_W",
+          "distance": 20.238577025077632,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R0C0_E",
+          "distance": 609.9022872559177,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R0_S",
+          "distance": 620.0129030915405,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R0C1_W",
+          "distance": 643.2318400079398,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C0R0_N",
+          "distance": 653.7253245821214,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R1C0_W",
+          "distance": 672.4003569303038,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C0R1_S",
+          "distance": 680.8018801384145,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R1C0_E",
+          "distance": 900.2143744686597,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R0_N",
+          "distance": 909.741062061068,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "C1R1_S",
+          "distance": 921.8867609419283,
+          "valid": true,
+          "reason": "ok"
+        },
+        {
+          "edge_id": "R1C1_W",
+          "distance": 930.2097827909573,
+          "valid": true,
+          "reason": "ok"
+        }
+      ],
+      "used_sumo_fallback": false
+    },
+    "runtime_spillover_summary": {
+      "scene_mode": "showcase",
+      "runtime_spillover_enabled": true,
+      "runtime_spillover_edge_count": 28,
+      "runtime_spillover_1hop_count": 28,
+      "runtime_spillover_2hop_count": 0,
+      "runtime_spillover_config": {
+        "hop_speed_factor_bounds": {
+          "1": [
+            0.76,
+            0.86
+          ],
+          "2": [
+            0.9,
+            0.96
+          ]
+        },
+        "hop_travel_time_multiplier": {
+          "1": 1.16,
+          "2": 1.06
+        }
+      },
+      "runtime_spillover_weight_range": {
+        "min": 2.6324,
+        "max": 4.955329395200001
+      }
+    },
+    "stage": "sumo_edge_runtime_quick",
+    "reason": "quick_edge_traveltime_sum",
+    "edge_runtime_times_s": {
+      "R4C0_E": 52.78127812781278,
+      "R4C0_W": 52.78127812781278,
+      "C0R3_S": 34.3611277744451,
+      "C0R2_S": 58.757875787578755,
+      "C0R1_S": 40.028797696184306,
+      "C0R0_S": 39.20815836832633
+    }
+  },
+  "warnings": []
+}

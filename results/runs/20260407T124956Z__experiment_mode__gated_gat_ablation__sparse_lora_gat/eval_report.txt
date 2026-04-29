@@ -1,0 +1,40 @@
+Gated GAT Ablation
+===================
+
+Checkpoint: /root/autodl-tmp/gat_model.pt
+Mode: real_checkpoint
+Load error: none
+
+Overall Summary
+---------------
+Sparse-LoRA: sumo=713.6s, constraint=53.8%, parsed=17.2%, signal=17.2%
+Sparse-LoRA+Always-GAT: sumo=511.1s, constraint=53.8%, parsed=17.2%, signal=91.7%
+Sparse-LoRA+Gated-GAT: sumo=511.1s, constraint=53.8%, parsed=17.2%, signal=91.8%
+
+Special Scene Summary
+---------------------
+Sparse-LoRA: sumo=731.5s, constraint=51.2%
+Sparse-LoRA+Always-GAT: sumo=525.9s, constraint=51.2%
+Sparse-LoRA+Gated-GAT: sumo=525.9s, constraint=51.2%
+
+Scene Type Rankings
+------------------
+compound_disaster: Sparse-LoRA+Always-GAT=509.0, Sparse-LoRA+Gated-GAT=509.0, Sparse-LoRA=526.2
+core_blockage: Sparse-LoRA+Always-GAT=708.4, Sparse-LoRA+Gated-GAT=708.4, Sparse-LoRA=1685.0
+directional_asymmetry: Sparse-LoRA=394.1, Sparse-LoRA+Always-GAT=394.1, Sparse-LoRA+Gated-GAT=394.1
+simple_local: Sparse-LoRA+Always-GAT=436.8, Sparse-LoRA+Gated-GAT=436.8, Sparse-LoRA=623.9
+
+Delta vs Sparse
+---------------
+场景A 黄河路单向拥堵 | Sparse-LoRA+Always-GAT | delta=-187.1 | helpful
+场景A 黄河路单向拥堵 | Sparse-LoRA+Gated-GAT | delta=-187.1 | helpful
+场景B 花园路封闭绕行 | Sparse-LoRA+Always-GAT | delta=-976.6 | helpful
+场景B 花园路封闭绕行 | Sparse-LoRA+Gated-GAT | delta=-976.6 | helpful
+场景C 多路段复合拥堵 | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+场景C 多路段复合拥堵 | Sparse-LoRA+Gated-GAT | delta=0.0 | tie
+场景D 中央核心节点封锁（强迫大范围绕行） | Sparse-LoRA+Always-GAT | delta=-51.6 | helpful
+场景D 中央核心节点封锁（强迫大范围绕行） | Sparse-LoRA+Gated-GAT | delta=-51.6 | helpful
+场景E 不对称方向拥堵（测试模型方向提取能力） | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+场景E 不对称方向拥堵（测试模型方向提取能力） | Sparse-LoRA+Gated-GAT | delta=0.0 | tie
+场景F 大规模复合灾害（极限压力测试） | Sparse-LoRA+Always-GAT | delta=0.0 | tie
+场景F 大规模复合灾害（极限压力测试） | Sparse-LoRA+Gated-GAT | delta=0.0 | tie

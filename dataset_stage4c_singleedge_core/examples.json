@@ -1,0 +1,446 @@
+{
+  "meta": {
+    "dataset": "stage4c_singleedge_core",
+    "bucket": "relief_normal_single_edge",
+    "train_rows": 75,
+    "eval_rows": 24,
+    "required_variant_counts_train": {
+      "正常通行": 8,
+      "保持正常通行": 4,
+      "畅通": 22,
+      "畅通无阻": 10,
+      "顺畅": 33,
+      "通行正常": 3,
+      "恢复正常": 6,
+      "局部恢复正常": 3,
+      "某段向某方向正常": 7,
+      "某段向某方向畅通": 20
+    }
+  },
+  "examples_by_structure": {
+    "anomaly_mixed_context": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:3",
+        "split": "stage4c_singleedge_core_train",
+        "text": "虽然附近仍有拥堵余波消息，但当前农业路经三路至经六路段向西正常通行，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向西|RANGE=经三路至经六路|LEVEL=正常",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "正常通行",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_eval:1",
+        "split": "stage4c_singleedge_core_eval",
+        "text": "虽然附近仍有拥堵余波消息，但当前农业路经六路至经八路段向东畅通，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经六路至经八路|LEVEL=畅通",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "畅通",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_eval:11",
+        "split": "stage4c_singleedge_core_eval",
+        "text": "虽然附近仍有拥堵余波消息，但当前经一路农业路至红专路段向南畅通，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经一路|DIR=向南|RANGE=农业路至红专路|LEVEL=畅通",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "畅通",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ],
+    "planner_long": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:6",
+        "split": "stage4c_singleedge_core_train",
+        "text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 未来路政七街至黄河路段向南恢复正常 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向南|RANGE=政七街至黄河路|LEVEL=正常",
+        "structure_tag": "planner_long",
+        "surface_phrase": "恢复正常",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:24",
+        "split": "stage4c_singleedge_core_train",
+        "text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 经八路政七街至黄河路段向南畅通 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经八路|DIR=向南|RANGE=政七街至黄河路|LEVEL=畅通",
+        "structure_tag": "planner_long",
+        "surface_phrase": "畅通",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:45",
+        "split": "stage4c_singleedge_core_train",
+        "text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 农业路经三路至经六路段向西畅通 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向西|RANGE=经三路至经六路|LEVEL=畅通",
+        "structure_tag": "planner_long",
+        "surface_phrase": "畅通",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ],
+    "prefixed_short": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:62",
+        "split": "stage4c_singleedge_core_train",
+        "text": "常态或局部短时事件：农业路经六路至经八路段向东保持正常通行",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经六路至经八路|LEVEL=正常",
+        "structure_tag": "prefixed_short",
+        "surface_phrase": "保持正常通行",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:74",
+        "split": "stage4c_singleedge_core_train",
+        "text": "常态或局部短时事件：经三路红专路至政七街段向南保持正常通行",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经三路|DIR=向南|RANGE=红专路至政七街|LEVEL=正常",
+        "structure_tag": "prefixed_short",
+        "surface_phrase": "保持正常通行",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:70",
+        "split": "stage4c_singleedge_core_train",
+        "text": "常态或局部短时事件：纬五路经三路至经六路段向东恢复正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=经三路至经六路|LEVEL=正常",
+        "structure_tag": "prefixed_short",
+        "surface_phrase": "恢复正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      }
+    ],
+    "same_road_dir_contrast": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:4",
+        "split": "stage4c_singleedge_core_train",
+        "text": "政七街经一路至经三路段向西保持正常通行，同一路反向方向暂未出现同等恢复。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=政七街|DIR=向西|RANGE=经一路至经三路|LEVEL=正常",
+        "structure_tag": "same_road_dir_contrast",
+        "surface_phrase": "保持正常通行",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:71",
+        "split": "stage4c_singleedge_core_train",
+        "text": "纬五路花园路至未来路段向东局部恢复正常，同一路反向方向暂未出现同等恢复。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=花园路至未来路|LEVEL=正常",
+        "structure_tag": "same_road_dir_contrast",
+        "surface_phrase": "局部恢复正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:67",
+        "split": "stage4c_singleedge_core_train",
+        "text": "未来路政七街至黄河路段向南正常通行，同一路反向方向暂未出现同等恢复。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向南|RANGE=政七街至黄河路|LEVEL=正常",
+        "structure_tag": "same_road_dir_contrast",
+        "surface_phrase": "正常通行",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ],
+    "short_plain": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:65",
+        "split": "stage4c_singleedge_core_train",
+        "text": "政七街经一路至经三路段向西局部恢复正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=政七街|DIR=向西|RANGE=经一路至经三路|LEVEL=正常",
+        "structure_tag": "short_plain",
+        "surface_phrase": "局部恢复正常",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:8",
+        "split": "stage4c_singleedge_core_train",
+        "text": "红专路花园路至未来路段向西正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=红专路|DIR=向西|RANGE=花园路至未来路|LEVEL=正常",
+        "structure_tag": "short_plain",
+        "surface_phrase": "正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:61",
+        "split": "stage4c_singleedge_core_train",
+        "text": "农业路花园路至未来路段向西正常通行",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向西|RANGE=花园路至未来路|LEVEL=正常",
+        "structure_tag": "short_plain",
+        "surface_phrase": "正常通行",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      }
+    ],
+    "tiny_range": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:29",
+        "split": "stage4c_singleedge_core_train",
+        "text": "只看农业路经一路至经三路这一小段，当前向东畅通。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经一路至经三路|LEVEL=畅通",
+        "structure_tag": "tiny_range",
+        "surface_phrase": "畅通",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": false
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:25",
+        "split": "stage4c_singleedge_core_train",
+        "text": "只看经八路红专路至政七街这一小段，当前向南畅通无阻。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经八路|DIR=向南|RANGE=红专路至政七街|LEVEL=畅通",
+        "structure_tag": "tiny_range",
+        "surface_phrase": "畅通无阻",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:13",
+        "split": "stage4c_singleedge_core_train",
+        "text": "只看农业路经三路至经六路这一小段，当前向西车流顺畅。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向西|RANGE=经三路至经六路|LEVEL=畅通",
+        "structure_tag": "tiny_range",
+        "surface_phrase": "车流顺畅",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ],
+    "weak_relief": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:68",
+        "split": "stage4c_singleedge_core_train",
+        "text": "当前路口压力回落，未来路红专路至政七街段向南保持正常通行",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向南|RANGE=红专路至政七街|LEVEL=正常",
+        "structure_tag": "weak_relief",
+        "surface_phrase": "保持正常通行",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:7",
+        "split": "stage4c_singleedge_core_train",
+        "text": "整体通行已经缓和，未来路红专路至政七街段向南局部恢复正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向南|RANGE=红专路至政七街|LEVEL=正常",
+        "structure_tag": "weak_relief",
+        "surface_phrase": "局部恢复正常",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:64",
+        "split": "stage4c_singleedge_core_train",
+        "text": "就这一小段来看，农业路经三路至经六路段向西恢复正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向西|RANGE=经三路至经六路|LEVEL=正常",
+        "structure_tag": "weak_relief",
+        "surface_phrase": "恢复正常",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ]
+  },
+  "examples_by_phrase_group": {
+    "正常通行": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:3",
+        "split": "stage4c_singleedge_core_train",
+        "text": "虽然附近仍有拥堵余波消息，但当前农业路经三路至经六路段向西正常通行，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向西|RANGE=经三路至经六路|LEVEL=正常",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "正常通行",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:67",
+        "split": "stage4c_singleedge_core_train",
+        "text": "未来路政七街至黄河路段向南正常通行，同一路反向方向暂未出现同等恢复。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向南|RANGE=政七街至黄河路|LEVEL=正常",
+        "structure_tag": "same_road_dir_contrast",
+        "surface_phrase": "正常通行",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ],
+    "畅通": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_eval:1",
+        "split": "stage4c_singleedge_core_eval",
+        "text": "虽然附近仍有拥堵余波消息，但当前农业路经六路至经八路段向东畅通，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经六路至经八路|LEVEL=畅通",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "畅通",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_eval:11",
+        "split": "stage4c_singleedge_core_eval",
+        "text": "虽然附近仍有拥堵余波消息，但当前经一路农业路至红专路段向南畅通，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经一路|DIR=向南|RANGE=农业路至红专路|LEVEL=畅通",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "畅通",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ],
+    "畅通无阻": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:46",
+        "split": "stage4c_singleedge_core_train",
+        "text": "虽然附近仍有拥堵余波消息，但当前政七街经一路至经三路段向西畅通无阻，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=政七街|DIR=向西|RANGE=经一路至经三路|LEVEL=畅通",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "畅通无阻",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:20",
+        "split": "stage4c_singleedge_core_train",
+        "text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 纬五路花园路至未来路段向东畅通无阻 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=花园路至未来路|LEVEL=畅通",
+        "structure_tag": "planner_long",
+        "surface_phrase": "畅通无阻",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      }
+    ],
+    "顺畅": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:54",
+        "split": "stage4c_singleedge_core_train",
+        "text": "虽然附近仍有拥堵余波消息，但当前经三路红专路至政七街段向北车流顺畅，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经三路|DIR=向北|RANGE=红专路至政七街|LEVEL=畅通",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "车流顺畅",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:58",
+        "split": "stage4c_singleedge_core_train",
+        "text": "虽然附近仍有拥堵余波消息，但当前经六路红专路至政七街段向北通行顺畅，本段不再按异常处理。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经六路|DIR=向北|RANGE=红专路至政七街|LEVEL=畅通",
+        "structure_tag": "anomaly_mixed_context",
+        "surface_phrase": "通行顺畅",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      }
+    ],
+    "恢复正常": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:6",
+        "split": "stage4c_singleedge_core_train",
+        "text": "当前需要根据常态或局部短时事件进行路径规划。 请优先按当前生效约束理解，不要被已解除或背景信息误导。 未来路政七街至黄河路段向南恢复正常 其余未明确提及路段按常态理解，不要额外扩大影响范围。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向南|RANGE=政七街至黄河路|LEVEL=正常",
+        "structure_tag": "planner_long",
+        "surface_phrase": "恢复正常",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:70",
+        "split": "stage4c_singleedge_core_train",
+        "text": "常态或局部短时事件：纬五路经三路至经六路段向东恢复正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=经三路至经六路|LEVEL=正常",
+        "structure_tag": "prefixed_short",
+        "surface_phrase": "恢复正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      }
+    ],
+    "保持正常通行": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:62",
+        "split": "stage4c_singleedge_core_train",
+        "text": "常态或局部短时事件：农业路经六路至经八路段向东保持正常通行",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=经六路至经八路|LEVEL=正常",
+        "structure_tag": "prefixed_short",
+        "surface_phrase": "保持正常通行",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:74",
+        "split": "stage4c_singleedge_core_train",
+        "text": "常态或局部短时事件：经三路红专路至政七街段向南保持正常通行",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=经三路|DIR=向南|RANGE=红专路至政七街|LEVEL=正常",
+        "structure_tag": "prefixed_short",
+        "surface_phrase": "保持正常通行",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      }
+    ],
+    "某段向某方向正常": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:66",
+        "split": "stage4c_singleedge_core_train",
+        "text": "常态或局部短时事件：未来路政七街至黄河路段向北正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向北|RANGE=政七街至黄河路|LEVEL=正常",
+        "structure_tag": "prefixed_short",
+        "surface_phrase": "正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:8",
+        "split": "stage4c_singleedge_core_train",
+        "text": "红专路花园路至未来路段向西正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=红专路|DIR=向西|RANGE=花园路至未来路|LEVEL=正常",
+        "structure_tag": "short_plain",
+        "surface_phrase": "正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      }
+    ],
+    "局部恢复正常": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:71",
+        "split": "stage4c_singleedge_core_train",
+        "text": "纬五路花园路至未来路段向东局部恢复正常，同一路反向方向暂未出现同等恢复。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=纬五路|DIR=向东|RANGE=花园路至未来路|LEVEL=正常",
+        "structure_tag": "same_road_dir_contrast",
+        "surface_phrase": "局部恢复正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:65",
+        "split": "stage4c_singleedge_core_train",
+        "text": "政七街经一路至经三路段向西局部恢复正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=政七街|DIR=向西|RANGE=经一路至经三路|LEVEL=正常",
+        "structure_tag": "short_plain",
+        "surface_phrase": "局部恢复正常",
+        "source_origin": "relief_pack_train",
+        "heldout_like_target": true
+      }
+    ],
+    "通行正常": [
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:63",
+        "split": "stage4c_singleedge_core_train",
+        "text": "农业路花园路至未来路段向东通行正常，同一路反向方向暂未出现同等恢复。",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=农业路|DIR=向东|RANGE=花园路至未来路|LEVEL=正常",
+        "structure_tag": "same_road_dir_contrast",
+        "surface_phrase": "通行正常",
+        "source_origin": "heldout_diff29",
+        "heldout_like_target": true
+      },
+      {
+        "core_sample_id": "stage4c_singleedge_core_train:5",
+        "split": "stage4c_singleedge_core_train",
+        "text": "未来路政七街至黄河路段向北通行正常",
+        "label": "<think>\nscene=simple_local\nanchor_count=1\nsimple_local_v2=输出所有 active changed-event anchors，含异常与恢复/畅通 side event。\n</think>\nANCHOR|ROAD=未来路|DIR=向北|RANGE=政七街至黄河路|LEVEL=正常",
+        "structure_tag": "short_plain",
+        "surface_phrase": "通行正常",
+        "source_origin": "relief_pack_eval",
+        "heldout_like_target": true
+      }
+    ]
+  }
+}

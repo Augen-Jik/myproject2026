@@ -1,0 +1,23 @@
+% Main results tables generated from clean runs
+
+\begin{table}[htbp]
+\centering
+\caption{Main compare results on the clean run under the unified SUMO evaluation protocol.}
+\label{tab:main_results}
+\small
+\begin{tabular}{lrrrrrr}
+\hline
+Method & Travel Time (s) & Constraint Rate (\%) & model\_infer\_time\_s & route\_solve\_time\_s & Planning Time (s) & Signal Ratio (\%) \\
+\hline
+Sparse-LoRA-v2 & 511.15 & 68.23 & 1.47 & 0.000080 & 1.470080 & 9.38 \\
+Rule-A* & 513.55 & 61.57 & 0.00 & 0.000070 & 0.000070 & 91.70 \\
+Qwen-LoRA & 591.95 & 47.42 & 15.86 & 0.000050 & 15.860050 & 34.72 \\
+R1-LoRA & 785.65 & 42.73 & 31.49 & 0.000070 & 31.490070 & 51.73 \\
+\hline
+\end{tabular}
+\end{table}
+
+% GAT-v2 has been moved to appendix-only exploratory analysis.
+% Official main method name: Sparse-LoRA-v2.
+% Appendix naming: Sparse-LoRA-v2 + Gated-GAT-v2.
+% Planning Time (s) = model_infer_time_s + route_solve_time_s.

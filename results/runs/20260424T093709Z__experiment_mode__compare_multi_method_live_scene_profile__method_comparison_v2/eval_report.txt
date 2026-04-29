@@ -1,0 +1,66 @@
+[Method] Dijkstra
+  - normal_baseline / 场景N normal_baseline 正常通行: travel=236.00 s, time_loss=40.33 s, waiting=23.50 s, stops=0, planning=0.000096 s, constraint=100.00%, signal=0.00%, seed=101, warmup=120 s, eval=120-1800 s
+  - simple_local / 场景A 黄河路单向拥堵: travel=355.90 s, time_loss=101.47 s, waiting=81.40 s, stops=0, planning=0.000218 s, constraint=0.00%, signal=0.00%, seed=111, warmup=180 s, eval=180-2100 s
+  - directional_asymmetry / 场景E 方向不对称拥堵: travel=898.50 s, time_loss=312.64 s, waiting=300.10 s, stops=0, planning=0.000183 s, constraint=14.29%, signal=0.00%, seed=202, warmup=180 s, eval=180-2100 s
+  - core_blockage / 场景D 中央核心节点封锁: travel=2160.10 s, time_loss=1815.60 s, waiting=1800.60 s, stops=0, planning=0.000220 s, constraint=12.50%, signal=0.00%, seed=303, warmup=240 s, eval=240-2400 s
+  - propagation_range / 场景G 传播范围外溢: travel=2117.70 s, time_loss=1817.18 s, waiting=1800.60 s, stops=0, planning=0.000236 s, constraint=16.67%, signal=0.00%, seed=404, warmup=240 s, eval=240-2400 s
+  - compound_disaster / 场景C 多路段复合拥堵: travel=1888.50 s, time_loss=1502.30 s, waiting=1481.90 s, stops=0, planning=0.000241 s, constraint=0.00%, signal=0.00%, seed=505, warmup=300 s, eval=300-2700 s
+  - mean: travel=1276.12 s, time_loss=931.59 s, waiting=914.68 s, stops=0.00, planning=0.000199 s, constraint=23.91%, signal=0.00%
+  - delta_vs_old_mean: travel=+556.55 (+77.3%) [>5%], planning=+0.00 (+158.4%) [>5%], constraint=-8.51 (-26.2%) [>5%], signal=+0.00
+
+[Method] Rule-A*
+  - normal_baseline / 场景N normal_baseline 正常通行: travel=406.80 s, time_loss=131.63 s, waiting=102.70 s, stops=0, planning=0.001221 s, constraint=100.00%, signal=91.70%, seed=101, warmup=120 s, eval=120-1800 s
+  - simple_local / 场景A 黄河路单向拥堵: travel=706.80 s, time_loss=416.15 s, waiting=395.00 s, stops=0, planning=0.000672 s, constraint=100.00%, signal=91.70%, seed=111, warmup=180 s, eval=180-2100 s
+  - directional_asymmetry / 场景E 方向不对称拥堵: travel=1778.70 s, time_loss=1216.22 s, waiting=1200.40 s, stops=0, planning=0.000652 s, constraint=85.71%, signal=91.70%, seed=202, warmup=180 s, eval=180-2100 s
+  - core_blockage / 场景D 中央核心节点封锁: travel=1277.50 s, time_loss=912.42 s, waiting=900.30 s, stops=0, planning=0.000323 s, constraint=37.50%, signal=91.70%, seed=303, warmup=240 s, eval=240-2400 s
+  - propagation_range / 场景G 传播范围外溢: travel=1219.90 s, time_loss=912.91 s, waiting=900.30 s, stops=0, planning=0.000686 s, constraint=50.00%, signal=91.70%, seed=404, warmup=240 s, eval=240-2400 s
+  - compound_disaster / 场景C 多路段复合拥堵: travel=2153.00 s, time_loss=1802.85 s, waiting=1782.00 s, stops=0, planning=0.000304 s, constraint=45.45%, signal=91.70%, seed=505, warmup=300 s, eval=300-2700 s
+  - mean: travel=1257.12 s, time_loss=898.70 s, waiting=880.12 s, stops=0.00, planning=0.000643 s, constraint=69.78%, signal=91.70%
+  - delta_vs_old_mean: travel=+743.57 (+144.8%) [>5%], planning=+0.00 (+780.8%) [>5%], constraint=+8.21 (+13.3%) [>5%], signal=+0.00 (+0.0%)
+
+[Method] DQN
+  - normal_baseline / 场景N normal_baseline 正常通行: travel=1280.00 s, time_loss=483.64 s, waiting=387.90 s, stops=0, planning=0.032786 s, constraint=100.00%, signal=91.70%, seed=101, warmup=120 s, eval=120-1800 s
+  - simple_local / 场景A 黄河路单向拥堵: travel=906.80 s, time_loss=292.06 s, waiting=239.80 s, stops=0, planning=0.037136 s, constraint=100.00%, signal=91.70%, seed=111, warmup=180 s, eval=180-2100 s
+  - directional_asymmetry / 场景E 方向不对称拥堵: travel=1872.30 s, time_loss=919.21 s, waiting=900.30 s, stops=0, planning=0.041769 s, constraint=85.71%, signal=91.70%, seed=202, warmup=180 s, eval=180-2100 s
+  - core_blockage / 场景D 中央核心节点封锁: travel=2160.10 s, time_loss=1786.84 s, waiting=1768.10 s, stops=0, planning=0.023744 s, constraint=37.50%, signal=91.70%, seed=303, warmup=240 s, eval=240-2400 s
+  - propagation_range / 场景G 传播范围外溢: travel=2160.10 s, time_loss=1808.86 s, waiting=1790.20 s, stops=0, planning=0.029627 s, constraint=50.00%, signal=91.70%, seed=404, warmup=240 s, eval=240-2400 s
+  - compound_disaster / 场景C 多路段复合拥堵: travel=2400.10 s, time_loss=2004.84 s, waiting=1981.00 s, stops=0, planning=0.033483 s, constraint=45.45%, signal=91.70%, seed=505, warmup=300 s, eval=300-2700 s
+  - mean: travel=1796.57 s, time_loss=1215.91 s, waiting=1177.88 s, stops=0.00, planning=0.033091 s, constraint=69.78%, signal=91.70%
+  - delta_vs_old_mean: travel=+1191.22 (+196.8%) [>5%], planning=+0.03 (+48563.0%) [>5%], constraint=+8.21 (+13.3%) [>5%], signal=+0.00 (+0.0%)
+
+[Method] GCN-Weight
+  - normal_baseline / 场景N normal_baseline 正常通行: travel=236.00 s, time_loss=40.33 s, waiting=23.50 s, stops=0, planning=0.000945 s, constraint=100.00%, signal=70.80%, seed=101, warmup=120 s, eval=120-1800 s
+  - simple_local / 场景A 黄河路单向拥堵: travel=706.80 s, time_loss=416.15 s, waiting=395.00 s, stops=0, planning=0.000969 s, constraint=100.00%, signal=72.90%, seed=111, warmup=180 s, eval=180-2100 s
+  - directional_asymmetry / 场景E 方向不对称拥堵: travel=1336.70 s, time_loss=913.45 s, waiting=900.30 s, stops=0, planning=0.000998 s, constraint=71.43%, signal=70.80%, seed=202, warmup=180 s, eval=180-2100 s
+  - core_blockage / 场景D 中央核心节点封锁: travel=2114.00 s, time_loss=1764.04 s, waiting=1738.70 s, stops=0, planning=0.000503 s, constraint=37.50%, signal=72.90%, seed=303, warmup=240 s, eval=240-2400 s
+  - propagation_range / 场景G 传播范围外溢: travel=2160.10 s, time_loss=1879.27 s, waiting=1861.80 s, stops=0, planning=0.001111 s, constraint=16.67%, signal=70.80%, seed=404, warmup=240 s, eval=240-2400 s
+  - compound_disaster / 场景C 多路段复合拥堵: travel=2277.80 s, time_loss=1941.17 s, waiting=1891.60 s, stops=0, planning=0.001056 s, constraint=18.18%, signal=72.90%, seed=505, warmup=300 s, eval=300-2700 s
+  - mean: travel=1471.90 s, time_loss=1159.07 s, waiting=1135.15 s, stops=0.00, planning=0.000930 s, constraint=57.30%, signal=71.85%
+  - delta_vs_old_mean: travel=+899.02 (+156.9%) [>5%], planning=+0.00 (+1108.2%) [>5%], constraint=-4.27 (-6.9%) [>5%], signal=+0.00 (+0.0%)
+
+[Method] Sparse-LoRA
+  - normal_baseline / 场景N normal_baseline 正常通行: travel=198.70 s, time_loss=40.18 s, waiting=23.50 s, stops=0, planning=1.075866 s, constraint=100.00%, signal=0.00%, seed=101, warmup=120 s, eval=120-1800 s
+  - simple_local / 场景A 黄河路单向拥堵: travel=318.60 s, time_loss=101.32 s, waiting=81.40 s, stops=0, planning=1.110278 s, constraint=50.00%, signal=1.00%, seed=111, warmup=180 s, eval=180-2100 s
+  - directional_asymmetry / 场景E 方向不对称拥堵: travel=1335.40 s, time_loss=913.44 s, waiting=900.30 s, stops=0, planning=1.501241 s, constraint=85.71%, signal=8.30%, seed=202, warmup=180 s, eval=180-2100 s
+  - core_blockage / 场景D 中央核心节点封锁: travel=1511.00 s, time_loss=1215.00 s, waiting=1200.40 s, stops=0, planning=1.909721 s, constraint=37.50%, signal=25.00%, seed=303, warmup=240 s, eval=240-2400 s
+  - propagation_range / 场景G 传播范围外溢: travel=1780.20 s, time_loss=1516.31 s, waiting=1500.50 s, stops=0, planning=1.109639 s, constraint=66.67%, signal=3.10%, seed=404, warmup=240 s, eval=240-2400 s
+  - compound_disaster / 场景C 多路段复合拥堵: travel=2400.10 s, time_loss=2152.47 s, waiting=2113.20 s, stops=0, planning=1.431471 s, constraint=63.64%, signal=13.50%, seed=505, warmup=300 s, eval=300-2700 s
+  - mean: travel=1257.33 s, time_loss=989.79 s, waiting=969.88 s, stops=0.00, planning=1.356369 s, constraint=67.25%, signal=8.48%
+  - delta_vs_old_mean: travel=+746.18 (+146.0%) [>5%], planning=-0.11 (-7.7%) [>5%], constraint=-0.98 (-1.4%), signal=-0.90 (-9.6%) [>5%]
+
+[Method] Sparse-LoRA+GAT
+  - normal_baseline / 场景N normal_baseline 正常通行: travel=198.70 s, time_loss=40.18 s, waiting=23.50 s, stops=0, planning=0.732757 s, constraint=100.00%, signal=100.00%, seed=101, warmup=120 s, eval=120-1800 s
+  - simple_local / 场景A 黄河路单向拥堵: travel=318.60 s, time_loss=101.32 s, waiting=81.40 s, stops=0, planning=1.084015 s, constraint=50.00%, signal=100.00%, seed=111, warmup=180 s, eval=180-2100 s
+  - directional_asymmetry / 场景E 方向不对称拥堵: travel=1335.40 s, time_loss=913.44 s, waiting=900.30 s, stops=0, planning=1.443425 s, constraint=85.71%, signal=100.00%, seed=202, warmup=180 s, eval=180-2100 s
+  - core_blockage / 场景D 中央核心节点封锁: travel=1511.00 s, time_loss=1215.00 s, waiting=1200.40 s, stops=0, planning=1.889414 s, constraint=37.50%, signal=100.00%, seed=303, warmup=240 s, eval=240-2400 s
+  - propagation_range / 场景G 传播范围外溢: travel=1780.20 s, time_loss=1516.31 s, waiting=1500.50 s, stops=0, planning=1.107646 s, constraint=66.67%, signal=100.00%, seed=404, warmup=240 s, eval=240-2400 s
+  - compound_disaster / 场景C 多路段复合拥堵: travel=2400.10 s, time_loss=2152.47 s, waiting=2113.20 s, stops=0, planning=1.398227 s, constraint=63.64%, signal=100.00%, seed=505, warmup=300 s, eval=300-2700 s
+  - mean: travel=1257.33 s, time_loss=989.79 s, waiting=969.88 s, stops=0.00, planning=1.275914 s, constraint=67.25%, signal=100.00%
+  - delta_vs_old_mean: travel=+753.86 (+149.7%) [>5%], planning=-0.20 (-13.8%) [>5%], constraint=-0.98 (-1.4%), signal=+38.55 (+62.7%) [>5%]
+
+[Method] PPO
+  - aggregate_only: travel=11.25 s, planning=0.001429 s, constraint=n/a, signal=n/a, source=results/ppo_baseline/ppo_quick_summary.csv
+  - delta_vs_old_mean: n/a
+
+[Warnings]
+  - none

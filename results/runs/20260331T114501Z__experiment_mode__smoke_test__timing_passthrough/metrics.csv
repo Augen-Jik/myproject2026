@@ -1,0 +1,2 @@
+﻿scenario,method,init_ms,infer_ms,smooth_ms,total_ms,cold_start,timing_info
+smoke,demo,1.23,20.4,0.0,26.0,True,"{'init_ms': 1.23, 'infer_ms': 20.4, 'smooth_ms': 0.0, 'total_ms': 26.0, 'cold_start': True}"

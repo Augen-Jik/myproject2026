@@ -1,0 +1,66 @@
+[
+  {
+    "showcase_name": "propagation_range_showcase",
+    "planned_time_s": 2160.1,
+    "baseline_time_s": 2160.1,
+    "saving_seconds": 0.0,
+    "saving_ratio": 0.0,
+    "planned_ok": false,
+    "baseline_ok": false,
+    "planned_final_runtime_route": [
+      "R0C0_W",
+      "C0R0_N",
+      "C0R1_N",
+      "C0R2_N",
+      "C0R3_N",
+      "R4C0_E",
+      "R4C1_E",
+      "C2R3_S"
+    ],
+    "baseline_final_runtime_route": [
+      "R0C0_W",
+      "C0R0_N",
+      "R1C0_E",
+      "C1R1_N",
+      "C1R2_N",
+      "R3C1_E",
+      "C2R3_N",
+      "C2R3_S"
+    ],
+    "final_runtime_overlap_ratio": 0.375,
+    "planned_used_sumo_fallback": false,
+    "baseline_used_sumo_fallback": true
+  },
+  {
+    "showcase_name": "compound_disaster_showcase",
+    "planned_time_s": 2400.1,
+    "baseline_time_s": 1995.3000000000002,
+    "saving_seconds": -404.7999999999997,
+    "saving_ratio": -0.20287676038690908,
+    "planned_ok": false,
+    "baseline_ok": true,
+    "planned_final_runtime_route": [
+      "R3C0_W",
+      "C0R2_S",
+      "C0R1_S",
+      "C0R0_S",
+      "R0C0_E",
+      "R0C1_E",
+      "R0C2_E",
+      "C3R0_N"
+    ],
+    "baseline_final_runtime_route": [
+      "R3C0_W",
+      "R3C0_E",
+      "R3C1_E",
+      "R3C2_E",
+      "C3R2_S",
+      "C3R1_S",
+      "C3R0_S",
+      "C3R0_N"
+    ],
+    "final_runtime_overlap_ratio": 0.25,
+    "planned_used_sumo_fallback": false,
+    "baseline_used_sumo_fallback": true
+  }
+]

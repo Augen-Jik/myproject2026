@@ -1,0 +1,36 @@
+# 本轮目标是打穿 relief_normal_single_edge 主瓶颈
+# stage4b 的 29/29 held-out 主失败样本完全未变
+# 本轮以更强更新 + 更高 single-edge exposure 为核心策略
+
+model:
+  name_or_path: /root/autodl-tmp/Qwen2.5-1.5B-Instruct
+  trust_remote_code: true
+
+data:
+  train_path: /root/autodl-tmp/dataset_sparse_v2_stage4c/train
+  eval_path: /root/autodl-tmp/dataset_sparse_v2_stage4c/eval
+  max_seq_length: 1024
+
+training:
+  output_dir: /root/autodl-tmp/model_lora_sparse_v2_stage4c_fix
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-5
+  num_train_epochs: 3.2
+  lr_scheduler_type: cosine
+  warmup_ratio: 0.0625
+  logging_steps: 2
+  save_steps: 8
+  eval_steps: 8
+  save_total_limit: 4
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  init_from: /root/autodl-tmp/model_lora_sparse_v2_stage4_fix
+
+smoke_test:
+  mode: sparse
+
+seed: 42

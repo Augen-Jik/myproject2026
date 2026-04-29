@@ -1,0 +1,36 @@
+[
+  {
+    "showcase_name": "propagation_range_showcase",
+    "scene_profile": "propagation_range",
+    "start_edge": "C0R0_N",
+    "end_edge": "C2R3_S",
+    "baseline": 2160.1,
+    "planned": 2160.1,
+    "saving_seconds": 0.0,
+    "saving_ratio": 0.0,
+    "whether_positive_gain": false,
+    "baseline_ok": false,
+    "planned_ok": false,
+    "baseline_final_runtime_route": [
+      "C0R0_N",
+      "R1C0_E",
+      "C1R1_N",
+      "C1R2_N",
+      "R3C1_E",
+      "C2R3_N",
+      "C2R3_S"
+    ],
+    "planned_final_runtime_route": [
+      "C0R0_N",
+      "C0R1_N",
+      "C0R2_N",
+      "C0R3_N",
+      "R4C0_E",
+      "R4C1_E",
+      "C2R3_S"
+    ],
+    "final_runtime_overlap_ratio": 0.2857142857142857,
+    "baseline_used_sumo_fallback": true,
+    "planned_used_sumo_fallback": false
+  }
+]

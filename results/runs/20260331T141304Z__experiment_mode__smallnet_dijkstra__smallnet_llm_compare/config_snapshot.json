@@ -1,0 +1,22 @@
+{
+  "timestamp": "20260331T141304Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "planner": "smallnet_dijkstra",
+  "model": "smallnet_llm_compare",
+  "scenario_list": [
+    "SmallNet-密集场景A：三事件同域拥堵",
+    "SmallNet-密集场景B：中轴拥堵",
+    "SmallNet-密集场景C：末端绕行"
+  ],
+  "fallback_policy": "N/A（smallnet对照脚本不做运行时fallback）",
+  "default_weight_policy": "默认2.0，Uniform-Dijkstra固定1.0",
+  "timing_policy": "planning_ms/plan_ms 仅统计smallnet_dijkstra；infer_ms为模型推理；smooth_ms当前为0；sim_ms当前为0；warmup_excluded=true",
+  "results_root": "/root/autodl-tmp/results",
+  "legacy_output_path": "/root/autodl-tmp/results/smallnet_results.json",
+  "models_loaded": [
+    "Qwen-LoRA★",
+    "R1-LoRA★",
+    "Sparse-LoRA★★"
+  ]
+}

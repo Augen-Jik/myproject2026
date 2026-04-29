@@ -1,0 +1,12 @@
+﻿scene,scene_type,scene_bucket,method,sumo_time,constraint_rate,parsed_edge_ratio,signal_ratio,gat_mode,high_conf_edges,low_conf_edges,missing_edges
+场景C 多路段复合拥堵,compound_disaster,normal,Sparse-LoRA+Always-GAT,0.0,0.0,17.3,96.9,always_topology_completion,0,17,79
+场景C 多路段复合拥堵,compound_disaster,normal,Sparse-LoRA+Gated-GAT,0.0,0.0,17.3,96.9,gated_topology_completion,17,0,79
+场景D 中央核心节点封锁（强迫大范围绕行）,core_blockage,normal,Sparse-LoRA+Always-GAT,0.0,33.3,28.6,90.8,always_topology_completion,0,8,68
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,normal,Sparse-LoRA+Always-GAT,0.0,36.4,18.4,98.0,always_topology_completion,0,16,80
+场景E 不对称方向拥堵（测试模型方向提取能力）,directional_asymmetry,normal,Sparse-LoRA+Gated-GAT,0.0,36.4,18.4,98.0,gated_topology_completion,16,0,80
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,normal,Sparse-LoRA+Always-GAT,0.0,21.4,10.2,94.9,always_topology_completion,0,0,86
+场景F 大规模复合灾害（极限压力测试）,compound_disaster,normal,Sparse-LoRA+Gated-GAT,0.0,21.4,10.2,94.9,gated_topology_completion,10,0,86
+特殊场景S1 核心封锁+外溢排队,core_blockage,special,Sparse-LoRA+Always-GAT,0.0,0.0,10.2,92.9,always_topology_completion,0,0,86
+特殊场景S1 核心封锁+外溢排队,core_blockage,special,Sparse-LoRA+Gated-GAT,0.0,0.0,10.2,92.9,gated_topology_completion,10,0,86
+特殊场景S2 活动管制+方向不对称,directional_asymmetry,special,Sparse-LoRA+Always-GAT,0.0,36.4,5.1,98.0,always_topology_completion,0,0,91
+特殊场景S2 活动管制+方向不对称,directional_asymmetry,special,Sparse-LoRA+Gated-GAT,0.0,36.4,5.1,98.0,gated_topology_completion,5,0,91

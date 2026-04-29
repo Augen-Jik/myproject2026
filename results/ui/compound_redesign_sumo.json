@@ -1,0 +1,38 @@
+[
+  {
+    "start_edge": "C0R2_N",
+    "end_edge": "C1R0_S",
+    "offline_score": 9.80907517052722,
+    "estimated_saving_seconds": 1.6335306948997186,
+    "result": {
+      "showcase_name": "compound_disaster_showcase",
+      "scene_profile": "compound_disaster",
+      "start_edge": "C0R2_N",
+      "end_edge": "C1R0_S",
+      "baseline": 1733.1,
+      "planned": 1733.1,
+      "saving_seconds": 0.0,
+      "saving_ratio": 0.0,
+      "whether_positive_gain": false,
+      "baseline_ok": true,
+      "planned_ok": true,
+      "baseline_final_runtime_route": [
+        "C0R2_N",
+        "R3C0_E",
+        "C1R2_S",
+        "C1R1_S",
+        "C1R0_S"
+      ],
+      "planned_final_runtime_route": [
+        "C0R2_N",
+        "C0R2_S",
+        "C0R1_S",
+        "R1C0_E",
+        "C1R0_S"
+      ],
+      "final_runtime_overlap_ratio": 0.4,
+      "baseline_used_sumo_fallback": false,
+      "planned_used_sumo_fallback": false
+    }
+  }
+]

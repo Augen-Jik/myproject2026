@@ -1,0 +1,240 @@
+{
+  "train": {
+    "size": 40,
+    "scene_type": {
+      "simple_local": 12,
+      "core_blockage": 12,
+      "compound_disaster": 6,
+      "propagation_range": 6,
+      "temporal_switch": 1,
+      "directional_asymmetry": 3
+    },
+    "scene_bucket": {
+      "simple_local": 12,
+      "core_blockage": 12,
+      "complex_spatiotemporal": 13,
+      "directional_asymmetry": 3
+    },
+    "length_bucket": {
+      "medium": 16,
+      "short": 14,
+      "long": 2,
+      "noisy_long": 8
+    },
+    "avg_anchor_count": 1.425,
+    "avg_parse_confidence": 0.964
+  },
+  "eval": {
+    "size": 12,
+    "scene_type": {
+      "core_blockage": 4,
+      "simple_local": 2,
+      "temporal_switch": 1,
+      "directional_asymmetry": 3,
+      "compound_disaster": 1,
+      "propagation_range": 1
+    },
+    "scene_bucket": {
+      "core_blockage": 4,
+      "simple_local": 2,
+      "complex_spatiotemporal": 3,
+      "directional_asymmetry": 3
+    },
+    "length_bucket": {
+      "medium": 6,
+      "long": 2,
+      "noisy_long": 3,
+      "short": 1
+    },
+    "avg_anchor_count": 1.25,
+    "avg_parse_confidence": 0.967
+  },
+  "stage1_train": {
+    "size": 2000,
+    "scene_type": {
+      "simple_local": 1143,
+      "directional_asymmetry": 857
+    },
+    "scene_bucket": {
+      "simple_local": 1143,
+      "directional_asymmetry": 857
+    },
+    "length_bucket": {
+      "medium": 877,
+      "short": 910,
+      "long": 144,
+      "noisy_long": 69
+    },
+    "avg_anchor_count": 0.978,
+    "avg_parse_confidence": 0.963
+  },
+  "stage1_eval": {
+    "size": 260,
+    "scene_type": {
+      "directional_asymmetry": 108,
+      "simple_local": 152
+    },
+    "scene_bucket": {
+      "directional_asymmetry": 108,
+      "simple_local": 152
+    },
+    "length_bucket": {
+      "medium": 114,
+      "short": 122,
+      "long": 20,
+      "noisy_long": 4
+    },
+    "avg_anchor_count": 0.977,
+    "avg_parse_confidence": 0.961
+  },
+  "stage2_train": {
+    "size": 4200,
+    "scene_type": {
+      "directional_asymmetry": 764,
+      "compound_disaster": 560,
+      "temporal_switch": 435,
+      "core_blockage": 968,
+      "simple_local": 1041,
+      "propagation_range": 432
+    },
+    "scene_bucket": {
+      "directional_asymmetry": 764,
+      "complex_spatiotemporal": 1427,
+      "core_blockage": 968,
+      "simple_local": 1041
+    },
+    "length_bucket": {
+      "noisy_long": 679,
+      "medium": 1669,
+      "long": 835,
+      "short": 1017
+    },
+    "avg_anchor_count": 1.386,
+    "avg_parse_confidence": 0.968
+  },
+  "stage2_eval": {
+    "size": 420,
+    "scene_type": {
+      "core_blockage": 111,
+      "compound_disaster": 54,
+      "temporal_switch": 44,
+      "directional_asymmetry": 76,
+      "simple_local": 97,
+      "propagation_range": 38
+    },
+    "scene_bucket": {
+      "core_blockage": 111,
+      "complex_spatiotemporal": 136,
+      "directional_asymmetry": 76,
+      "simple_local": 97
+    },
+    "length_bucket": {
+      "medium": 166,
+      "short": 106,
+      "long": 84,
+      "noisy_long": 64
+    },
+    "avg_anchor_count": 1.417,
+    "avg_parse_confidence": 0.97
+  },
+  "stage3_train": {
+    "size": 1200,
+    "scene_type": {
+      "temporal_switch": 284,
+      "compound_disaster": 400,
+      "propagation_range": 309,
+      "core_blockage": 207
+    },
+    "scene_bucket": {
+      "complex_spatiotemporal": 993,
+      "core_blockage": 207
+    },
+    "length_bucket": {
+      "noisy_long": 480,
+      "long": 458,
+      "medium": 262
+    },
+    "avg_anchor_count": 1.85,
+    "avg_parse_confidence": 0.969
+  },
+  "stage3_eval": {
+    "size": 180,
+    "scene_type": {
+      "temporal_switch": 39,
+      "compound_disaster": 60,
+      "core_blockage": 29,
+      "propagation_range": 52
+    },
+    "scene_bucket": {
+      "complex_spatiotemporal": 151,
+      "core_blockage": 29
+    },
+    "length_bucket": {
+      "medium": 42,
+      "long": 64,
+      "noisy_long": 74
+    },
+    "avg_anchor_count": 1.867,
+    "avg_parse_confidence": 0.969
+  },
+  "val_normal": {
+    "size": 180,
+    "scene_type": {
+      "simple_local": 137,
+      "directional_asymmetry": 43
+    },
+    "scene_bucket": {
+      "simple_local": 137,
+      "directional_asymmetry": 43
+    },
+    "length_bucket": {
+      "short": 85,
+      "medium": 75,
+      "noisy_long": 4,
+      "long": 16
+    },
+    "avg_anchor_count": 0.833,
+    "avg_parse_confidence": 0.956
+  },
+  "val_special": {
+    "size": 180,
+    "scene_type": {
+      "compound_disaster": 40,
+      "core_blockage": 53,
+      "temporal_switch": 26,
+      "directional_asymmetry": 26,
+      "propagation_range": 35
+    },
+    "scene_bucket": {
+      "complex_spatiotemporal": 101,
+      "core_blockage": 53,
+      "directional_asymmetry": 26
+    },
+    "length_bucket": {
+      "noisy_long": 33,
+      "medium": 83,
+      "short": 21,
+      "long": 43
+    },
+    "avg_anchor_count": 1.75,
+    "avg_parse_confidence": 0.974
+  },
+  "val_anti_truncation": {
+    "size": 180,
+    "scene_type": {
+      "compound_disaster": 60,
+      "propagation_range": 59,
+      "temporal_switch": 61
+    },
+    "scene_bucket": {
+      "complex_spatiotemporal": 180
+    },
+    "length_bucket": {
+      "noisy_long": 98,
+      "long": 67,
+      "medium": 15
+    },
+    "avg_anchor_count": 1.828,
+    "avg_parse_confidence": 0.967
+  }
+}

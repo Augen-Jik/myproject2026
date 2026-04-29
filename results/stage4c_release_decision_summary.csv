@@ -1,0 +1,13 @@
+model_version,scope,scope_name,count,no_anchor_when_gt_changed_rate,target_recall,gt_changed_edge_recall,MAE_on_changed_edges,parse_fail_rate_strict,note
+stage4_fix,overall:scene_type,simple_local,139,0.2762,100.0,63.7,0.2901,0.2086,
+stage4_fix,overall:scene_type,directional_asymmetry,71,0.0,100.0,71.8,0.2256,0.0,
+stage4_fix,split,val_anti_truncation,180,0.0,99.6,98.0,0.0251,0.0,
+stage4b_fix,overall:scene_type,simple_local,139,0.2762,100.0,63.7,0.2901,0.2086,
+stage4b_fix,overall:scene_type,directional_asymmetry,71,0.0,100.0,71.8,0.2256,0.0,
+stage4b_fix,split,val_anti_truncation,180,0.0,100.0,98.5,0.0124,0.0,
+stage4c_fix,overall:scene_type,simple_local,139,0.2667,100.0,64.3,0.2854,0.2014,
+stage4c_fix,overall:scene_type,directional_asymmetry,71,0.0,100.0,75.4,0.1969,0.0,
+stage4c_fix,split,val_anti_truncation,180,0.0,100.0,98.5,0.0124,0.0,
+stage4c_fix,shadow_eval,overall,60,0.0,100.0,91.3,0.0696,0.0,
+stage4c_fix,relief_eval,overall,47,0.0,0.0,100.0,0.0,0.0,
+stage4c_fix,guard_eval,overall,7,0.0,100.0,76.9,0.1846,0.0,

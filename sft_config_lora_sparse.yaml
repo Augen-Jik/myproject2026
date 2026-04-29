@@ -1,0 +1,24 @@
+model:
+  name_or_path:       /root/autodl-tmp/Qwen2.5-1.5B-Instruct
+  trust_remote_code:  true
+
+data:
+  train_path:         /root/autodl-tmp/dataset_sparse/train
+  eval_path:          /root/autodl-tmp/dataset_sparse/eval
+  max_seq_length:     512   # v3: 5事件最多~350 tokens，512留足余量
+
+training:
+  output_dir:                   /root/autodl-tmp/model_lora_sparse
+  per_device_train_batch_size:  8
+  gradient_accumulation_steps:  2    # global batch = 16
+  learning_rate:                5e-5  # 输出极短，无需高lr
+  num_train_epochs:             5     # 5轮足矣（输出短，收敛极快）
+  logging_steps:                20
+  save_steps:                   300
+
+lora:
+  r:        16
+  alpha:    32
+  dropout:  0.05
+
+seed: 42

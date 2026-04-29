@@ -1,0 +1,31 @@
+Spatiotemporal Prompt Ablation
+==============================
+
+Summary
+-------
+directional_asymmetry | baseline_sparse_prompt: recall=54.5%, leak=100.0%, success=0.0%, parse_conf=0.80
+directional_asymmetry | spatiotemporal_enhanced_prompt: recall=54.5%, leak=100.0%, success=0.0%, parse_conf=0.80
+multi_constraint_conflict | baseline_sparse_prompt: recall=71.4%, leak=100.0%, success=0.0%, parse_conf=0.80
+multi_constraint_conflict | spatiotemporal_enhanced_prompt: recall=71.4%, leak=100.0%, success=0.0%, parse_conf=0.90
+propagation_range | baseline_sparse_prompt: recall=40.0%, leak=100.0%, success=0.0%, parse_conf=0.80
+propagation_range | spatiotemporal_enhanced_prompt: recall=0.0%, leak=0.0%, success=0.0%, parse_conf=0.80
+temporal_switch | baseline_sparse_prompt: recall=100.0%, leak=100.0%, success=0.0%, parse_conf=0.80
+temporal_switch | spatiotemporal_enhanced_prompt: recall=100.0%, leak=100.0%, success=0.0%, parse_conf=0.89
+
+Case Deltas
+-----------
+时空对照1 方向不对称 | delta_recall=+0.0 | delta_leak=+0.0 | tie
+时空对照2 时段切换 | delta_recall=+0.0 | delta_leak=+0.0 | tie
+时空对照3 传播范围 | delta_recall=-40.0 | delta_leak=-100.0 | negative
+时空对照4 多约束冲突 | delta_recall=+0.0 | delta_leak=+0.0 | tie
+
+Failure Cases
+-------------
+时空对照1 方向不对称 | baseline_sparse_prompt | recall=54.5% | leak=100.0% | mae=2.47
+时空对照1 方向不对称 | spatiotemporal_enhanced_prompt | recall=54.5% | leak=100.0% | mae=2.60
+时空对照2 时段切换 | baseline_sparse_prompt | recall=100.0% | leak=100.0% | mae=3.35
+时空对照2 时段切换 | spatiotemporal_enhanced_prompt | recall=100.0% | leak=100.0% | mae=0.50
+时空对照3 传播范围 | baseline_sparse_prompt | recall=40.0% | leak=100.0% | mae=4.84
+时空对照3 传播范围 | spatiotemporal_enhanced_prompt | recall=0.0% | leak=0.0% | mae=7.00
+时空对照4 多约束冲突 | baseline_sparse_prompt | recall=71.4% | leak=100.0% | mae=1.06
+时空对照4 多约束冲突 | spatiotemporal_enhanced_prompt | recall=71.4% | leak=100.0% | mae=0.79

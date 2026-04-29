@@ -1,0 +1,82 @@
+[
+  {
+    "showcase_name": "blockage_detour_showcase",
+    "scene_profile": "core_blockage",
+    "start_edge": "R0C0_W",
+    "end_edge": "C2R3_S",
+    "valid": true,
+    "baseline_logical_path": [
+      "R0C0_W",
+      "R0C0_E",
+      "R0C1_E",
+      "C2R0_N",
+      "C2R1_N",
+      "C2R2_N",
+      "C2R3_N",
+      "C2R3_S"
+    ],
+    "planned_logical_path": [
+      "R0C0_W",
+      "C0R0_N",
+      "C0R1_N",
+      "C0R2_N",
+      "C0R3_N",
+      "R4C0_E",
+      "R4C1_E",
+      "C2R3_S"
+    ],
+    "baseline_safe_route": [
+      "R0C0_W",
+      "C0R0_N",
+      "R1C0_E",
+      "R1C1_E",
+      "C2R1_N",
+      "C2R2_N",
+      "C2R3_N",
+      "C2R3_S"
+    ],
+    "planned_safe_route": [
+      "R0C0_W",
+      "C0R0_N",
+      "C0R1_N",
+      "C0R2_N",
+      "C0R3_N",
+      "R4C0_E",
+      "R4C1_E",
+      "C2R3_S"
+    ],
+    "baseline_final_runtime_route": [
+      "R0C0_W",
+      "C0R0_N",
+      "R1C0_E",
+      "C1R1_N",
+      "C1R2_N",
+      "R3C1_E",
+      "C2R3_N",
+      "C2R3_S"
+    ],
+    "planned_final_runtime_route": [
+      "R0C0_W",
+      "C0R0_N",
+      "C0R1_N",
+      "C0R2_N",
+      "C0R3_N",
+      "R4C0_E",
+      "R4C1_E",
+      "C2R3_S"
+    ],
+    "logical_overlap_ratio": 0.25,
+    "safe_route_overlap_ratio": 0.375,
+    "final_runtime_overlap_ratio": 0.375,
+    "baseline_impacted_edges": 2,
+    "planned_impacted_edges": 0,
+    "baseline_time_s": 2160.1,
+    "planned_time_s": 2160.1,
+    "saving_seconds": 0.0,
+    "saving_ratio": 0.0,
+    "planned_ok": false,
+    "baseline_ok": false,
+    "baseline_used_sumo_fallback": true,
+    "planned_used_sumo_fallback": false
+  }
+]

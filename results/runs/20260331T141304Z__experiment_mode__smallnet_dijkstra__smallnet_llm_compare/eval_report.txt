@@ -1,0 +1,30 @@
+============================================================
+SmallNet Evaluation Report
+============================================================
+run_id: 20260331T141304Z__experiment_mode__smallnet_dijkstra__smallnet_llm_compare
+mode: experiment_mode
+seed: 42
+
+[Scenario] SmallNet-密集场景A：三事件同域拥堵  oracle_cost=18.5
+  - Uniform-Dijkstra     plan_ms=   0.04  parsed=   0.0%  signal=   0.0%
+  - Rule-Dijkstra        plan_ms=   0.04  parsed=  12.5%  signal=  12.5%
+  - Qwen-LoRA★           plan_ms=   0.06  parsed=   0.0%  signal=   0.0%
+  - R1-LoRA★             plan_ms=   0.06  parsed=  87.5%  signal=  87.5%
+  - Sparse-LoRA★★        plan_ms=   0.06  parsed=  12.5%  signal=  12.5%
+  - Sparse-LoRA+GAT★★★   plan_ms=    0.0  parsed=   0.0%  signal=   0.0%
+
+[Scenario] SmallNet-密集场景B：中轴拥堵  oracle_cost=10.0
+  - Uniform-Dijkstra     plan_ms=   0.03  parsed=   0.0%  signal=   0.0%
+  - Rule-Dijkstra        plan_ms=   0.03  parsed=  12.5%  signal=  12.5%
+  - Qwen-LoRA★           plan_ms=   0.05  parsed= 100.0%  signal=  58.3%
+  - R1-LoRA★             plan_ms=   0.05  parsed=  87.5%  signal=  66.7%
+  - Sparse-LoRA★★        plan_ms=   0.05  parsed=  12.5%  signal=  12.5%
+  - Sparse-LoRA+GAT★★★   plan_ms=    0.0  parsed=   0.0%  signal=   0.0%
+
+[Scenario] SmallNet-密集场景C：末端绕行  oracle_cost=8.0
+  - Uniform-Dijkstra     plan_ms=   0.03  parsed=   0.0%  signal=   0.0%
+  - Rule-Dijkstra        plan_ms=   0.03  parsed=  12.5%  signal=  12.5%
+  - Qwen-LoRA★           plan_ms=   0.05  parsed=   0.0%  signal=   0.0%
+  - R1-LoRA★             plan_ms=   0.05  parsed= 100.0%  signal= 100.0%
+  - Sparse-LoRA★★        plan_ms=   0.06  parsed=   8.3%  signal=   8.3%
+  - Sparse-LoRA+GAT★★★   plan_ms=    0.0  parsed=   0.0%  signal=   0.0%

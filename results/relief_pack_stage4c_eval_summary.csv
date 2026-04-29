@@ -1,0 +1,15 @@
+scope,scope_name,count,no_anchor_when_gt_changed_rate,target_recall,gt_changed_edge_recall,MAE_on_changed_edges,parse_fail_rate_strict
+overall,overall,47,0.0,0.0,100.0,0.0,0.0
+mixture_component,multi_edge_relief_tail,3,0.0,0.0,100.0,0.0,0.0
+mixture_component,short_range_relief_support,10,0.0,0.0,100.0,0.0,0.0
+mixture_component,singleedge_relief_core,34,0.0,0.0,100.0,0.0,0.0
+bucket,multi_edge_relief,3,0.0,0.0,100.0,0.0,0.0
+bucket,relief_normal_short_range,10,0.0,0.0,100.0,0.0,0.0
+bucket,relief_normal_single_edge,34,0.0,0.0,100.0,0.0,0.0
+edge_profile,multi_edge,3,0.0,0.0,100.0,0.0,0.0
+edge_profile,short_range,10,0.0,0.0,100.0,0.0,0.0
+edge_profile,single_edge,34,0.0,0.0,100.0,0.0,0.0
+phrase_variant,unknown,13,0.0,0.0,100.0,0.0,0.0
+phrase_variant,畅通,10,0.0,0.0,100.0,0.0,0.0
+phrase_variant,畅通无阻,10,0.0,0.0,100.0,0.0,0.0
+phrase_variant,顺畅,14,0.0,0.0,100.0,0.0,0.0

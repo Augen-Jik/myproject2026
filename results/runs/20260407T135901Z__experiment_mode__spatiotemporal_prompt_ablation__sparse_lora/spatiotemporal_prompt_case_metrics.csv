@@ -1,0 +1,48 @@
+﻿case_id,case_name,focus,scene_type,prompt_mode,prompt_chars,prompt_tokens,infer_time_s,parsed_edges,parsed_edge_ratio,signal_edges,signal_ratio,anchor_count,parse_confidence,target_recall,reverse_leakage,weight_mae,scene_success,raw_preview,instruction_preview
+ST1,时空对照1 方向不对称,directional_asymmetry,directional_asymmetry,baseline_sparse_prompt,278,103,1.159,18,18.4,18,18.4,2,0.8,54.5,100.0,2.473,0,"ANCHOR|ROAD=纬五路|DIR=东|RANGE=4.9|LEVEL=4.9
+ANCHOR|ROAD=未来路|DIR=南|RANGE=5.0|LEVEL=5.0","TASK=sparse_output
+交通描述：纬五路向东方向因事故严重拥堵，向西方向畅通无阻；未来路向南中度拥堵。
+请直接输出异常语义锚点，格式：ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级。
+不要输出全量边权，不要解释。"
+ST1,时空对照1 方向不对称,directional_asymmetry,directional_asymmetry,spatiotemporal_enhanced_prompt,581,230,0.984,18,18.4,18,18.4,2,0.8,54.5,100.0,2.6,0,"纬五路:东→严重拥堵(5.0,3.3,4.0,4.0,4.0)
+未来路:南→中度拥堵(4.2,3.3,4.0,4.0,4.0)","TASK=sparse_output
+SCENE_TYPE=directional_asymmetry
+OUTPUT_OBJECT=异常语义锚点
+OUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级
+CONFLICT_POLICY=同一路段同方向同范围若冲突，保留更严重异常；不要补全全量边权。
+EVENT_1: ROAD=纬五路 | DIR=向东 | RANGE=局部 | LEVEL=严重拥堵 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT="
+ST2,时空对照2 时段切换,temporal_switch,simple_local,baseline_sparse_prompt,298,118,0.344,10,10.2,10,10.2,1,0.8,100.0,100.0,3.35,0,ANCHOR|ROAD=黄河路|RANGE=东→西|LEVEL=4.4,"TASK=sparse_output
+交通描述：早高峰07:00-09:00黄河路向东严重拥堵，09:30后恢复正常；当前时间08:30，请按当前时段规划。
+请直接输出异常语义锚点，格式：ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级。
+不要输出全量边权，不要解释。"
+ST2,时空对照2 时段切换,temporal_switch,simple_local,spatiotemporal_enhanced_prompt,481,192,0.505,10,10.2,10,10.2,2,0.885,100.0,100.0,0.5,0,ROAD=黄河路|DIR=东|RANGE=局部|LEVEL=严重拥堵|TEXT=黄河路东→东→严重拥堵,"TASK=sparse_output
+SCENE_TYPE=simple_local
+OUTPUT_OBJECT=异常语义锚点
+OUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级
+CONFLICT_POLICY=同一路段同方向同范围若冲突，保留更严重异常；不要补全全量边权。
+EVENT_1: ROAD=黄河路 | DIR=向东 | RANGE=局部 | LEVEL=严重拥堵 | TIME=07:00-09:00 | PROPAGATION=无明显传播 | CONFLICT=存在冲突/切换 | TE"
+ST3,时空对照3 传播范围,propagation_range,core_blockage,baseline_sparse_prompt,292,112,0.319,8,8.2,8,8.2,1,0.8,40.0,100.0,4.84,0,ANCHOR|ROAD=花园路|RANGE=4.4|LEVEL=5.0,"TASK=sparse_output
+交通描述：经六路农业路至黄河路段施工封闭，排队外溢至花园路红专路至黄河路段向北中度拥堵；其余方向保持正常。
+请直接输出异常语义锚点，格式：ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级。
+不要输出全量边权，不要解释。"
+ST3,时空对照3 传播范围,propagation_range,core_blockage,spatiotemporal_enhanced_prompt,593,244,0.325,8,8.2,8,8.2,1,0.8,0.0,0.0,7.0,0,经六路:R0_北→R0_北C4:5.0,"TASK=sparse_output
+SCENE_TYPE=simple_local
+OUTPUT_OBJECT=异常语义锚点
+OUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级
+CONFLICT_POLICY=同一路段同方向同范围若冲突，保留更严重异常；不要补全全量边权。
+EVENT_1: ROAD=经六路 | DIR=向北 | RANGE=农业路至黄河路 | LEVEL=封闭 | TIME=未指明 | PROPAGATION=波及:农业路至黄河路 | CONFLICT=单约束 | TEXT=经"
+ST4,时空对照4 多约束冲突,multi_constraint_conflict,compound_disaster,baseline_sparse_prompt,284,106,0.959,26,26.5,26,26.5,3,0.8,71.4,100.0,1.057,0,"ANCHOR|ROAD=黄河路|RANGE=东→中|LEVEL=5.0
+ANCHOR|ROAD=经一路|RANGE=西→东|LEVEL=7.6
+ANCHOR|ROAD=花园路|RANGE=北→南|LEVEL=0.8","TASK=sparse_output
+交通描述：黄河路向东中度拥堵；但经一路至经六路段因事故升级为严重拥堵；花园路向北正常通行。
+请直接输出异常语义锚点，格式：ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级。
+不要输出全量边权，不要解释。"
+ST4,时空对照4 多约束冲突,multi_constraint_conflict,compound_disaster,spatiotemporal_enhanced_prompt,695,282,1.63,26,26.5,18,18.4,6,0.895,71.4,100.0,0.786,0,"<异常语义锚点>
+<ROAD=黄河路,DIR=东,LEVEL=中度拥堵,RANGE=局部,TEXT=黄河路向东中度拥堵>
+<ROAD=经一路,DIR=东,LEVEL=严重拥堵,RANGE=经一路至经六路,TEXT=经一路至经六路严重拥堵>
+<ROAD=花园路,DIR=北,LEVEL=正常,RANGE=局部,TEXT=花园路向北正常通行>","TASK=sparse_output
+SCENE_TYPE=compound_disaster
+OUTPUT_OBJECT=异常语义锚点
+OUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级
+CONFLICT_POLICY=同一路段同方向同范围若冲突，保留更严重异常；不要补全全量边权。
+EVENT_1: ROAD=黄河路 | DIR=向东 | RANGE=局部 | LEVEL=中度拥堵 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=黄河路向"

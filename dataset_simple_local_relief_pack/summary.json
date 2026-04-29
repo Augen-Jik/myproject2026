@@ -1,0 +1,107 @@
+{
+  "policy_applied": "A. strict-aligned labeling",
+  "policy_rule": "输出所有当前生效且可定位的 changed-event anchors，包含异常主事件与畅通/正常 relief side event。",
+  "source_inputs": {
+    "historical_root": "/root/autodl-tmp/dataset_sparse_v2",
+    "failure_audit_csv": "/root/autodl-tmp/results/simple_local_semantic_gap_audit.csv",
+    "failure_summary_csv": "/root/autodl-tmp/results/simple_local_failure_bucket_summary.csv",
+    "failure_examples_json": "/root/autodl-tmp/results/simple_local_failure_examples.json",
+    "policy_md": "/root/autodl-tmp/results/simple_local_v2_label_policy.md",
+    "failure_summary_rows": 20,
+    "failure_examples_meta": {
+      "source_details_csv": "/root/autodl-tmp/results/sparse_v2_validation_strict_stage4_fix_details.csv",
+      "dataset_root": "/root/autodl-tmp/dataset_sparse_v2",
+      "simple_local_failure_count": 51,
+      "pred_matches_gt_label_failure_count": 51,
+      "selection_policy": "Per dimension bucket, keep up to 5 representative failures; if a bucket has fewer than 5 samples, keep all available samples."
+    }
+  },
+  "quota": {
+    "train_per_bucket": 16,
+    "eval_per_bucket": 8,
+    "examples_per_bucket": 10
+  },
+  "dataset_stats": {
+    "train_rows": 48,
+    "eval_rows": 24,
+    "bucket_counts_total": {
+      "relief_normal_single_edge": 24,
+      "relief_normal_short_range": 24,
+      "multi_edge_relief": 24
+    },
+    "bucket_counts_by_split": {
+      "relief_normal_single_edge": {
+        "train": 16,
+        "eval": 8
+      },
+      "relief_normal_short_range": {
+        "train": 16,
+        "eval": 8
+      },
+      "multi_edge_relief": {
+        "train": 16,
+        "eval": 8
+      }
+    },
+    "single_edge_count": 24,
+    "short_range_count": 24,
+    "multi_edge_count": 24,
+    "severity_counts": {
+      "mild": 24,
+      "moderate": 24,
+      "severe": 24
+    },
+    "source_type_counts": {
+      "historical_retrieval": 70,
+      "manual_generation": 2
+    },
+    "source_type_share": {
+      "historical_retrieval": 0.9722,
+      "manual_generation": 0.0278
+    }
+  },
+  "bucket_selection_meta": {
+    "relief_normal_single_edge": {
+      "history_unique_available": 88,
+      "train_selected": 16,
+      "eval_selected": 8,
+      "selected_by_source_type": {
+        "historical_retrieval": 24
+      },
+      "selected_failure_library_count": 8
+    },
+    "relief_normal_short_range": {
+      "history_unique_available": 54,
+      "train_selected": 16,
+      "eval_selected": 8,
+      "selected_by_source_type": {
+        "historical_retrieval": 24
+      },
+      "selected_failure_library_count": 7
+    },
+    "multi_edge_relief": {
+      "history_unique_available": 22,
+      "train_selected": 16,
+      "eval_selected": 8,
+      "selected_by_source_type": {
+        "historical_retrieval": 22,
+        "manual_generation": 2
+      },
+      "selected_failure_library_count": 2
+    }
+  },
+  "readiness": {
+    "supports_next_ceiling_eval": true,
+    "scarcest_bucket": "multi_edge_relief",
+    "boundary_ambiguity_bucket": "multi_edge_relief",
+    "boundary_ambiguity_reason": "multi_edge_relief 需要覆盖完整连续 3+ edge 范围，最容易在区间边界上出现歧义。",
+    "severity_definition": "mild/moderate/severe 按 relief changed-edge 跨度定义：1 edge / 2 edges / 3+ edges。"
+  },
+  "validation": {
+    "train_bucket_quota_met": true,
+    "eval_bucket_quota_met": true,
+    "all_labels_valid": true,
+    "all_rows_stage4b_ready": true,
+    "all_rows_new_supervision": true
+  }
+}

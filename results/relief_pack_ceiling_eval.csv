@@ -1,0 +1,62 @@
+row_type,scope,bucket,metric,current_reference,oracle_ceiling,absolute_gain,relative_gain_pct,metric_direction,evidence_type,support_count,note
+metric,A.relief_pack_overall,overall,no_anchor_when_gt_changed_rate,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,72,
+metric,A.relief_pack_overall,overall,target_recall,0.0,0.0,0.0,0.0,higher_is_better,oracle_label_adequacy,72,gt_target_edge_total=0; relief-only scope 上该指标按当前 strict 实现记为 0.0，语义上应视为 N/A。
+metric,A.relief_pack_overall,overall,gt_changed_edge_recall,100.0,100.0,0.0,0.0,higher_is_better,oracle_label_adequacy,72,
+metric,A.relief_pack_overall,overall,MAE_on_changed_edges,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,72,
+metric,A.relief_pack_overall,overall,parse_fail_rate_strict,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,72,
+metric,B.relief_normal_single_edge,relief_normal_single_edge,no_anchor_when_gt_changed_rate,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.relief_normal_single_edge,relief_normal_single_edge,target_recall,0.0,0.0,0.0,0.0,higher_is_better,oracle_label_adequacy,24,gt_target_edge_total=0; relief-only scope 上该指标按当前 strict 实现记为 0.0，语义上应视为 N/A。
+metric,B.relief_normal_single_edge,relief_normal_single_edge,gt_changed_edge_recall,100.0,100.0,0.0,0.0,higher_is_better,oracle_label_adequacy,24,
+metric,B.relief_normal_single_edge,relief_normal_single_edge,MAE_on_changed_edges,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.relief_normal_single_edge,relief_normal_single_edge,parse_fail_rate_strict,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.relief_normal_short_range,relief_normal_short_range,no_anchor_when_gt_changed_rate,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.relief_normal_short_range,relief_normal_short_range,target_recall,0.0,0.0,0.0,0.0,higher_is_better,oracle_label_adequacy,24,gt_target_edge_total=0; relief-only scope 上该指标按当前 strict 实现记为 0.0，语义上应视为 N/A。
+metric,B.relief_normal_short_range,relief_normal_short_range,gt_changed_edge_recall,100.0,100.0,0.0,0.0,higher_is_better,oracle_label_adequacy,24,
+metric,B.relief_normal_short_range,relief_normal_short_range,MAE_on_changed_edges,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.relief_normal_short_range,relief_normal_short_range,parse_fail_rate_strict,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.multi_edge_relief,multi_edge_relief,no_anchor_when_gt_changed_rate,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.multi_edge_relief,multi_edge_relief,target_recall,0.0,0.0,0.0,0.0,higher_is_better,oracle_label_adequacy,24,gt_target_edge_total=0; relief-only scope 上该指标按当前 strict 实现记为 0.0，语义上应视为 N/A。
+metric,B.multi_edge_relief,multi_edge_relief,gt_changed_edge_recall,100.0,100.0,0.0,0.0,higher_is_better,oracle_label_adequacy,24,
+metric,B.multi_edge_relief,multi_edge_relief,MAE_on_changed_edges,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,B.multi_edge_relief,multi_edge_relief,parse_fail_rate_strict,0.0,0.0,0.0,0.0,lower_is_better,oracle_label_adequacy,24,
+metric,C.heldout_alignment_reference,overall,no_anchor_when_gt_changed_rate,0.2762,0.0,-0.2762,-100.0,lower_is_better,failure_mode_alignment + bucket_coverage + oracle_label_adequacy,139,
+metric,C.heldout_alignment_reference,overall,target_recall,100.0,100.0,0.0,0.0,higher_is_better,failure_mode_alignment + bucket_coverage + oracle_label_adequacy,139,
+metric,C.heldout_alignment_reference,overall,gt_changed_edge_recall,63.7,87.1,23.4,36.7347,higher_is_better,failure_mode_alignment + bucket_coverage + oracle_label_adequacy,139,
+metric,C.heldout_alignment_reference,overall,MAE_on_changed_edges,0.2901,0.1029,-0.1872,-64.5295,lower_is_better,failure_mode_alignment + bucket_coverage + oracle_label_adequacy,139,
+metric,C.heldout_alignment_reference,overall,parse_fail_rate_strict,0.2086,0.0,-0.2086,-100.0,lower_is_better,failure_mode_alignment + bucket_coverage + oracle_label_adequacy,139,
+metric,C.heldout_alignment_reference,relief_normal_single_edge,no_anchor_when_gt_changed_rate,1.0,0.0,-1.0,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,20,
+metric,C.heldout_alignment_reference,relief_normal_single_edge,target_recall,0.0,0.0,0.0,0.0,higher_is_better,failure_mode_alignment + oracle_label_adequacy,20,gt_target_edge_total=0; relief-only scope 上该指标按当前 strict 实现记为 0.0，语义上应视为 N/A。
+metric,C.heldout_alignment_reference,relief_normal_single_edge,gt_changed_edge_recall,0.0,100.0,100.0,inf,higher_is_better,failure_mode_alignment + oracle_label_adequacy,20,
+metric,C.heldout_alignment_reference,relief_normal_single_edge,MAE_on_changed_edges,0.8,0.0,-0.8,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,20,
+metric,C.heldout_alignment_reference,relief_normal_single_edge,parse_fail_rate_strict,1.0,0.0,-1.0,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,20,
+metric,C.heldout_alignment_reference,relief_normal_short_range,no_anchor_when_gt_changed_rate,1.0,0.0,-1.0,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,7,
+metric,C.heldout_alignment_reference,relief_normal_short_range,target_recall,0.0,0.0,0.0,0.0,higher_is_better,failure_mode_alignment + oracle_label_adequacy,7,gt_target_edge_total=0; relief-only scope 上该指标按当前 strict 实现记为 0.0，语义上应视为 N/A。
+metric,C.heldout_alignment_reference,relief_normal_short_range,gt_changed_edge_recall,0.0,100.0,100.0,inf,higher_is_better,failure_mode_alignment + oracle_label_adequacy,7,
+metric,C.heldout_alignment_reference,relief_normal_short_range,MAE_on_changed_edges,0.8,0.0,-0.8,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,7,
+metric,C.heldout_alignment_reference,relief_normal_short_range,parse_fail_rate_strict,1.0,0.0,-1.0,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,7,
+metric,C.heldout_alignment_reference,multi_edge_relief,no_anchor_when_gt_changed_rate,1.0,0.0,-1.0,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,2,
+metric,C.heldout_alignment_reference,multi_edge_relief,target_recall,0.0,0.0,0.0,0.0,higher_is_better,failure_mode_alignment + oracle_label_adequacy,2,gt_target_edge_total=0; relief-only scope 上该指标按当前 strict 实现记为 0.0，语义上应视为 N/A。
+metric,C.heldout_alignment_reference,multi_edge_relief,gt_changed_edge_recall,0.0,100.0,100.0,inf,higher_is_better,failure_mode_alignment + oracle_label_adequacy,2,
+metric,C.heldout_alignment_reference,multi_edge_relief,MAE_on_changed_edges,0.8,0.0,-0.8,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,2,
+metric,C.heldout_alignment_reference,multi_edge_relief,parse_fail_rate_strict,1.0,0.0,-1.0,-100.0,lower_is_better,failure_mode_alignment + oracle_label_adequacy,2,
+coverage,C.heldout_alignment_reference,relief_normal_single_edge,heldout_failure_count,20.0,20.0,1.0,,higher_is_better,bucket_coverage,20,当前 held-out 该 bucket 的 strict fail 数量。
+coverage,C.heldout_alignment_reference,relief_normal_single_edge,pack_train_count,16.0,20.0,0.8,,higher_is_better,bucket_coverage,20,未来进入 stage4b 训练时该 bucket 可直接进入训练的样本数。
+coverage,C.heldout_alignment_reference,relief_normal_single_edge,pack_eval_count,8.0,20.0,0.4,,higher_is_better,bucket_coverage,20,该 bucket 在 pack 中保留的 eval 样本数。
+coverage,C.heldout_alignment_reference,relief_normal_single_edge,direct_sample_overlap_pack_total,8.0,20.0,0.4,,higher_is_better,bucket_coverage,20,pack 全量与 held-out 失败样本 sample_id 直接重合数。
+coverage,C.heldout_alignment_reference,relief_normal_single_edge,direct_sample_overlap_pack_train,0.0,20.0,0.0,,higher_is_better,bucket_coverage,20,pack train 与 held-out 失败样本 sample_id 直接重合数。
+coverage,C.heldout_alignment_reference,relief_normal_single_edge,exact_range_overlap_pack_total,12.0,20.0,0.6,,higher_is_better,bucket_coverage,20,pack 全量与 held-out 失败样本 ROAD+DIR+RANGE 完全一致数。
+coverage,C.heldout_alignment_reference,relief_normal_single_edge,exact_range_overlap_pack_train,3.0,20.0,0.15,,higher_is_better,bucket_coverage,20,pack train 与 held-out 失败样本 ROAD+DIR+RANGE 完全一致数。
+coverage,C.heldout_alignment_reference,relief_normal_short_range,heldout_failure_count,7.0,7.0,1.0,,higher_is_better,bucket_coverage,7,当前 held-out 该 bucket 的 strict fail 数量。
+coverage,C.heldout_alignment_reference,relief_normal_short_range,pack_train_count,16.0,7.0,2.2857,,higher_is_better,bucket_coverage,7,未来进入 stage4b 训练时该 bucket 可直接进入训练的样本数。
+coverage,C.heldout_alignment_reference,relief_normal_short_range,pack_eval_count,8.0,7.0,1.1429,,higher_is_better,bucket_coverage,7,该 bucket 在 pack 中保留的 eval 样本数。
+coverage,C.heldout_alignment_reference,relief_normal_short_range,direct_sample_overlap_pack_total,7.0,7.0,1.0,,higher_is_better,bucket_coverage,7,pack 全量与 held-out 失败样本 sample_id 直接重合数。
+coverage,C.heldout_alignment_reference,relief_normal_short_range,direct_sample_overlap_pack_train,0.0,7.0,0.0,,higher_is_better,bucket_coverage,7,pack train 与 held-out 失败样本 sample_id 直接重合数。
+coverage,C.heldout_alignment_reference,relief_normal_short_range,exact_range_overlap_pack_total,7.0,7.0,1.0,,higher_is_better,bucket_coverage,7,pack 全量与 held-out 失败样本 ROAD+DIR+RANGE 完全一致数。
+coverage,C.heldout_alignment_reference,relief_normal_short_range,exact_range_overlap_pack_train,0.0,7.0,0.0,,higher_is_better,bucket_coverage,7,pack train 与 held-out 失败样本 ROAD+DIR+RANGE 完全一致数。
+coverage,C.heldout_alignment_reference,multi_edge_relief,heldout_failure_count,2.0,2.0,1.0,,higher_is_better,bucket_coverage,2,当前 held-out 该 bucket 的 strict fail 数量。
+coverage,C.heldout_alignment_reference,multi_edge_relief,pack_train_count,16.0,2.0,8.0,,higher_is_better,bucket_coverage,2,未来进入 stage4b 训练时该 bucket 可直接进入训练的样本数。
+coverage,C.heldout_alignment_reference,multi_edge_relief,pack_eval_count,8.0,2.0,4.0,,higher_is_better,bucket_coverage,2,该 bucket 在 pack 中保留的 eval 样本数。
+coverage,C.heldout_alignment_reference,multi_edge_relief,direct_sample_overlap_pack_total,2.0,2.0,1.0,,higher_is_better,bucket_coverage,2,pack 全量与 held-out 失败样本 sample_id 直接重合数。
+coverage,C.heldout_alignment_reference,multi_edge_relief,direct_sample_overlap_pack_train,0.0,2.0,0.0,,higher_is_better,bucket_coverage,2,pack train 与 held-out 失败样本 sample_id 直接重合数。
+coverage,C.heldout_alignment_reference,multi_edge_relief,exact_range_overlap_pack_total,2.0,2.0,1.0,,higher_is_better,bucket_coverage,2,pack 全量与 held-out 失败样本 ROAD+DIR+RANGE 完全一致数。
+coverage,C.heldout_alignment_reference,multi_edge_relief,exact_range_overlap_pack_train,0.0,2.0,0.0,,higher_is_better,bucket_coverage,2,pack train 与 held-out 失败样本 ROAD+DIR+RANGE 完全一致数。

@@ -1,0 +1,8 @@
+scope,scope_name,count,false_positive_anchor_count,false_positive_anchor_rate,exact_no_anchor_count,exact_no_anchor_rate,parse_fail_count,parse_fail_rate,avg_anchor_count,avg_parse_confidence
+overall,overall,8,8,1.0,0,0.0,0,0.0,1.0,0.98
+phrase_variant,交通基本正常,6,6,1.0,0,0.0,0,0.0,1.0,0.98
+phrase_variant,保持正常通行,2,2,1.0,0,0.0,0,0.0,1.0,0.98
+structure_variant,planner_long,2,2,1.0,0,0.0,0,0.0,1.0,0.98
+structure_variant,prefixed_short,2,2,1.0,0,0.0,0,0.0,1.0,0.98
+structure_variant,short_plain,4,4,1.0,0,0.0,0,0.0,1.0,0.98
+source_type,remaining_false_positive_seed_eval_only,8,8,1.0,0,0.0,0,0.0,1.0,0.98

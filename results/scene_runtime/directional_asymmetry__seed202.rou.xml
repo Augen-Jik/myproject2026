@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+
+  <!-- demand_profile=directional_bias depart_rate=1.100 -->
+
+  <vType id="car" vClass="passenger" accel="2.6" decel="4.5" sigma="0.5" length="4.5" minGap="2.5" maxSpeed="16.67" guiShape="passenger"/>
+  <vType id="bus" vClass="bus" accel="1.2" decel="3.5" sigma="0.3" length="12.0" minGap="3.0" maxSpeed="13.89" guiShape="bus"/>
+  <vType id="truck" vClass="truck" accel="1.0" decel="3.0" sigma="0.3" length="9.0" minGap="3.5" maxSpeed="11.11" guiShape="truck"/>
+
+  <route id="Nongye_EW" edges="R0C0_E R0C1_E R0C2_E R0C3_E R0C4_E"/>
+  <route id="Nongye_WE" edges="R0C4_W R0C3_W R0C2_W R0C1_W R0C0_W"/>
+  <route id="Huanghe_EW" edges="R3C0_E R3C1_E R3C2_E R3C3_E R3C4_E"/>
+  <route id="Huanghe_WE" edges="R3C4_W R3C3_W R3C2_W R3C1_W R3C0_W"/>
+  <route id="Hongzhuan_EW" edges="R1C0_E R1C1_E R1C2_E R1C3_E R1C4_E"/>
+  <route id="Hongzhuan_WE" edges="R1C4_W R1C3_W R1C2_W R1C1_W R1C0_W"/>
+  <route id="Huayuan_NS" edges="C4R0_N C4R1_N C4R2_N C4R3_N"/>
+  <route id="Huayuan_SN" edges="C4R3_S C4R2_S C4R1_S C4R0_S"/>
+  <route id="Jing6_NS" edges="C2R0_N C2R1_N C2R2_N C2R3_N"/>
+  <route id="Jing6_SN" edges="C2R3_S C2R2_S C2R1_S C2R0_S"/>
+  <route id="CrossNW_SE" edges="R0C0_E R0C1_E C1R0_N C1R1_N R2C1_E R2C2_E C2R2_N C2R3_N"/>
+  <route id="Short_R2" edges="R2C2_E R2C3_E"/>
+  <route id="Short_C3" edges="C3R1_N C3R2_N"/>
+
+  <flow id="f_Nongye_EW" route="Nongye_EW" type="car" begin="0" end="3600" period="13.64" departLane="best" departSpeed="max"/>
+  <flow id="f_Nongye_WE" route="Nongye_WE" type="car" begin="5" end="3600" period="13.64" departLane="best" departSpeed="max"/>
+  <flow id="f_Huanghe_EW" route="Huanghe_EW" type="car" begin="0" end="3600" period="16.36" departLane="best" departSpeed="max"/>
+  <flow id="f_Huanghe_WE" route="Huanghe_WE" type="car" begin="8" end="3600" period="16.36" departLane="best" departSpeed="max"/>
+  <flow id="f_Huayuan_NS" route="Huayuan_NS" type="car" begin="0" end="3600" period="18.18" departLane="best" departSpeed="max"/>
+  <flow id="f_Huayuan_SN" route="Huayuan_SN" type="car" begin="10" end="3600" period="18.18" departLane="best" departSpeed="max"/>
+  <flow id="f_Jing6_NS" route="Jing6_NS" type="car" begin="0" end="3600" period="20.00" departLane="best" departSpeed="max"/>
+  <flow id="f_Jing6_SN" route="Jing6_SN" type="car" begin="12" end="3600" period="20.00" departLane="best" departSpeed="max"/>
+  <flow id="f_Hongz_EW" route="Hongzhuan_EW" type="car" begin="0" end="3600" period="27.27" departLane="best" departSpeed="max"/>
+  <flow id="f_Hongz_WE" route="Hongzhuan_WE" type="car" begin="15" end="3600" period="27.27" departLane="best" departSpeed="max"/>
+  <flow id="f_cross1" route="CrossNW_SE" type="car" begin="0" end="3600" period="40.91" departLane="best" departSpeed="max"/>
+  <flow id="f_bus_N" route="Nongye_EW" type="bus" begin="60" end="3600" period="163.64" departLane="best" departSpeed="max"/>
+  <flow id="f_bus_H" route="Huanghe_WE" type="bus" begin="90" end="3600" period="163.64" departLane="best" departSpeed="max"/>
+  <flow id="f_truck" route="Huanghe_EW" type="truck" begin="0" end="3600" period="272.73" departLane="best" departSpeed="max"/>
+</routes>

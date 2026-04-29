@@ -1,0 +1,37 @@
+# 本轮是最后一轮 micro patch
+# 唯一目标桶是 single_edge_changed_relief__short_plain_or_prefixed
+# 必须同时抑制 normal-only 假阳性
+# 若本轮仍不放行，则冻结 stage4_fix 并停止 patch
+
+model:
+  name_or_path: /root/autodl-tmp/Qwen2.5-1.5B-Instruct
+  trust_remote_code: true
+
+data:
+  train_path: /root/autodl-tmp/dataset_sparse_v2_stage4d_micro/train
+  eval_path: /root/autodl-tmp/dataset_sparse_v2_stage4d_micro/eval
+  max_seq_length: 1024
+
+training:
+  output_dir: /root/autodl-tmp/model_lora_sparse_v2_stage4d_micro
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 3
+  learning_rate: 2.0e-5
+  num_train_epochs: 3.0
+  lr_scheduler_type: cosine
+  warmup_ratio: 0.05
+  logging_steps: 2
+  save_steps: 9
+  eval_steps: 9
+  save_total_limit: 4
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  init_from: /root/autodl-tmp/model_lora_sparse_v2_stage4_fix
+
+smoke_test:
+  mode: sparse
+
+seed: 42

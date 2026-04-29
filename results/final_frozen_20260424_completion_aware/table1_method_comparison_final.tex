@@ -1,0 +1,36 @@
+% Requires: \usepackage{booktabs,threeparttable}
+
+\begin{table}[t]
+\centering
+\caption{Completion-aware final method comparison under the scene-profile-fixed live SUMO protocol.}
+\label{tab:table1_method_comparison_final}
+\small
+\begin{threeparttable}
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & Travel Time (s) & Time Loss (s) & Waiting Time (s) & Stop Count & Completion Rate (\%) & Truncated Runs \\
+\midrule
+\multicolumn{7}{l}{\textit{Classical}} \\
+Dijkstra & 1276.12 & 931.59 & 914.68 & 3.83 & 83.3 & 1 \\
+Rule-A* & 1257.12 & 898.70 & 880.12 & 4.17 & 100.0 & 0 \\
+\midrule
+\multicolumn{7}{l}{\textit{GNN}} \\
+GCN-Weight & 1471.90 & 1159.07 & 1135.15 & 5.00 & 83.3 & 1 \\
+\midrule
+\multicolumn{7}{l}{\textit{RL}} \\
+DQN & 1796.57 & 1215.91 & 1177.88 & 7.50 & 50.0 & 3 \\
+\midrule
+\multicolumn{7}{l}{\textit{Ours}} \\
+Sparse-LoRA & 1257.33 & 989.79 & 969.88 & 4.33 & 83.3 & 1 \\
+\midrule
+\multicolumn{7}{l}{\textit{Extended}} \\
+Sparse-LoRA+GAT & 1257.33 & 989.79 & 969.88 & 4.33 & 83.3 & 1 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Completion Rate is the share of scene-level live SUMO runs with vehicle\_arrived=true. Truncated Runs are retained as incomplete runs and are not counted as arrivals.
+\item Stop Count is computed from speed transitions (last speed $\geq 0.1$ m/s and current speed $< 0.1$ m/s), not from tripinfo.stopCount.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

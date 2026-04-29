@@ -1,0 +1,5 @@
+scope,scope_name,count,no_anchor_when_gt_changed_rate,target_recall,gt_changed_edge_recall,MAE_on_changed_edges,parse_fail_rate_strict
+overall,overall,28,0.0,100.0,56.9,0.3446,0.0
+bucket,anomaly_plus_normal_side_event,28,0.0,100.0,56.9,0.3446,0.0
+severity,moderate,20,0.0,100.0,50.0,0.4,0.0
+severity,severe,8,0.0,100.0,68.0,0.256,0.0

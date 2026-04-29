@@ -1,0 +1,26 @@
+[
+  {
+    "instruction": "TASK=sparse_output\nSCENE_TYPE=simple_local\nOUTPUT_OBJECT=异常语义锚点\nOUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级\nOUTPUT_RULE=只输出异常语义锚点；不要补全全量边权；不要解释。\nSCHEMA=ROAD|DIR|RANGE|LEVEL|TIME|PROPAGATION|CONFLICT\nNARRATIVE=黄河路经一路至经三路段向东因追尾事故严重拥堵；花园路向北畅通无阻\nEVENT_1: ROAD=黄河路 | DIR=向东 | RANGE=经一路至经三路 | LEVEL=严重拥堵 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=黄河路经一路至经三路段向东因追尾事故严重拥堵\nEVENT_2: ROAD=花园路 | DIR=向北 | RANGE=局部 | LEVEL=畅通 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=花园路向北畅通无阻\n仅输出锚点，不要解释。",
+    "output_preview": "ANCHOR|ROAD=黄河路|DIR=向东|RANGE=经一路至经三路|LEVEL=严重拥堵",
+    "anchor_count": 1,
+    "mapped_edges": 1,
+    "parse_confidence": 0.98,
+    "parse_fail": false
+  },
+  {
+    "instruction": "TASK=sparse_output\nSCENE_TYPE=simple_local\nOUTPUT_OBJECT=异常语义锚点\nOUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级\nOUTPUT_RULE=只输出异常语义锚点；不要补全全量边权；不要解释。\nSCHEMA=ROAD|DIR|RANGE|LEVEL|TIME|PROPAGATION|CONFLICT\nNARRATIVE=经六路农业路至红专路段向北施工封闭；经八路向北正常通行\nEVENT_1: ROAD=经六路 | DIR=向北 | RANGE=农业路至红专路 | LEVEL=封闭 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=经六路农业路至红专路段向北施工封闭\nEVENT_2: ROAD=经八路 | DIR=向北 | RANGE=局部 | LEVEL=正常 | TIME=未指明 | PROPAGATION=无明显传播 | CONFLICT=单约束 | TEXT=经八路向北正常通行\n仅输出锚点，不要解释。",
+    "output_preview": "ANCHOR|ROAD=经六路|DIR=向北|RANGE=农业路至红专路|LEVEL=封闭",
+    "anchor_count": 1,
+    "mapped_edges": 1,
+    "parse_confidence": 0.98,
+    "parse_fail": false
+  },
+  {
+    "instruction": "TASK=sparse_output\nSCENE_TYPE=temporal_switch\nOUTPUT_OBJECT=异常语义锚点\nOUTPUT_FORMAT=ANCHOR|ROAD=道路名|DIR=方向|RANGE=范围|LEVEL=等级\nOUTPUT_RULE=只输出异常语义锚点；不要补全全量边权；不要解释。\nSCHEMA=ROAD|DIR|RANGE|LEVEL|TIME|PROPAGATION|CONFLICT\nNARRATIVE=早高峰07:00-09:00黄河路向东严重拥堵，09:30后恢复正常；当前时间08:30，请按当前时段规划\nEVENT_1: ROAD=黄河路 | DIR=向东 | RANGE=局部 | LEVEL=严重拥堵 | TIME=07:00-09:00 | PROPAGATION=无明显传播 | CONFLICT=存在冲突/切换 | TEXT=早高峰07:00-09:00黄河路向东严重拥堵，09:30后恢复正常\n仅输出锚点，不要解释。",
+    "output_preview": "ANCHOR|ROAD=黄河路|DIR=向东|RANGE=局部|LEVEL=严重拥堵",
+    "anchor_count": 1,
+    "mapped_edges": 5,
+    "parse_confidence": 0.98,
+    "parse_fail": false
+  }
+]

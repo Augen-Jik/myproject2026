@@ -1,0 +1,195 @@
+{
+  "paths": {
+    "stage4_train": "/root/autodl-tmp/dataset_sparse_v2_stage4/train/data.parquet",
+    "stage4_eval": "/root/autodl-tmp/dataset_sparse_v2_stage4/eval/data.parquet",
+    "relabel_train": "/root/autodl-tmp/dataset_sparse_v2_stage4b_relabel/train/data.parquet",
+    "relabel_eval": "/root/autodl-tmp/dataset_sparse_v2_stage4b_relabel/eval/data.parquet",
+    "relabel_mapping": "/root/autodl-tmp/dataset_sparse_v2_stage4b_relabel/relabel_mapping.csv",
+    "relief_train": "/root/autodl-tmp/dataset_simple_local_relief_pack/train/data.parquet",
+    "relief_eval": "/root/autodl-tmp/dataset_simple_local_relief_pack/eval/data.parquet",
+    "policy_md": "/root/autodl-tmp/results/simple_local_v2_label_policy.md",
+    "output_train": "/root/autodl-tmp/dataset_sparse_v2_stage4b/train",
+    "output_eval": "/root/autodl-tmp/dataset_sparse_v2_stage4b/eval"
+  },
+  "constraints": {
+    "temporal_switch_mixed_in": false,
+    "simple_local_semantics": "simple_local_v2_strict_aligned",
+    "no_anchor_controlled": true,
+    "multi_edge_relief_high_risk_tagged": true,
+    "pyarrow_io": true
+  },
+  "old_stage4_reference": {
+    "train_rows": 671,
+    "eval_rows": 178,
+    "train_scene_type_counts": {
+      "directional_asymmetry": 270,
+      "simple_local": 401
+    },
+    "eval_scene_type_counts": {
+      "directional_asymmetry": 71,
+      "simple_local": 107
+    }
+  },
+  "stage4b_summary": {
+    "train": {
+      "total_rows": 168,
+      "mixture_component_counts": {
+        "anti_regression_guard": 48,
+        "relabeled_simple_local_repair": 72,
+        "relief_supervision_pack": 48
+      },
+      "mixture_component_share": {
+        "relabeled_simple_local_repair": 0.4286,
+        "relief_supervision_pack": 0.2857,
+        "anti_regression_guard": 0.2857
+      },
+      "bucket_counts": {
+        "anomaly_plus_normal_side_event": 72,
+        "anti_truncation_guard": 12,
+        "directional_asymmetry_stable": 16,
+        "existing_simple_local_buffer": 10,
+        "hard_negative_no_anchor": 10,
+        "multi_edge_relief": 16,
+        "relief_normal_short_range": 16,
+        "relief_normal_single_edge": 16
+      },
+      "scene_type_counts": {
+        "directional_asymmetry": 38,
+        "simple_local": 130
+      },
+      "guard_focus_counts": {
+        "anti_truncation_guard": 12,
+        "directional_asymmetry_stable": 16,
+        "existing_simple_local_buffer": 10,
+        "hard_negative_no_anchor": 10
+      },
+      "relief_bucket_counts": {
+        "multi_edge_relief": 16,
+        "relief_normal_short_range": 16,
+        "relief_normal_single_edge": 16
+      },
+      "anchor_style_counts": {
+        "NO_ANCHOR": 10,
+        "explicit_anchor": 158
+      },
+      "severity_counts": {
+        "mild": 33,
+        "moderate": 76,
+        "none": 10,
+        "severe": 49
+      },
+      "length_bucket_counts": {
+        "long": 18,
+        "medium": 24,
+        "noisy_long": 12,
+        "short": 114
+      },
+      "high_risk_bucket_count": 16,
+      "no_anchor_count": 10,
+      "explicit_anchor_count": 158
+    },
+    "eval": {
+      "total_rows": 72,
+      "mixture_component_counts": {
+        "anti_regression_guard": 20,
+        "relabeled_simple_local_repair": 28,
+        "relief_supervision_pack": 24
+      },
+      "mixture_component_share": {
+        "relabeled_simple_local_repair": 0.3889,
+        "relief_supervision_pack": 0.3333,
+        "anti_regression_guard": 0.2778
+      },
+      "bucket_counts": {
+        "anomaly_plus_normal_side_event": 28,
+        "anti_truncation_guard": 4,
+        "directional_asymmetry_stable": 8,
+        "existing_simple_local_buffer": 4,
+        "hard_negative_no_anchor": 4,
+        "multi_edge_relief": 8,
+        "relief_normal_short_range": 8,
+        "relief_normal_single_edge": 8
+      },
+      "scene_type_counts": {
+        "directional_asymmetry": 14,
+        "simple_local": 58
+      },
+      "guard_focus_counts": {
+        "anti_truncation_guard": 4,
+        "directional_asymmetry_stable": 8,
+        "existing_simple_local_buffer": 4,
+        "hard_negative_no_anchor": 4
+      },
+      "relief_bucket_counts": {
+        "multi_edge_relief": 8,
+        "relief_normal_short_range": 8,
+        "relief_normal_single_edge": 8
+      },
+      "anchor_style_counts": {
+        "NO_ANCHOR": 4,
+        "explicit_anchor": 68
+      },
+      "severity_counts": {
+        "mild": 17,
+        "moderate": 30,
+        "none": 4,
+        "severe": 21
+      },
+      "length_bucket_counts": {
+        "long": 4,
+        "medium": 11,
+        "noisy_long": 5,
+        "short": 52
+      },
+      "high_risk_bucket_count": 8,
+      "no_anchor_count": 4,
+      "explicit_anchor_count": 68
+    }
+  },
+  "major_increment_sources_vs_old_stage4": {
+    "train": {
+      "relabeled_simple_local_repair": 72,
+      "relief_supervision_pack": 48,
+      "anti_regression_guard": 48
+    },
+    "eval": {
+      "relabeled_simple_local_repair": 28,
+      "relief_supervision_pack": 24,
+      "anti_regression_guard": 20
+    },
+    "notes": [
+      "stage4b is a curated conservative patch set, not a superset of old stage4.",
+      "relabel repair carries over only the changed anomaly_plus_normal simple_local samples.",
+      "relief supervision pack is the major new strict-aligned addition for the held-out bottleneck buckets.",
+      "anti_regression_guard reuses stable stage4-derived samples without mixing temporal_switch."
+    ]
+  },
+  "component_ratio_check": {
+    "train": {
+      "relabeled_simple_local_repair": 0.4286,
+      "relief_supervision_pack": 0.2857,
+      "anti_regression_guard": 0.2857
+    },
+    "eval": {
+      "relabeled_simple_local_repair": 0.3889,
+      "relief_supervision_pack": 0.3333,
+      "anti_regression_guard": 0.2778
+    }
+  },
+  "guard_bucket_quota": {
+    "train": {
+      "directional_asymmetry_stable": 16,
+      "anti_truncation_guard": 12,
+      "hard_negative_no_anchor": 10,
+      "existing_simple_local_buffer": 10
+    },
+    "eval": {
+      "directional_asymmetry_stable": 8,
+      "anti_truncation_guard": 4,
+      "hard_negative_no_anchor": 4,
+      "existing_simple_local_buffer": 4
+    }
+  },
+  "high_risk_bucket": "multi_edge_relief",
+  "boundary_risk_note": "multi_edge_relief is kept with explicit high-risk tagging because full-range boundary coverage remains the most fragile tail behavior."
+}

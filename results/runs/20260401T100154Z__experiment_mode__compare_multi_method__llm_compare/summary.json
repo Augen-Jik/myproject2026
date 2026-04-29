@@ -1,0 +1,8 @@
+{
+  "run_id": "20260401T100154Z__experiment_mode__compare_multi_method__llm_compare",
+  "timestamp": "20260401T100154Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "total_scenarios": 6,
+  "run_llm": true
+}

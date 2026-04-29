@@ -1,0 +1,27 @@
+model:
+  name_or_path: /root/autodl-tmp/Qwen2.5-1.5B-Instruct
+  trust_remote_code: true
+
+data:
+  train_path: /root/autodl-tmp/dataset_sparse_v2/stage1/train
+  eval_path: /root/autodl-tmp/dataset_sparse_v2/stage1/eval
+  max_seq_length: 1024
+
+training:
+  output_dir: /root/autodl-tmp/model_lora_sparse_v2_stage1
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 5e-5
+  num_train_epochs: 1
+  logging_steps: 20
+  save_steps: 180
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+
+smoke_test:
+  mode: sparse
+
+seed: 42

@@ -1,0 +1,7 @@
+﻿Method,Category,Total Runs,Arrived Runs,Truncated Runs,Completion Rate (%),Mean Travel Time All Runs (s),Mean Travel Time Arrived Only (s),Mean Time Loss All Runs (s),Mean Waiting Time All Runs (s),Mean Stop Count All Runs,Mean Planning Time (s),Truncated Scenarios,Completion Status Sequence
+Dijkstra,Classical,6,5,1,83.33,1276.12,1099.32,931.59,914.68,3.83,0.000184,D,arrived|arrived|arrived|truncated_at_evaluation_end|arrived|arrived
+Rule-A*,Classical,6,6,0,100.0,1257.12,1257.12,898.7,880.12,4.17,0.00065,,arrived|arrived|arrived|arrived|arrived|arrived
+DQN,RL,6,3,3,50.0,1796.57,1353.03,1215.91,1177.88,7.5,0.033243,D|G|C,arrived|arrived|arrived|truncated_at_evaluation_end|truncated_at_evaluation_end|truncated_at_evaluation_end
+GCN-Weight,GNN,6,5,1,83.33,1471.9,1334.26,1159.07,1135.15,5.0,0.000856,G,arrived|arrived|arrived|arrived|truncated_at_evaluation_end|arrived
+Sparse-LoRA,Ours,6,5,1,83.33,1257.33,1028.78,989.79,969.88,4.33,1.345181,C,arrived|arrived|arrived|arrived|arrived|truncated_at_evaluation_end
+Sparse-LoRA+GAT,Extended,6,5,1,83.33,1257.33,1028.78,989.79,969.88,4.33,1.267167,C,arrived|arrived|arrived|arrived|arrived|truncated_at_evaluation_end

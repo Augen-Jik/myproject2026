@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+  <node id="N00" x="0" y="0" type="traffic_light"/>
+  <node id="N01" x="620" y="0" type="traffic_light"/>
+  <node id="N02" x="1320" y="0" type="traffic_light"/>
+  <node id="N03" x="1940" y="0" type="traffic_light"/>
+  <node id="N04" x="2680" y="0" type="traffic_light"/>
+  <node id="N05" x="3300" y="0" type="traffic_light"/>
+  <node id="N10" x="0" y="680" type="traffic_light"/>
+  <node id="N11" x="620" y="680" type="traffic_light"/>
+  <node id="N12" x="1320" y="680" type="traffic_light"/>
+  <node id="N13" x="1940" y="680" type="traffic_light"/>
+  <node id="N14" x="2680" y="680" type="traffic_light"/>
+  <node id="N15" x="3300" y="680" type="traffic_light"/>
+  <node id="N20" x="0" y="1260" type="priority"/>
+  <node id="N21" x="620" y="1260" type="traffic_light"/>
+  <node id="N22" x="1320" y="1260" type="traffic_light"/>
+  <node id="N23" x="1940" y="1260" type="traffic_light"/>
+  <node id="N24" x="2680" y="1260" type="traffic_light"/>
+  <node id="N25" x="3300" y="1260" type="priority"/>
+  <node id="N30" x="0" y="1940" type="traffic_light"/>
+  <node id="N31" x="620" y="1940" type="traffic_light"/>
+  <node id="N32" x="1320" y="1940" type="traffic_light"/>
+  <node id="N33" x="1940" y="1940" type="traffic_light"/>
+  <node id="N34" x="2680" y="1940" type="traffic_light"/>
+  <node id="N35" x="3300" y="1940" type="traffic_light"/>
+  <node id="N40" x="0" y="2540" type="priority"/>
+  <node id="N41" x="620" y="2540" type="traffic_light"/>
+  <node id="N42" x="1320" y="2540" type="traffic_light"/>
+  <node id="N43" x="1940" y="2540" type="traffic_light"/>
+  <node id="N44" x="2680" y="2540" type="traffic_light"/>
+  <node id="N45" x="3300" y="2540" type="priority"/>
+</nodes>

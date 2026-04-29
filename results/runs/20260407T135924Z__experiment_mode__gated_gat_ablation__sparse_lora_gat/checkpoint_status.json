@@ -1,0 +1,12 @@
+{
+  "path": "/root/autodl-tmp/gat_model.pt",
+  "exists": true,
+  "compatible_params": 8,
+  "checkpoint_params": 10,
+  "model_params": 10,
+  "load_mode": "real_checkpoint_partial_compatible_load",
+  "message": "真实 checkpoint + 部分兼容加载",
+  "load_error": null,
+  "mode": "真实 checkpoint + 部分兼容加载",
+  "fallback_recommendation": null
+}

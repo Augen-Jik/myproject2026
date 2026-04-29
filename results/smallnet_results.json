@@ -1,0 +1,188 @@
+[
+  {
+    "scenario": "SmallNet-密集场景A：三事件同域拥堵",
+    "oracle_cost": 18.5,
+    "total_edges": 24,
+    "methods": [
+      {
+        "method": "Uniform-Dijkstra",
+        "plan_ms": 0.05,
+        "hops": 6,
+        "cost": 6.0,
+        "overhead_pct": -67.57,
+        "weight_mae": 6.833,
+        "parse_rate": 100.0,
+        "parsed_edges": 24,
+        "total_edges": 24
+      },
+      {
+        "method": "Rule-Dijkstra",
+        "plan_ms": 0.34,
+        "hops": 6,
+        "cost": 18.0,
+        "overhead_pct": -2.7,
+        "weight_mae": 0.167,
+        "parse_rate": 12.5,
+        "parsed_edges": 3,
+        "total_edges": 24
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "plan_ms": 21392.87,
+        "hops": 6,
+        "cost": 12.0,
+        "overhead_pct": -35.14,
+        "weight_mae": 5.833,
+        "parse_rate": 0.0,
+        "parsed_edges": 0,
+        "total_edges": 24
+      },
+      {
+        "method": "R1-LoRA★",
+        "plan_ms": 25594.61,
+        "hops": 6,
+        "cost": 14.0,
+        "overhead_pct": -24.32,
+        "weight_mae": 3.833,
+        "parse_rate": 87.5,
+        "parsed_edges": 21,
+        "total_edges": 24
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "plan_ms": 495.16,
+        "hops": 6,
+        "cost": 12.0,
+        "overhead_pct": -35.14,
+        "weight_mae": 4.9,
+        "parse_rate": 12.5,
+        "parsed_edges": 3,
+        "total_edges": 24
+      }
+    ]
+  },
+  {
+    "scenario": "SmallNet-密集场景B：中轴拥堵",
+    "oracle_cost": 10.0,
+    "total_edges": 24,
+    "methods": [
+      {
+        "method": "Uniform-Dijkstra",
+        "plan_ms": 0.04,
+        "hops": 5,
+        "cost": 5.0,
+        "overhead_pct": -50.0,
+        "weight_mae": 4.667,
+        "parse_rate": 100.0,
+        "parsed_edges": 24,
+        "total_edges": 24
+      },
+      {
+        "method": "Rule-Dijkstra",
+        "plan_ms": 0.09,
+        "hops": 5,
+        "cost": 10.0,
+        "overhead_pct": 0.0,
+        "weight_mae": 0.333,
+        "parse_rate": 12.5,
+        "parsed_edges": 3,
+        "total_edges": 24
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "plan_ms": 20825.37,
+        "hops": 5,
+        "cost": 8.6,
+        "overhead_pct": -14.0,
+        "weight_mae": 3.6,
+        "parse_rate": 58.3,
+        "parsed_edges": 24,
+        "total_edges": 24
+      },
+      {
+        "method": "R1-LoRA★",
+        "plan_ms": 8368.38,
+        "hops": 5,
+        "cost": 12.0,
+        "overhead_pct": 20.0,
+        "weight_mae": 4.0,
+        "parse_rate": 66.7,
+        "parsed_edges": 21,
+        "total_edges": 24
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "plan_ms": 602.68,
+        "hops": 5,
+        "cost": 10.0,
+        "overhead_pct": 0.0,
+        "weight_mae": 2.853,
+        "parse_rate": 12.5,
+        "parsed_edges": 3,
+        "total_edges": 24
+      }
+    ]
+  },
+  {
+    "scenario": "SmallNet-密集场景C：末端绕行",
+    "oracle_cost": 8.0,
+    "total_edges": 24,
+    "methods": [
+      {
+        "method": "Uniform-Dijkstra",
+        "plan_ms": 0.04,
+        "hops": 4,
+        "cost": 4.0,
+        "overhead_pct": -50.0,
+        "weight_mae": 6.667,
+        "parse_rate": 100.0,
+        "parsed_edges": 24,
+        "total_edges": 24
+      },
+      {
+        "method": "Rule-Dijkstra",
+        "plan_ms": 0.07,
+        "hops": 4,
+        "cost": 8.0,
+        "overhead_pct": 0.0,
+        "weight_mae": 0.0,
+        "parse_rate": 12.5,
+        "parsed_edges": 3,
+        "total_edges": 24
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "plan_ms": 18363.8,
+        "hops": 4,
+        "cost": 8.0,
+        "overhead_pct": 0.0,
+        "weight_mae": 5.667,
+        "parse_rate": 0.0,
+        "parsed_edges": 0,
+        "total_edges": 24
+      },
+      {
+        "method": "R1-LoRA★",
+        "plan_ms": 27950.94,
+        "hops": 4,
+        "cost": 10.0,
+        "overhead_pct": 25.0,
+        "weight_mae": 0.0,
+        "parse_rate": 100.0,
+        "parsed_edges": 24,
+        "total_edges": 24
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "plan_ms": 523.78,
+        "hops": 4,
+        "cost": 8.0,
+        "overhead_pct": 0.0,
+        "weight_mae": 5.667,
+        "parse_rate": 8.3,
+        "parsed_edges": 2,
+        "total_edges": 24
+      }
+    ]
+  }
+]

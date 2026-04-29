@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <input>
+    <net-file    value="../net/my_net.net.xml"/>
+    <route-files value="../routes.rou.xml"/>
+  </input>
+  <time>
+    <begin       value="0"/>
+    <end         value="3600"/>
+    <step-length value="0.1"/>
+  </time>
+  <processing>
+    <ignore-route-errors value="true"/>
+  </processing>
+  <report>
+    <no-warnings          value="true"/>
+    <duration-log.disable value="true"/>
+  </report>
+</configuration>

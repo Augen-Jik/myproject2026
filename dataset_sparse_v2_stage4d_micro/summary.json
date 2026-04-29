@@ -1,0 +1,295 @@
+{
+  "dataset": "dataset_sparse_v2_stage4d_micro",
+  "target_bucket": "single_edge_changed_relief__short_plain_or_prefixed",
+  "paths": {
+    "remaining_hard_json": "/root/autodl-tmp/results/stage4c_remaining_hard_cases.json",
+    "priority_csv": "/root/autodl-tmp/results/stage4c_repair_priority.csv",
+    "policy_md": "/root/autodl-tmp/results/simple_local_v2_label_policy.md",
+    "core_train": "/root/autodl-tmp/dataset_stage4c_singleedge_core/train/data.parquet",
+    "core_eval": "/root/autodl-tmp/dataset_stage4c_singleedge_core/eval/data.parquet",
+    "original_train": "/root/autodl-tmp/dataset_sparse_v2/train/data.parquet",
+    "original_eval": "/root/autodl-tmp/dataset_sparse_v2/eval/data.parquet",
+    "original_val_normal": "/root/autodl-tmp/dataset_sparse_v2/val_normal/data.parquet",
+    "original_val_special": "/root/autodl-tmp/dataset_sparse_v2/val_special/data.parquet",
+    "output_train": "/root/autodl-tmp/dataset_sparse_v2_stage4d_micro/train",
+    "output_eval": "/root/autodl-tmp/dataset_sparse_v2_stage4d_micro/eval"
+  },
+  "optional_input_status": {
+    "requested_stage4_fix_train": "/root/autodl-tmp/dataset_sparse_v2_stage4_fix/train/data.parquet",
+    "requested_stage4_fix_eval": "/root/autodl-tmp/dataset_sparse_v2_stage4_fix/eval/data.parquet",
+    "stage4_fix_train_exists": "False",
+    "stage4_fix_eval_exists": "False",
+    "fallback_to_dataset_sparse_v2": true
+  },
+  "priority_reference": {
+    "priority_rank": "1",
+    "bucket_name": "single_edge_changed_relief__short_plain_or_prefixed",
+    "count": "18",
+    "phrases": "畅通无阻=10; 顺畅=8",
+    "structures": "prefixed_short=7; short_plain=11",
+    "guardrail": "If patching, freeze all LEVEL=正常 positives and add explicit hard negatives for `交通基本正常` / `保持正常通行`.",
+    "stop_reason": "Stop immediately if this bucket does not move after one micro patch, because stage4c already proved broader patch SFT has sharply diminishing returns.",
+    "final_recommendation": "DO_ONE_LAST_MICRO_PATCH"
+  },
+  "selection_reference": {
+    "remaining_target_hard_cases": 18,
+    "remaining_false_positive_seeds": 8,
+    "train_target_total": 100,
+    "eval_target_total": 30
+  },
+  "train_total": 100,
+  "eval_total": 30,
+  "split_summary": {
+    "train": {
+      "total_rows": 100,
+      "mixture_component_counts": {
+        "hard_negative_guard": 25,
+        "micro_patch_positive_core": 65,
+        "minimal_stability_canary": 10
+      },
+      "mixture_component_share": {
+        "hard_negative_guard": 0.25,
+        "micro_patch_positive_core": 0.65,
+        "minimal_stability_canary": 0.1
+      },
+      "phrase_variant_counts": {
+        "anti_truncation_canary": 5,
+        "directional_asymmetry_canary": 5,
+        "交通基本正常": 12,
+        "保持正常通行": 13,
+        "畅通无阻": 24,
+        "车流顺畅": 24,
+        "顺畅": 17
+      },
+      "structure_variant_counts": {
+        "planner_long": 10,
+        "prefixed_short": 42,
+        "short_plain": 48
+      },
+      "target_structure_counts": {
+        "short_plain": 48,
+        "prefixed_short": 42
+      },
+      "hard_negative_count": 25,
+      "hard_negative_share": 0.25,
+      "NO_ANCHOR_count": 25,
+      "NO_ANCHOR_share": 0.25,
+      "anchor_style_counts": {
+        "NO_ANCHOR": 25,
+        "explicit_anchor": 75
+      },
+      "source_type_counts": {
+        "anti_truncation_canary": 5,
+        "directional_asymmetry_canary": 5,
+        "orig_train_hard_negative_guard": 25,
+        "orig_train_policy_a_relabel": 48,
+        "stage4c_core_targeted": 17
+      },
+      "canary_kind_counts": {
+        "anti_truncation": 5,
+        "directional_asymmetry": 5
+      },
+      "component_phrase_variant_counts": {
+        "micro_patch_positive_core": {
+          "畅通无阻": 24,
+          "车流顺畅": 24,
+          "顺畅": 17
+        },
+        "hard_negative_guard": {
+          "交通基本正常": 12,
+          "保持正常通行": 13
+        },
+        "minimal_stability_canary": {
+          "anti_truncation_canary": 5,
+          "directional_asymmetry_canary": 5
+        }
+      },
+      "component_structure_variant_counts": {
+        "micro_patch_positive_core": {
+          "prefixed_short": 33,
+          "short_plain": 32
+        },
+        "hard_negative_guard": {
+          "planner_long": 5,
+          "prefixed_short": 9,
+          "short_plain": 11
+        },
+        "minimal_stability_canary": {
+          "planner_long": 5,
+          "short_plain": 5
+        }
+      }
+    },
+    "eval": {
+      "total_rows": 30,
+      "mixture_component_counts": {
+        "hard_negative_guard": 8,
+        "micro_patch_positive_core": 18,
+        "minimal_stability_canary": 4
+      },
+      "mixture_component_share": {
+        "hard_negative_guard": 0.2667,
+        "micro_patch_positive_core": 0.6,
+        "minimal_stability_canary": 0.1333
+      },
+      "phrase_variant_counts": {
+        "anti_truncation_canary": 2,
+        "directional_asymmetry_canary": 2,
+        "交通基本正常": 6,
+        "保持正常通行": 2,
+        "畅通无阻": 10,
+        "车流顺畅": 8
+      },
+      "structure_variant_counts": {
+        "planner_long": 4,
+        "prefixed_short": 10,
+        "short_plain": 16
+      },
+      "target_structure_counts": {
+        "short_plain": 16,
+        "prefixed_short": 10
+      },
+      "hard_negative_count": 8,
+      "hard_negative_share": 0.2667,
+      "NO_ANCHOR_count": 8,
+      "NO_ANCHOR_share": 0.2667,
+      "anchor_style_counts": {
+        "NO_ANCHOR": 8,
+        "explicit_anchor": 22
+      },
+      "source_type_counts": {
+        "anti_truncation_canary_eval": 2,
+        "directional_asymmetry_canary_eval": 2,
+        "remaining_false_positive_seed_eval_only": 8,
+        "remaining_hard_case_exact_eval_only": 18
+      },
+      "canary_kind_counts": {
+        "anti_truncation": 2,
+        "directional_asymmetry": 2
+      },
+      "component_phrase_variant_counts": {
+        "micro_patch_positive_core": {
+          "畅通无阻": 10,
+          "车流顺畅": 8
+        },
+        "hard_negative_guard": {
+          "交通基本正常": 6,
+          "保持正常通行": 2
+        },
+        "minimal_stability_canary": {
+          "anti_truncation_canary": 2,
+          "directional_asymmetry_canary": 2
+        }
+      },
+      "component_structure_variant_counts": {
+        "micro_patch_positive_core": {
+          "prefixed_short": 7,
+          "short_plain": 11
+        },
+        "hard_negative_guard": {
+          "planner_long": 2,
+          "prefixed_short": 2,
+          "short_plain": 4
+        },
+        "minimal_stability_canary": {
+          "planner_long": 2,
+          "prefixed_short": 1,
+          "short_plain": 1
+        }
+      }
+    },
+    "overall": {
+      "total_rows": 130,
+      "mixture_component_counts": {
+        "hard_negative_guard": 33,
+        "micro_patch_positive_core": 83,
+        "minimal_stability_canary": 14
+      },
+      "mixture_component_share": {
+        "hard_negative_guard": 0.2538,
+        "micro_patch_positive_core": 0.6385,
+        "minimal_stability_canary": 0.1077
+      },
+      "phrase_variant_counts": {
+        "anti_truncation_canary": 7,
+        "directional_asymmetry_canary": 7,
+        "交通基本正常": 18,
+        "保持正常通行": 15,
+        "畅通无阻": 34,
+        "车流顺畅": 32,
+        "顺畅": 17
+      },
+      "structure_variant_counts": {
+        "planner_long": 14,
+        "prefixed_short": 52,
+        "short_plain": 64
+      },
+      "target_structure_counts": {
+        "short_plain": 64,
+        "prefixed_short": 52
+      },
+      "hard_negative_count": 33,
+      "hard_negative_share": 0.2538,
+      "NO_ANCHOR_count": 33,
+      "NO_ANCHOR_share": 0.2538,
+      "anchor_style_counts": {
+        "NO_ANCHOR": 33,
+        "explicit_anchor": 97
+      },
+      "source_type_counts": {
+        "anti_truncation_canary": 5,
+        "anti_truncation_canary_eval": 2,
+        "directional_asymmetry_canary": 5,
+        "directional_asymmetry_canary_eval": 2,
+        "orig_train_hard_negative_guard": 25,
+        "orig_train_policy_a_relabel": 48,
+        "remaining_false_positive_seed_eval_only": 8,
+        "remaining_hard_case_exact_eval_only": 18,
+        "stage4c_core_targeted": 17
+      },
+      "canary_kind_counts": {
+        "anti_truncation": 7,
+        "directional_asymmetry": 7
+      },
+      "component_phrase_variant_counts": {
+        "micro_patch_positive_core": {
+          "畅通无阻": 34,
+          "车流顺畅": 32,
+          "顺畅": 17
+        },
+        "hard_negative_guard": {
+          "交通基本正常": 18,
+          "保持正常通行": 15
+        },
+        "minimal_stability_canary": {
+          "anti_truncation_canary": 7,
+          "directional_asymmetry_canary": 7
+        }
+      },
+      "component_structure_variant_counts": {
+        "micro_patch_positive_core": {
+          "prefixed_short": 40,
+          "short_plain": 43
+        },
+        "hard_negative_guard": {
+          "planner_long": 7,
+          "prefixed_short": 11,
+          "short_plain": 15
+        },
+        "minimal_stability_canary": {
+          "planner_long": 7,
+          "prefixed_short": 1,
+          "short_plain": 6
+        }
+      }
+    }
+  },
+  "final_checks": {
+    "train_total_in_requested_band": true,
+    "micro_patch_positive_core_share_in_band": true,
+    "hard_negative_guard_share_in_band": true,
+    "minimal_stability_canary_share_in_band": true,
+    "single_edge_bucket_is_absolute_main_signal": true,
+    "hard_negative_guard_sufficient_for_normal_only_false_positive_risk": true
+  }
+}

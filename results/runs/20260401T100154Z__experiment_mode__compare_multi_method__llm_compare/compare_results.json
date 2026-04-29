@@ -1,0 +1,752 @@
+[
+  {
+    "scenario": "场景A 黄河路单向拥堵",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 5.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 50.0,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 623.9
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 16.0,
+        "path_len": 6,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 436.8
+      },
+      {
+        "method": "DQN",
+        "path_cost": 27.6,
+        "path_len": 13,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.02,
+        "sumo_time": 943.8
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 16.4,
+        "path_len": 6,
+        "coverage": 98.0,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 436.8
+      },
+      {
+        "method": "Raw-Qwen",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 50.0,
+        "parsed_edges": 96,
+        "time_s": 20.72,
+        "sumo_time": 623.9
+      },
+      {
+        "method": "CoT-Qwen",
+        "path_cost": 12.0,
+        "path_len": 6,
+        "coverage": 3.1,
+        "constraint_rate": 50.0,
+        "parsed_edges": 96,
+        "time_s": 16.62,
+        "sumo_time": 436.8
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "path_cost": 11.5,
+        "path_len": 6,
+        "coverage": 68.4,
+        "constraint_rate": 66.7,
+        "parsed_edges": 96,
+        "time_s": 20.38,
+        "sumo_time": 436.8
+      },
+      {
+        "method": "LoRA+GAT★★",
+        "path_cost": 13.06,
+        "path_len": 6,
+        "coverage": 94.9,
+        "constraint_rate": 66.7,
+        "parsed_edges": 94,
+        "time_s": 20.38,
+        "sumo_time": 436.8
+      },
+      {
+        "method": "R1-Raw",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 50.0,
+        "parsed_edges": 96,
+        "time_s": 16.9,
+        "sumo_time": 623.9
+      },
+      {
+        "method": "R1-LoRA★",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 50.0,
+        "parsed_edges": 96,
+        "time_s": 29.2,
+        "sumo_time": 623.9
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "path_cost": 18.2,
+        "path_len": 6,
+        "coverage": 9.2,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 1.13,
+        "sumo_time": 436.8
+      },
+      {
+        "method": "Sparse-LoRA+GAT★★★",
+        "path_cost": 18.45,
+        "path_len": 6,
+        "coverage": 93.9,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 1.13,
+        "sumo_time": 436.8
+      }
+    ]
+  },
+  {
+    "scenario": "场景B 花园路封闭绕行",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 4.0,
+        "path_len": 4,
+        "coverage": 0.0,
+        "constraint_rate": 60.0,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 1685.0
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 16.5,
+        "path_len": 5,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 708.4
+      },
+      {
+        "method": "DQN",
+        "path_cost": 57.3,
+        "path_len": 22,
+        "coverage": 89.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 2112.6
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 16.3,
+        "path_len": 5,
+        "coverage": 98.0,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 708.4
+      },
+      {
+        "method": "Raw-Qwen",
+        "path_cost": 8.0,
+        "path_len": 4,
+        "coverage": 0.0,
+        "constraint_rate": 60.0,
+        "parsed_edges": 96,
+        "time_s": 4.89,
+        "sumo_time": 1685.0
+      },
+      {
+        "method": "CoT-Qwen",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 3.1,
+        "constraint_rate": 60.0,
+        "parsed_edges": 96,
+        "time_s": 11.38,
+        "sumo_time": 991.5
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "path_cost": 12.4,
+        "path_len": 5,
+        "coverage": 68.4,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 19.67,
+        "sumo_time": 708.4
+      },
+      {
+        "method": "LoRA+GAT★★",
+        "path_cost": 13.6,
+        "path_len": 5,
+        "coverage": 95.9,
+        "constraint_rate": 100.0,
+        "parsed_edges": 94,
+        "time_s": 19.68,
+        "sumo_time": 708.4
+      },
+      {
+        "method": "R1-Raw",
+        "path_cost": 16.5,
+        "path_len": 5,
+        "coverage": 77.6,
+        "constraint_rate": 40.0,
+        "parsed_edges": 96,
+        "time_s": 26.38,
+        "sumo_time": 708.4
+      },
+      {
+        "method": "R1-LoRA★",
+        "path_cost": 22.0,
+        "path_len": 4,
+        "coverage": 100.0,
+        "constraint_rate": 80.0,
+        "parsed_edges": 96,
+        "time_s": 27.64,
+        "sumo_time": 1685.0
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "path_cost": 17.7,
+        "path_len": 5,
+        "coverage": 8.2,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 1.15,
+        "sumo_time": 708.4
+      },
+      {
+        "method": "Sparse-LoRA+GAT★★★",
+        "path_cost": 17.89,
+        "path_len": 5,
+        "coverage": 91.8,
+        "constraint_rate": 100.0,
+        "parsed_edges": 96,
+        "time_s": 1.13,
+        "sumo_time": 708.4
+      }
+    ]
+  },
+  {
+    "scenario": "场景C 多路段复合拥堵",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 0.0,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 649.8
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 17.2,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 544.6
+      },
+      {
+        "method": "DQN",
+        "path_cost": 41.6,
+        "path_len": 20,
+        "coverage": 89.8,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 1258.7
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 14.75,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 533.6
+      },
+      {
+        "method": "Raw-Qwen",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 0.0,
+        "parsed_edges": 96,
+        "time_s": 7.45,
+        "sumo_time": 649.8
+      },
+      {
+        "method": "CoT-Qwen",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 3.1,
+        "constraint_rate": 0.0,
+        "parsed_edges": 96,
+        "time_s": 8.76,
+        "sumo_time": 588.7
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 0.0,
+        "parsed_edges": 0,
+        "time_s": 12.7,
+        "sumo_time": 649.8
+      },
+      {
+        "method": "LoRA+GAT★★",
+        "path_cost": 8.88,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 0.0,
+        "parsed_edges": 96,
+        "time_s": 12.1,
+        "sumo_time": 544.6
+      },
+      {
+        "method": "R1-Raw",
+        "path_cost": 21.5,
+        "path_len": 8,
+        "coverage": 20.4,
+        "constraint_rate": 0.0,
+        "parsed_edges": 96,
+        "time_s": 14.25,
+        "sumo_time": 649.8
+      },
+      {
+        "method": "R1-LoRA★",
+        "path_cost": 5.4,
+        "path_len": 8,
+        "coverage": 52.0,
+        "constraint_rate": 0.0,
+        "parsed_edges": 96,
+        "time_s": 26.4,
+        "sumo_time": 588.7
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 9.2,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 1.5,
+        "sumo_time": 544.6
+      },
+      {
+        "method": "Sparse-LoRA+GAT★★★",
+        "path_cost": 16.15,
+        "path_len": 8,
+        "coverage": 87.8,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 1.53,
+        "sumo_time": 544.6
+      }
+    ]
+  },
+  {
+    "scenario": "场景D 中央核心节点封锁（强迫大范围绕行）",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 26.7,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 17.6,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 46.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 490.4
+      },
+      {
+        "method": "DQN",
+        "path_cost": 17.5,
+        "path_len": 9,
+        "coverage": 89.8,
+        "constraint_rate": 46.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 581.4
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 15.95,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 46.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 682.2
+      },
+      {
+        "method": "Raw-Qwen",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 26.7,
+        "parsed_edges": 96,
+        "time_s": 11.22,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "CoT-Qwen",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 3.1,
+        "constraint_rate": 33.3,
+        "parsed_edges": 96,
+        "time_s": 5.8,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 26.7,
+        "parsed_edges": 0,
+        "time_s": 9.56,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "LoRA+GAT★★",
+        "path_cost": 9.0,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 26.7,
+        "parsed_edges": 96,
+        "time_s": 9.59,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "R1-Raw",
+        "path_cost": 23.5,
+        "path_len": 8,
+        "coverage": 38.8,
+        "constraint_rate": 26.7,
+        "parsed_edges": 96,
+        "time_s": 50.26,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "R1-LoRA★",
+        "path_cost": 5.2,
+        "path_len": 8,
+        "coverage": 57.1,
+        "constraint_rate": 40.0,
+        "parsed_edges": 96,
+        "time_s": 30.2,
+        "sumo_time": 546.5
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 12.2,
+        "constraint_rate": 86.7,
+        "parsed_edges": 96,
+        "time_s": 1.88,
+        "sumo_time": 536.5
+      },
+      {
+        "method": "Sparse-LoRA+GAT★★★",
+        "path_cost": 16.85,
+        "path_len": 8,
+        "coverage": 90.8,
+        "constraint_rate": 86.7,
+        "parsed_edges": 96,
+        "time_s": 1.84,
+        "sumo_time": 490.4
+      }
+    ]
+  },
+  {
+    "scenario": "场景E 不对称方向拥堵（测试模型方向提取能力）",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 5.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 36.4,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 21.2,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 454.6
+      },
+      {
+        "method": "DQN",
+        "path_cost": 33.7,
+        "path_len": 15,
+        "coverage": 89.8,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 889.0
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 17.45,
+        "path_len": 6,
+        "coverage": 98.0,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 394.1
+      },
+      {
+        "method": "Raw-Qwen",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 36.4,
+        "parsed_edges": 96,
+        "time_s": 5.93,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "CoT-Qwen",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 3.1,
+        "constraint_rate": 36.4,
+        "parsed_edges": 96,
+        "time_s": 3.04,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "path_cost": 3.6,
+        "path_len": 5,
+        "coverage": 70.4,
+        "constraint_rate": 36.4,
+        "parsed_edges": 96,
+        "time_s": 20.1,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "LoRA+GAT★★",
+        "path_cost": 4.93,
+        "path_len": 5,
+        "coverage": 95.9,
+        "constraint_rate": 36.4,
+        "parsed_edges": 94,
+        "time_s": 19.97,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "R1-Raw",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 36.4,
+        "parsed_edges": 96,
+        "time_s": 24.77,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "R1-LoRA★",
+        "path_cost": 10.0,
+        "path_len": 5,
+        "coverage": 0.0,
+        "constraint_rate": 36.4,
+        "parsed_edges": 96,
+        "time_s": 50.79,
+        "sumo_time": 773.7
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "path_cost": 18.5,
+        "path_len": 6,
+        "coverage": 13.3,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 1.41,
+        "sumo_time": 394.1
+      },
+      {
+        "method": "Sparse-LoRA+GAT★★★",
+        "path_cost": 19.63,
+        "path_len": 6,
+        "coverage": 95.9,
+        "constraint_rate": 72.7,
+        "parsed_edges": 96,
+        "time_s": 1.41,
+        "sumo_time": 394.1
+      }
+    ]
+  },
+  {
+    "scenario": "场景F 大规模复合灾害（极限压力测试）",
+    "methods": [
+      {
+        "method": "Dijkstra",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 21.4,
+        "parsed_edges": 0,
+        "time_s": 0.0,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "Rule-A*",
+        "path_cost": 12.8,
+        "path_len": 8,
+        "coverage": 89.8,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "DQN",
+        "path_cost": 48.5,
+        "path_len": 22,
+        "coverage": 89.8,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 1456.5
+      },
+      {
+        "method": "GCN-Weight",
+        "path_cost": 15.95,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 0.0,
+        "sumo_time": 682.2
+      },
+      {
+        "method": "Raw-Qwen",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 12.57,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "CoT-Qwen",
+        "path_cost": 16.0,
+        "path_len": 8,
+        "coverage": 3.1,
+        "constraint_rate": 28.6,
+        "parsed_edges": 96,
+        "time_s": 5.77,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "Qwen-LoRA★",
+        "path_cost": 8.0,
+        "path_len": 8,
+        "coverage": 0.0,
+        "constraint_rate": 21.4,
+        "parsed_edges": 0,
+        "time_s": 13.86,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "LoRA+GAT★★",
+        "path_cost": 9.0,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 13.91,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "R1-Raw",
+        "path_cost": 45.5,
+        "path_len": 9,
+        "coverage": 91.8,
+        "constraint_rate": 57.1,
+        "parsed_edges": 96,
+        "time_s": 30.32,
+        "sumo_time": 618.3
+      },
+      {
+        "method": "R1-LoRA★",
+        "path_cost": 38.1,
+        "path_len": 8,
+        "coverage": 98.0,
+        "constraint_rate": 50.0,
+        "parsed_edges": 96,
+        "time_s": 27.57,
+        "sumo_time": 496.1
+      },
+      {
+        "method": "Sparse-LoRA★★",
+        "path_cost": 9.2,
+        "path_len": 8,
+        "coverage": 4.1,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 1.81,
+        "sumo_time": 446.5
+      },
+      {
+        "method": "Sparse-LoRA+GAT★★★",
+        "path_cost": 10.16,
+        "path_len": 8,
+        "coverage": 84.7,
+        "constraint_rate": 21.4,
+        "parsed_edges": 96,
+        "time_s": 1.82,
+        "sumo_time": 446.5
+      }
+    ]
+  }
+]

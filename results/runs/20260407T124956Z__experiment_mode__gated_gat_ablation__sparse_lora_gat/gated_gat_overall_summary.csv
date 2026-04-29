@@ -1,0 +1,4 @@
+﻿subset,method,samples,avg_path_cost,avg_constraint_rate,avg_parsed_edge_ratio,avg_signal_ratio,avg_infer_time_s,avg_sumo_time
+all_scenes,Sparse-LoRA,6,16.467,53.767,17.183,17.183,1.383,713.6
+all_scenes,Sparse-LoRA+Always-GAT,6,19.528,53.767,17.183,91.667,1.383,511.05
+all_scenes,Sparse-LoRA+Gated-GAT,6,19.037,53.767,17.183,91.833,1.383,511.05

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-04-10 13:56:01 by Eclipse SUMO sumo Version 1.12.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/root/autodl-tmp/SUMO/config/../net/my_net.net.xml"/>
+        <route-files value="/root/autodl-tmp/SUMO/config/../routes.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="/root/autodl-tmp/SUMO/tripinfo_cmp.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="0.1"/>
+    </time>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <report>
+        <no-warnings value="true"/>
+        <duration-log.disable value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="35467"/>
+    </traci_server>
+
+    <gui_only>
+        <tracker-interval value="0.1"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <tripinfo id="cmp_veh" depart="0.00" departLane="R0C0_E_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="446.40" arrivalLane="R4C3_E_0" arrivalPos="706.40" arrivalSpeed="16.67" duration="446.40" routeLength="5163.23" waitingTime="109.50" waitingCount="3" stopTime="0.00" timeLoss="129.96" rerouteNo="0" devices="tripinfo_cmp_veh" vType="DEFAULT_VEHTYPE" speedFactor="1.06" vaporized=""/>
+</tripinfos>

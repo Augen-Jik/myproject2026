@@ -1,0 +1,7 @@
+{
+  "run_id": "20260407T135732Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora",
+  "case_csv": "/root/autodl-tmp/results/runs/20260407T135732Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_case_metrics.csv",
+  "summary_csv": "/root/autodl-tmp/results/runs/20260407T135732Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_summary.csv",
+  "delta_csv": "/root/autodl-tmp/results/runs/20260407T135732Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_deltas.csv",
+  "failure_json": "/root/autodl-tmp/results/runs/20260407T135732Z__experiment_mode__spatiotemporal_prompt_ablation__sparse_lora/spatiotemporal_prompt_failures.json"
+}

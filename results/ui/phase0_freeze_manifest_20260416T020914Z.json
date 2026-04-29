@@ -1,0 +1,198 @@
+{
+  "audit_timestamp_utc": "2026-04-16 02:09:20 UTC",
+  "phase": "phase0_audit_freeze",
+  "workspace": "/root/autodl-tmp",
+  "key_files": [
+    {
+      "path": "/root/autodl-tmp/code/app_fixed.py",
+      "exists": true,
+      "size_bytes": 302355,
+      "mtime_utc": "2026-04-16 02:07:12 UTC",
+      "sha256": "4533e2d6b646ef027b81e09dc4da104d532c98c4ad745a6a1695e5849e78d2bc"
+    },
+    {
+      "path": "/root/autodl-tmp/code/viz.py",
+      "exists": true,
+      "size_bytes": 65564,
+      "mtime_utc": "2026-04-16 02:04:36 UTC",
+      "sha256": "155fb296d13a536f8b28cefff87882b061d69db09c5f60f0e466715edee4538d"
+    },
+    {
+      "path": "/root/autodl-tmp/code/display_geometry.py",
+      "exists": true,
+      "size_bytes": 22638,
+      "mtime_utc": "2026-04-14 07:52:00 UTC",
+      "sha256": "f36e1c73af95c0cd80d61352e33b9444d8e7adc6b41881c155477cdaaea8b69e"
+    },
+    {
+      "path": "/root/autodl-tmp/code/demo_scene_selector.py",
+      "exists": true,
+      "size_bytes": 12512,
+      "mtime_utc": "2026-04-14 07:59:44 UTC",
+      "sha256": "8553686dd05fe24cec2e1d5a573eac09848e49d88141263b6fd7b79d81d350a1"
+    },
+    {
+      "path": "/root/autodl-tmp/code/sim_scene_profiles.py",
+      "exists": true,
+      "size_bytes": 20724,
+      "mtime_utc": "2026-04-16 02:02:00 UTC",
+      "sha256": "02da9f3ea0411e3fda1b17a9fb49bac875af816158d16527e4be80a4a1cec67b"
+    },
+    {
+      "path": "/root/autodl-tmp/code/final_table_loader.py",
+      "exists": true,
+      "size_bytes": 7433,
+      "mtime_utc": "2026-04-16 01:41:01 UTC",
+      "sha256": "4f765a2051b3b50294b7159300ef37c8c8c2e9ecddd09201e8a59ad1fb588ff8"
+    },
+    {
+      "path": "/root/autodl-tmp/compare/run_compare.py",
+      "exists": true,
+      "size_bytes": 45205,
+      "mtime_utc": "2026-04-01 08:59:07 UTC",
+      "sha256": "83cf7ed54bc208395ac613afd83226622a3949a3494d8462f3081e4b9f756a44"
+    },
+    {
+      "path": "/root/autodl-tmp/compare/run_live_scene_profile_main_table.py",
+      "exists": true,
+      "size_bytes": 41190,
+      "mtime_utc": "2026-04-10 02:28:13 UTC",
+      "sha256": "ee4b2c8442af1c802dbe2db57cd89b865659d03ce7ddf93a51f5dfb5256d46c3"
+    }
+  ],
+  "frozen_bindings": {
+    "method_comparison": {
+      "csv_path": "/root/autodl-tmp/results/final_tables/method_comparison_final.csv",
+      "csv_sha256": "b3c3a951264f431378e305a1b16c61f57b02438785e6533cc79eac2bb195841a",
+      "tex_path": "/root/autodl-tmp/results/paper_ready/table1_method_comparison_final.tex",
+      "md_path": "/root/autodl-tmp/results/paper_ready/table1_final_preview.md",
+      "rows": 9,
+      "cols": 14
+    },
+    "ablation_study": {
+      "csv_path": "/root/autodl-tmp/results/final_tables/ablation_study.csv",
+      "csv_sha256": "5ed4f8b339e8b7b1cc7db709b62560becfb22ac2309c3e24f8cb1b0247b9d4b6",
+      "tex_path": "/root/autodl-tmp/results/paper_ready/table2_ablation.tex",
+      "md_path": "/root/autodl-tmp/results/paper_ready/table2_final_preview.md",
+      "rows": 30,
+      "cols": 14
+    },
+    "appendix": {
+      "csv_path": "/root/autodl-tmp/results/final_tables/method_comparison_appendix.csv",
+      "csv_sha256": "17eb498d612daad3ef8324e6bb335557e245f99a9c0d25d50347addf6b8d462e",
+      "tex_path": null,
+      "md_path": null,
+      "rows": 1,
+      "cols": 16
+    }
+  },
+  "selected_compare_artifact": {
+    "path": "/root/autodl-tmp/results/runs/20260401T100154Z__experiment_mode__compare_multi_method__llm_compare/compare_results.json",
+    "exists": true,
+    "sha256": "a36dc0088d801013883b53a3c70c310d709eadb216ced802cb309a02a3125d5a",
+    "method_names_from_first_scenario": [
+      "Dijkstra",
+      "Rule-A*",
+      "DQN",
+      "GCN-Weight",
+      "Raw-Qwen",
+      "CoT-Qwen",
+      "Qwen-LoRA★",
+      "LoRA+GAT★★",
+      "R1-Raw",
+      "R1-LoRA★",
+      "Sparse-LoRA★★",
+      "Sparse-LoRA+GAT★★★"
+    ]
+  },
+  "validation": {
+    "py_compile": "passed",
+    "table_render_checks": {
+      "method_comparison": {
+        "pyarrow_from_pandas_ok": false,
+        "pyarrow_from_pandas_exc": "('Input object was not a NumPy array', 'Conversion failed for column Method with type string')",
+        "manual_arrow_ok": true,
+        "manual_arrow_exc": null,
+        "forced_str_columns": [
+          "Category",
+          "Method",
+          "Method (CN)",
+          "Notes",
+          "evaluation_end_time",
+          "evaluation_start_time",
+          "simulation_seed",
+          "warmup_seconds"
+        ],
+        "mixed_object_columns": [],
+        "complex_object_columns": []
+      },
+      "ablation_summary": {
+        "pyarrow_from_pandas_ok": false,
+        "pyarrow_from_pandas_exc": "('Input object was not a NumPy array', 'Conversion failed for column Variant with type string')",
+        "manual_arrow_ok": true,
+        "manual_arrow_exc": null,
+        "forced_str_columns": [
+          "GAT Component",
+          "LLM Component",
+          "Sparse Mode",
+          "Variant",
+          "Variant (CN)"
+        ],
+        "mixed_object_columns": [],
+        "complex_object_columns": []
+      },
+      "appendix": {
+        "pyarrow_from_pandas_ok": false,
+        "pyarrow_from_pandas_exc": "('Input object was not a NumPy array', 'Conversion failed for column Method with type string')",
+        "manual_arrow_ok": true,
+        "manual_arrow_exc": null,
+        "forced_str_columns": [
+          "Category",
+          "Device",
+          "Method",
+          "Method (CN)",
+          "Notes",
+          "Protocol",
+          "Source File"
+        ],
+        "mixed_object_columns": [],
+        "complex_object_columns": []
+      }
+    },
+    "geometry_checks": {
+      "missing_edges": 0,
+      "endpoint_mismatch_count": 0,
+      "endpoint_mismatch_sample": []
+    },
+    "recommended_demo_cases": {
+      "core_blockage": {
+        "start_edge": "R0C0_E",
+        "end_edge": "C4R3_S",
+        "positive_gain": true,
+        "estimated_delta_s": 816.2,
+        "score": 0.8043
+      },
+      "directional_asymmetry": {
+        "start_edge": "C0R3_N",
+        "end_edge": "C4R3_S",
+        "positive_gain": true,
+        "estimated_delta_s": 183.78,
+        "score": 0.821
+      },
+      "propagation_range": {
+        "start_edge": "C3R0_S",
+        "end_edge": "C0R3_S",
+        "positive_gain": true,
+        "estimated_delta_s": 1190.39,
+        "score": 0.882
+      },
+      "compound_disaster": {
+        "start_edge": "C0R3_N",
+        "end_edge": "C3R0_N",
+        "positive_gain": true,
+        "estimated_delta_s": 860.01,
+        "score": 0.8683
+      }
+    }
+  }
+}

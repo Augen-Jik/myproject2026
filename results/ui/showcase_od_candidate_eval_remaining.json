@@ -1,0 +1,70 @@
+[
+  {
+    "showcase_name": "directional_asymmetry_showcase",
+    "scene_profile": "directional_asymmetry",
+    "start_edge": "C1R3_N",
+    "end_edge": "R4C4_E",
+    "valid": true,
+    "baseline_logical_path": [
+      "C1R3_N",
+      "R4C1_E",
+      "R4C2_E",
+      "R4C3_E",
+      "R4C4_E"
+    ],
+    "planned_logical_path": [
+      "C1R3_N",
+      "C1R3_S",
+      "R3C1_E",
+      "R3C2_E",
+      "R3C3_E",
+      "C4R3_N",
+      "R4C4_E"
+    ],
+    "baseline_safe_route": [
+      "C1R3_N",
+      "R4C1_E",
+      "R4C2_E",
+      "R4C3_E",
+      "R4C4_E"
+    ],
+    "planned_safe_route": [
+      "C1R3_N",
+      "C1R3_S",
+      "R3C1_E",
+      "R3C2_E",
+      "R3C3_E",
+      "C4R3_N",
+      "R4C4_E"
+    ],
+    "baseline_final_runtime_route": [
+      "C1R3_N",
+      "R4C1_E",
+      "R4C2_E",
+      "R4C3_E",
+      "R4C4_E"
+    ],
+    "planned_final_runtime_route": [
+      "C1R3_N",
+      "C1R3_S",
+      "R3C1_E",
+      "R3C2_E",
+      "R3C3_E",
+      "C4R3_N",
+      "R4C4_E"
+    ],
+    "logical_overlap_ratio": 0.2857142857142857,
+    "safe_route_overlap_ratio": 0.2857142857142857,
+    "final_runtime_overlap_ratio": 0.2857142857142857,
+    "baseline_impacted_edges": 3,
+    "planned_impacted_edges": 0,
+    "baseline_time_s": 771.2,
+    "planned_time_s": 1894.5,
+    "saving_seconds": -1123.3,
+    "saving_ratio": -1.456561203319502,
+    "planned_ok": true,
+    "baseline_ok": true,
+    "baseline_used_sumo_fallback": false,
+    "planned_used_sumo_fallback": false
+  }
+]

@@ -1,0 +1,6 @@
+﻿scenario_id,scenario_name,algorithm,weight_source,plan_ms,hops,true_travel_time,overhead_pct,weight_mae,parsed_ratio,oracle_time
+1,黄河路单向拥堵,Uniform-Dijkstra,等权(1.0),0.12,5,13.0,32.65,1.367,100.0,9.8
+1,黄河路单向拥堵,Rule-Dijkstra,规则解析,0.23,9,12.6,28.57,0.434,14.3,9.8
+1,黄河路单向拥堵,Bellman-Ford,LLM权重,0.21,5,13.0,32.65,0.638,12.2,9.8
+1,黄河路单向拥堵,ACO,LLM权重,14.47,5,13.0,32.65,0.638,12.2,9.8
+1,黄河路单向拥堵,LLM-Dijkstra,LLM权重,0.11,5,13.0,32.65,0.638,12.2,9.8

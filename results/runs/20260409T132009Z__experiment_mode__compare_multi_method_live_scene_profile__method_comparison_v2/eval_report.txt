@@ -1,0 +1,4 @@
+[Method] Dijkstra
+  - normal_baseline / 场景N normal_baseline 正常通行: travel=235.80 s, planning=0.000095 s, constraint=100.00%, signal=0.00%, seed=101, warmup=120 s, eval=120-1800 s
+  - mean: travel=235.80 s, planning=0.000095 s, constraint=100.00%, signal=0.00%
+  - delta_vs_old_mean: travel=-483.77 (-67.2%) [>5%], planning=+0.00 (+23.4%) [>5%], constraint=+67.58 (+208.5%) [>5%], signal=+0.00

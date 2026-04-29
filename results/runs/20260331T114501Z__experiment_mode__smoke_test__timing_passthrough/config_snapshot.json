@@ -1,0 +1,13 @@
+{
+  "timestamp": "20260331T114501Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "planner": "smoke_test",
+  "model": "timing_passthrough",
+  "scenario_list": [
+    "smoke"
+  ],
+  "fallback_policy": "none",
+  "default_weight_policy": "default=2.0",
+  "timing_policy": "ms only"
+}

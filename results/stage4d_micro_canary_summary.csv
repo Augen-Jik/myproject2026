@@ -1,0 +1,9 @@
+scope,scope_name,count,no_anchor_when_gt_changed_rate,target_recall,gt_changed_edge_recall,MAE_on_changed_edges,parse_fail_rate_strict
+overall,overall,4,0.0,100.0,66.7,0.2667,0.0
+canary_kind,anti_truncation,2,0.0,100.0,66.7,0.2667,0.0
+canary_kind,directional_asymmetry,2,0.0,100.0,66.7,0.2667,0.0
+structure_variant,planner_long,2,0.0,100.0,66.7,0.2667,0.0
+structure_variant,prefixed_short,1,0.0,100.0,66.7,0.2667,0.0
+structure_variant,short_plain,1,0.0,100.0,66.7,0.2667,0.0
+source_type,anti_truncation_canary_eval,2,0.0,100.0,66.7,0.2667,0.0
+source_type,directional_asymmetry_canary_eval,2,0.0,100.0,66.7,0.2667,0.0

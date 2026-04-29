@@ -1,0 +1,5 @@
+Method,Travel Time (s),Constraint Rate (%),model_infer_time_s,route_solve_time_s,Planning Time (s),Signal Ratio (%)
+Sparse-LoRA-v2,511.15,68.23,1.47,0.000080,1.470080,9.38
+Rule-A*,513.55,61.57,0.00,0.000070,0.000070,91.7
+Qwen-LoRA,591.95,47.42,15.86,0.000050,15.860050,34.72
+R1-LoRA,785.65,42.73,31.49,0.000070,31.490070,51.73

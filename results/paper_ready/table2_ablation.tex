@@ -1,0 +1,26 @@
+% Requires: \usepackage{booktabs,threeparttable}
+
+\begin{table}[t]
+\centering
+\caption{Frozen ablation study with the No-SpatioTemporal prompt-input variant.}
+\label{tab:table2_ablation}
+\small
+\begin{threeparttable}
+\begin{tabular}{lrrrrr}
+\toprule
+Variant & Travel Time (s) & Planning Time (s) & Constraint Rate (\%) & Signal Ratio (\%) & Parsed Edge Ratio (\%) \\
+\midrule
+Qwen-LoRA & 591.95 & 15.858387 & 47.42 & 34.72 & 50.00 \\
+LoRA+GAT & 574.42 & 15.785057 & 47.42 & 64.25 & 50.00 \\
+No-SpatioTemporal & 542.33 & 1.173277 & 50.98 & 9.55 & 10.25 \\
+Sparse-LoRA & 511.15 & 1.475079 & 68.23 & 9.38 & 9.38 \\
+Sparse-LoRA+GAT & 503.47 & 1.481741 & 68.23 & 61.45 & 9.38 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item No-SpatioTemporal removes only the spatiotemporal structured-field injection from the Sparse-LoRA prompt. Model weights, sparse parser, path planning, GAT setting, and metric definitions remain unchanged.
+\item LoRA+GAT is retained as a legacy dense+GAT control. It is useful for narrative completeness, but it is not part of the Sparse-LoRA mainline method claim.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

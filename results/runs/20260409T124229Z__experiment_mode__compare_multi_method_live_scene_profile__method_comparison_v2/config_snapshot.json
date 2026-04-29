@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260409T124229Z",
+  "mode": "experiment_mode",
+  "seed": 42,
+  "planner": "compare_multi_method_live_scene_profile",
+  "model": "method_comparison_v2",
+  "scenario_list": [
+    "场景N normal_baseline 正常通行"
+  ],
+  "fallback_policy": "experiment_mode_no_rule_fallback_for_llm",
+  "default_weight_policy": "method_specific_default_weight",
+  "timing_policy": "planning_time_s=model_infer_time_s+route_solve_time_s",
+  "simulation_seed": {
+    "normal_baseline": 101
+  },
+  "warmup_seconds": {
+    "normal_baseline": 120
+  },
+  "evaluation_start_time": {
+    "normal_baseline": 120
+  },
+  "evaluation_end_time": {
+    "normal_baseline": 1800
+  },
+  "scene_profile_version": "sha256:eb0410e2b384",
+  "scene_profile_protocols": {
+    "normal_baseline": {
+      "simulation_seed": 101,
+      "warmup_seconds": 120,
+      "evaluation_start_time": 120,
+      "evaluation_end_time": 1800
+    }
+  },
+  "run_compare_results": "/root/autodl-tmp/results/runs/20260409T124229Z__experiment_mode__compare_multi_method_live_scene_profile__method_comparison_v2/compare_results.json",
+  "mainline_model_path": "/root/autodl-tmp/model_merged_sparse_v2_stage4_fix",
+  "gat_model_path": "/root/autodl-tmp/gat_model_v2_gated.pt",
+  "ppo_summary_path": ""
+}
