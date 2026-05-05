@@ -76,7 +76,7 @@ def load_and_merge(dtype) -> None:
     tokenizer.save_pretrained(args.output)
 
 
-# ── 带 OOM 保护的两级降级策略 ───────────────────────────────
+# 带 OOM 保护的两级降级策略
 try:
     load_and_merge(save_dtype)
 

@@ -16,7 +16,7 @@ from copy import deepcopy
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-# ── 超参 ────────────────────────────────────────────────────
+# 超参
 TRAIN_SIZE  = 5000
 EVAL_SIZE   = 500
 OUT_DIR     = "/root/autodl-tmp/dataset_cot"
@@ -24,7 +24,7 @@ RANDOM_SEED = 42
 MAX_RETRY   = 10
 random.seed(RANDOM_SEED)
 
-# ── 路网定义 ────────────────────────────────────────────────
+# 路网定义
 COL_NAMES = ["经一路", "经三路", "经六路", "经八路", "花园路", "未来路"]
 ROW_NAMES = ["农业路", "红专路", "政七街", "黄河路", "纬五路"]
 COL_TYPE  = ['M', 'S', 'A', 'S', 'A', 'M']
@@ -37,7 +37,7 @@ DIR_OPP = {'E': 'W', 'W': 'E', 'N': 'S', 'S': 'N'}
 ROW_IDX = {name: i for i, name in enumerate(ROW_NAMES)}
 COL_IDX = {name: i for i, name in enumerate(COL_NAMES)}
 
-# ── 路段注册 ────────────────────────────────────────────────
+# 路段注册
 EDGES: list[str] = []
 EDGE_META: dict  = {}
 
@@ -67,7 +67,7 @@ for c in range(len(COL_NAMES)):
 
 assert len(EDGES) == 98, f"路段数量错误: {len(EDGES)} ≠ 98"
 
-# ── 邻居索引（空间相关性）──────────────────────────────────
+# 邻居索引（空间相关性）
 def _build_neighbors():
     nb = {e: [] for e in EDGES}
     for eid in EDGES:
@@ -89,7 +89,7 @@ def _build_neighbors():
 
 NEIGHBORS = _build_neighbors()
 
-# ── 拥堵等级与权重范围 ──────────────────────────────────────
+# 拥堵等级与权重范围
 LEVELS = {
     "畅通":     (0.3,  1.2),
     "正常":     (1.5,  2.5),
@@ -147,14 +147,14 @@ ENDINGS = [
 ]
 
 
-# ── 权重采样 ────────────────────────────────────────────────
+# 权重采样
 def sample_weight(level: str) -> float:
     lo, hi = LEVELS[level]
     x = random.betavariate(2.0, 2.0)
     return round(lo + x * (hi - lo), 1)
 
 
-# ── 等级分配（带空间相关性+时段）──────────────────────────
+# 等级分配（带空间相关性+时段）
 def assign_levels(time_slot=None) -> dict:
     lvs = {}
     for eid in EDGES:
@@ -209,7 +209,7 @@ def inject_event(lvs: dict) -> tuple[dict, str, str]:
     return lvs, evt_desc, event_level
 
 
-# ── Think 链生成（4种句式模板，随机选取防止过拟合）──────────
+# Think 链生成（4种句式模板，随机选取防止过拟合）
 def _fmt_event(tpl_id: int, idx: int, eid: str, level: str,
                evt_desc: str, w: float, weights: dict,
                seen_eids: set) -> list[str]:
@@ -329,7 +329,7 @@ def build_think_chain(described_events: list[tuple], weights: dict) -> str:
     return "\n".join(lines)
 
 
-# ── 样本生成 ────────────────────────────────────────────────
+# 样本生成
 def generate_sample(force_event: bool = False) -> dict:
     time_slot = random.choice(list(TIME_SLOTS.keys()) + [None, None])
     lvs = assign_levels(time_slot)
@@ -393,7 +393,7 @@ def generate_sample(force_event: bool = False) -> dict:
     }
 
 
-# ── 验证 ────────────────────────────────────────────────────
+# 验证
 def validate_sample(sample: dict) -> tuple[dict, list]:
     resp = sample["messages"][1]["content"]
     # 从 </think> 之后提取，与 app_fixed.py 推理端逻辑一致
@@ -406,14 +406,14 @@ def validate_sample(sample: dict) -> tuple[dict, list]:
     return parsed, missing
 
 
-# ── Token 长度预估（防超出 2048）───────────────────────────
+# Token 长度预估（防超出 2048）
 def estimate_tokens(sample: dict) -> int:
     total_chars = (len(sample["messages"][0]["content"]) +
                    len(sample["messages"][1]["content"]))
     return total_chars // 2  # 中文约 1.5-2 chars/token，取保守值
 
 
-# ── 保存 ────────────────────────────────────────────────────
+# 保存
 def save_parquet(samples: list, out_dir: str):
     Path(out_dir).mkdir(parents=True, exist_ok=True)
     msgs  = [json.dumps(s["messages"], ensure_ascii=False) for s in samples]
@@ -424,7 +424,7 @@ def save_parquet(samples: list, out_dir: str):
     print(f"  ✅ 已保存 {len(samples)} 条 → {out}  ({size_mb:.1f} MB)")
 
 
-# ── 批量生成 ────────────────────────────────────────────────
+# 批量生成
 def generate_dataset(n: int, label: str) -> list:
     samples   = []
     fail_cnt  = 0

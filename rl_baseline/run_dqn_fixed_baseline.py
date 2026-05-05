@@ -71,8 +71,8 @@ DIRECTION_MAP = {
     "向南": "S",
 }
 
-# This parser is intentionally independent from Rule-A*.
-# It produces a fixed-length scene state vector for the DQN route agent.
+# 这里单独解析场景，不复用 Rule-A* 的规则。
+# 输出固定长度状态向量，供 DQN 路由策略使用。
 SEVERITY_MAP = (
     ("完全封闭", 9.2),
     ("全线封闭", 9.0),
@@ -425,7 +425,7 @@ def build_candidate_paths(case: dict[str, Any], estimated_weights: dict[str, flo
                 alt_cost,
             )
 
-    # Stronger fallback: heavily penalize one interior edge at a time to force an alternate detour.
+    # Fallback: heavily penalize one interior edge at a time to force an alternate detour.
     for seed_candidate in list(unique_candidates(candidates)):
         if len(unique_candidates(candidates)) >= 5:
             break

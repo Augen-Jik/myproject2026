@@ -15,7 +15,7 @@ Road hierarchy:
 
 import os, subprocess, sys
 
-# ─── Grid parameters ──────────────────────────────────────────
+# Grid parameters
 COL_NAMES = ["C0_Jing1",  "C1_Jing3",  "C2_Jing6",
              "C3_Jing8",  "C4_Huayuan","C5_Weilai"]
 ROW_NAMES = ["R0_Nongye", "R1_Hongzhuan", "R2_Zheng7",
@@ -41,7 +41,7 @@ def edge_speed(rt):   return TYPE_SPEED[rt]
 def edge_lanes(rt):   return TYPE_LANES[rt]
 def edge_prio(rt):    return TYPE_PRIO[rt]
 
-# ─── Write nodes.xml ──────────────────────────────────────────
+# Write nodes.xml
 def write_nodes(path):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<nodes>']
     for r in range(len(ROW_NAMES)):
@@ -62,7 +62,7 @@ def write_nodes(path):
         f.write('\n'.join(lines))
     print(f"  ✅ Wrote {path}")
 
-# ─── Write edges.xml ──────────────────────────────────────────
+# Write edges.xml
 def edge_type(r_type, c_type):
     # Intersection edge type = max priority of the two roads
     pA = TYPE_PRIO[r_type]; pB = TYPE_PRIO[c_type]
@@ -110,7 +110,7 @@ def write_edges(path):
     print(f"  ✅ Wrote {path}  ({eid} edges)")
     return eid
 
-# ─── Write routes.rou.xml ─────────────────────────────────────
+# Write routes.rou.xml
 def write_routes(path):
     # Named after real Zhengzhou roads for readability
     routes = [
@@ -185,7 +185,7 @@ def write_routes(path):
         f.write('\n'.join(lines))
     print(f"  ✅ Wrote {path}")
 
-# ─── Write SUMO config ────────────────────────────────────────
+# Write SUMO config
 def write_sumocfg(path, net_rel, rou_rel):
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
@@ -211,7 +211,7 @@ def write_sumocfg(path, net_rel, rou_rel):
         f.write(xml)
     print(f"  ✅ Wrote {path}")
 
-# ─── Print edge list for dataset generator ────────────────────
+# Print edge list for dataset generator
 def print_edges():
     edges = []
     for r in range(len(ROW_NAMES)):
@@ -226,7 +226,7 @@ def print_edges():
     print("EDGES = " + repr(edges))
     return edges
 
-# ─── Main ─────────────────────────────────────────────────────
+# Main
 if __name__ == "__main__":
     OUT = "/root/autodl-tmp/SUMO"
     NET_DIR = f"{OUT}/net"

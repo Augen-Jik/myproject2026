@@ -681,7 +681,7 @@ def main() -> None:
             },
         )
 
-    # Step 1: seed required lexical/structure coverage with heldout-like signatures.
+    # 1. seed required lexical/structure coverage with heldout-like signatures.
     required_seed_plan = [
         (heldout_signature_seeds[0], CHANGED_PHRASES[0], "short_plain", "补 bare 畅通表达与最短句式。"),
         (heldout_signature_seeds[1], CHANGED_PHRASES[1], "prefixed_short", "补 畅通无阻 + 常态前缀表达。"),
@@ -698,7 +698,7 @@ def main() -> None:
         if not add_train(seed, phrase_spec, structure_tag, idx, why):
             raise RuntimeError(f"Failed to add required coverage row for {seed['signature']} / {phrase_spec['surface']}")
 
-    # Step 2: one changed relief rewrite for every available signature.
+    # 2. one changed relief rewrite for every available signature.
     primary_structures = ["short_plain", "prefixed_short", "planner_long", "tiny_range"]
     for idx, seed in enumerate(train_signatures):
         phrase_spec = CHANGED_PHRASES[(idx + 1) % len(CHANGED_PHRASES)]
@@ -711,7 +711,7 @@ def main() -> None:
             "所有可用 single-edge signature 至少给 1 条非原句 rewrite，先把 signature 池铺满。",
         )
 
-    # Step 3: give heldout-like signatures extra changed rewrites proportional to heldout frequency.
+    # 3. give heldout-like signatures extra changed rewrites proportional to heldout frequency.
     focused_structures = ["anomaly_mixed_context", "same_road_dir_contrast", "weak_relief", "planner_long"]
     counter = 0
     for idx, seed in enumerate(heldout_signature_seeds):
@@ -728,7 +728,7 @@ def main() -> None:
             )
             counter += 1
 
-    # Step 4: inject more normal-surface anchors on top heldout-like signatures.
+    # 4. inject more normal-surface anchors on top heldout-like signatures.
     normal_priority = heldout_signature_seeds + pack_only_signature_seeds
     for idx, seed in enumerate(normal_priority[:14]):
         phrase_spec = NORMAL_PHRASES[idx % len(NORMAL_PHRASES)]
@@ -741,7 +741,7 @@ def main() -> None:
             "补足 normal-surface 单边 anchor 表达，让 single-edge 核心集不只会锚 `畅通无阻/车流顺畅` 两种说法。",
         )
 
-    # Step 5: fill train to target with extra heldout-weighted changed rewrites.
+    # 5. fill train to target with extra heldout-weighted changed rewrites.
     fill_priority = sorted(
         heldout_signature_seeds,
         key=lambda seed: (

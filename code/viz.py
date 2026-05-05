@@ -21,7 +21,7 @@ from display_geometry import (
 )
 from roadnet_meta import COL_NAMES, ROW_NAMES, load_roadnet_meta
 
-# Global cache for loaded SUMO networks.
+# SUMO 路网缓存，避免重复读 net.xml。
 _net_cache = {}
 
 MAP_STYLE_LABELS = {
@@ -388,12 +388,7 @@ def _merge_path_polylines(
 
 
 def load_net_cached(net_path: str):
-    """
-    Load SUMO network with caching to avoid repeated loading.
-
-    Returns:
-        tuple: (net_obj, edge_coords_dict)
-    """
+    """读取 SUMO 路网，并缓存路段坐标。"""
     global _net_cache
 
     if net_path in _net_cache:
@@ -412,9 +407,7 @@ def load_net_cached(net_path: str):
 
 
 def safe_table_markdown(df: pd.DataFrame) -> str:
-    """
-    Safely convert DataFrame to markdown table avoiding issues with special characters.
-    """
+    """把 DataFrame 转成 markdown 表格，顺手处理表格里的特殊字符。"""
     try:
         df_copy = df.copy()
         for col in df_copy.columns:
@@ -432,7 +425,7 @@ def safe_table_markdown(df: pd.DataFrame) -> str:
 
 
 def make_json_safe(obj):
-    """Recursively convert component payloads into JSON-safe primitives."""
+    """把组件参数整理成 JSON 能直接序列化的值。"""
     if obj is None or isinstance(obj, (str, int, float, bool)):
         return obj
     if callable(obj):
@@ -470,17 +463,17 @@ def make_json_safe(obj):
 
 
 def sanitize_component_args(obj):
-    """Alias kept for component call sites and debug output."""
+    """保留这个名字，现有组件调用还在用。"""
     return make_json_safe(obj)
 
 
 def render_folium_html(map_obj) -> str:
-    """Render a Folium object to plain HTML for stable Streamlit embedding."""
+    """把 Folium 地图渲染成 Streamlit 可嵌入的 HTML。"""
     return map_obj.get_root().render()
 
 
 def clear_viz_cache():
-    """Clear the visualization caches."""
+    """清掉可视化相关缓存。"""
     global _net_cache
     _net_cache.clear()
     load_roadnet_visual_meta.cache_clear()

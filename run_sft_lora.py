@@ -35,7 +35,7 @@ if CODE_DIR not in sys.path:
 
 from sparse_utils import build_sparse_task_prompt, parse_sparse_output_bundle
 
-# ── 命令行参数 ──────────────────────────────────────────────
+# 命令行参数
 parser = argparse.ArgumentParser()
 parser.add_argument("--config", required=True, help="YAML 配置文件路径")
 args = parser.parse_args()
@@ -70,7 +70,7 @@ INIT_ADAPTER = config.get("lora", {}).get("init_from")
 RESUME_CHECKPOINT = config.get("training", {}).get("resume_from_checkpoint")
 SMOKE_MODE = config.get("smoke_test", {}).get("mode", "auto")
 
-# ── GPU 验证 ─────────────────────────────────────────────────
+# GPU 验证
 print("\n🔍 验证 GPU 环境...")
 assert torch.cuda.is_available(), "❌ 需要 GPU！"
 gpu_mem  = torch.cuda.get_device_properties(0).total_memory / 1024**3
@@ -86,7 +86,7 @@ except ImportError:
     has_flash = False
     print("⚠️  Flash Attention 未安装，使用标准注意力")
 
-# ── 加载 Tokenizer ───────────────────────────────────────────
+# 加载 Tokenizer
 print(f"\n🔍 加载 Tokenizer: {MODEL_PATH}")
 tokenizer = AutoTokenizer.from_pretrained(
     MODEL_PATH, trust_remote_code=TRUST_RC, use_fast=True)
@@ -105,14 +105,14 @@ try:
 except Exception as e:
     raise RuntimeError(f"❌ chat_template 不可用: {e}")
 
-# ── 加载基座模型 ─────────────────────────────────────────────
+# 加载基座模型
 print(f"\n🔍 加载基座模型（LoRA 模式，不做全量微调）...")
 model_kwargs = dict(
     trust_remote_code=TRUST_RC,
     torch_dtype=torch.bfloat16 if use_bf16 else torch.float16,
     device_map="auto",
     low_cpu_mem_usage=True,
-    # load_in_4bit 和 load_in_8bit 已从新版 transformers 的 from_pretrained 中移除
+    # 新版 transformers 不再从 from_pretrained 直接接收 load_in_4bit/load_in_8bit。
     # LoRA 全精度微调不需要量化，直接删除即可
 )
 if has_flash:
@@ -128,7 +128,7 @@ if getattr(model, "generation_config", None) is not None:
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 print(f"✅ 基座模型加载完成 ({time.time()-t0:.1f}s)")
 
-# ── 注入 LoRA ────────────────────────────────────────────────
+# 注入 LoRA
 print(f"\n🔍 注入 LoRA (r={LORA_R}, alpha={LORA_ALPHA})...")
 lora_config = LoraConfig(
     r=LORA_R,
@@ -148,7 +148,7 @@ else:
     model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
 
-# ── 数据预处理 ───────────────────────────────────────────────
+# 数据预处理
 # 统一使用 apply_chat_template，Qwen/R1 均可
 # 训练数据已包含 <think>...</think>，无需特殊处理
 
@@ -161,7 +161,7 @@ def preprocess(examples):
         user_content = next((m["content"] for m in msgs if m["role"] == "user"),  "")
         asst_content = next((m["content"] for m in msgs if m["role"] == "assistant"), "")
 
-        # 完整对话文本（含 assistant 回复）
+        # 完整对话文本，包含回复。
         full_text = tokenizer.apply_chat_template(
             [{"role": "user", "content": user_content},
              {"role": "assistant", "content": asst_content}],
@@ -179,7 +179,7 @@ def preprocess(examples):
             padding="max_length",
             return_tensors=None,
         )
-        # prefix_enc 不 truncate，以精确获取 prefix 长度
+        # prefix_enc 不截断，方便对齐 prefix 长度。
         prefix_enc = tokenizer(
             prefix_text,
             truncation=False,
@@ -191,7 +191,7 @@ def preprocess(examples):
         mask   = full_enc["attention_mask"]
         plen   = len(prefix_enc["input_ids"])
 
-        # Response-only masking：只对 assistant 回复计算 loss
+        # 只在回复部分计算 loss。
         labels = [-100] * len(ids)
         for i in range(plen, len(ids)):
             if mask[i] == 1:
@@ -239,7 +239,7 @@ def load_and_preprocess(path: str, name: str):
 train_dataset = load_and_preprocess(TRAIN_PATH, "训练集")
 eval_dataset  = load_and_preprocess(EVAL_PATH,  "验证集")
 
-# ── 训练参数 ──────────────────────────────────────────────────
+# 训练参数
 training_args = TrainingArguments(
     output_dir                  = OUTPUT_DIR,
     per_device_train_batch_size = BS,
@@ -288,7 +288,7 @@ print(f"   Max seq len : {MAX_LEN}")
 print(f"   输出目录    : {OUTPUT_DIR}")
 print("-" * 60)
 
-# ── 训练 ─────────────────────────────────────────────────────
+# 训练
 trainer = Trainer(
     model         = model,
     args          = training_args,
@@ -302,14 +302,14 @@ trainer.train(resume_from_checkpoint=RESUME_CHECKPOINT)
 elapsed = time.time() - t_start
 print(f"\n✅ 训练完成！耗时 {elapsed/3600:.1f}h ({elapsed/60:.0f}min)")
 
-# ── 保存 ─────────────────────────────────────────────────────
+# 保存
 print("\n💾 保存 LoRA 适配器权重...")
 trainer.save_model(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)
 print(f"✅ LoRA 权重已保存 → {OUTPUT_DIR}")
 print("   (如需合并到基座，可后续运行 merge_lora.py)")
 
-# ── 推理验证 ─────────────────────────────────────────────────
+# 推理验证
 print("\n🔍 推理验证（测试输出格式与解析率）...")
 model.eval()
 
@@ -405,7 +405,7 @@ for idx, instruction in enumerate(test_cases, 1):
 with open(os.path.join(OUTPUT_DIR, "smoke_results.json"), "w", encoding="utf-8") as f:
     json.dump(smoke_rows, f, ensure_ascii=False, indent=2)
 
-# ── 完成摘要 ──────────────────────────────────────────────────
+# 完成摘要
 print("\n" + "=" * 60)
 print(f"🎉 全部完成！")
 print(f"   模型路径    : {OUTPUT_DIR}")

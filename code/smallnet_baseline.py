@@ -25,7 +25,7 @@ from typing import Dict, List, Tuple
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# ── 24 边 SmallNet 定义 ─────────────────────────────────────
+# 24 边 SmallNet 定义
 SMALL_ROW_NAMES = ["X街", "Y街", "Z街", "W街"]
 SMALL_COL_NAMES = ["A路", "B路", "C路"]
 SMALL_NODE_ROWS = len(SMALL_ROW_NAMES) + 1  # 5
@@ -72,7 +72,7 @@ DEFAULT_MODEL_SPECS = [
 ]
 
 
-# ── 路网图结构 ──────────────────────────────────────────────
+# 路网图结构
 def build_small_graph(weight_dict: Dict[str, float], default_w: float = 2.0) -> Dict:
     """构建邻接表 graph[node] = [(cost, neighbor, edge_id)]。"""
     graph = defaultdict(list)
@@ -123,7 +123,7 @@ def smallnet_dijkstra(weight_dict: Dict[str, float], start: tuple, end: tuple) -
     return (path if path and path[0] == start else []), dist.get(end, math.inf), elapsed_ms
 
 
-# ── Prompt / 解析 ───────────────────────────────────────────
+# Prompt / 解析
 def _build_instruction(constraint: str, mode: str) -> str:
     base = (
         "你是交通路径权重生成助手。\n"
@@ -215,7 +215,7 @@ def parse_small_weights(text: str) -> Dict[str, float]:
     return parsed
 
 
-# ── 模型加载 / 推理 ─────────────────────────────────────────
+# 模型加载 / 推理
 def load_model_pair(model_path: str):
     """加载一个模型对（tokenizer, model）。"""
     if not torch.cuda.is_available():
@@ -307,7 +307,7 @@ def _build_model_specs(model_paths: List[str] | None = None):
     return [spec for spec in DEFAULT_MODEL_SPECS if os.path.exists(spec["path"])]
 
 
-# ── 测试场景 ────────────────────────────────────────────────
+# 测试场景
 SMALL_TEST_CASES = [
     {
         "name": "SmallNet-密集场景A：三事件同域拥堵",
@@ -360,7 +360,7 @@ SMALL_TEST_CASES = [
 ]
 
 
-# ── 基线方法 ───────────────────────────────────────────────
+# 基线方法
 def method_uniform_small(start, end, _tc) -> Tuple[Dict, List, float, float]:
     wd = {e: 1.0 for e in SMALL_EDGES}
     path, cost, ms = smallnet_dijkstra(wd, start, end)
@@ -412,7 +412,7 @@ def calc_parse_rate(pred: Dict) -> float:
     return round(parsed / len(SMALL_EDGES) * 100, 1)
 
 
-# ── 主实验函数 ───────────────────────────────────────────
+# 主实验函数
 def run_smallnet_comparison(
     llm_model_path: str | None = None,
     output_path: str = "results/smallnet_results.json",
@@ -570,7 +570,7 @@ def print_conclusion(results: List[dict]):
     )
 
 
-# ── 入口 ────────────────────────────────────────────────────
+# 入口
 if __name__ == "__main__":
     import sys
 

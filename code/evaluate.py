@@ -33,19 +33,15 @@ from scenarios import classify_scene_type
 RESULTS_DIR = "results"
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
-# ════════════════════════════════════════════════════════════
-#  6 个标准测试场景定义
-#  对应 app_fixed.py 中的「快捷测试场景」
-# ════════════════════════════════════════════════════════════
-#
-#  每个场景包含：
-#    constraint  — 自然语言描述（用于 RuleDijkstra 和 LLM）
-#    true_weights — 模拟「SUMO 仿真真实权重」（用于计算真实通行时间）
-#    start / end  — 起终点交叉口坐标 (row, col)
-#    llm_weights  — 模拟 LLM 解析结果（含误差和缺失，反映实际模型表现）
-#
-#  注：true_weights 从 generate_dataset.py 的权重分布合理设定；
-#      llm_weights 根据截图中实测模型表现模拟（主干道偏低、部分缺失）
+# 6 个标准测试场景定义
+# 对应 app_fixed.py 中的「快捷测试场景」
+# 每个场景包含：
+# constraint — 自然语言描述（用于 RuleDijkstra 和 LLM）
+# true_weights — 模拟「SUMO 仿真真实权重」（用于计算真实通行时间）
+# start / end — 起终点交叉口坐标 (row, col)
+# llm_weights — 模拟 LLM 解析结果（含误差和缺失，反映实际模型表现）
+# 注：true_weights 从 generate_dataset.py 的权重分布合理设定；
+# llm_weights 根据截图中实测模型表现模拟（主干道偏低、部分缺失）
 
 def _full_default(v: float = 2.0) -> Dict[str, float]:
     """构造全路网默认权重（正常通行 2.0）"""
@@ -67,7 +63,7 @@ def _patch(base: Dict, updates: Dict) -> Dict:
     return d
 
 
-# ── 场景 1：黄河路单向拥堵 ────────────────────────────────
+# 场景 1：黄河路单向拥堵
 _S1_TRUE = _patch(_full_default(), {
     "R3C0_E": 9.0, "R3C1_E": 8.5, "R3C2_E": 7.5, "R3C3_E": 8.0,
     "R3C4_E": 7.0,
@@ -93,7 +89,7 @@ _S1_LLM = _patch(_full_default(), {
     "R3C0_W": 2.2, "R3C1_W": 2.0, "C4R2_N": 3.5,
 })
 
-# ── 场景 2：花园路施工封闭 ────────────────────────────────
+# 场景 2：花园路施工封闭
 _S2_TRUE = _patch(_full_default(), {
     "C4R0_N": 9.8, "C4R1_N": 9.8, "C4R2_N": 9.8, "C4R3_N": 9.8,
     "C4R0_S": 9.8, "C4R1_S": 9.8, "C4R2_S": 9.8, "C4R3_S": 9.8,
@@ -115,7 +111,7 @@ _S2_LLM = _patch(_full_default(), {
     "C0R1_N": 1.8, "C1R1_N": 2.0, "C2R1_N": 2.2, "C3R2_N": 5.5,
 })
 
-# ── 场景 3：经六路双向拥堵 ────────────────────────────────
+# 场景 3：经六路双向拥堵
 _S3_TRUE = _patch(_full_default(), {
     **{f"C2R{r}_N": 7.5 for r in range(4)},
     **{f"C2R{r}_S": 7.0 for r in range(4)},
@@ -126,7 +122,7 @@ _S3_LLM = _patch(_full_default(1.5), {
     **{f"C2R{r}_S": 7.0 for r in range(4)},
 })
 
-# ── 场景 4：中央节点封锁（复杂场景，LLM 只解析约 50 条）────
+# 场景 4：中央节点封锁（复杂场景，LLM 解析约 50 条）
 _S4_TRUE = _patch(_full_default(), {
     # C2R2 交叉口（经六路×政七街）向所有方向封锁
     "C2R1_N": 9.5, "C2R2_N": 9.5, "C2R1_S": 9.5, "C2R2_S": 9.5,
@@ -136,14 +132,14 @@ _S4_TRUE = _patch(_full_default(), {
     **{f"C3R{r}_N": 5.5 for r in range(4)},
     "R1C0_E": 5.0, "R3C0_E": 4.5,
 })
-# LLM 只解析了 ~50 条，剩余 48 条为默认值（体现 GAT 补全的价值）
+# LLM 解析了 ~50 条，剩余 48 条为默认值（体现 GAT 补全的价值）
 _S4_LLM_PARTIAL = {
     "C2R1_N": 0.7, "C2R2_N": 0.7,   # 严重低估
     "R2C1_E": 0.7, "R2C2_E": 0.7,
     **{k: _S4_TRUE[k] for k in list(_S4_TRUE.keys())[:48]},   # 仅50条
 }
 
-# ── 场景 5：早高峰全网中度拥堵 ───────────────────────────
+# 场景 5：早高峰全网中度拥堵
 _S5_TRUE = _patch(_full_default(3.5), {
     "R3C0_E": 7.0, "R3C1_E": 6.5, "R3C4_E": 6.0,
     "C4R0_N": 6.0, "C4R1_N": 5.5, "C4R2_N": 6.5,
@@ -154,7 +150,7 @@ _S5_LLM = _patch(_full_default(2.5), {
     "C4R0_N": 4.5, "C4R2_N": 5.0,
 })
 
-# ── 场景 6：大型活动交通管制（LLM 部分解析）────────────────
+# 场景 6：大型活动交通管制（LLM 部分解析）
 _S6_TRUE = _patch(_full_default(), {
     **{f"R0C{c}_E": 8.0 for c in range(5)},   # 农业路全线
     **{f"R0C{c}_W": 8.5 for c in range(5)},
@@ -234,9 +230,7 @@ SCENARIOS = [
 ]
 
 
-# ════════════════════════════════════════════════════════════
-#  评测指标计算
-# ════════════════════════════════════════════════════════════
+# 评测指标计算
 
 def calc_true_travel_time(path: List[Tuple], true_w: Dict[str, float]) -> float:
     """
@@ -356,14 +350,12 @@ def calc_parsed_ratio(w_dict: Dict[str, float],
     return round(parsed / len(all_eids) * 100, 1)
 
 
-# ════════════════════════════════════════════════════════════
-#  权重来源映射（每个算法使用自己独立的权重，消除变量污染）
-#  实验设计分两个维度：
-#    维度A: 权重质量对比（统一用 Dijkstra 路由）
-#           Uniform(1.0) < Rule(规则解析) < LLM(大模型) < LLM+GAT(本文)
-#    维度B: 路由算法对比（统一用 LLM 权重，相同输入比性能）
-#           Dijkstra < Bellman-Ford < ACO（速度/质量权衡）
-# ════════════════════════════════════════════════════════════
+# 权重来源映射（每个算法使用自己独立的权重，消除变量污染）
+# 实验设计分两个维度：
+# 维度A: 权重质量对比（统一用 Dijkstra 路由）
+# Uniform(1.0) < Rule(规则解析) < LLM(大模型) < LLM + GAT(本文)
+# 维度B: 路由算法对比（统一用 LLM 权重，相同输入比性能）
+# Dijkstra < Bellman-Ford < ACO（速度/质量权衡）
 
 def _make_uniform_weights() -> Dict[str, float]:
     """等权基线：全路网权重一律为 1.0，代表完全忽略路况"""
@@ -468,10 +460,10 @@ def run_scenario(sc: dict, algorithms: list, use_gat: bool = True) -> List[dict]
             continue
 
         try:
-            # ── [FIX-1] 每个算法独立获取权重（不共享引用）──────────────
+            # 修正 1：每个算法独立获取权重（不共享引用）
             algo_weights = _get_weight_source(algo, sc, use_gat)
 
-            # ── 路由规划 ──────────────────────────────────────────────
+            # 路由规划
             if isinstance(algo, RuleDijkstra):
                 # RuleDijkstra 内部自行解析，传 constraint 触发规则解析
                 path, _plan_cost, plan_ms = algo.plan(
@@ -485,10 +477,10 @@ def run_scenario(sc: dict, algorithms: list, use_gat: bool = True) -> List[dict]
                 path, _plan_cost, plan_ms = algo.plan(
                     sc_start, sc_end, copy.deepcopy(sc["llm_w"]))
 
-            # ── [FIX-2] MAE 用该算法实际权重计算 ─────────────────────
+            # 修正 2：MAE 用该算法实际权重计算
             mae = calc_weight_mae(algo_weights, true_w)
 
-            # ── [FIX-3] 解析率按各算法权重来源统计 ───────────────────
+            # 修正 3：解析率按各算法权重来源统计
             parsed_ratio = calc_parsed_ratio(algo_weights, all_eids)
 
             true_tt        = calc_true_travel_time(path, true_w)
@@ -547,9 +539,7 @@ def run_scenario(sc: dict, algorithms: list, use_gat: bool = True) -> List[dict]
     return results
 
 
-# ════════════════════════════════════════════════════════════
-#  结果汇总与输出
-# ════════════════════════════════════════════════════════════
+# 结果汇总与输出
 
 def save_csv(all_results: List[dict], path: str):
     keys = [
@@ -596,7 +586,7 @@ def save_report(all_results: List[dict], path: str):
     for r in valid:
         by_scenario[r.get("scenario_id", 0)].append(r)
 
-    # ── 逐场景明细 ───────────────────────────────────────────
+    # 逐场景明细
     hdr = (f"  {'算法':<22} {'权重来源':<10} {'规划ms':>7} {'跳数':>4}"
            f" {'通行时间':>10} {'TimeLoss':>9} {'WaitTime':>9} {'SC':>3} {'MAE':>7} {'解析率':>7}")
     for sc_id, sc_results in sorted(by_scenario.items()):
@@ -624,7 +614,7 @@ def save_report(all_results: List[dict], path: str):
     for r in valid:
         by_algo[r["algorithm"]].append(r)
 
-    # ── 维度 A：权重质量对比（统一用 Dijkstra 路由）─────────
+    # 维度 A：权重质量对比（统一用 Dijkstra 路由）
     lines += [
         SEP,
         "【维度A】权重质量对比  (统一使用 Dijkstra 路由，展示权重来源对路径质量的影响)",
@@ -651,7 +641,7 @@ def save_report(all_results: List[dict], path: str):
         )
     lines.append("")
 
-    # ── 维度 B：路由算法对比（统一用 LLM 权重）─────────────
+    # 维度 B：路由算法对比（统一用 LLM 权重）
     lines += [
         "【维度B】路由算法对比  (统一使用 LLM 权重，展示路由算法效率差异)",
         f"  {'算法':<22} {'权重来源':<10} {'平均通行时间':>12} {'平均Overhead':>13}"
@@ -678,9 +668,7 @@ def save_report(all_results: List[dict], path: str):
     print(f"✅ 报告已保存 → {path}")
 
 
-# ════════════════════════════════════════════════════════════
-#  主函数
-# ════════════════════════════════════════════════════════════
+# 主函数
 
 def main():
     parser = argparse.ArgumentParser()

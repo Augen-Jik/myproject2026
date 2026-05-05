@@ -124,7 +124,7 @@ STRICT_PROTOCOL_SLICE_LABELS = {
     "anti_truncation": "anti_truncation",
 }
 
-# ── 全局字体修复 ────────────────────────────────────────────
+# 全局字体修复
 def _setup_font():
     candidates = [
         "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
@@ -144,7 +144,7 @@ def _setup_font():
 
 FONT_NAME = _setup_font()
 
-# ── 统一方法列表、别名和颜色定义 ───────────────────────────────
+# 统一方法列表、别名和颜色定义
 MAINLINE_METHOD_NAME = "Sparse-LoRA-v2"
 MAINLINE_MODEL_PATH = "/root/autodl-tmp/model_merged_sparse_v2_stage4_fix"
 
@@ -216,7 +216,7 @@ def _IS_EXPLORATORY_METHOD(method_name):
         or "patch" in name.lower()
     )
 
-# ── SmallNet UI 常量 ───────────────────────────────────────
+# SmallNet UI 常量
 # 这里定义的是 4 行 × 3 列路网对应的交叉口网格尺寸。
 SMALL_ROAD_ROWS = 4
 SMALL_ROAD_COLS = 3
@@ -226,10 +226,10 @@ SMALL_ROW_NAMES = ["X街", "Y街", "Z街", "W街"]
 SMALL_COL_NAMES = ["A路", "B路", "C路"]
 
 
-# ====================== 配置管理类（迁移到 config.py）======================
+# 配置管理类（迁移到 config.py）
 
 
-# ====================== 模型管理类 ======================
+# 模型管理类
 class ModelManager:
     _ALL_EDGES = LIVE_EDGE_IDS
     _EDGE_LIST_STR = LIVE_EDGE_LIST_STR
@@ -256,7 +256,7 @@ class ModelManager:
             model_path, trust_remote_code=True, use_fast=True,
             cache_dir=_self.config.get("CACHE_DIR"),
         )
-        # R1 模型必须用 left padding（Qwen2+FlashAttn 要求）
+        # R1 模型需要用 left padding（Qwen2+FlashAttn 要求）
         if "R1" in model_path or "DeepSeek" in model_path:
             tokenizer.padding_side = "left"
         if tokenizer.pad_token is None:
@@ -284,9 +284,9 @@ class ModelManager:
         return self.tokenizers[model_name], self.models[model_name]
 
 
-# ====================== 路径规划引擎 ======================
+# 路径规划引擎
 class PathPlanningEngine:
-    # ── 路网常量（类级别，可通过 self. 或 PathPlanningEngine. 访问）────
+    # 路网常量（类级别，可通过 self. 或 PathPlanningEngine. 访问）
     _ALL_EDGES = LIVE_EDGE_IDS
     _EDGE_LIST_STR = LIVE_EDGE_LIST_STR
     _ROW_MAP = {"农业路":"R0","红专路":"R1","政七街":"R2","黄河路":"R3","纬五路":"R4"}
@@ -391,7 +391,7 @@ class PathPlanningEngine:
         """多策略从文本中提取 EdgeID:数字 对，兼容各种模型输出格式"""
         if not text:
             return {}
-        # 预处理：统一分隔符、去除markdown标记
+        # 预处理：统一分隔符、去除Markdown标记
         cleaned = (text
                    .replace("：", ":").replace("，", ",")
                    .replace("**", "").replace("__", "")
@@ -430,7 +430,7 @@ class PathPlanningEngine:
                         weights[f"C{ci}R{ri}_{d}"] = v
         return weights
 
-    # ── 文字→数值映射 ──────────────────────────────────────────────
+    # 文字→数值映射
     _TEXT_TO_WEIGHT = [
         (["全封", "封闭", "管制", "禁行", "禁止通行"],     9.5),
         (["极度拥堵", "严重拥堵", "严重", "极度"],         8.0),
@@ -485,7 +485,7 @@ class PathPlanningEngine:
                 for ri in range(4):
                     wd[f"C{ci}R{ri}_{d}"] = val
 
-        # ── Step 1: 解析 think 块的道路级别信息 ────────────────────
+        # 1. 解析 think 块的道路级别信息
         think_m = _re.search(r'<think>(.*?)</think>', raw, _re.DOTALL)
         think_text = think_m.group(1) if think_m else ""
 
@@ -552,7 +552,7 @@ class PathPlanningEngine:
                     for ri in range(4):
                         for d in ("N", "S"): wd[f"{cid}R{ri}_{d}"] = v
 
-        # ── Step 2: 解析结构化输出（think后或整体），支持文字权重 ──
+        # 2. 解析结构化输出（think 后或整体），支持文字权重
         struct_text = raw.split("</think>")[-1] if "</think>" in raw else raw
         for eid, val_str in _re.findall(
                 r'\b([RC]\d[CR]\d_[EWNS])\s*[:：]\s*([^\s,;，；\)）]+)', struct_text):
@@ -569,7 +569,7 @@ class PathPlanningEngine:
             if v is not None:
                 _expand_edge(eid, v)
 
-        # ── Step 3: 备用路级别格式 R3>7.5 / C2>9.5 ────────────────
+        # 3. 备用路级别格式 R3>7.5 / C2>9.5
         if not wd:
             wd = _self._extract_road_level_weights(raw)
 
@@ -922,7 +922,7 @@ class PathPlanningEngine:
         )
 
 
-# ====================== SUMO仿真引擎 ======================
+# SUMO 仿真引擎
 class SUMOSimulationEngine:
     def __init__(self, config):
         self.config = config
@@ -1264,13 +1264,13 @@ class SUMOSimulationEngine:
             return simulation_result
 
 
-# ====================== 路网坐标（迁移到 viz.py）======================
+# 路网坐标（迁移到 viz.py）
 def _load_net_cached(net_path: str):
     """兼容层：委托到 viz.load_net_cached。"""
     return load_net_cached(net_path)
 
 
-# ====================== 可视化引擎 ======================
+# 可视化引擎
 class VisualizationEngine:
     def __init__(self, config):
         self.config = config
@@ -1751,7 +1751,7 @@ class VisualizationEngine:
                 hovertemplate=f"<b>{self._edge_road_name(eid)}</b><br>{eid}<br>Weight: {w:.1f}<extra></extra>",
                 showlegend=False,
             ))
-        # [FIX4] Plotly 5.x/6.x 兼容：color 长度与 x/y 一致，cmin/cmax 驱动色条
+        # 修正 4：Plotly 5.x/6.x 兼容：color 长度与 x/y 一致，cmin/cmax 驱动色条
         fig.add_trace(go.Scatter(
             x=[None], y=[None], mode="markers",
             marker=dict(
@@ -2101,8 +2101,7 @@ class VisualizationEngine:
         )
         return fig
 
-    # ══ 真实对比实验可视化 ════════════════════════════════
-    # ══ 真实对比实验可视化 ════════════════════════════════
+    # 真实对比实验可视化
     def _normalize_method_label(self, method_name: str) -> str:
         """统一展示方法名，兼容旧版结果中的别名写法。"""
         return canonical_method_name(method_name)
@@ -2704,7 +2703,7 @@ class VisualizationEngine:
         )
         return fig
 
-# ====================== 数据导出引擎 ======================
+# 数据导出引擎
 class DataExportEngine:
     def __init__(self, config):
         self.config = config
@@ -2721,7 +2720,7 @@ class DataExportEngine:
         return fp
 
 
-# ====================== 全局实例化 ======================
+# 全局实例化
 config        = ConfigManager()
 model_manager = ModelManager(config)
 path_engine   = PathPlanningEngine(config)
@@ -2730,7 +2729,7 @@ viz_engine    = VisualizationEngine(config)
 export_engine = DataExportEngine(config)
 
 
-# ====================== 主界面 ======================
+# 主界面
 
 def _safe_table(df):
     """统一走安全的 Streamlit DataFrame 渲染链路。"""
@@ -4222,8 +4221,7 @@ def _render_method_comparison_panel(debug: bool = False):
         ("Runtime Detail", "model_infer_time_s, route_solve_time_s"),
     ])
 
-    # ── Fixed presentation layout: no user controls ─────────────────────────
-    # Main table excludes Extended category (GAT variants); those belong in appendix.
+    # 主表固定展示，GAT 等探索项放到附录。
     _MAIN_CATEGORIES = {"Classical", "GNN", "RL", "LLM-Prompt", "Ours"}
     filtered_df = df.copy()
     if "Category" in filtered_df.columns:
@@ -4233,7 +4231,7 @@ def _render_method_comparison_panel(debug: bool = False):
         _extended_df = pd.DataFrame()
     filtered_df = filtered_df.sort_values("__paper_order", ascending=True, na_position="last").reset_index(drop=True)
 
-    # Fixed column order optimised for projection/screenshot
+    # 投屏和截图用的固定列顺序。
     visible_columns = [c for c in [
         "Method Display", "Method (CN)", "Category",
         "Travel Time (s)", "Planning Time (s)", "Constraint Rate (%)", "Signal Ratio (%)",
@@ -4268,10 +4266,10 @@ def _render_method_comparison_panel(debug: bool = False):
         row_type_fn=_row_type,
         delta_reference=None,
     )
-    # Full-width table: primary visual for defense/presentation
+    # 主表占满宽度，答辩时先看这一张。
     st.markdown(table_html, unsafe_allow_html=True)
 
-    # Charts collapsed by default; expand when needed for detailed analysis
+    # 图表默认收起，需要细看时再展开。
     with st.expander("图表详情（点击展开）", expanded=False):
         chart_left, chart_right, chart_delta = st.columns([1, 1, 1], gap="medium")
         with chart_left:
@@ -4386,8 +4384,7 @@ def _render_ablation_panel(debug: bool = False):
         ("Delta View", "vs previous row, vs frozen mainline"),
     ])
 
-    # ── Fixed presentation layout: no user controls ─────────────────────────
-    # Use all scenes, paper order, fixed column set
+    # 消融表也固定成论文顺序和列集合。
     raw_scene_df = raw_df.copy()
     visible_columns = [c for c in [
         "Variant Display", "Variant (CN)", "Structured Input", "GAT Component", "Sparse Mode",
@@ -4411,10 +4408,10 @@ def _render_ablation_panel(debug: bool = False):
         delta_reference=None,
     )
 
-    # Full-width ablation table
+    # 消融表占满宽度。
     st.markdown(table_html, unsafe_allow_html=True)
 
-    # Detailed charts and raw data collapsed by default
+    # 明细图和原始数据默认收起。
     with st.expander("图表详情（点击展开）", expanded=False):
         expl_cols = st.columns(2)
         expl_cols[0].metric(
@@ -4541,7 +4538,7 @@ def _render_appendix_table():
 
 
 def _render_frozen_tables_workspace(total_cost_value: float, weight_dict_value: dict, planning_time_value: float, debug: bool = False):
-    # ── 答辩用数据源与方法定位说明 ────────────────────────────────────
+    # 答辩用数据源与方法定位说明
     st.markdown(
         """
         <div style="background:#1E3A8A;border-radius:12px;padding:14px 18px;margin-bottom:12px;color:#fff">
@@ -6769,7 +6766,7 @@ def main():
     )
     st.divider()
 
-    # ======================== 侧边栏 ========================
+    # 侧边栏
     with st.sidebar:
         st.markdown(
             '<div style="font-size:1rem;font-weight:700;color:#1E3A8A;margin-bottom:8px">'
@@ -6928,7 +6925,7 @@ def main():
         with col_e:
             end_edge = st.text_input("🏁 终点", value="R3C3_E", key="end_edge")
 
-        # ── 共享场景标签与快捷测试场景 ─────────────────────────────
+        # 共享场景标签与快捷测试场景
         scenarios = get_ui_scenarios()
         scene_profile_options = list(list_scene_profiles())
         production_showcase_names = tuple(PRODUCTION_SHOWCASE_NAMES)
@@ -7341,7 +7338,7 @@ def main():
                 )
                 use_manual = st.checkbox("✅ 启用手动权重", key="use_manual")
 
-        # [FIX6] 模型原始输出栏：始终可见，未运行时显示"尚未运行"
+        # 修正 6：模型原始输出栏：始终可见，未运行时显示"尚未运行"
         _short = selected_model.split("(")[0].strip()
         if display_mode != "答辩简洁模式" or show_debug_details:
             st.markdown(f'<div class="sec-hdr">🔍 模型原始输出 · {_short}</div>', unsafe_allow_html=True)
@@ -7412,7 +7409,7 @@ def main():
         ],
     )
 
-    # ======================== 主内容区 ========================
+    # 主内容区
     compare_ph = None
     adv_ph = None
     if defense_mode:
@@ -7530,7 +7527,7 @@ def main():
             st.markdown('<div class="sec-hdr">🔎 Appendix & Advanced Analysis</div>', unsafe_allow_html=True)
             adv_ph = st.empty()
 
-    # ======================== 运行逻辑 ========================
+    # 运行逻辑
     cached_display_ready = bool(st.session_state.get("results")) and not result_context_dirty
     if not run_button:
         if cached_display_ready:
@@ -8089,7 +8086,7 @@ def main():
                     f" reason={baseline_simulation_result.get('reason', 'unknown')}"
                 )
 
-        # 提前计算Dijkstra参考路径（供Tab2/Tab4复用，避免Tab4重复计算）
+        # 提前计算 Dijkstra 参考路径，供 Tab2 / Tab4 复用。
         _uniform_wd = {e: 1.0 for e in weight_dict}
         _path_dijk_ref, _cost_dijk_ref = path_engine.dijkstra_route(
             net, start_edge, end_edge, _uniform_wd)
@@ -8163,8 +8160,8 @@ def main():
             "planning_time_ms": planning_time_ms,
             "model_infer_time_s": float(infer_time or 0.0),
             "route_solve_time_s": route_solve_time_s,
-            # Legacy aliases retained only for backward-compatible UI/readers.
-            # Paper / defense evidence must use the protocol fields above.
+            # 旧字段只给早期 UI/读取脚本兼容用。
+            # 论文和答辩统计统一看上面的 protocol 字段。
             "travel_time": travel_time,
             "travel_time_s": travel_time,
             "travel_time_ms": float(travel_time) * 1000.0,
@@ -8203,7 +8200,7 @@ def main():
             "baseline_depart_delay_s": baseline_simulation_result.get("depart_delay_s"),
             "baseline_route_length_edges": baseline_simulation_result.get("route_length_edges"),
             "baseline_affected_edge_overlap_ratio": baseline_simulation_result.get("affected_edge_overlap_ratio"),
-            # Legacy alias retained for backward-compatible readers.
+            # 旧字段，保留给早期读取脚本。
             "infer_time":  infer_time,
             "timing_info": _timing_info,
             "sparse_parse": _sparse_parse,
@@ -8281,7 +8278,7 @@ def main():
             scene_env_payload=scene_env_payload,
         )
 
-        # ── Tab3：真实对比实验 ──
+        # Tab3：真实对比实验
         if compare_ph is not None:
             compare_ph.empty()
         if compare_ph is not None:
@@ -8292,7 +8289,7 @@ def main():
                 planning_time_value=float(planning_time_s),
                 debug=show_debug_details,
             )
-        # ── Tab4 ──
+        # Tab4
         if adv_ph is not None:
             adv_ph.empty()
         if adv_ph is not None:

@@ -19,14 +19,13 @@ from results_manager import (
     write_standard_artifacts,
 )
 
-# ── 路网定义（与主系统一致）──────────────────────────────
+# 路网定义（与主系统一致）
 import sumolib
 NET_PATH = "/root/autodl-tmp/SUMO/net/my_net.net.xml"
 net = sumolib.net.readNet(NET_PATH)
 ALL_EDGES = [e.getID() for e in net.getEdges()]
 
-# ── 测试场景 ──────────────────────────────────────────────
-# ── 测试场景（6场景完整版，保留真实交通流梯度排队效应）────────────────────────────
+# 测试场景（6 个场景，保留交通流梯度和排队效应）
 TEST_CASES = [
     {
         "name": "场景A 黄河路单向拥堵",
@@ -95,17 +94,13 @@ TEST_CASES = [
     }
 ]
 
-# ═══════════════════════════════════════════════════════
 # 方法1：Dijkstra（统一权重=1）
-# ═══════════════════════════════════════════════════════
 def method_dijkstra(start, end, desc):
     weights = {e: 1.0 for e in ALL_EDGES}
     path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法2：Rule-based A*（基于道路类型的规则权重）
-# ═══════════════════════════════════════════════════════
 ROAD_TYPE_WEIGHT = {
     "农业路": 3.5, "黄河路": 4.0,  # 主干道拥堵概率高
     "红专路": 2.5, "经三路": 2.5,  # 次干道
@@ -172,9 +167,7 @@ def method_rule_astar(start, end, desc):
     path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法3：DQN（轻量版，用Q表近似）
-# ═══════════════════════════════════════════════════════
 class LightDQN:
     """轻量Q-learning路径规划（用于对比实验）"""
     def __init__(self):
@@ -251,9 +244,7 @@ def method_dqn(start, end, desc, weight_dict_hint=None):
         path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法4：GCN-Weight（图特征权重估计，轻量版）
-# ═══════════════════════════════════════════════════════
 def method_gcn_weight(start, end, desc):
     """
     模拟GCN对路网图的权重估计：
@@ -285,11 +276,9 @@ def method_gcn_weight(start, end, desc):
     path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法5：Raw Qwen（无微调基座模型）
 # 方法6：CoT Qwen（思维链提示工程）
 # 方法7：SFT Qwen（本文方法）
-# ═══════════════════════════════════════════════════════
 def load_llm(model_path):
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -298,7 +287,7 @@ def load_llm(model_path):
         model_path, trust_remote_code=True, use_fast=True)
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
-    # 新版 transformers 不接受 load_in_4bit 直接参数
+    # 新版 transformers 不再直接接收 load_in_4bit。
     mdl = AutoModelForCausalLM.from_pretrained(
         model_path, trust_remote_code=True,
         torch_dtype=torch.bfloat16, device_map="auto",
@@ -349,16 +338,14 @@ def llm_infer_r1(tok, mdl, desc, max_new=3000):
 def parse_weights(text):
     weights = {}
     valid = re.compile(r'^(R\d+C\d+_[EW]|C\d+R\d+_[NS])$')
-    # support both ASCII colon ':' and Chinese full-width colon '：'
+    # 兼容英文冒号和中文冒号。
     for eid, w in re.findall(r'(R\d+C\d+_[EW]|C\d+R\d+_[NS])\s*[：:]\s*(\d+(?:\.\d+)?)', text):
         if valid.match(eid):
             weights[eid] = float(w)
     return weights
 
 
-# ═══════════════════════════════════════════════════════
 # SUMO 仿真（轻量版，直接在对比实验中调用）
-# ═══════════════════════════════════════════════════════
 SUMO_CFG  = "/root/autodl-tmp/SUMO/config/my_config.sumocfg"
 SUMO_TRIP = "/root/autodl-tmp/SUMO/tripinfo_cmp.xml"
 
@@ -434,9 +421,7 @@ SFT_PROMPT_TMPL = (
     "交通描述：{desc}\n\n### Response:\n"
 )
 
-# ═══════════════════════════════════════════════════════
 # A* 路径规划（公用）
-# ═══════════════════════════════════════════════════════
 def astar_route(net, start_eid, end_eid, weight_dict):
     try:
         se = net.getEdge(start_eid); ee = net.getEdge(end_eid)
@@ -457,9 +442,7 @@ def astar_route(net, start_eid, end_eid, weight_dict):
                 open_list[nbr] = (nc, path + [eid])
     return [], float('inf')
 
-# ═══════════════════════════════════════════════════════
 # 评估指标计算
-# ═══════════════════════════════════════════════════════
 # 合法边集合（用于覆盖率计算）
 _VALID_EDGE_SET = set(
     [f"R{r}C{c}_{d}" for r in range(5) for c in range(5) for d in ("E","W")] +
@@ -490,9 +473,7 @@ def calc_coverage(pred_weights):
                 if e in _VALID_EDGE_SET and w not in _NEUTRAL_DEFAULTS)
     return round(valid / max(len(_VALID_EDGE_SET), 1) * 100, 1)
 
-# ═══════════════════════════════════════════════════════
 # 主实验循环
-# ═══════════════════════════════════════════════════════
 def run_all(run_llm=True, mode="experiment_mode"):
     results = []
 
@@ -535,7 +516,7 @@ def run_all(run_llm=True, mode="experiment_mode"):
             ("GCN-Weight", lambda: method_gcn_weight(tc["start"], tc["end"], tc["desc"])),
         ]
         if run_llm:
-            # ── R1 Raw（未微调，对比格式对齐前后差异）──
+            # R1 Raw（未微调，对比格式对齐前后差异）
             def _r1_raw():
                 if r1_raw_tok is None: return {e:1.0 for e in ALL_EDGES}, [], float("inf")
                 raw = llm_infer_r1(r1_raw_tok, r1_raw_mdl, tc["desc"])
@@ -546,7 +527,7 @@ def run_all(run_llm=True, mode="experiment_mode"):
                 p, cost = astar_route(net, tc["start"], tc["end"], w)
                 return w, p, cost
 
-            # ── R1 SFT（微调后）──
+            # R1 SFT（微调后）
             def _r1_sft():
                 if r1_sft_tok is None: return {e:1.0 for e in ALL_EDGES}, [], float("inf")
                 raw = llm_infer_r1(r1_sft_tok, r1_sft_mdl, tc["desc"])
@@ -634,7 +615,7 @@ def run_all(run_llm=True, mode="experiment_mode"):
                 ("R1-Raw",    _r1_raw),
                 ("R1-LoRA★",   _r1_sft),
             ]
-            # ── Sparse-LoRA★★（本文最终方法：稀疏异常路段输出）──
+            # Sparse-LoRA（本文主方法：稀疏异常路段输出）
             def _sparse_lora():
                 if sparse_tok is None:
                     return {e: 2.0 for e in ALL_EDGES}, [], float("inf")
@@ -695,7 +676,7 @@ def run_all(run_llm=True, mode="experiment_mode"):
                 _raw = sparse_tok.decode(_out[0][_in_len:], skip_special_tokens=True).strip()
                 w = {}
 
-                # Step1: 解析 think 块道路级别
+                # 1. 解析 think 块道路级别
                 _think_m = _re.search(r'<think>(.*?)</think>', _raw, _re.DOTALL)
                 if _think_m:
                     for _line in _think_m.group(1).split('\n'):
@@ -750,7 +731,7 @@ def run_all(run_llm=True, mode="experiment_mode"):
                                 for ri in range(4):
                                     for _d in ("N","S"): w[f"{_cid}R{ri}_{_d}"] = _v
 
-                # Step2: 解析结构化输出，支持文字权重，并沿路段展开
+                # 2. 解析结构化输出，支持文字权重，并沿路段展开
                 _struct = _raw.split("</think>")[-1] if "</think>" in _raw else _raw
                 for _eid, _vs in _re.findall(
                         r'\b([RC]\d[CR]\d_[EWNS])\s*[:：]\s*([^\s,;，；\)）]+)', _struct):
@@ -768,20 +749,20 @@ def run_all(run_llm=True, mode="experiment_mode"):
                 return w, p, cost
             methods_to_run.append(("Sparse-LoRA★★", _sparse_lora))
 
-            # ── Sparse-LoRA+GAT★★★（本文终极级联方法）──
+            # Sparse-LoRA+GAT 级联方法
             def _sparse_lora_gat():
                 if sparse_tok is None:
                     return {e: 2.0 for e in ALL_EDGES}, [], float("inf")
                 import torch as _t, re as _re, copy
                 
-                # 1. 直接调用已有的 Sparse-LoRA 推理获取初始稀疏权重
+                # 先跑 Sparse-LoRA，拿到初始稀疏权重。
                 w_sparse, _, _ = _sparse_lora()
                 w_base = copy.deepcopy(w_sparse)
                 
-                # 2. 调用 GAT 进行拓扑补全与平滑
+                # 再用 GAT 做拓扑补全和平滑。
                 try:
                     from gat_smoother import smooth_weights
-                    # 将 Sparse-LoRA 识别出的异常权重作为先验输入 GAT
+                    # Sparse-LoRA 的异常权重作为 GAT 输入。
                     w_final, _ = smooth_weights(w_base, "/root/autodl-tmp/gat_model.pt", device="cpu")
                 except Exception as _ge:
                     print(f"     [GAT跳过] {_ge}")
@@ -802,7 +783,7 @@ def run_all(run_llm=True, mode="experiment_mode"):
                 constraint  = calc_constraint_rate(weights, tc["ground_truth"])
                 parsed_cnt  = sum(1 for e, w in weights.items()
                                   if e in ALL_EDGES and w != 1.0)
-                # ★ SUMO 仿真：用场景规则权重设置限速，测量真实行程时间
+                # SUMO 仿真：用场景规则权重设置限速，测量真实行程时间。
                 _scene_w, _, _ = method_rule_astar(tc["start"], tc["end"], tc["desc"])
                 sumo_t = run_sumo(path, _scene_w)
                 print(f"     路径: {' → '.join(path[:4])}{'...' if len(path)>4 else ''}")

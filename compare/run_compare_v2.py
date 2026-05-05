@@ -9,13 +9,13 @@ import sys, os, re, json, time, random, math
 import numpy as np
 sys.path.insert(0, "/root/autodl-tmp/code")
 
-# ── 路网定义（与主系统一致）──────────────────────────────
+# 路网定义（与主系统一致）
 import sumolib
 NET_PATH = "/root/autodl-tmp/SUMO/net/my_net.net.xml"
 net = sumolib.net.readNet(NET_PATH)
 ALL_EDGES = [e.getID() for e in net.getEdges()]
 
-# ── 测试场景 ──────────────────────────────────────────────
+# 测试场景
 TEST_CASES = [
     {
         "name": "场景A 黄河路单向拥堵",
@@ -47,17 +47,13 @@ TEST_CASES = [
     },
 ]
 
-# ═══════════════════════════════════════════════════════
 # 方法1：Dijkstra（统一权重=1）
-# ═══════════════════════════════════════════════════════
 def method_dijkstra(start, end, desc):
     weights = {e: 1.0 for e in ALL_EDGES}
     path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法2：Rule-based A*（基于道路类型的规则权重）
-# ═══════════════════════════════════════════════════════
 ROAD_TYPE_WEIGHT = {
     "农业路": 3.5, "黄河路": 4.0,  # 主干道拥堵概率高
     "红专路": 2.5, "经三路": 2.5,  # 次干道
@@ -124,9 +120,7 @@ def method_rule_astar(start, end, desc):
     path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法3：DQN（轻量版，用Q表近似）
-# ═══════════════════════════════════════════════════════
 class LightDQN:
     """轻量Q-learning路径规划（用于对比实验）"""
     def __init__(self):
@@ -203,9 +197,7 @@ def method_dqn(start, end, desc, weight_dict_hint=None):
         path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法4：GCN-Weight（图特征权重估计，轻量版）
-# ═══════════════════════════════════════════════════════
 def method_gcn_weight(start, end, desc):
     """
     模拟GCN对路网图的权重估计：
@@ -237,11 +229,9 @@ def method_gcn_weight(start, end, desc):
     path, cost = astar_route(net, start, end, weights)
     return weights, path, cost
 
-# ═══════════════════════════════════════════════════════
 # 方法5：Raw Qwen（无微调基座模型）
 # 方法6：CoT Qwen（思维链提示工程）
 # 方法7：SFT Qwen（本文方法）
-# ═══════════════════════════════════════════════════════
 def load_llm(model_path):
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -250,7 +240,7 @@ def load_llm(model_path):
         model_path, trust_remote_code=True, use_fast=True)
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
-    # 新版 transformers 不接受 load_in_4bit 直接参数
+    # 新版 transformers 不再直接接收 load_in_4bit。
     mdl = AutoModelForCausalLM.from_pretrained(
         model_path, trust_remote_code=True,
         torch_dtype=torch.bfloat16, device_map="auto",
@@ -346,9 +336,7 @@ SFT_PROMPT_TMPL = (
     "交通描述：{desc}\n\n### Response:\n"
 )
 
-# ═══════════════════════════════════════════════════════
 # A* 路径规划（公用）
-# ═══════════════════════════════════════════════════════
 def astar_route(net, start_eid, end_eid, weight_dict):
     try:
         se = net.getEdge(start_eid); ee = net.getEdge(end_eid)
@@ -369,9 +357,7 @@ def astar_route(net, start_eid, end_eid, weight_dict):
                 open_list[nbr] = (nc, path + [eid])
     return [], float('inf')
 
-# ═══════════════════════════════════════════════════════
 # 评估指标计算
-# ═══════════════════════════════════════════════════════
 # 合法边集合（用于覆盖率计算）
 _VALID_EDGE_SET = set(
     [f"R{r}C{c}_{d}" for r in range(5) for c in range(5) for d in ("E","W")] +
@@ -402,9 +388,7 @@ def calc_coverage(pred_weights):
                 if e in _VALID_EDGE_SET and w not in _NEUTRAL_DEFAULTS)
     return round(valid / 98 * 100, 1)
 
-# ═══════════════════════════════════════════════════════
 # 主实验循环
-# ═══════════════════════════════════════════════════════
 def run_all(run_llm=True):
     results = []
 
@@ -416,7 +400,7 @@ def run_all(run_llm=True):
         raw_tok, raw_mdl = load_llm("/root/autodl-tmp/Qwen2.5-1.5B-Instruct")
         print("📦 加载 SFT Qwen（本文模型）...")
         sft_tok, sft_mdl = load_llm("/root/autodl-tmp/model_merged_qwen")
-        # 稀疏模型（本文最终方法）
+        # 稀疏模型（主方法）
         sparse_tok = sparse_mdl = None
         import os as _os
         _sp = "/root/autodl-tmp/model_merged_sparse"
@@ -450,7 +434,7 @@ def run_all(run_llm=True):
             ("GCN-Weight", lambda: method_gcn_weight(tc["start"], tc["end"], tc["desc"])),
         ]
         if run_llm:
-            # ── R1 Raw（未微调，对比格式对齐前后差异）──
+            # R1 Raw（未微调，对比格式对齐前后差异）
             def _r1_raw():
                 if r1_raw_tok is None: return {e:1.0 for e in ALL_EDGES}, [], float("inf")
                 raw = llm_infer_r1(r1_raw_tok, r1_raw_mdl, tc["desc"])
@@ -461,7 +445,7 @@ def run_all(run_llm=True):
                 p, cost = astar_route(net, tc["start"], tc["end"], w)
                 return w, p, cost
 
-            # ── R1 SFT（微调后）──
+            # R1 SFT（微调后）
             def _r1_sft():
                 if r1_sft_tok is None: return {e:1.0 for e in ALL_EDGES}, [], float("inf")
                 raw = llm_infer_r1(r1_sft_tok, r1_sft_mdl, tc["desc"])
@@ -532,7 +516,7 @@ def run_all(run_llm=True):
                 return w, p, c
 
 
-            # ── Sparse-LoRA（稀疏输出 + 默认值后处理）─────────
+            # Sparse-LoRA（稀疏输出 + 默认值后处理）
             def _sparse():
                 if sparse_tok is None or sparse_mdl is None:
                     return {e:1.0 for e in ALL_EDGES}, [], float("inf")
@@ -553,7 +537,7 @@ def run_all(run_llm=True):
                 raw = sparse_tok.decode(_out[0][_in_len:], skip_special_tokens=True).strip()
                 if "</think>" in raw: raw = raw.split("</think>")[-1]
                 w = parse_weights(raw)
-                # ★ 后处理：未解析路段填默认值 2.0（正常通行）
+                # 后处理：未解析路段填默认值 2.0（正常通行）
                 for e in ALL_EDGES:
                     w.setdefault(e, 2.0)
                 p, c = astar_route(net, tc["start"], tc["end"], w)

@@ -452,21 +452,21 @@ def _update_table_notes() -> None:
     existing = TABLE_NOTES_PATH.read_text(encoding="utf-8")
     extra = f"""
 
-## 7. 2026-04-10 citation-ready baseline naming update
+# # 7. 2026-04-10 citation-ready baseline naming update
 
 - 当前主表中的图基线命名统一为 `GCN-Weight (Kipf & Welling)`，用于明确其 citation anchor；但本仓库实现仍是轻量图权重估计器，而不是完整监督式 GCN 复现。
 - `CoT-Qwen` 保留在 `LLM-Prompt` 分组，并在主表注释中明确为 chain-of-thought prompting baseline。
 - `R1-Raw` 保留在 `LLM-Prompt` 分组，并在主表注释中明确为 raw reasoning prompt baseline。
 - `DQN-RouteSelector` 保持为 repaired RL baseline。
 
-## 8. 2026-04-10 DCRNN-inspired baseline
+# # 8. 2026-04-10 DCRNN-inspired baseline
 
 - `DCRNN-inspired` 已按最低代价接入现有 live evaluation pipeline。
 - 该方法只在固定有向图上复用 forward/backward random-walk diffusion aggregation，`K=2`。
 - It is not a full DCRNN reproduction.
 - 为避免夸大方法复现程度，主表与说明文件统一使用 `DCRNN-inspired` 命名。
 
-## 9. 2026-04-10 MAPPO 暂缓理由
+# # 9. 2026-04-10 MAPPO 暂缓理由
 
 - 当前仓库缺少清晰的多智能体定义、每个 agent 的观测空间、联合动作空间或共享策略接口、协作奖励设计，以及兼容的多智能体 SUMO 环境包装。
 - 因此 `MAPPO` 虽然可以作为论文引用对象，但本轮不属于最低代价可提交项，已单独写入 `results/final_tables/mappo_scope_note.md`。

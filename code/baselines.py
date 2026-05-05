@@ -27,9 +27,7 @@ try:
 except Exception:  # pragma: no cover
     sumolib = None
 
-# ════════════════════════════════════════════════════════════
-#  路网图结构（与 gat_smoother.py 保持一致）
-# ════════════════════════════════════════════════════════════
+# 路网图结构（与 gat_smoother.py 保持一致）
 
 N_ROWS   = 5
 N_COLS   = 6
@@ -96,9 +94,7 @@ def heuristic(node, goal) -> float:
     return abs(node[0] - goal[0]) + abs(node[1] - goal[1])
 
 
-# ════════════════════════════════════════════════════════════
-#  1. Uniform Dijkstra（等权，忽略拥堵）
-# ════════════════════════════════════════════════════════════
+# 1. Uniform Dijkstra（等权，忽略拥堵）
 
 class UniformDijkstra:
     """
@@ -134,9 +130,7 @@ class UniformDijkstra:
         return path, dist.get(end, math.inf), elapsed
 
 
-# ════════════════════════════════════════════════════════════
-#  2. Rule-based Dijkstra（关键词规则解析权重）
-# ════════════════════════════════════════════════════════════
+# 2. Rule-based Dijkstra（关键词规则解析权重）
 
 ROW_NAMES = ["农业路", "红专路", "政七街", "黄河路", "纬五路"]
 COL_NAMES = ["经一路", "经三路", "经六路", "经八路", "花园路", "未来路"]
@@ -227,9 +221,7 @@ class RuleDijkstra:
         return path, dist.get(end, math.inf), elapsed
 
 
-# ════════════════════════════════════════════════════════════
-#  3. LLM Dijkstra（LLM 原始权重 + A*）
-# ════════════════════════════════════════════════════════════
+# 3. LLM Dijkstra（LLM 原始权重 + A*）
 
 class LLMDijkstra:
     """
@@ -265,9 +257,7 @@ class LLMDijkstra:
         return path, dist.get(end, math.inf), elapsed
 
 
-# ════════════════════════════════════════════════════════════
-#  4. GAT Dijkstra（本文方法：LLM-GAT 级联 + Dijkstra）
-# ════════════════════════════════════════════════════════════
+# 4. GAT Dijkstra（本文方法：LLM-GAT 级联 + Dijkstra）
 
 class GATDijkstra:
     """
@@ -320,9 +310,7 @@ class GATDijkstra:
         return path, dist.get(end, math.inf), elapsed
 
 
-# ════════════════════════════════════════════════════════════
-#  5. Bellman-Ford
-# ════════════════════════════════════════════════════════════
+# 5. Bellman-Ford
 
 class BellmanFord:
     """
@@ -360,9 +348,7 @@ class BellmanFord:
         return path, dist.get(end, math.inf), elapsed
 
 
-# ════════════════════════════════════════════════════════════
-#  6. 蚁群算法 ACO（Ant Colony Optimization）
-# ════════════════════════════════════════════════════════════
+# 6. 蚁群算法 ACO（Ant Colony Optimization）
 
 class ACO:
     """
@@ -477,9 +463,7 @@ class ACO:
         return path, math.inf   # 超步数未到达
 
 
-# ════════════════════════════════════════════════════════════
-#  统一接口工厂
-# ════════════════════════════════════════════════════════════
+# 统一接口工厂
 
 def get_all_baselines(gat_model_path: str = "/root/autodl-tmp/gat_model.pt"):
     """返回所有算法实例列表，按性能预期从弱到强排列"""
