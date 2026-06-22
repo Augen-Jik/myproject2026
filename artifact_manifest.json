@@ -1,0 +1,86 @@
+{
+  "manifest_version": "1.0",
+  "project": "STAG-Route",
+  "description": "Measured (not assumed) SHA256 + size + role for the canonical model, the STC-Bench build, and the T1-pinned frozen scorer stack. All paths are relative to ${PROJECT_ROOT}. Verify with tools/verify_manifest.py.",
+  "path_convention": "relative_to_PROJECT_ROOT",
+  "generated": "2026-06-19",
+  "artifacts": [
+    {
+      "id": "canonical_model_adapter",
+      "path": "model_lora_p1_fixv2_seed1337/adapter_model.safetensors",
+      "sha256": "c92bdc8701d3151760da9c04326c59d3084ff8b5966be532076bda57a50b50bd",
+      "size_bytes": 73911112,
+      "role": "Canonical STAG-Route LoRA adapter (FIXV2_SEED1337_FROZEN). Backbone: Qwen2.5-1.5B-Instruct. This safetensors hash IS the locked canonical identity."
+    },
+    {
+      "id": "canonical_model_adapter_config",
+      "path": "model_lora_p1_fixv2_seed1337/adapter_config.json",
+      "sha256": "ceafec9825fab0fd61b0aac4e3095e38ff6ac60b4b8d26520bf6e49bb81e4ac7",
+      "size_bytes": 1069,
+      "role": "LoRA config for the canonical adapter (r16/alpha32)."
+    },
+    {
+      "id": "stc_bench_instances",
+      "path": "paper_v2_admin/stc_bench_v1_approved_freeze/stc_bench_instances.jsonl",
+      "sha256": "45a1f0af5e6417aa78e40a9c0d1b102a1ef7603fb6b4acdaab0c259f52174cfc",
+      "size_bytes": 5956636,
+      "role": "STC-Bench semfix_full v1 instances, n=2000. Byte-identical to the run_20260609_113836_semfix_full source build."
+    },
+    {
+      "id": "stc_bench_oracles",
+      "path": "paper_v2_admin/stc_bench_v1_approved_freeze/stc_bench_oracle_artifacts.jsonl",
+      "sha256": "99d9a6ff984f617c67a0db36995534184d8638fdb904cc21d0b4661a23b7e71f",
+      "size_bytes": 5162705,
+      "role": "STC-Bench oracle/GT artifacts (gt_anchors, gt_changed_edges, gt_conflict_resolution, gt_cost_map). Byte-identical to semfix_full source."
+    },
+    {
+      "id": "scorer_primary",
+      "path": "paper_v2_admin/cc6b_powered_eval/offline_run_20260610_102000/cc6b1_offline_runner.py",
+      "sha256": "068b122c14a49075643875146a49e8ea090f5bdf47c008866c0f2682d2a8486b",
+      "size_bytes": 73404,
+      "role": "T1-PINNED frozen scorer (CC6B-1 stack). evaluate_row / build_prompt(M3) / parse_for_method / batch_generate. Authoritative main-table scorer; imports NO sparse_utils variant (see T1)."
+    },
+    {
+      "id": "scorer_companion_v2",
+      "path": "paper_v2_admin/cc6b_powered_eval/offline_v2_run_20260610_215818/cc6b1_offline_v2_runner.py",
+      "sha256": "e6baa5850fa006cea8700af2ce343784b16bfa276f15e801f9143609a34f470e",
+      "size_bytes": 41240,
+      "role": "T1-PINNED scorer companion. to_schema_row; produced the frozen per-instance metrics CSV."
+    },
+    {
+      "id": "scorer_local_range",
+      "path": "paper_v2_admin/local_range_scorer_fix_run_20260612_051858/run_local_range_scorer_fix.py",
+      "sha256": "84751f1e194bd9cfa0cfd61c49c06e07b6c48a5f2497084d5c0afaee09a336c9",
+      "size_bytes": 32399,
+      "role": "T1-PINNED scorer companion. graph_equivalent_local_scorer (graph-equivalent local-range scoring fix)."
+    },
+    {
+      "id": "canonical_grounding_results",
+      "path": "paper_v2_admin/p0_lock_in_fixv2_results_run_20260612_180500/a2_fixv2_full2000_results.csv",
+      "sha256": "6796db33080e8036ed960f4fc73fa17ea46daf54219727c7719f8742399d449f",
+      "size_bytes": 524234,
+      "role": "CANONICAL fixv2 (c92bdc87) per-instance grounding results, 2000 x M3/Level-2. anchor_recall = changed_edge_recall = 95.58 (road/anchor-level). The authoritative grounding source for eval/rebuild_main_table.py."
+    },
+    {
+      "id": "canonical_grounding_raw",
+      "path": "paper_v2_admin/p0_lock_in_fixv2_results_run_20260612_180500/a2_raw_full2000.jsonl",
+      "sha256": "e596a992dcc6413ec42cda916f7184b5091fbd1813c8f2b02282cb85586a2c79",
+      "size_bytes": 965580,
+      "role": "CANONICAL fixv2 raw STAG outputs (anchors JSON). Input to the validated road_text_localization computation in rebuild_main_table.py."
+    },
+    {
+      "id": "edge_frame_artifact_csv_EXCLUDED",
+      "path": "paper_v2_admin/cc6b_powered_eval/offline_v2_run_20260610_215818/cc6b1_instance_metrics_schema.csv",
+      "sha256": "d71e77b5a19457b94a8d522eb9d36dedf14d7417aa2c03111f7004b4a9e72cb9",
+      "size_bytes": 2221404,
+      "role": "EXCLUDED reference only. Pre-canonical cc6b1 offline_v2 run (M3=v1_nohalluc); recall is a uniform ~16.00 = edge-id frame ARTIFACT. NOT the canonical grounding source. Retained for provenance/transparency, never as a headline number."
+    },
+    {
+      "id": "competitive_main_table_tex",
+      "path": "paper_v2_admin/aaai27_competitive_main_table_final/competitive_main_table_final.tex",
+      "sha256": "ed3edb4aad10865ed2c8f8bdd0629da73c05e03d4587d23c025cc4a519648767",
+      "size_bytes": 3189,
+      "role": "Frozen competitive main table (closed-loop full-150, 9 methods). Reference table; numbers cross-checked against the offline rebuild."
+    }
+  ]
+}

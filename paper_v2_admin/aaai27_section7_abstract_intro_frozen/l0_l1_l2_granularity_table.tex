@@ -5,7 +5,7 @@
 % Source: aaai27_camera_ready_full_frame/{l0_eval_summary_full.json, eval/summary_qwen1p5b_full.json}.
 \begin{table}[t]
 \centering
-\small
+\footnotesize
 \caption{Output-interface granularity. Same base/corpus/budget/seed; only the grounding output
 representation varies. On a frame-free road-text metric L0 and L2 name roads \emph{equally well}
 ($0.87$); but lacking typed structure L0 cannot express the direction/conflict semantics routing requires;
@@ -13,11 +13,12 @@ L1 fails to localize; typed sparse anchors (L2) are the operating point. ($^\dag
 road-text recall, scorer-frame-independent, computed identically for L0 and L2; L0's typed anchor-recall
 is low \emph{by interface design} ($15.95$ vs.\ L2 $95.70$). Full STC-Bench frame, $n{=}2000$.)}
 \label{tab:granularity}
-\begin{tabular}{lccccc}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}p{2.15cm}ccccc@{}}
 \toprule
-Interface & Road recall$^\dagger$ & Direction & Conflict res. & Schema & Closed-loop CS \\
+Interface & \shortstack{Road\\rec.$^\dagger$} & Dir. & \shortstack{Conflict\\res.} & Schema & \shortstack{Closed-loop\\CS} \\
 \midrule
-L1 dense edge-weight   & --    & --   & --   & --   & 0.02 (uniform enum.) \\
+L1 dense edge-weight   & --    & --   & --   & --   & \shortstack{0.02\\(uniform enum.)} \\
 L0 untyped road-level & 0.87 & 0.16 & 0.00 & 1.00 & -- \\
 \textbf{L2 typed sparse (ours)}  & 0.87 & 0.99 & 0.75 & 1.00 & \textbf{0.96} \\
 \bottomrule
