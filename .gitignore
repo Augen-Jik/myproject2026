@@ -30,3 +30,14 @@ logs/
 DeepSeek-R1-1.5B/model.safetensors
 Qwen2.5-1.5B-Instruct/model.safetensors
 model_merged_*/model.safetensors
+
+# LaTeX build artifacts (manuscript compiles from source; artifacts regenerated)
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.synctex.gz
+paper_v2_admin/aaai27_manuscript_assembly/manuscript_aaai2027_submission.pdf

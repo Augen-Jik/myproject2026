@@ -1,0 +1,48 @@
+% =====================================================================
+% section7_assembled.tex — assembled Section 7 (Experiments & Analysis)
+% Order: §7.4 closed-loop -> §7.5 mechanism -> §7.6 robustness
+%        -> reconciliation (§7.x) -> limitations
+% Assembly method: \input of the FROZEN authoritative files (single source
+% of truth; frozen files are NOT modified). The bare table \input inside the
+% frozen files resolves via \input@path -> live table source dirs (no copies,
+% no stale paths). Built by ASSEMBLE_SECTION7 task; gate = PASS (see
+% reference_integrity_report.md). Compile from THIS directory.
+% =====================================================================
+
+% --- resolve the bare table \input{...} found inside the frozen section files
+%     to their live source dirs (relative to this assembly directory) ---
+\makeatletter
+\def\input@path{%
+  {../aaai27_competitive_main_table_final/}%
+  {../aaai27_section7_abstract_intro_frozen/}%
+}
+\makeatother
+
+\section{Experiments and Analysis}
+\label{sec:experiments}
+
+% §7.4 — Closed-loop main result (competitive table via \input; DCRNN bucket
+%         framing; sensor-invariance; CR<->TT trade-off). Footnotes (a)(b)(c)
+%         = DRGPT only, (d)(e) = DCRNN only.
+\input{../aaai27_section7_abstract_intro_frozen/section_7_4.tex}
+
+% §7.5 — Grounding mechanism: output-interface granularity (L0/L1/L2),
+%         semantic-field necessity, verifier role. L0 row = full-frame final.
+\input{../aaai27_section7_abstract_intro_frozen/section_7_5.tex}
+
+% §7.6 — Topology (P3) + backbone (2x2) robustness.
+\input{../aaai27_section7_abstract_intro_frozen/section_7_6.tex}
+
+% §7.x — Offline grounding quality (P4) + offline<->closed-loop reconciliation.
+%         Defines labels sec:p4 / sec:p4reconcile referenced (forward) by §7.4.
+\input{../aaai27_section7_abstract_intro_frozen/offline_closedloop_reconciliation_paragraph.tex}
+
+% Limitations.
+\input{../aaai27_section7_abstract_intro_frozen/limitations.tex}
+
+% =====================================================================
+% End assembled Section 7. All \ref resolve to \label within this block:
+%   sec:closedloop(7.4) sec:mechanism(7.5) sec:robustness(7.6)
+%   sec:p4 / sec:p4reconcile(reconciliation) sec:limitations(limitations)
+%   tab:granularity(granularity table, via \input in 7.5).
+% =====================================================================

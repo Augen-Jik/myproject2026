@@ -1,0 +1,62 @@
+% R4 — Cross-topology offline grounding-quality external validity (appendix-ready)
+% Scope: OFFLINE grounding quality only. Does NOT claim closed-loop / behavioral transfer.
+% Source: canonical adapter model_lora_p1_fixv2_seed1337 (c92bdc87), CC6B-1 evaluate_row,
+%         re-aggregated from the frozen a2_fixv2_full2000 scored CSV (same artifact as P4).
+
+\subsection{Cross-topology offline grounding quality (external validity)}
+\label{app:r4-cross-topology}
+
+To probe whether the offline grounding quality reported on the primary grid
+($M1$, $|E|{=}98$) generalizes across road-network topology and scale, we
+re-evaluate the canonical STAG adapter on the held-out families already present
+in the frozen benchmark: $M2$ (Grid-M, $|E|{=}194$), $M3$ (Grid-L, $|E|{=}398$),
+and $M5$ (Irregular, $|E|{=}118$), each with $n{=}100$ oracle-covered instances.
+$M4$ (Renamed-grid, $|E|{=}98$) is included only as a label control and is
+\emph{not} counted toward cross-topology external validity. This is an offline
+re-scoring widen: identical canonical adapter, identical CC6B-1 scorer, and
+identical column definitions and frame-free road-level recall convention as the
+main offline table (Sec.~\ref{sec:p4}); the aggregation reproduces the main-table
+overall numbers exactly on all reported quantities. \emph{anchor\_recall} is the
+scorer's road-level (road, type, direction) match, i.e.\ the frame-free road-level
+recall; no edge-id frame is reintroduced.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llrrrrr}
+\toprule
+Family & Role & $|E|$ & $n$ & Road-rec. & Dir. & Sch. \\
+\midrule
+$M1$ (full)        & reference   & 98  & 1600 & 94.6  & 99.6  & 100 \\
+$M1$ @ ID-eval     & clean ref   & 98  & 1000 & 100.0 & 100.0 & 100 \\
+\midrule
+$M5$ Irregular     & OOD-topo    & 118 & 100  & 99.5  & \textbf{82.0} & 100 \\
+$M2$ Grid-M        & OOD-scale   & 194 & 100  & 99.5  & 100.0 & 100 \\
+$M3$ Grid-L        & OOD-scale   & 398 & 100  & 100.0 & 100.0 & 100 \\
+\midrule
+$M4$ Renamed\,$^{\dagger}$ & label-ctrl & 98 & 100 & 99.0 & 100.0 & 100 \\
+\bottomrule
+\end{tabular}
+\caption{Offline grounding quality across held-out network families
+(canonical STAG adapter, frame-free road-level recall). Road-level grounding,
+schema validity ($100\%$), hallucinated-road rate ($0\%$), truncation ($0\%$),
+temporal and conflict-resolution accuracy hold across $|E|{=}118\!\to\!398$ and
+the irregular topology. The single topology-dependent weakness is directional
+accuracy on the non-grid family ($M5$, $82.0$), consistent with the main-table
+OOD-topology split and with our semantic-ablation finding that direction is the
+most load-bearing field. The positive gap vs.\ $M1$(full) is a distributional
+artifact---$M1$(full) contains the hard OOD-complexity/linguistic overload splits
+absent from the single-network held-out families; the like-for-like reference is
+$M1$@ID-eval, against which cross-topology grounding is statistically on par.
+$^{\dagger}$label control, not counted toward external validity.}
+\label{tab:r4-cross-topology}
+\end{table}
+
+\paragraph{Takeaway.} STAG's \emph{offline} road-level grounding interface is
+robust to network topology and scale: across a $4\times$ edge-count range and an
+irregular non-grid layout, road identification, schema conformance, hallucination,
+temporal and conflict-resolution quality are maintained, with the residual gap
+localized to directional disambiguation on irregular geometry. This strengthens
+the external validity of the offline grounding claim. It is an offline-quality
+result and does not extend the closed-loop evaluation, which remains
+single-network (Sec.~\ref{sec:limitations}).

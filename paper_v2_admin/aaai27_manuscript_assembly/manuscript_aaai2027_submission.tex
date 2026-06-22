@@ -1,0 +1,60 @@
+% =====================================================================
+% STAG-Route AAAI-27 submission build root.
+%
+% Uses the official AAAI-27 Author Kit style files copied into this
+% directory:
+%   aaai2027.sty
+%   aaai2027.bst
+%
+% Compile from this directory so all relative \input paths resolve.
+% =====================================================================
+\documentclass[letterpaper]{article}
+\usepackage[submission]{aaai2027}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\usepackage{natbib}
+\usepackage{caption}
+\frenchspacing
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+
+\setcounter{secnumdepth}{0}
+
+\title{STAG-Route: An Output-Interface View of Language-Grounded Routing}
+\author{}
+\affiliations{}
+
+\begin{document}
+\maketitle
+
+% ---- Front matter ----
+\input{../aaai27_section7_abstract_intro_frozen/abstract.tex}
+
+% ---- Introduction ----
+\section{Introduction}
+\label{sec:introduction}
+\input{../aaai27_intro_method_relatedwork/introduction_narrative.tex}
+\input{../aaai27_section7_abstract_intro_frozen/introduction_contributions.tex}
+
+% ---- Related Work and Method ----
+\input{../aaai27_intro_method_relatedwork/related_work.tex}
+\input{../aaai27_intro_method_relatedwork/method_formalization.tex}
+
+% ---- Section 7: Experiments and Analysis (assembled, frozen sources) ----
+\input{section7_assembled.tex}
+
+% ---- Appendix ----
+\appendix
+\section{Additional Offline Analyses}
+\label{app:additional-offline}
+\input{../aaai27_r4_cross_topology_offline/cross_topology_external_validity.tex}
+
+\bibliography{references}
+
+\end{document}

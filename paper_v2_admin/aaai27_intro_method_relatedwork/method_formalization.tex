@@ -1,0 +1,70 @@
+% =====================================================================
+% Method — problem formalization + output-interface levels (L0/L1/L2) +
+% schema-verified sparse-anchor pipeline. Scope-locked: every symbol's
+% capability claim <= proven evidence; L0/L1/L2 match the granularity
+% ablation's ACTUAL operational definitions (L0 = untyped road/segment
+% enumeration, NOT a true O-D route). Verifier = normalization + reachability,
+% NOT error-repair (P5). No P2/P3 scope relaxation.
+% =====================================================================
+\section{Method}
+\label{sec:method}
+
+\subsection{Problem formalization}
+Let $G=(V,E)$ be a road graph and $(o,d)$ an origin--destination pair. A traffic situation is described
+in natural language as a text $x$ that announces a set of currently active events
+$\mathcal{C}=\{c_1,\dots,c_m\}$; each event $c_i$ concerns a road segment and carries typed attributes
+(direction, spatial range, event type, severity/level, and temporal validity). The task is to produce a
+route $\rho$ from $o$ to $d$ that \emph{completes} in closed-loop simulation and \emph{satisfies}
+$\mathcal{C}$ (it does not traverse a segment in a way the active constraints forbid). We factor any
+solution into a \emph{grounding} step and a \emph{planning} step:
+\[
+  x \;\xrightarrow{\;g\;}\; r \;\xrightarrow{\;\Pi\;}\; \rho ,
+\]
+where $g$ maps the description to an intermediate \emph{intervention representation} $r$, and a fixed
+planner $\Pi$ (A$^\star$ on $G$) turns $r$ into a route. The paper studies the design of $r$---the
+grounding \emph{output interface}---with $\Pi$, the backbone, corpus, budget, and seed held fixed.
+
+\subsection{Output-interface levels}
+We compare three output interfaces for $r$, which differ only in \emph{structure} and \emph{density}.
+Let $k=|\mathcal{C}|$ be the number of disrupted segments ($k\ll|E|$ at operational density).
+
+\begin{description}
+  \item[L1 — dense edge-weight.] $r = \mathbf{w}\in\mathbb{R}^{|E|}$, one weight per edge; $\Pi$ plans
+        on the reweighted graph. Output size is $\Theta(|E|)$, independent of how localized the
+        disruption is.
+  \item[L2 — typed sparse anchors (ours).] $r = A=\{a_1,\dots,a_k\}$ with each anchor a typed record
+        $a_i=(\textit{road},\textit{direction},\textit{range},\textit{type},\textit{level})$; a
+        graph-completion operator $\Phi$ expands $A$ into the induced edge edits $\Phi(A)$ that $\Pi$
+        consumes. Output size is $\Theta(k)$.
+  \item[L0 — untyped sparse enumeration.] $r = A_0=\{(\textit{road},\textit{range})\}$: the same sparse
+        set of affected segments as L2 but with the typed fields removed. Output size is also
+        $\Theta(k)$. Operationally, $A_0$ is the field-projection of the L2 target onto
+        $\{\textit{road},\textit{range}\}$; it is an \emph{untyped road/segment enumeration}, not an
+        origin--destination route.
+\end{description}
+
+The three lie on a single \emph{structuredness} axis (dense $\to$ typed-sparse $\to$ untyped), and L0
+differs from L2 in exactly one variable---the presence of typed structure---because $A_0$ is obtained by
+deleting fields from the L2 target on the identical corpus. This makes the L0/L1/L2 comparison a
+controlled ablation of output structure rather than a comparison of different models or data
+(\S\ref{sec:mechanism}). We make no claim that any level is universally optimal; the claim is that, under
+this control, the \emph{interface} determines the structural failure mode.
+
+\subsection{Schema-verified sparse-anchor pipeline (STAG-Route)}
+STAG-Route instantiates L2 as a four-stage pipeline:
+\[
+  x \xrightarrow{\text{LLM}} \hat{A}\ \text{(JSON anchors)} \xrightarrow{\ \mathcal{V}\ } A
+  \xrightarrow{\ \Phi\ } \Phi(A) \xrightarrow{\ \Pi\ } \rho .
+\]
+A LoRA-fine-tuned backbone emits anchors $\hat{A}$ under a fixed prompt contract; a validator
+$\mathcal{V}$ checks them against an explicit anchor \emph{schema} and the road catalog, normalizes the
+empty-constraint case to a uniform \texttt{NO\_ANCHOR} sentinel, and enforces a reachability/route
+guarantee before the completion operator $\Phi$ writes the corresponding edge edits for the planner.
+
+Crucially, $\mathcal{V}$ is positioned as \emph{contract normalization plus reachability assurance, not
+error repair}. As the ablation in \S\ref{sec:mechanism} shows, the fine-tuned model already emits
+schema-clean, hallucination-free anchors; the validator's measured gain is essentially the
+normalization of correct sentinels into the uniform schema and the addition of a reachability check the
+raw output lacks, rather than the correction of frequent model mistakes. We therefore do not attribute
+the method's correctness to the verifier; the verifier delivers deployability on top of an already-clean
+grounder.

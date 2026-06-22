@@ -1,0 +1,35 @@
+% =====================================================================
+% §7.x  Offline grounding quality (P4) + offline<->closed-loop reconciliation
+% Authoritative claim set: C10, C11, L1, L2 (frozen_claim_hierarchy_v1.md)
+% =====================================================================
+\subsection{Offline grounding quality and its reconciliation with the closed loop}
+\label{sec:p4}
+
+\paragraph{Grounding self-portrait (STC-Bench, $n{=}2000$).}
+On its own discriminative benchmark the canonical adapter localizes cleanly: anchor recall $95.58$ at
+precision $98.75$, changed-edge recall $95.58$, schema validity $100$, \textbf{zero} hallucinated roads,
+zero truncation/parse failure, direction accuracy $98.80$. The headroom is on the hard semantic axes:
+temporal $80.56$ and conflict resolution $75.26$.
+
+\paragraph{The frontier is compositional, and it is real (not a frame artifact).}
+\label{sec:p4reconcile}
+The weakest split is OOD-complexity (anchor recall $80.88$, conflict $45.49$; $n{=}400$). A diagnostic
+confirms this is a \emph{real, bounded} capability gap, \emph{not} a scorer-frame artifact: unlike the P3
+recall case, offline constraint-feasibility tracks the metric 1:1 (when conflict is scored wrong, the
+route is 100\% infeasible; 0\% hallucination on the misses). Crucially, the gap is driven by
+\emph{compositional density}, not by graph size or novelty: STAG is at 100\% on OOD-scale (296 edges),
+OOD-topology, and OOD-linguistic, and degrades only when multiple events/conflicts co-occur on one
+instance ($\approx$3 simultaneous events vs.\ 2). On a fixed 98-edge net, single-conflict cases are
+$\sim$100\% and multi-conflict cases fall to 45--55\%.
+
+\paragraph{Why this does not contradict the closed-loop 0.96.}
+The closed-loop stress test and the offline benchmark sit at \emph{different points on the same difficulty
+axis, and they agree on its direction.} The closed-loop buckets operate at \emph{operational}
+(single-conflict) density---the regime where STAG is also $\sim$100\% offline---and conflict is well
+represented there (B4 compound $+$ B5 conflict $=40\%$ of the 150 cases). The closed loop does not sample
+the amplified compositional tail that OOD-complexity probes. Both instruments rank compound density
+hardest: the single weakest closed-loop bucket is B4 compound (CS $0.80$), exactly where compositional
+density begins to bite, mirroring the offline OOD-complexity result. The $0.96$ is genuine
+operational-density robustness (not propped up by missing conflict cases, and not a leniency artifact---on
+the hard cases feasibility equals conflict accuracy); the amplified compositional tail is the honest open
+frontier, reported in \S\ref{sec:limitations}.
