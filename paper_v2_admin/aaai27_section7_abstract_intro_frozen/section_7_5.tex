@@ -1,0 +1,61 @@
+% =====================================================================
+% §7.5  Grounding mechanism: output-interface granularity + semantic-field
+%        necessity + verifier role
+% Authoritative claim set: M1, M3, L3. L0 = full STC-Bench frame (n=2000), camera-ready final.
+% =====================================================================
+\subsection{What makes the interface work: granularity, semantic fields, verifier}
+\label{sec:mechanism}
+
+\paragraph{Output-interface granularity (L0/L1/L2).}
+We ablate the grounding \emph{output interface} on a common base (Qwen2.5-1.5B), corpus
+(\texttt{fixv2\_interface\_align}), budget (matched LoRA-lite), and seed (1337), varying only how the
+grounded constraint is emitted:
+\begin{itemize}
+  \item \textbf{L1 dense} — a weight for every edge ($\Theta(|E|)$). This is Dense-LoRA: it collapses to
+        a fixed-capacity, scenario-invariant enumeration that neither scales with $|E|$ nor encodes the
+        constraint (CS $0.02$, \S\ref{sec:closedloop}).
+  \item \textbf{L2 typed sparse anchors} — STAG: \texttt{road$\mid$dir$\mid$range$\mid$type$\mid$level}
+        per constraint (CS $0.96$).
+  \item \textbf{L0 untyped road-level} — road$+$range only, with the typed semantic fields removed
+        (single varied variable vs.\ L2 = typed structure). On the full STC-Bench frame ($n{=}2000$;
+        $1840$ active-constraint cases), L0 is \emph{not} degenerate: on a frame-free road-text metric it
+        names the correct roads \emph{as well as} L2 (road-level recall $0.869$ vs.\ L2's $0.868$), with
+        schema $1.0$ and $0$ hallucination, but, lacking typed output, collapses on the routing-relevant
+        axes (direction $0.16$, conflict resolution $0.00$, vs.\ L2's $0.99$/$0.75$); its typed
+        anchor-recall is $15.95$ \emph{by interface design} (vs.\ L2 $95.70$).
+\end{itemize}
+The three sit monotonically on output structure (dense $\to$ typed-sparse $\to$ untyped). L1 fails to
+localize (CS $0.02$); L0 under-structures (finds roads but cannot direct or resolve conflicts); only L2 typed
+sparse anchors both stay selective and carry the semantics routing needs (CS $0.96$). The result isolates
+\emph{typed structure}, not mere sparsity, as the load-bearing property.
+% T8c canonical P2 mechanism (Full; semantics locked per p2-final-mechanism-locked memory)
+Mechanistically, the dense interface emits a fixed-capacity ($\sim$130--210-slot), near-uniform,
+scenario-invariant edge enumeration: it neither scales with $|E|$---at $|E|{=}398$ it emits $\sim$206 of
+$398$ edges before terminating voluntarily, well under the token budget---nor encodes the instructed
+constraint, since its weights are near-uniform and invariant across events; changed-edge recall therefore
+decays as $|E|$ outgrows this capacity and constraint satisfaction stays $\approx 0$, while STAG's typed
+sparse anchors ($k\approx 1$) scale trivially and carry the constraint typing.
+\input{l0_l1_l2_granularity_table.tex}  % L0/L1/L2 full-frame final (n=2000)
+
+\paragraph{Which semantic fields carry the grounding (P5 field ablation).}
+Masking individual input fields (length-preserving mask token; canonical STAG; $n{=}180$) isolates each
+field's load:
+\begin{itemize}
+  \item \textbf{Direction} is the largest lever for \emph{localization}: anchor recall $100\to 51.11$
+        ($-48.89$), and conflict resolution $100\to 57.5$.
+  \item \textbf{Event-type/severity} is the dominant field for \emph{conflict resolution}: $100\to 50.0$.
+  \item Temporal masking costs little ($93.33$ anchor recall), and the explicit conflict directive is
+        \emph{redundant} (0 drop): STAG resolves conflicts from event$+$temporal content, not the literal
+        ``override'' cue---a robustness finding, not a gap.
+\end{itemize}
+These dependencies mirror the closed-loop and offline frontiers (direction/conflict are where difficulty
+concentrates).
+
+\paragraph{The verifier normalizes, it does not repair.}
+Comparing with vs.\ without the verifier (canonical, $n{=}2000$): machine-consumable/schema validity rises
+$83.45\to 100$, but this gain is \emph{entirely} from normalizing correct \texttt{NO\_ANCHOR} sentinels
+(16.55\% of cases) into the uniform schema---the raw model already emits \textbf{0 malformed JSON and 0
+hallucinated roads}. Route/graph validity ($99.4$/$100$) are guarantees the verifier adds (the raw output
+has no reachability check); a directional-consistency guard catches $5$ residual direction errors
+(leave-one-out, $n{=}640$). The verifier delivers deployability (uniform schema $+$ reachability
+guarantees) on top of an already-clean model, rather than repairing frequent model errors.

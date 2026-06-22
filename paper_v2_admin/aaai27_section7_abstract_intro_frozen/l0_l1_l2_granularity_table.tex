@@ -1,0 +1,25 @@
+% Output-interface granularity ablation (matched LoRA-lite, Qwen2.5-1.5B, seed1337).
+% FULL STC-Bench frame (n=2000; 1840 active-constraint cases).
+% Road recall = frame-free road-text recall (run_diagnostic convention), computed identically for
+% L0 and L2 -> directly comparable. L0/L2 typed anchor-recall (15.95 / 95.70) reported in text.
+% Source: aaai27_camera_ready_full_frame/{l0_eval_summary_full.json, eval/summary_qwen1p5b_full.json}.
+\begin{table}[t]
+\centering
+\small
+\caption{Output-interface granularity. Same base/corpus/budget/seed; only the grounding output
+representation varies. On a frame-free road-text metric L0 and L2 name roads \emph{equally well}
+($0.87$); but lacking typed structure L0 cannot express the direction/conflict semantics routing requires;
+L1 fails to localize; typed sparse anchors (L2) are the operating point. ($^\dagger$Road recall is frame-free
+road-text recall, scorer-frame-independent, computed identically for L0 and L2; L0's typed anchor-recall
+is low \emph{by interface design} ($15.95$ vs.\ L2 $95.70$). Full STC-Bench frame, $n{=}2000$.)}
+\label{tab:granularity}
+\begin{tabular}{lccccc}
+\toprule
+Interface & Road recall$^\dagger$ & Direction & Conflict res. & Schema & Closed-loop CS \\
+\midrule
+L1 dense edge-weight   & --    & --   & --   & --   & 0.02 (uniform enum.) \\
+L0 untyped road-level & 0.87 & 0.16 & 0.00 & 1.00 & -- \\
+\textbf{L2 typed sparse (ours)}  & 0.87 & 0.99 & 0.75 & 1.00 & \textbf{0.96} \\
+\bottomrule
+\end{tabular}
+\end{table}

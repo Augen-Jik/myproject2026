@@ -1,0 +1,68 @@
+% =====================================================================
+% §7.4  Closed-loop main result (competitive table + DCRNN bucket framing
+%        + sensor-invariance + CR<->TT trade-off)
+% Authoritative claim set: frozen_claim_hierarchy_v1.md (H1, M2, S1)
+% Freeze-conditions applied: OC-2 (scope 0.96), OC-3 (detour wording),
+%   OC-4 (DCRNN bound to buckets).
+% =====================================================================
+\subsection{Closed-loop evaluation under discriminative routing stress}
+\label{sec:closedloop}
+
+We evaluate on \textbf{SUMO-Disc-Stress-v1}, a constructed, method-agnostic, held-out closed-loop
+stress test ($n{=}150$, 30 cases each over five buckets B1--B5; pilot overlap $0$; cases selected by
+graph geometry and oracle constraints only). Every case is built so that the unconstrained shortest
+path \emph{violates} the active constraint, making grounding errors consequential for routing. All
+nine methods run under an identical protocol, oracle, and constraint-satisfaction checker.
+STAG-Route is the canonical adapter (checksum \texttt{c92bdc87}).
+
+\input{competitive_main_table_final.tex}  % 9-method table
+
+\paragraph{Result.}
+STAG-Route attains conditional constraint satisfaction (CS) $\mathbf{0.96}$ with the lowest average
+travel time ($437.3$), ranking first on both CS and Avg.\ TT among the nine methods. Constraint-ignoring
+planners (Dijkstra, A$^\star$, Qwen-Raw) score CS $0.0$ by construction, validating the substrate. The
+central comparison is against the two \emph{learned, constraint-reading} grounders: Dense-LoRA fails
+\emph{both} axes (CS $0.02$; excess detour $\approx$ language-blind), and its $\Theta(|E|)$ output
+collapses into a fixed-capacity, scenario-invariant enumeration that does not encode the constraint
+(100\% of cases emit a single near-uniform weight over all 98 edges---42\% all-normal $\to$ 0 changed,
+58\% all-congested $\to$ all changed; never a sparse, localized edit). The
+paired STAG\,$-$\,Dense excess-detour reduction is $961.74$s (95\% CI $[916.39,1002.69]$; artifact audit
+risk LOW). STAG's excess detour is \textbf{low (median $0.0$s; 96\% of cases $\le 60$s; mean $44.77$s)}.
+
+\paragraph{Scope of the 0.96 (read with \S\ref{sec:p4reconcile}).}
+The $0.96$ is robustness across all \emph{operational} stress buckets; it is not a comprehensive-OOD
+claim. STAG's grounding frontier is \emph{compositional} OOD (multiple simultaneous conflicting events),
+where offline accuracy falls to 45--55\% (\S\ref{sec:p4}); the two are reconciled in \S\ref{sec:p4reconcile}.
+
+\paragraph{The travel-time trade-off, reported openly.}
+STAG ranks \emph{last} on Time Loss ($99.04$; rank 8/8). This is the expected CR$\leftrightarrow$TT
+trade-off: by routing around constrained edges to satisfy the constraint, STAG accepts marginally higher
+nominal time loss on the satisfied routes. The CS-conditional time-loss comparison is unpaired (no CI;
+footnote~c) and is reported as a trade-off, not hidden.
+
+\paragraph{Why not just use a numeric sensor? The gap is structural, not sensing.}
+A natural objection is that a numeric congestion sensor feeding a learned predictor should suffice.
+We test this with DCRNN, a diffusion-convolutional edge-weight GNN that never reads the constraint text.
+\textbf{DCRNN must be read by bucket, not by its 0.80 overall.} Granted near-oracle sensing
+(changed-edge recall $0.97$), it reaches only CS $0.80$ overall; decomposed, it scores $0.90$ on the
+single-event buckets (B1/B2/B5)---where the constraint is already physically manifest, so any method that
+reads simulator state routes around it near-ceiling---but only $0.70$ (B3 propagation) and $0.60$ (B4
+compound), the multi-edge structural buckets that carry the benchmark's discriminative load. To rule out
+``imperfect sensor,'' we re-ran DCRNN under degraded coverage down to a fully closure-blind detector:
+the single-event buckets degrade as a sensing story predicts (B1 $0.90{\to}0.77$, B2 $0.90{\to}0.80$,
+B5 $0.90{\to}0.83$; overall $0.80{\to}0.74$), but \textbf{B3 stays $0.70$ and B4 stays $0.60$ at every
+coverage level}. Because the ablation provably moves the single-event buckets, this invariance is not a
+measurement artifact: DCRNN's failure on propagation/compound constraints is \emph{structural}---it
+persists under a perfect sensor and is unaffected by a degraded one. The STAG\,$-$\,numeric gap on the
+scenarios that define the task is therefore attributable to constraint \emph{representation}, not sensing
+fidelity, and STAG attains $0.96$ there from text alone, with no congestion sensor.
+
+\paragraph{Three non-language methods, the same compositional failure.}
+The same B3/B4 split recurs across every non-language reactive baseline, isolating it as a property of
+the buckets and not of any one method. Dense-LoRA collapses into the fixed-capacity, constraint-blind enumeration above;
+DCRNN's $0.70/0.60$ on B3/B4 is sensor-invariant; and DQN, a learned-control baseline on the same
+oracle-grade sensor, has its completion collapse precisely there (CR $0.27$ on B3 propagation and $0.23$
+on B4 compound, vs.\ $0.93$ on the single-event buckets), so its completion-conditional, sensing-fidelity
+constraint satisfaction nets to an effective $\mathrm{CR}\times\mathrm{CS}=0.66$ (footnote~f). Three
+non-language reactive methods fail on exactly the compositional buckets; only STAG holds across B1--B5.
+% Footnotes (d)(e)(f) and the realistic-sensor appendix row accompany the table (OC-4).
