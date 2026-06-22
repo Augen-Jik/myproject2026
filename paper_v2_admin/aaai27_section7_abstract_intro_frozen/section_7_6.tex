@@ -1,0 +1,51 @@
+% =====================================================================
+% §7.6  Topology & backbone robustness (P3 + backbone matrix)
+% Authoritative claim set: S2 (P2 PARTIAL), S3 (P3 road-level), M1 (dense collapse).
+% Freeze-conditions: OC-1 (matched-cell anchor recall not a headline; full-frame 95.70 = canonical 95.58), OC-5 (interface-robust
+%   != equal-correctness), OC-6 (P3 boundary verbatim).
+% =====================================================================
+\subsection{Topology and backbone robustness}
+\label{sec:robustness}
+
+\paragraph{Held-out topology transfer (P3).}
+On four held-out topologies ($|E|$ from 98 to 398), STAG's typed anchors localize the constraint to the
+\emph{correct road} in 100\% of cases (road\_text\_match $=1.0$, all 120); under a unified, non-circular
+oracle$\leftrightarrow$edge frame, road-level localization recall is $\mathbf{0.9292}$ (per-map
+0.911--0.944). The previously reported 0.12--0.23 was a scorer road$\to$edge reference-frame mismatch
+(catalog-position vs.\ the oracle's row/col frame), not a capability limit. \textbf{Scope (do not
+overstate):} this is \emph{road-level} localization. \emph{Edge-exact / segment-level precision remains
+open (0.07--0.14)}.
+
+\paragraph{Held-out closed-loop transfer.}
+Beyond offline localization, we run the faithful closed-loop SUMO protocol on two networks unseen in
+training (M2\_GridM, $|E|{=}194$; M3\_GridL, $|E|{=}398$; $n{=}60$ each, road identity preserved,
+discriminative precheck $60/60$). STAG satisfies the instructed constraint on \textbf{$119/120$} cases
+(M2 $59/60$, M3 $60/60$; unconditional CS $0.992$, CR $0.992$; the single miss is a compositional
+no-arrival \emph{completion} failure, not a constraint violation), whereas Dense-LoRA collapses on
+\textbf{all $120$} (CS $0.00$) as its fixed-capacity enumeration is truncated on the larger graphs. A
+frame-position fallout audit confirms this is not a by-construction artifact: satisfied cases spread over
+$25$/$29$ distinct directed road-lines per net (top-2 frame concentration $20\%$/$13.3\%$, an order of
+magnitude below the $\ge 90\%$/$\le 2$-position regime that would invalidate such transfer), and CS is
+independent of frame position. This converts the previously deferred Tier-2 transfer test into evidence.
+
+\paragraph{Dense interface collapse transfers across topology.}
+The same held-out maps show the dense $\Theta(|E|)$ interface collapsing and \emph{worsening} with graph
+size: all-equal weight outputs (0.80--1.00), 100\% truncation/parse-failure at $|E|\ge 194$, and
+$\approx$50\% coverage at $|E|{=}398$ even at a 6368-token budget. The output-complexity failure is
+structural and scales with $|E|$, whereas STAG's sparse output stays flat ($\approx$1.0--1.4 anchors,
+intervention/$|E|$ ratio \emph{decreasing} 0.0102$\to$0.0035).
+
+\paragraph{Backbone robustness (P2, matched LoRA-lite 2$\times$2).}
+We train the same recipe across Qwen2.5 and Llama-3.2 at 1.5/1B and 3B (matched corpus/budget/seed),
+evaluated on the full STC-Bench frame ($n{=}2000$). \textbf{The typed-anchor \emph{interface} is robust
+across both families}: schema validity 0.945--1.0, parse-fail 0.0--0.055, no $\Theta(|E|)$-style collapse
+anywhere. \textbf{Absolute correctness is family-dependent (Qwen-favored)} (anchor recall $\approx$95
+[94.6--95.7] vs.\ 88--90), partly confounded by chat-template/EOS differences and Llama's longer output
+(CoT-ish spill; Llama-3B alone shows $5.5\%$ parse-fail). \emph{Neither family shows a consistent scale
+gain}: Qwen is flat near-ceiling (95.7$\to$94.6 from 1.5B to 3B) and Llama does \emph{not} improve with
+size (anchor recall 89.9$\to$88.5 from 1B to 3B, with the 3B regressing on schema robustness). We
+therefore claim \emph{interface robustness}, \emph{not} equal correctness across backbones, and make
+\emph{no} general scale claim and no 3B/7B necessity claim.
+% OC-1: on the full frame the matched-cell Qwen-1.5B anchor recall (95.70) now coincides with the
+% canonical STAG figure (95.58, n=2000); neither is
+% used as a headline. (Full-frame qwen-1.5B reproduces canonical direction 98.8 / conflict 75.26 exactly.)

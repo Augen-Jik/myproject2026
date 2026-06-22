@@ -1,0 +1,54 @@
+% =====================================================================
+% Introduction — narrative body (precedes the FROZEN contributions list in
+% introduction_contributions.tex). Scope-locked to frozen_claim_hierarchy_v1.md
+% and OC-1..6. Order: problem -> evaluation entry -> interface limitation ->
+% output-interface reframe -> three-proposition preview -> (contributions list).
+% Wording strength <= §7.4/§7.6 and the abstract. No "comprehensive/全面".
+% =====================================================================
+
+\paragraph{Problem.}
+Traffic disruptions---closures, congestion, lane reversals, staged recoveries---are announced and
+updated in \emph{natural language}. A routing system that consumes such announcements must do two
+things at once: \emph{ground} the language into the road graph (which segments are affected, in which
+direction, for how long, and how severe), and then \emph{route} so that vehicles still reach their
+destinations under the disruption. The useful objective is therefore not surface fidelity to the text
+but the downstream traffic outcome: do trips \emph{complete}, and at what travel-time cost. We adopt
+this as the evaluation entry point, reporting closed-loop completion first and travel time only
+conditional on completion (\S\ref{sec:experiments}).
+
+\paragraph{The interface gap in existing groundings.}
+Most language-driven routing systems commit, implicitly, to one of two \emph{output interfaces} for the
+grounding step. One emits a route directly from the description; the path is fluent but
+\emph{uncheckable}---it carries no intermediate structure tying the decision to the specific disrupted
+segments, and can be graph-invalid. The other emits a dense, per-edge cost or weight vector
+($\Theta(|E|)$) for a downstream planner; this is verifiable but \emph{sequence-inefficient} and, as we
+show, prone to collapsing into a fixed-capacity, scenario-invariant enumeration rather than a localized
+edit. Both interfaces conflate \emph{what changed} with \emph{how to route}, and neither exposes a
+compact, checkable representation of the disruption itself.
+
+\paragraph{Our reframe: grounding as a choice of output interface.}
+We treat constraint grounding as a first-class \emph{output-representation} decision and study it on a
+fixed backbone, corpus, budget, and seed, varying \emph{only} how the grounded constraint is emitted.
+We introduce \textbf{STAG-Route}, which grounds a natural-language constraint into \emph{typed sparse
+anchors}: for each disrupted segment the model emits a small typed record
+(\texttt{road$\mid$direction$\mid$range$\mid$type$\mid$level}), schema-validated and completed into the
+graph by an external planner. The output is $\Theta(k)$ in the number of disrupted segments rather than
+$\Theta(|E|)$, and every anchor is checkable against the road graph before it is acted on.
+
+\paragraph{What we claim (and what we do not).}
+We organize the evidence as three scoped propositions, each stated at the strength the experiments
+support. \textbf{(P1) Representational adequacy.} On a constructed, method-agnostic, held-out
+closed-loop SUMO stress test in which the unconstrained shortest path always violates the active
+constraint, STAG-Route attains conditional constraint satisfaction $0.96$ at low excess detour and ranks
+first of nine methods on both satisfaction and travel time, while a dense edge-weight grounder collapses
+(CS $0.02$). The $0.96$ is robustness across the \emph{operational} stress buckets, not a
+comprehensive-OOD claim: grounding degrades to $45$--$55\%$ under \emph{compositional} OOD (multiple
+simultaneous conflicting events), a frontier we report and reconcile (\S\ref{sec:p4reconcile}).
+\textbf{(P2) Interface robustness.} The typed-anchor \emph{interface} transfers across model families
+(Qwen2.5, Llama-3.2)---schema-valid, no $\Theta(|E|)$ collapse---though absolute correctness is
+family-dependent; we claim interface robustness, \emph{not} equal cross-family correctness, and make no
+scale claim. \textbf{(P3) Topology transfer.} On held-out topologies the grounding localizes the
+constraint to the correct \emph{road} (recall $0.93$) and the closed-loop advantage transfers to unseen
+networks ($119/120$ vs.\ $0/120$ for the dense interface); edge-/segment-exact precision remains open. A separate mechanism finding---that even a near-oracle
+numeric sensor does not close the gap---isolates constraint \emph{representation} from sensing
+(\S\ref{sec:closedloop}). The contributions below make these precise.

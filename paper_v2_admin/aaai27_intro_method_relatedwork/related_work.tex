@@ -1,0 +1,71 @@
+% =====================================================================
+% Related Work — qualitative differentiation only. NO implied quantitative
+% defeat of un-reproduced methods (STPGNN/UrbanGPT/Constraint-Aware RouteLLM).
+% RouteLLM(LMSYS) disambiguated. DynamicRouteGPT = backbone-matched faithful
+% reimplementation (Qwen2.5-1.5B, not original Llama3-8B); no original-paper
+% numbers cited as beaten. DCRNN bucket-discriminative + sensor-invariance is
+% the "why not a numeric sensor" rebuttal (developed in §7.4).
+% =====================================================================
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Classical and learned control for routing.}
+Shortest-path and heuristic search (Dijkstra, A$^\star$) are exact route planners but
+\emph{constraint-unaware}: with no representation of the announced disruption they take the violating
+shortest path, scoring zero conditional constraint satisfaction by construction; we include them as
+substrate validators rather than competitors. Reinforcement-learning routing learns control policies
+from a reward signal but is likewise not grounded in natural-language constraints and requires an
+environment-specific training loop; we discuss RL routing as context and report learned-control baselines
+under their own protocol, with not-run cases stated with reason.
+
+\paragraph{Spatio-temporal GNN traffic models.}
+Diffusion-convolutional and graph-wavelet networks (DCRNN~\cite{li2018dcrnn},
+GraphWaveNet~\cite{wu2019gwn}) and more recent spatio-temporal predictors (e.g.\
+STPGNN~\cite{stpgnn2024}, UrbanGPT~\cite{urbangpt2024}) target numerical traffic \emph{forecasting} from
+sensor histories; they are not natural-language constraint grounders and are not directly comparable on
+conditional satisfaction. They are the right context for the natural objection that a numeric congestion
+sensor should suffice. We test this directly by adapting DCRNN as a near-oracle numeric-sensor baseline
+under our protocol: it is competitive on the single-event buckets where the disruption is already
+physically manifest, but fails \emph{structurally} on the multi-edge propagation/compound buckets that
+carry the benchmark's discriminative load, and---under a coverage ablation down to a closure-blind
+sensor---that failure is \emph{invariant} to sensor fidelity (\S\ref{sec:closedloop}). The
+STAG--numeric gap on the scenarios that define the task is thus attributable to constraint
+\emph{representation}, not sensing. STPGNN/GraphWaveNet/UrbanGPT are positioned as modern ST-GNN
+references only; we make no claim of beating them on a task they were not built for.
+
+\paragraph{LLM-based routing and natural-language grounding.}
+We first disambiguate a name collision: \emph{RouteLLM}~\cite{ong2024routellm} (LMSYS) routes
+\emph{queries between candidate LLMs} by cost/quality preference and is unrelated to vehicle/path
+routing; it is not a path-routing baseline. Among genuinely related natural-language routing systems, the
+closest in spirit is \emph{Constraint-Aware RouteLLM}, which conditions route recommendation on language
+constraints; it differs from our work in (i) the grounding \emph{interface}---a route recommendation
+versus our typed, graph-verifiable sparse anchors, (ii) the constraint regime---largely static
+point-of-interest/preference constraints versus dynamic, time-varying traffic events, and (iii)
+evaluation---we score closed-loop SUMO constraint satisfaction on a discriminative, method-agnostic
+substrate. We differentiate qualitatively and do not claim a quantitative win, as same-protocol
+reproduction is precluded by uncertain code availability. \emph{DynamicRouteGPT}~\cite{drgpt2024} applies
+prompt-level reasoning over traffic state for dynamic re-routing; we compare against a \emph{faithful,
+backbone-matched reimplementation} (Qwen2.5-1.5B, not the original Llama3-8B) run under our identical
+protocol, oracle, and scorer (a fine-tuned-vs-zero-shot, single-backbone contrast; we do not cite the
+original paper's numbers as defeated). The operative difference is the \emph{contract}: its final action
+is free-form reasoning not constrained to a graph-verifiable anchor schema, so its grounding is not
+checkable in the way ours is. \emph{LLM-A$^\star$}~\cite{meng2024llmastar} couples an LLM with A$^\star$
+by shaping the cost/heuristic or proposing waypoints---closer to dense edge-weight grounding feeding a
+classical planner; we view anchor-level grounding as complementary: keep the planner, change what the
+LLM is asked to ground.
+
+\paragraph{Positioning.}
+Prior language-grounded routing methods condition on natural language but commit to a dense output
+interface---per-edge weights or full-graph generation (e.g., DynamicRouteGPT)---or route zero-shot without
+a typed grounding contract. STAG-Route instead grounds instructions into a typed, sparse anchor set
+validated against a schema before graph completion. On the closed-loop benchmark this interface choice,
+\emph{not} backbone scale, is decisive: STAG raises constraint satisfaction to $0.96$ versus $0.80$ for
+the strongest learned baseline (DCRNN)---a $16$-point ($20\%$ relative) gain---while cutting average
+travel time by $24\%$ (\S\ref{sec:closedloop}).
+Across these lines the consistent differentiator is the grounding \emph{output interface}: we move the
+language model's output from direct route emission or dense per-edge weights to \emph{typed,
+graph-verifiable sparse anchors}, and we evaluate in closed loop with a completion-first,
+denominator-honest protocol (parse failures and truncations kept in the denominator; arrived-only travel
+time treated as diagnostic, not headline). The mechanism studies (\S\ref{sec:mechanism}) and the held-out
+transfer and frontier analyses (\S\ref{sec:robustness}, \S\ref{sec:p4reconcile}) are what substantiate
+this position.

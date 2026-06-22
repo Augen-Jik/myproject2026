@@ -1,0 +1,30 @@
+% =====================================================================
+% Introduction — contribution list. Scope-locked to sections (no claim
+% stronger than the corresponding §). Mirrors frozen_claim_hierarchy_v1.md.
+% =====================================================================
+\paragraph{Contributions.}
+\begin{itemize}
+  \item \textbf{An output-interface view of language-grounded routing.} We frame constraint grounding as a
+        choice of \emph{output representation} and show, on a constructed method-agnostic held-out
+        closed-loop SUMO stress test (SUMO-Disc-Stress-v1, cases selected by graph geometry and oracle
+        constraints only), that a dense $\Theta(|E|)$ edge-weight interface collapses into a
+        fixed-capacity, scenario-invariant enumeration (100\% single near-uniform outputs), failing both
+        constraint satisfaction and efficiency.
+  \item \textbf{STAG-Route: typed sparse anchors.} Grounding constraints into typed sparse anchors
+        preserves edge-level selectivity and route capacity, attaining conditional constraint satisfaction
+        $0.96$ at low excess detour and ranking first of nine methods on satisfaction and travel time.
+  \item \textbf{A structural separation from numeric sensing.} A near-oracle numeric GNN baseline fails on
+        the multi-edge buckets that define the task, and a coverage ablation shows this failure is
+        \emph{invariant} to sensor fidelity---isolating constraint \emph{representation} from sensing.
+  \item \textbf{Mechanism and robustness ablations.} We localize the grounding to specific semantic fields
+        (direction for localization; event-type/severity for conflict resolution), show the verifier
+        normalizes rather than repairs an already hallucination-free model, and show the typed-anchor
+        interface is robust across model families and across held-out topologies, with the closed-loop
+        advantage transferring to unseen networks ($119/120$ vs.\ $0/120$ dense); segment-/edge-exact
+        precision remains open.
+  \item \textbf{An honest frontier.} We characterize and reconcile the method's limit: grounding is
+        invariant to scale, topology, and language but degrades under compositional OOD (multiple
+        simultaneous conflicts), consistent in direction with the weakest closed-loop bucket.
+\end{itemize}
+% Positioning: the earlier 540-case MVT is introduced only as an underpowered diagnostic that exposed
+% nondiscriminative substrate behavior, NOT as STAG evidence (no superiority claim from it).

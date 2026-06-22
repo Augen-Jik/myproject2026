@@ -1,0 +1,59 @@
+% =====================================================================
+% Limitations — stated proactively (frozen hierarchy Tier-3 + open scopes)
+% =====================================================================
+\subsection{Limitations}
+\label{sec:limitations}
+
+\paragraph{Compositional-OOD grounding frontier.}
+STAG's grounding is invariant to graph scale, topology renaming, and linguistic paraphrase (all
+$\sim$100\% offline), but degrades to 45--55\% under \emph{compositional} OOD---multiple simultaneous
+conflicting events on a single instance (\S\ref{sec:p4reconcile}). The closed-loop $0.96$ is measured at
+operationally realistic conflict density and should be read as such; the amplified multi-conflict tail is
+an open capability gap, not a frame artifact.
+
+\paragraph{Edge-/segment-level precision is open.}
+Held-out transfer is established at the \emph{road} level (recall $0.93$); edge-exact and segment-level
+(\texttt{range}) precision remain low (0.07--0.14) and are deferred to range-aware evaluation. We do not
+claim segment-exact localization is solved. The R4 cross-topology appendix surfaces the same weak axis in
+a bounded form: on $M5$ Irregular, directional accuracy is $82.0$ while road-level recall, schema
+validity, temporal quality, conflict resolution, hallucination rate, and truncation remain stable; we
+treat this as a topology-related offline grounding-quality wrinkle consistent with the P4 OOD-topology
+split and the P5 direction-load-bearing ablation, not as a separate limitation or a closed-loop failure
+claim.
+
+% Closed-loop transfer: resolved by T6/T6b on a discriminative held-out set. The earlier R1-b
+% frame-block is retained only as the diagnosis that motivated the discriminative construction.
+\paragraph{Held-out closed-loop transfer: resolved on a discriminative set.}
+Our first attempt to extend closed-loop evaluation to held-out SUMO networks was \emph{frame-blocked}:
+on the initially frozen held-out maps over $90\%$ of ground-truth blockages collapsed onto a single
+row/column index, so projecting a road-level prediction onto the materialized network was not faithfully
+scorable (a perfect-predictor control confirmed the harness was otherwise fair). We resolved this by
+constructing a \emph{discriminative} held-out set with faithful per-road edge geometry and verified
+frame-position dispersion (M2\_GridM, M3\_GridL; \S\ref{sec:robustness}), on which STAG transfers
+($119/120$) while the dense interface collapses ($0/120$). We retain the methodological observation that
+constructing discriminative held-out closed-loop benchmarks is nontrivial and, to our knowledge,
+underprovided by current synthetic generators. What remains open is \emph{edge-/segment-exact} precision,
+not closed-loop transfer itself.
+
+\paragraph{Phrasing brittleness (narrow, input-normalizable).}
+Stress-testing instruction phrasing surfaced one narrow brittleness: an out-of-distribution paraphrase
+that inserts a comma between the range and direction clauses of a single moderate-congestion
+(\texttt{simple\_local}) event can trigger a \texttt{NO\_ANCHOR} fallback. The benchmark distribution does
+\emph{not} contain this construction---canonical \texttt{simple\_local} concatenates the clauses without a
+separator---and the contrastive comma construction in \texttt{directional\_asymmetry} events is
+unaffected, so main-table results are not impacted; it is resolvable by input normalization without
+retraining.
+
+\paragraph{Backbone correctness is family-dependent.}
+The typed-anchor \emph{interface} generates robustly across Qwen2.5 and Llama-3.2, but absolute
+correctness is Qwen-favored and partly confounded by chat-template/EOS and output-length differences. We
+claim interface robustness, not equal cross-family correctness, and make no scale-necessity claim.
+
+\paragraph{Baseline and efficiency caveats.}
+The DynamicRouteGPT comparison uses a backbone-matched substitution (Qwen2.5-1.5B, not the original
+Llama3-8B) and is a fine-tuned-vs-zero-shot contrast (footnotes a--c). DCRNN is numeric/NL-blind and given
+a near-oracle sensor; its 0.80 must be read by bucket. DQN is a learned-control baseline given the same
+oracle-grade sensor: its reported constraint satisfaction is completion-conditional and sensing-fidelity
+(effective $\mathrm{CR}\times\mathrm{CS}=0.66$), and it collapses on the compositional buckets (footnote~f).
+STAG accepts a travel-time trade-off (worst Time Loss) to satisfy constraints; the CS-conditional
+comparison is unpaired. Graph WaveNet and LLM-A$^\star$ are reported as not-run-with-reason.

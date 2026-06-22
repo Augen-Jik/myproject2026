@@ -1,0 +1,21 @@
+% =====================================================================
+% Abstract — closed-loop sentence(s). Scope-locked to sections (OC-2/3, no
+% claim stronger than §7.4/§7.6). Does NOT use "comprehensive"; detour worded
+% as "low" with distribution; P2 = interface-robust.
+% =====================================================================
+\begin{abstract}
+We study how the \emph{output interface} of language-grounded routing should represent traffic
+constraints, and introduce \textbf{STAG-Route}, which grounds natural-language constraints into typed
+sparse anchors rather than dense per-edge weights. On a held-out, 150-case, method-agnostic SUMO stress
+test in which the unconstrained shortest path always violates the constraint, STAG-Route attains high
+conditional constraint satisfaction ($0.96$) at low excess detour (median $0.0$s; 96\% of cases $\le 60$s),
+ranking first among nine methods on both satisfaction and travel time. In contrast, a dense edge-weight
+grounder collapses into a fixed-capacity, scenario-invariant enumeration that fails as $|E|$ grows---failing
+both constraint satisfaction ($0.02$) and efficiency---and a near-oracle numeric (sensor-based) baseline fails \emph{structurally} on
+the multi-edge buckets that define the task, a failure invariant to sensor coverage. Ablations show the
+typed-anchor interface is robust across model families (Qwen2.5, Llama-3.2) and held-out topologies at the
+road level, while a verifier provides schema/reachability guarantees over an already-clean,
+hallucination-free model. We further characterize the method's frontier: grounding is invariant to scale,
+topology, and language, but degrades under \emph{compositional} out-of-distribution stress (multiple
+simultaneous conflicting events), which we report and reconcile with the closed-loop result.
+\end{abstract}
