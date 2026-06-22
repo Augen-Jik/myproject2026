@@ -1,54 +1,44 @@
 % ============================================================================================
 % FINAL competitive main table (9 methods) — SUMO-Disc-Stress-v1 expanded full-150, closed loop.
 % Identical protocol/oracle/scorer for every row. STAG-Route = canonical c92bdc87. n=150.
-% Unified footnote scheme: (a)(b)(c) = DynamicRouteGPT-adapted ; (d)(e) = DCRNN ; (f) = DQN. No reuse/clash.
-% Full footnote text: table_and_footnote_consistency_check.md. DCRNN MUST be read by bucket
-% (footnote e) and accompanied by the §7 invariance paragraph (invariance_finding_main_text_paragraph.md).
+% Footnotes: (a)(b)(c)=DynamicRouteGPT-adapted ; (d)(e)=DCRNN ; (f)=DQN (rendered at table foot below).
+% Registry/provenance: table_and_footnote_consistency_check.md. DCRNN read by bucket (footnote e) +
+% §7 invariance paragraph (invariance_finding_main_text_paragraph.md).
+% CS reported UNCONDITIONAL (over all 150 cases); completion-conditional CS for CR<1 (DQN) in footnote f.
 % ============================================================================================
-\begin{tabular}{lllrrrrr}
-\hline
-Method & Category & Venue/Year & CR & Avg TT & Time Loss & Stop & Constr. Sat. \\
-\hline
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{Comparison of nine methods on STC-Bench ($n{=}150$ closed-loop stress test, identical
+  protocol/oracle/scorer). CR\,=\,completion rate; Avg\,TT\,=\,average travel time (s);
+  CS\,=\,constraint satisfaction, reported \textbf{unconditional} (over all 150 cases). The
+  completion-conditional CS for CR${<}1$ methods (DQN$^{f}$) is given in footnote~$f$. STAG-Route is
+  the canonical adapter (\texttt{c92bdc87}).}
+\label{tab:main}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{2.6cm}p{2.3cm}p{2.1cm}rrrrr@{}}
+\toprule
+Method & Category & Reference & CR & Avg TT & Time Loss & Stop & CS \\
+\midrule
 Dijkstra & Classical shortest-path & Dijkstra 1959 & 1.000 & 1417.9 & 87.73 & 2.587 & 0.000 \\
 A* & Classical heuristic search & Hart et al. 1968 & 1.000 & 1417.9 & 87.73 & 2.587 & 0.000 \\
 Rule-A* & Hand-rule corridor + A* & this work & 1.000 & 639.7 & 90.42 & 2.347 & 0.740 \\
 Qwen-Raw & Raw LLM anchors (unadapted) & Qwen2.5-1.5B & 1.000 & 1417.9 & 87.73 & 2.587 & 0.000 \\
-DynamicRouteGPT-adapted$^{a,b,c}$ & LLM-based dynamic routing & adapted, Sun et al. 2024 & 0.987 & 1309.9 & 111.61 & 3.169 & 0.153 \\
+DynamicRouteGPT-adapted$^{a,b,c}$ & LLM-based dynamic routing & adapted, Zhou et al. 2024 & 0.987 & 1309.9 & 111.61 & 3.169 & 0.153 \\
 Dense-LoRA & Dense edge-weight LLM & this work & 1.000 & 1399.1 & 88.36 & 2.560 & 0.020 \\
 DCRNN$^{d,e}$ & Numeric GNN (congestion-sensor) & Li et al. 2018 (adapted) & 1.000 & 575.8 & 89.16 & 2.447 & 0.800 \\
 DQN$^{f}$ & RL learned-control (congestion-sensor) & Mnih et al. 2015 (adapted) & 0.660 & 373.7 & 86.81 & 2.580 & 1.000$^{f}$ \\
 STAG-Route (ours) & Typed sparse anchors & this work & 1.000 & 437.3 & 99.04 & 2.680 & \textbf{0.960} \\
-\hline
+\bottomrule
 \end{tabular}
 
-% Recommended companion mini-table for the main text (makes the discriminative split + DCRNN
-% sensor-invariance visible alongside the headline numbers):
-% \begin{tabular}{lccccc}
-% \hline
-% DCRNN Constraint Sat. by bucket & B1 & B2 & B3 & B4 & B5 \\
-% \hline
-% near-oracle sensor   & 0.90 & 0.90 & \textbf{0.70} & \textbf{0.60} & 0.90 \\
-% closure-blind sensor & 0.77 & 0.80 & \textbf{0.70} & \textbf{0.60} & 0.83 \\
-% \hline
-% \multicolumn{6}{l}{\footnotesize B3/B4 invariant to sensor coverage (structural); STAG 0.96 from text alone.}\\
-% \end{tabular}
-%
-% Footnote (f) — DQN: genuine RL learned-control baseline (graph-MDP DQN over net edges,
-% NL-blind, oracle-grade congestion sensor; 3 seeds, mean; replay buffer not persisted; same
-% frozen full-150 cases/OD/demand/SUMO config/scorer as every other row; no STAG/Dense outputs
-% used for state, reward, or selection). Its Constr. Sat. = 1.000 is CONDITIONAL ON COMPLETION
-% and is a SENSING-FIDELITY property (sensed-blocked edges are impassable), NOT constraint
-% understanding -- the analogue of the DCRNN sensor caveat (d,e). Because completion is only
-% CR=0.66, the EFFECTIVE constraint satisfaction over all cases is CR x CS = 0.66, below STAG's
-% 0.96 and comparable to DCRNN 0.80 / Rule-A* 0.74. DQN's discriminative axis is completion,
-% which collapses on the compositional buckets:
-% \begin{tabular}{lccccc}
-% \hline
-% DQN by bucket & B1 & B2 & B3(prop) & B4(comp) & B5 \\
-% \hline
-% Completion (CR) & 0.93 & 0.93 & \textbf{0.27} & \textbf{0.23} & 0.93 \\
-% Constr. Sat.\,$^{f}$ & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
-% \hline
-% \multicolumn{6}{l}{\footnotesize DQN = third non-language reactive method to fail on B3/B4}\\
-% \multicolumn{6}{l}{\footnotesize (cf. DCRNN CS-drop, Dense interface-collapse); only STAG holds.}\\
-% \end{tabular}
+\vspace{1pt}
+{\scriptsize\raggedright
+$^{a,b,c}$DRGPT-adapted: Qwen2.5-1.5B backbone (not Llama3-8B), zero-shot vs.\ STAG's LoRA fine-tune; time on completed-route basis (CS-conditional delta unpaired).
+$^{d,e}$DCRNN: numeric/NL-blind near-oracle sensor; CS $0.80$ is an upper bound ($0.74$ realistic); read by bucket (B1/B2/B5 sensing-dependent, B3/B4 sensor-invariant).
+$^{f}$DQN CS $1.000$ is completion-conditional / sensing-fidelity; with CR${=}0.660$ the effective $\mathrm{CR}{\times}\mathrm{CS}{=}0.66$.\par}
+\end{table*}
+
+% Optional companion mini-tables (DCRNN sensor-invariance; DQN bucket completion collapse) remain in
+% the §7.4 prose / appendix per OC-4; see invariance_finding_main_text_paragraph.md and
+% table_and_footnote_consistency_check.md for the locked bucket numbers.
